@@ -74,6 +74,8 @@ fields: date,adcampaign_name,cost,offsite_conversions_fb_pixel_purchase,offsite_
 ### 5. 計算
 各商品×各期間で:
 - 原価合計 = 販売数 × 単価原価
+- **バリアントで原価が異なる商品（壁掛けディスペンサーの2本¥2,144〜2,261/3本¥2,929セット等）は、`GROUP BY product_title, product_variant_title` でバリアント別販売数を取得して加重計算する**。原価表の単価をそのまま全数に掛けない
+- 原価の正はShopifyのunitCost。ただしユーザーのCJ実費と乖離が疑われる場合（2026-07-18にディスペンサーで$18.3vs$13.7の乖離を検出、確認中）はアラートを出す
 - **利益 = 総売上高(gross) − 原価合計 − Meta広告費**
 - 利益率 = 利益 ÷ 総売上高、MER = 総売上高 ÷ 広告費
 - 損益分岐MER = 総売上高 ÷（総売上高 − 原価合計）… これを下回ると赤字
