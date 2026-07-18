@@ -21,7 +21,16 @@ FROM sales SHOW gross_sales, net_items_sold, discounts, returns GROUP BY product
 ```
 期間: 前日（昨日のみ）/ 直近3日 / 直近7日 / 直近30日
 
-### 2. Meta広告費（日別×キャンペーン別）
+### 2. Meta現在予算（毎日変わるため必ず当日読む）
+ユーザーは日予算を毎日増減しているため、`data_query` で**昨日時点の広告セット別設定予算**を取得する:
+```
+fields: adcampaign_name,adset_name,adsetstatus,adsetdaily_budget,cost
+昨日1日分 (custom, timezone=Asia/Tokyo)
+```
+- 予算は広告セット単位（全キャンペーンABO）。同一キャンペーンに複数広告セット（例: 形状記憶日傘の並行テスト）がある場合は別行で扱う
+- 消化が予算を大きく下回る広告セット（消化率<85%）は「配信制限あり＝増額しても効かない」としてフラグ
+
+### 2b. Meta広告費（日別×キャンペーン別）
 `data_query` (ds_id=FA, ds_accounts=act_1124340806289175, timezone=Asia/Tokyo):
 ```
 fields: date,adcampaign_name,cost,offsite_conversions_fb_pixel_purchase,offsite_conversion_value_fb_pixel_purchase
@@ -95,7 +104,8 @@ fields: date,adcampaign_name,cost,offsite_conversions_fb_pixel_purchase,offsite_
 - レポートには毎回「シーズン移行ステータス」（終盤商品の縮小状況／次シーズンのテスト状況）を1行入れる
 
 ### 8. 出力フォーマット（日本語・簡潔に）
-1. **冒頭: 前回からの変化点・アラート**（新たな赤字転落、急落/急伸、突合異常）
+1. **冒頭: 前回からの変化点・アラート**（新たな赤字転落、急落/急伸、突合異常、前回提案と実際の予算変更の差分）
 2. 全体サマリー（4期間の 売上/広告費/利益、カタログ広告費差引後）
-3. 商品別テーブル（4期間の利益、7日MER、判定: 🚀増額/✅維持/🔧テコ入れ/🚨赤字）
-4. 推奨アクション（優先順・根拠つき、3〜5個まで）
+3. 商品別テーブル（4期間の利益、7日MER、判定: 🚀増額/✅維持/🔧テコ入れ/🚨赤字、**現予算→提案予算**）
+4. **日予算提案**: 広告セット単位で「現予算→提案額」と一言理由。ルール: 増額は+20〜30%/回まで・余裕+1.0以上かつ消化率85%以上が条件／減額は-20%目安・段階②対象は半減／総額は原則±10%以内に収め、構成の組み替えで対応
+5. 推奨アクション（優先順・根拠つき、3〜5個まで）
