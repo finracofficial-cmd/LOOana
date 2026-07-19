@@ -10,9 +10,12 @@ description: LOOTY(looty-japan.com)の商品別損益 定例レポート。Shopi
 - **広告費 = Meta**（Supermetrics FA, アカウント `act_1124340806289175`）
 - **原価 = Shopify** の variant `inventoryItem.unitCost`。**送料込み**（送料無料運営のため追加送料計算は不要）
 - ROASはMeta表示値を信用せず、必ず **購入価値÷消化額** を自分で割り算する（同名キャンペーン合算時にMetaのROAS列が約2倍になるバグを確認済み）
-- 決済手数料は**実効ブレンド率 約3.32%**を全体サマリーでのみ言及（商品別テーブルには含めない）。内訳（2026-07-19実測・金額ベース）: Shopify Payments 71.8%×3.25%（Advanced・国内）＋KOMOJU QR（PayPay等）23.5%×3.5%＋KOMOJU Paidy 4.6%×3.5%
+- 決済手数料は**実効ブレンド率 約3.46%**を全体サマリーでのみ言及（商品別テーブルには含めない）。内訳（2026-07-19実測・金額ベース）:
+  - Shopify Payments 71.8% × 3.25%（Advanced・国内カード）
+  - KOMOJU QR（PayPay等） 23.5% × **4.0%**（KOMOJU 3.5% ＋ **Shopify外部決済取引手数料0.5%**（Advancedプラン。外部決済にはKOMOJU手数料と別にShopifyが0.5%を請求する））
+  - KOMOJU Paidy 4.6% × **4.0%**（同上）
   - **毎月1日に再計測**: `graphql_query` で直近100注文の `paymentGatewayNames` × 金額を集計し、構成比×料率でブレンド率を更新する
-  - 要確認事項: KOMOJUのPayPayが恒常キャンペーン2.99%適用か（適用ならブレンド率≈3.20%に修正）
+  - 要確認事項: KOMOJUのPayPayが恒常キャンペーン2.99%適用か（適用ならKOMOJU QR実質3.49%、ブレンド率≈3.34%に修正）
 
 ## 手順
 
