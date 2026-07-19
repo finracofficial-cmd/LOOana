@@ -15,7 +15,7 @@ description: LOOTY(looty-japan.com)の商品別損益 定例レポート。Shopi
   - KOMOJU QR（PayPay等） 23.5% × **4.0%**（KOMOJU 3.5% ＋ **Shopify外部決済取引手数料0.5%**（Advancedプラン。外部決済にはKOMOJU手数料と別にShopifyが0.5%を請求する））
   - KOMOJU Paidy 4.6% × **4.0%**（同上）
   - **毎月1日に再計測**: `graphql_query` で直近100注文の `paymentGatewayNames` × 金額を集計し、構成比×料率でブレンド率を更新する
-  - 要確認事項: KOMOJUのPayPayが恒常キャンペーン2.99%適用か（適用ならKOMOJU QR実質3.49%、ブレンド率≈3.34%に修正）
+  - 2026-07-19ユーザー確認済み: KOMOJUのPayPay・メルペイ・Paidyはいずれも3.5%（キャンペーン適用なし）→ ブレンド率3.46%で確定
 
 ## 手順
 
