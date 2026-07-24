@@ -180,3 +180,4 @@ fields: date,adcampaign_name,cost,offsite_conversions_fb_pixel_purchase,offsite_
    - **👀 様子見（何もしないのが正解のもの）**: 判定待ちを「商品名: 次回判定日 M/D（何を判定するか）」で一覧化。**「様子見＝タスクなし」を明示**する
    - タスクの完了判定はデータで検証してから消す（予算はMeta実測、価格はShopify実測、CRは広告セット内の広告数の変化）
    - 必須・推奨が空の日は「本日は様子見のみ」と明記し、無理にアクションを作らない
+6. **Excel版を毎回生成して送付する（2026-07-24ユーザー指定）**: `scripts/report_xlsx.py` に data.json を渡して `data/reports/report-YYYY-MM-DD.xlsx` を生成 → コミット＆プッシュ → `SendUserFile` で送付（display=attach）。シート構成: ①全体サマリー（昨日×期間比較＋期間別サマリー＋注記）②商品別（全商品・7日売上/原価/広告費/利益・前日売上/利益/利益率・3日/30日利益・MER/分岐/余裕/判定/予算）。**商品別シートはヘッダー行＋商品列をスクロール固定（freeze_panes="B2"）**・負の利益は赤字表示・交互行の背景色
