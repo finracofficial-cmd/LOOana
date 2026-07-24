@@ -40,7 +40,7 @@ for row in data["headline"]:
 r += 2
 ws.cell(r, 1, "■ 期間別サマリー（カタログ広告費込み・全商品）").font = Font(name="Arial", bold=True, size=11)
 r += 1
-sh = ["期間", "売上(gross−値引)", "原価", "広告費", "利益", "利益率", "手数料(3.46%)", "控除後利益", "控除後利益率"]
+sh = ["期間", "売上(gross−値引)", "原価", "広告費", "利益", "利益率", "手数料(3.49%)", "控除後利益", "控除後利益率"]
 for c, v in enumerate(sh, 1): ws.cell(r, c, v)
 style_header(ws, r, len(sh))
 for row in data["summary"]:
