@@ -15,6 +15,7 @@ TD = Font(name="Arial", size=10)
 NEG = Font(name="Arial", size=10, color="CC0000")
 HEAD = PatternFill("solid", fgColor="305496")
 ALT = PatternFill("solid", fgColor="F2F6FC")
+YELLOW = PatternFill("solid", fgColor="FFF2A8")
 thin = Border(*[Side(style="thin", color="CCCCCC")]*4)
 
 def style_header(ws, row, ncols):
@@ -72,6 +73,7 @@ for i, row in enumerate(data["products"]):
             if c == 8: cell.number_format = "0.0%"
             if c in (11,12,13): cell.number_format = "0.00"
         if i % 2 == 1: cell.fill = ALT
+        if c == 8 and isinstance(v, (int, float)) and v < 0.30: cell.fill = YELLOW  # 前日利益率<30%は黄ハイライト
 for col, w in zip("ABCDEFGHIJKLMNOP", [34,11,11,11,11,10,10,9,10,11,8,7,8,12,22,16]): ws2.column_dimensions[col].width = w
 ws2.freeze_panes = "B2"  # ヘッダー行＋商品列を固定（ユーザー指定）
 wb.save(sys.argv[2])
