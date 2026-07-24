@@ -57,8 +57,8 @@ ws.freeze_panes = "A5"
 
 # ---- Sheet2: 商品別 ----
 ws2 = wb.create_sheet("商品別")
-ph = ["商品", "7日売上", "7日原価", "7日広告費", "7日利益", "前日売上", "前日利益", "前日利益率", "前日ROAS",
-      "3日利益", "30日利益", "MER(7日)", "ROAS(7日)", "分岐", "余裕", "判定", "予算"]
+ph = ["商品", "7日売上", "7日原価", "7日広告費", "7日利益", "前日売上", "前日利益", "前日利益率",
+      "3日利益", "30日利益", "MER(7日)", "分岐", "余裕", "判定", "予算"]
 for c, v in enumerate(ph, 1): ws2.cell(1, c, v)
 style_header(ws2, 1, len(ph))
 ws2.row_dimensions[1].height = 28
@@ -66,13 +66,13 @@ for i, row in enumerate(data["products"]):
     r = i + 2
     for c, v in enumerate(row, 1):
         cell = ws2.cell(r, c, v); cell.border = thin
-        cell.font = NEG if (isinstance(v, (int, float)) and v < 0 and c in (5,7,10,11)) else TD
+        cell.font = NEG if (isinstance(v, (int, float)) and v < 0 and c in (5,7,9,10)) else TD
         if isinstance(v, (int, float)):
-            if c in (2,3,4,5,6,7,10,11): cell.number_format = "#,##0"
+            if c in (2,3,4,5,6,7,9,10): cell.number_format = "#,##0"
             if c == 8: cell.number_format = "0.0%"
-            if c in (9,12,13,14,15): cell.number_format = "0.00"
+            if c in (11,12,13): cell.number_format = "0.00"
         if i % 2 == 1: cell.fill = ALT
-for col, w in zip("ABCDEFGHIJKLMNOPQ", [34,11,11,11,11,10,10,9,9,10,11,8,8,7,8,22,16]): ws2.column_dimensions[col].width = w
+for col, w in zip("ABCDEFGHIJKLMNO", [34,11,11,11,11,10,10,9,10,11,8,7,8,22,16]): ws2.column_dimensions[col].width = w
 ws2.freeze_panes = "B2"  # ヘッダー行＋商品列を固定（ユーザー指定）
 wb.save(sys.argv[2])
 print("saved", sys.argv[2])
