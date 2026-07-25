@@ -60,26 +60,36 @@ ws.freeze_panes = "A5"
 
 # ---- Sheet2: 商品別 ----
 ws2 = wb.create_sheet("商品別")
-ph = ["商品", "7日売上", "7日原価", "7日広告費", "7日利益", "前日売上", "前日利益", "前日利益率",
-      "3日利益", "30日利益", "MER(7日)", "分岐", "余裕", "増分MER", "現日予算(円)", "判定", "予算提案"]
+ph = ["商品", "7日売上", "7日原価", "7日広告費", "7日利益", "7日利益率", "原価率", "広告費率",
+      "3日利益率", "前日売上", "前日利益", "前日利益率", "3日利益", "30日利益",
+      "MER(7日)", "分岐", "余裕", "増分MER", "現日予算(円)", "判定", "推奨アクション"]
 for c, v in enumerate(ph, 1): ws2.cell(1, c, v)
 style_header(ws2, 1, len(ph))
-ws2.row_dimensions[1].height = 28
+ws2.row_dimensions[1].height = 30
+MONEY = (2, 3, 4, 5, 10, 11, 13, 14, 19)
+PCT   = (6, 7, 8, 9, 12)
+RATIO = (15, 16, 17, 18)
 for i, row in enumerate(data["products"]):
     r = i + 2
     for c, v in enumerate(row, 1):
         cell = ws2.cell(r, c, v); cell.border = thin
-        cell.font = NEG if (isinstance(v, (int, float)) and v < 0 and c in (5,7,9,10)) else TD
+        cell.font = NEG if (isinstance(v, (int, float)) and v < 0 and c in (5, 6, 9, 11, 12, 13, 14)) else TD
         if isinstance(v, (int, float)):
-            if c in (2,3,4,5,6,7,9,10,15): cell.number_format = "#,##0"
-            if c == 8: cell.number_format = "0.0%"
-            if c in (11,12,13,14): cell.number_format = "0.00"
+            if c in MONEY: cell.number_format = "#,##0"
+            if c in PCT:   cell.number_format = "0.0%"
+            if c in RATIO: cell.number_format = "0.00"
         if i % 2 == 1: cell.fill = ALT
-        if c == 8 and isinstance(v, (int, float)) and v < 0.30: cell.fill = YELLOW  # 前日利益率<30%は黄ハイライト
+        if c == 21: cell.alignment = Alignment(wrap_text=True, vertical="top")
+        if not isinstance(v, (int, float)): continue
+        # 利益率<30%は黄、赤字は赤（7日・3日・前日）
+        if c in (6, 9, 12) and v < 0.30: cell.fill = RED if v < 0 else YELLOW
+        # ボトルネックの可視化: 原価率>33% / 広告費率>40% を赤系
+        if c == 7 and v > 0.33: cell.fill = RED
+        if c == 8 and v > 0.40: cell.fill = RED
         # 増分MER: 2.91以上=利益率35%を守って伸ばせる(緑)、1.44未満=増額が赤字(赤)
-        if c == 14 and isinstance(v, (int, float)):
-            cell.fill = GREEN if v >= 2.91 else (RED if v < 1.44 else YELLOW)
-for col, w in zip("ABCDEFGHIJKLMNOPQ", [34,11,11,11,11,10,10,9,10,11,8,7,8,9,12,22,16]): ws2.column_dimensions[col].width = w
+        if c == 18: cell.fill = GREEN if v >= 2.91 else (RED if v < 1.44 else YELLOW)
+WIDTHS = [34, 11, 10, 11, 11, 9, 8, 9, 9, 10, 10, 9, 10, 11, 9, 7, 7, 8, 11, 20, 52]
+for c, w in enumerate(WIDTHS, 1): ws2.column_dimensions[ws2.cell(1, c).column_letter].width = w
 ws2.freeze_panes = "B2"  # ヘッダー行＋商品列を固定（ユーザー指定）
 wb.save(sys.argv[2])
 print("saved", sys.argv[2])
