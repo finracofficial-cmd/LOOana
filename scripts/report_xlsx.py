@@ -16,6 +16,8 @@ NEG = Font(name="Arial", size=10, color="CC0000")
 HEAD = PatternFill("solid", fgColor="305496")
 ALT = PatternFill("solid", fgColor="F2F6FC")
 YELLOW = PatternFill("solid", fgColor="FFF2A8")
+GREEN = PatternFill("solid", fgColor="D6EFD8")
+RED = PatternFill("solid", fgColor="FADBD8")
 thin = Border(*[Side(style="thin", color="CCCCCC")]*4)
 
 def style_header(ws, row, ncols):
@@ -59,7 +61,7 @@ ws.freeze_panes = "A5"
 # ---- Sheet2: 商品別 ----
 ws2 = wb.create_sheet("商品別")
 ph = ["商品", "7日売上", "7日原価", "7日広告費", "7日利益", "前日売上", "前日利益", "前日利益率",
-      "3日利益", "30日利益", "MER(7日)", "分岐", "余裕", "現日予算(円)", "判定", "予算提案"]
+      "3日利益", "30日利益", "MER(7日)", "分岐", "余裕", "増分MER", "現日予算(円)", "判定", "予算提案"]
 for c, v in enumerate(ph, 1): ws2.cell(1, c, v)
 style_header(ws2, 1, len(ph))
 ws2.row_dimensions[1].height = 28
@@ -69,12 +71,15 @@ for i, row in enumerate(data["products"]):
         cell = ws2.cell(r, c, v); cell.border = thin
         cell.font = NEG if (isinstance(v, (int, float)) and v < 0 and c in (5,7,9,10)) else TD
         if isinstance(v, (int, float)):
-            if c in (2,3,4,5,6,7,9,10,14): cell.number_format = "#,##0"
+            if c in (2,3,4,5,6,7,9,10,15): cell.number_format = "#,##0"
             if c == 8: cell.number_format = "0.0%"
-            if c in (11,12,13): cell.number_format = "0.00"
+            if c in (11,12,13,14): cell.number_format = "0.00"
         if i % 2 == 1: cell.fill = ALT
         if c == 8 and isinstance(v, (int, float)) and v < 0.30: cell.fill = YELLOW  # 前日利益率<30%は黄ハイライト
-for col, w in zip("ABCDEFGHIJKLMNOP", [34,11,11,11,11,10,10,9,10,11,8,7,8,12,22,16]): ws2.column_dimensions[col].width = w
+        # 増分MER: 2.91以上=利益率35%を守って伸ばせる(緑)、1.44未満=増額が赤字(赤)
+        if c == 14 and isinstance(v, (int, float)):
+            cell.fill = GREEN if v >= 2.91 else (RED if v < 1.44 else YELLOW)
+for col, w in zip("ABCDEFGHIJKLMNOPQ", [34,11,11,11,11,10,10,9,10,11,8,7,8,9,12,22,16]): ws2.column_dimensions[col].width = w
 ws2.freeze_panes = "B2"  # ヘッダー行＋商品列を固定（ユーザー指定）
 wb.save(sys.argv[2])
 print("saved", sys.argv[2])
