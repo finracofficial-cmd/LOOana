@@ -103,5 +103,53 @@ for i, row in enumerate(data["products"]):
 WIDTHS = [34, 11,10,11,11,9, 8,9, 10,10,10,10,9, 10,10,10,10,9, 11, 9,7,8,7,8, 11, 22, 52]
 for c, w in enumerate(WIDTHS, 1): ws2.column_dimensions[ws2.cell(1,c).column_letter].width = w
 ws2.freeze_panes = "B2"  # ヘッダー行＋商品列を固定（ユーザー指定）
+
+# ---- Sheet3: 判定フロー（フロー図＋当日の全商品トレース） ----
+if data.get("flow"):
+    ws3 = wb.create_sheet("判定フロー")
+    ws3["A1"] = "予算増減・CR投入の判定フロー　※商品別シートの判定はこのフローから機械的に生成している"
+    ws3["A1"].font = Font(name="Arial", bold=True, size=12)
+    r = 3
+    for step, q, branch in data["flow"]:
+        if not q:
+            r += 1; continue
+        if not step:                                  # セクション見出し
+            c = ws3.cell(r, 1, q); c.font = Font(name="Arial", bold=True, size=11, color="1F4E78")
+            ws3.cell(r, 1).fill = PatternFill("solid", fgColor="EAF1FB")
+            r += 1; continue
+        ws3.cell(r, 1, step).font = Font(name="Arial", bold=True, size=10, color="C00000")
+        ws3.cell(r, 2, q).font = Font(name="Arial", bold=True, size=10)
+        ws3.cell(r, 3, branch).font = Font(name="Arial", size=9, color="404040")
+        for c in (1, 2, 3):
+            ws3.cell(r, c).border = thin
+            ws3.cell(r, c).alignment = Alignment(wrap_text=True, vertical="top")
+        r += 1
+    r += 2
+    ws3.cell(r, 1, "■ 本日の全商品トレース（どの分岐を通ってその結論になったか）").font = Font(name="Arial", bold=True, size=11)
+    r += 1
+    th = ["商品", "日販", "7日利益", "MER", "目標MER", "分岐", "余裕", "消化率", "増分MER",
+          "判定日", "現予算", "提案予算", "結論", "通った分岐"]
+    for c, v in enumerate(th, 1): ws3.cell(r, c, v)
+    style_header(ws3, r, len(th))
+    hdr = r
+    for i, row in enumerate(data["trace"]):
+        r += 1
+        for c, v in enumerate(row, 1):
+            cell = ws3.cell(r, c, v); cell.border = thin; cell.font = TD
+            if isinstance(v, (int, float)):
+                if c in (3, 11, 12): cell.number_format = "#,##0"
+                if c == 2: cell.number_format = "0.0"
+                if c in (4, 5, 6, 7, 9): cell.number_format = "0.00"
+                if c == 8: cell.number_format = "0%"
+            if i % 2 == 1: cell.fill = ALT
+            if c == 14: cell.alignment = Alignment(wrap_text=True, vertical="top")
+        if row[10] != row[11]:                        # 予算が動く行を強調
+            for c in range(1, 15): ws3.cell(r, c).fill = YELLOW
+    for c, w in enumerate([30, 7, 11, 7, 8, 7, 7, 8, 9, 10, 10, 10, 26, 78], 1):
+        ws3.column_dimensions[ws3.cell(hdr, c).column_letter].width = w
+    ws3.column_dimensions["B"].width = 46
+    ws3.column_dimensions["C"].width = 92
+    ws3.freeze_panes = ws3.cell(hdr + 1, 2)
+
 wb.save(sys.argv[2])
 print("saved", sys.argv[2])
