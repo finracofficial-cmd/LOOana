@@ -39,6 +39,10 @@ for row in data["headline"]:
     r += 1
     for c, v in enumerate(row, 1):
         cell = ws.cell(r, c, v); cell.font = TD; cell.border = thin
+        # 実績期間比較の数値はカンマ表記（ユーザー指定 2026-07-26）
+        if isinstance(v, (int, float)) and not isinstance(v, bool) and c in (2,3,4,5,6):
+            cell.number_format = "#,##0"
+            cell.alignment = Alignment(horizontal="right")
 r += 2
 ws.cell(r, 1, "■ 期間別サマリー（カタログ広告費込み・全商品）").font = Font(name="Arial", bold=True, size=11)
 r += 1
