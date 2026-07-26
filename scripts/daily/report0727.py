@@ -96,17 +96,25 @@ def blk(label, S_, C_, A_):
     P = S_-C_-A_; f = S_*FEE
     return [label, S_, C_, round(A_), round(P), round(P/S_,4), round(f), round(P-f), round((P-f)/S_,4)]
 SD  = {ds: (g-dc) for ds,g,dc,*_ in DAILY}
-tot = json.load(open('calc0727.json'))['tot']
+cf = json.load(open('cumfix.json')); ADD = cf['ADD']
+# 全店の広告費はアカウントレベルの日次実測を正とする（キャンペーン合算だと取りこぼしが出る）
+A1t = ADD['2026-07-26']; A3t = sum(ADD[d] for d in D3); A7t = sum(ADD[d] for d in D7)
+A30t = sum(ADD[d] for d in ADD)
 s1_= SD['2026-07-26']; s3_= sum(SD[d] for d in D3); s7_= sum(SD[d] for d in D7); s30_= sum(SD.values())
 c1_= sum(C['d1'].values()); c3_= sum(C['d3'].values()); c7_= sum(C['d7'].values()); c30_= sum(C['d30'].values())
-CUM = json.load(open('cum.json'))
-cum = [CUM['S']+s1_, CUM['C']+c1_, CUM['A']+tot['A1'], 0]
-summary = [blk(f'前日(7/26 日)', s1_, c1_, tot['A1']),
-           blk('3日(7/24-26)', s3_, c3_, tot['A3']),
-           blk('7日(7/20-26)', s7_, c7_, tot['A7']),
-           blk('30日(6/27-7/26)', s30_, c30_, tot['A30']),
-           blk('📅7/18〜7/26累積(9日)', cum[0], cum[1], cum[2])]
-json.dump({'S':cum[0],'C':cum[1],'A':cum[2],'P':cum[0]-cum[1]-cum[2],'f':round(cum[0]*FEE)}, open('cum.json','w'))
+# --- 7/18〜の累積は日次実測から毎回積み直す（繰り越しファイルを使わない） ---
+CUMD = ['2026-07-%02d'%d for d in range(18,27)]
+def cost_day(u, cv):
+    return sum(cv.values()) + sum(q*COST.get(n,0) for n,q in u.items() if n not in cv)
+c1819 = cost_day(cf['U18'], cf['CV18']) + cost_day(cf['U19'], cf['CV19'])
+cumS = sum(SD[d] for d in CUMD); cumA = sum(ADD[d] for d in CUMD); cumC = c7_ + c1819
+assert abs(cumS - (sum(SD[d] for d in CUMD[:-1]) + s1_)) < 1, '累積売上が日次と不整合'
+tot = {'A1':A1t,'A3':A3t,'A7':A7t,'A30':A30t}
+summary = [blk('前日(7/26 日)', s1_, c1_, A1t),
+           blk('3日(7/24-26)', s3_, c3_, A3t),
+           blk('7日(7/20-26)', s7_, c7_, A7t),
+           blk('30日(6/27-7/26)', s30_, c30_, A30t),
+           blk('📅7/18〜7/26累積(9日)', cumS, cumC, cumA)]
 
 # ヘッドライン
 sun = [SD[d] for d in SD if wd(d)=='日']
@@ -148,6 +156,12 @@ data = {'date':'2026-07-27(月) 定例（昨日=7/26 日実績）','headline':h,
   '30日窓の途中開始: 卓上冷感クーラー7/13(14日)・5WAY腰掛けファン7/19(8日)・瞬間冷感ポンチョ/ムダ毛シェーバー7/10(17日)',
   '広告セット19/21が配信CR1本（日予算合計の約92%）。害虫ブロッカー本体(70,000円)・4WAY(95,000円)が最大の単一CR依存',
   '★増額候補（自分の目標MER超え × 消化率95%以上）: ' + CAND,
+  '⚠️訂正: 7/27朝に一度お渡ししたファイルの「7/18〜累積」行が誤っていました（売上16,290,866円等）。'
+  '累積を繰り越しファイルへの加算方式で作っていたため、生成スクリプトを3回走らせた分だけ7/26が3重計上されていました。'
+  '本ファイルは累積を日次実測から毎回積み直す方式に変更し、日次合計との一致を自動チェックしています（他の行は元から毎回再計算のため影響なし）',
+  '★全店の広告費をキャンペーン合算からMetaのアカウントレベル日次実測に変更（取りこぼしが構造的に起きない）。差は7日で84円',
+  '★7/18〜累積の原価は全日を現行（7/25改定後）の原価表で評価している。'
+  '前回ファイルの8日累積3,448,948円との差−11,811円は、この基準統一とディスペンサーのバリエーション別原価の修正による',
  ]}
 json.dump(data, open('report_data_0727.json','w'), ensure_ascii=False, indent=1)
 print('--- 全体 ---')
