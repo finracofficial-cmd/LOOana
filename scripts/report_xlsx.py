@@ -25,8 +25,34 @@ def style_header(ws, row, ncols):
         cell = ws.cell(row, c); cell.font = TH; cell.fill = HEAD; cell.border = thin
         cell.alignment = Alignment(horizontal="center", vertical="center", wrap_text=True)
 
+# ---- Sheet0: ネクストアクション ----
+na = wb.active; na.title = "ネクストアクション"
+na["A1"] = f"LOOTY ネクストアクション {data['date']}"
+na["A1"].font = Font(name="Arial", bold=True, size=14)
+r = 3
+for sec, rows_ in data.get("next_actions", []):
+    c = na.cell(r, 1, sec); c.font = Font(name="Arial", bold=True, size=12, color="FFFFFF")
+    c.fill = PatternFill("solid", fgColor="305496")
+    for cc in range(1, 7): na.cell(r, cc).fill = PatternFill("solid", fgColor="305496")
+    r += 1
+    if rows_ and isinstance(rows_[0], list) and len(rows_[0]) > 1:
+        for c2, v in enumerate(rows_[0], 1): na.cell(r, c2, v)
+        style_header(na, r, len(rows_[0])); r += 1
+        for row in rows_[1:]:
+            for c2, v in enumerate(row, 1):
+                cell = na.cell(r, c2, v); cell.font = TD; cell.border = thin
+                cell.alignment = Alignment(wrap_text=True, vertical="top")
+            r += 1
+    else:
+        for row in rows_:
+            na.cell(r, 1, row[0] if isinstance(row, list) else row).font = TD
+            na.cell(r, 1).alignment = Alignment(wrap_text=True, vertical="top")
+            r += 1
+    r += 1
+for col, w in zip("ABCDEF", [30, 42, 12, 12, 30, 14]): na.column_dimensions[col].width = w
+
 # ---- Sheet1: 全体サマリー ----
-ws = wb.active; ws.title = "全体サマリー"
+ws = wb.create_sheet("全体サマリー")
 ws["A1"] = f"LOOTY 日次損益レポート {data['date']}"
 ws["A1"].font = Font(name="Arial", bold=True, size=13)
 r = 3
@@ -69,12 +95,13 @@ ph = ["商品",
       "3日売上", "3日原価", "3日広告費", "3日利益", "3日利益率",
       "前日売上", "前日原価", "前日広告費", "前日利益", "前日利益率",
       "30日利益", "MER(7日)", "分岐", "目標MER", "余裕", "増分MER",
+      "CVR(7日)", "CVR順位", "残シーズン(週)",
       "現日予算(円)", "判定", "推奨アクション"]
 for c, v in enumerate(ph, 1): ws2.cell(1, c, v)
 style_header(ws2, 1, len(ph))
 ws2.row_dimensions[1].height = 30
-MONEY  = (2,3,4,5, 9,10,11,12, 14,15,16,17, 19, 25)
-PCT    = (6,7,8, 13, 18)
+MONEY  = (2,3,4,5, 9,10,11,12, 14,15,16,17, 19, 28)
+PCT    = (6,7,8, 13, 18, 25)
 RATIO  = (20,21,22,23,24)
 PROFIT = (5,12,17,19)        # 赤字を赤字表示する利益列
 MARGIN = (6,13,18)           # 利益率列（<30%黄・赤字は赤）
@@ -88,19 +115,21 @@ for i, row in enumerate(data["products"]):
             if c in PCT:   cell.number_format = "0.0%"
             if c in RATIO: cell.number_format = "0.00"
         if i % 2 == 1: cell.fill = ALT
-        if c == 27: cell.alignment = Alignment(wrap_text=True, vertical="top")
+        if c == 30: cell.alignment = Alignment(wrap_text=True, vertical="top")
         if not isinstance(v, (int, float)): continue
         if c in MARGIN and v < 0.30: cell.fill = RED if v < 0 else YELLOW
         if c == 7 and v > 0.33: cell.fill = RED        # 原価率>33%
         if c == 8 and v > 0.40: cell.fill = RED        # 広告費率>40%
         if c == 24: cell.fill = GREEN if v >= 2.91 else (RED if v < 1.44 else YELLOW)
+        if c == 25: cell.fill = GREEN if v >= 0.0318 else RED      # CVR 自店中央値3.18%
+        if c == 27 and v <= 5: cell.fill = YELLOW                  # 残シーズン5週以下
 # MER vs 目標MER: 目標を超えていれば緑、下回れば赤（商品ごとの目標で判定）
 for i, row in enumerate(data["products"]):
     r = i + 2
     mer, tgt = row[19], row[21]
     if isinstance(mer,(int,float)) and isinstance(tgt,(int,float)):
         ws2.cell(r, 20).fill = GREEN if mer >= tgt else RED
-WIDTHS = [34, 11,10,11,11,9, 8,9, 10,10,10,10,9, 10,10,10,10,9, 11, 9,7,8,7,8, 11, 22, 52]
+WIDTHS = [34, 11,10,11,11,9, 8,9, 10,10,10,10,9, 10,10,10,10,9, 11, 9,7,8,7,8, 9,9,11, 11, 22, 62]
 for c, w in enumerate(WIDTHS, 1): ws2.column_dimensions[ws2.cell(1,c).column_letter].width = w
 ws2.freeze_panes = "B2"  # ヘッダー行＋商品列を固定（ユーザー指定）
 
