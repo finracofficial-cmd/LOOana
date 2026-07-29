@@ -113,7 +113,7 @@ for r in rows:
        '目標MER':r[21],'分岐':r[20],'余裕':r[22],'消化率':UTIL.get(n) or 0,'増分MER':im,
        '増分MER下限':lo,'増分MER上限':hi,'増分MER両論':split,'変更方向':EXPMETA.get(n,{}).get('方向','増額'),
        '予算':cur,'元予算':PREV.get(n),'赤字比率':abs((r[4]/7)/cur) if cur else 0,'2巡目':n in CYCLE2,
-       '転用が有利':False,'転用不可理由':NOREDEPLOY,'転用利益':0,'P1凍結':P1GUARD}
+       '転用が有利':False,'転用不可理由':NOREDEPLOY,'転用利益':0,'P1警戒':P1GUARD,'P1理由':P1REASON}
     path,concl,prop=flow.judge(p)
     if n=='湯上がりガーゼワンピース':
         r[30]='⏹ 停止済み'; r[31]='【広告】停止中（0円/日）。7/26停止の減額分の増分MER 曜日+1.03/全店+1.03＜目標3.12＝停止は正解'

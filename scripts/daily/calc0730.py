@@ -111,7 +111,12 @@ WINS=[('7/02-08',ALLD[3:10]),('7/09-15',ALLD[10:17]),('7/16-22',ALLD[17:24]),('7
 ACCTD={d: sum(AD[c].get(d,0) for c in AD) for d in ALLD}
 MERW=[(l,sum(STORE[d] for d in ds)/sum(ACCTD[d] for d in ds)) for l,ds in WINS]
 _ch=[(MERW[i+1][1]-MERW[i][1])/MERW[i][1] for i in range(len(MERW)-1)]
-P1GUARD=_ch[-1]<=-0.05 and _ch[-2]<=-0.05
+# P-1（2026-07-30ユーザー承認で改定）: ①2週連続−5%以上 または ②単週−8%以上 で発動
+P1_A=_ch[-1]<=-0.05 and _ch[-2]<=-0.05
+P1_B=_ch[-1]<=-0.08
+P1GUARD=P1_A or P1_B
+P1REASON=(('全店の週次MERが2週連続で−5%以上（%+.1f%%→%+.1f%%）'%(_ch[-2]*100,_ch[-1]*100)) if P1_A else '') \
+        + (('' if not P1_A else ' かつ ')+('全店の週次MERが単週で−8%%以上（%+.1f%%）'%(_ch[-1]*100)) if P1_B else '')
 # 曜日を揃えた比較（月曜を両週から外す）
 def merx(ds,skip):
     d2=[d for d in ds if wd(d)!=skip]
