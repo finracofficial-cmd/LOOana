@@ -96,11 +96,12 @@ ph = ["商品",
       "前日売上", "前日原価", "前日広告費", "前日利益", "前日利益率",
       "30日利益", "MER(7日)", "分岐", "目標MER", "余裕", "増分MER",
       "CVR(7日)", "CVR順位", "残シーズン(週)",
+      "値引(7日)", "返品(7日)",
       "現日予算(円)", "判定", "推奨アクション"]
 for c, v in enumerate(ph, 1): ws2.cell(1, c, v)
 style_header(ws2, 1, len(ph))
 ws2.row_dimensions[1].height = 30
-MONEY  = (2,3,4,5, 9,10,11,12, 14,15,16,17, 19, 28)
+MONEY  = (2,3,4,5, 9,10,11,12, 14,15,16,17, 19, 28,29, 30)
 PCT    = (6,7,8, 13, 18, 25)
 RATIO  = (20,21,22,23,24)
 PROFIT = (5,12,17,19)        # 赤字を赤字表示する利益列
@@ -115,7 +116,7 @@ for i, row in enumerate(data["products"]):
             if c in PCT:   cell.number_format = "0.0%"
             if c in RATIO: cell.number_format = "0.00"
         if i % 2 == 1: cell.fill = ALT
-        if c == 30: cell.alignment = Alignment(wrap_text=True, vertical="top")
+        if c == 32: cell.alignment = Alignment(wrap_text=True, vertical="top")
         if not isinstance(v, (int, float)): continue
         if c in MARGIN and v < 0.30: cell.fill = RED if v < 0 else YELLOW
         if c == 7 and v > 0.33: cell.fill = RED        # 原価率>33%
@@ -123,13 +124,14 @@ for i, row in enumerate(data["products"]):
         if c == 24: cell.fill = GREEN if v >= 2.91 else (RED if v < 1.44 else YELLOW)
         if c == 25: cell.fill = GREEN if v >= 0.0318 else RED      # CVR 自店中央値3.18%
         if c == 27 and v <= 5: cell.fill = YELLOW                  # 残シーズン5週以下
+        if c == 29 and v > 0: cell.fill = YELLOW                   # 返品あり（原価には影響させない・別窓管理）
 # MER vs 目標MER: 目標を超えていれば緑、下回れば赤（商品ごとの目標で判定）
 for i, row in enumerate(data["products"]):
     r = i + 2
     mer, tgt = row[19], row[21]
     if isinstance(mer,(int,float)) and isinstance(tgt,(int,float)):
         ws2.cell(r, 20).fill = GREEN if mer >= tgt else RED
-WIDTHS = [34, 11,10,11,11,9, 8,9, 10,10,10,10,9, 10,10,10,10,9, 11, 9,7,8,7,8, 9,9,11, 11, 22, 62]
+WIDTHS = [34, 11,10,11,11,9, 8,9, 10,10,10,10,9, 10,10,10,10,9, 11, 9,7,8,7,8, 9,9,11, 10,10, 11, 22, 62]
 for c, w in enumerate(WIDTHS, 1): ws2.column_dimensions[ws2.cell(1,c).column_letter].width = w
 ws2.freeze_panes = "B2"  # ヘッダー行＋商品列を固定（ユーザー指定）
 
