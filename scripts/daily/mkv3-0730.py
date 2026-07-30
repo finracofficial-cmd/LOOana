@@ -45,9 +45,18 @@ BD=collections.defaultdict(lambda: collections.defaultdict(int))
 for r in csv.DictReader(open('/home/user/LOOana/data/budget-snapshots.csv',encoding='utf-8')):
     BD[r['campaign']][r['snapshot_date']]+=int(r['daily_budget'])
 D7=['2026-07-%02d'%x for x in range(23,30)]; D3=D7[-3:]; D1=D7[-1:]
+def qty(n,d):
+    g=S[n][d][0]
+    if not g: return 0
+    if n=='ムダ毛シェーバー':      # 7/27に5,980→6,980へ値上げ（日付対応の売価）
+        if d<'2026-07-27': return round(g/5980)
+        if g%6980==0: return g//6980
+        for b in range(g//6980+1):
+            if (g-b*6980)%5980==0: return (g-b*6980)//5980+b
+    return round(g/PRICE[n])
 def blk(n,ds):
     g=sum(S[n][d][0] for d in ds); dc=sum(S[n][d][1] for d in ds); s=g-dc
-    q=round(g/PRICE[n]); c=q*COST[n]; a=sum(A[MAP.get(n,n)].get(d,0) for d in ds)
+    q=sum(qty(n,d) for d in ds); c=q*COST[n]; a=sum(A[MAP.get(n,n)].get(d,0) for d in ds)
     return s,c,a,s-c-a
 rows=[]
 for n in BR:

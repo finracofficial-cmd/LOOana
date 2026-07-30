@@ -31,6 +31,7 @@ PRICE = {'4WAY':4980,'害虫ブロッカー':3980,'形状記憶日傘':4980,'完
  'リカバリーサンダル':3980,'姿勢サポートベルト':5980,'癒しの指圧マット':5980,'優先配送':536,
  'ナノガラス脱毛パッド':3980, '壁掛けディスペンサー':6556, 'ムダ毛シェーバー':None}   # None=売価が窓内で変動
 BLENDED = {'ナノガラス脱毛パッド':'原価は白/緑757円・黒/桃740円の30日実測ミックスで加重平均（751円）。4期間サマリーはバリエーション別実数量の正確値',
+           'ムダ毛シェーバー':'売価は7/27に5,980→6,980円へ値上げ。販売数は日付に応じた売価で算出（値上げ当日7/27のみ新旧混在を分解: 旧1個+新5個=6個）',
            '壁掛けディスペンサー':'日次の売価・原価は3本セット(6,980/2,528円)と2本セット(5,980/1,981円)の30日実測ミックスで加重平均。'
                             '販売数・原価は日次では概算になる（4期間サマリーはバリエーション別実数量の正確値）'}
 # Shopify商品名 → Metaキャンペーン名
@@ -95,6 +96,14 @@ def header(ws, row, n):
         x = ws.cell(row, c); x.font = TH; x.fill = HEAD; x.border = thin
         x.alignment = Alignment(horizontal='center', vertical='center', wrap_text=True)
 
+def _mixed_qty(g, p_old, p_new):
+    """新旧売価が混在する日の販売数を解く（a×旧 + b×新 = gross）"""
+    for b in range(0, g // p_new + 1):
+        rem = g - b * p_new
+        if rem % p_old == 0:
+            return rem // p_old + b
+    return None
+
 def series(name):
     """その商品の日次系列を返す"""
     camp = CAMP.get(name, name)
@@ -104,9 +113,13 @@ def series(name):
         sales = g - dc
         cost_ad = A[camp].get(d, 0.0)
         p = PRICE.get(name)
-        if p:
+        if name == 'ムダ毛シェーバー' and g:      # 7/27に5,980→6,980へ値上げ（日付対応の売価で算出）
+            if d < '2026-07-27': q = round(g / 5980)
+            elif g % 6980 == 0:  q = g // 6980
+            else:                q = _mixed_qty(g, 5980, 6980)   # 値上げ当日の新旧混在
+        elif p:
             q = round(g / p)
-        else:                       # 窓内で売価が変動した商品は数量を出さない
+        else:                       # 窓内で売価が変動し構成が解けない商品は数量を出さない
             q = None
         cost = q * COST.get(name, 0) if q is not None else None
         profit = sales - (cost or 0) - cost_ad
