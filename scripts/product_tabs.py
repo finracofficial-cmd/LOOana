@@ -176,8 +176,8 @@ for col, w in zip('ABCDEFGHIJKLMNOPQR', [26,9,9,11,9,9, 12,11,12,12,11,9, 11,11,
 ws.freeze_panes = 'B6'
 
 # ---- 商品ごとのタブ ----
-PH = ['日付','曜日','曜日指数','売上(gross−値引)','値引','販売数','原価','広告費','利益','利益率',
-      'MER','曜日補正MER','日予算','消化率','メモ']
+PH = ['日付','曜日','曜日指数','売上(gross−値引)','値引','販売数','売価(実測)','単価原価','原価','原価率',
+      '広告費','利益','利益率','MER','曜日補正MER','日予算','消化率','メモ']
 for n in ADV:
     rows = series(n)
     w = wb.create_sheet(TAB[n][:31])
@@ -220,29 +220,34 @@ for n in ADV:
             memo.append('⚠️消化率が異常（当日中の予算変更 or 開始初日 or スナップショット欠落を確認）')
         if (n, x['date']) in EVENTS: memo.append(EVENTS[(n, x['date'])])
         mer = x['sales']/x['ad'] if x['ad'] else None
+        gross = x['sales'] + x['disc']
+        unit_price = round(gross / x['qty']) if x['qty'] else ''          # その日の実測売価（値引前）
+        unit_cost  = round(x['cost'] / x['qty']) if x['qty'] else ''      # その日の実測単価原価（バリアント加重後）
+        cost_rate  = round(x['cost'] / x['sales'], 4) if x['sales'] and x['cost'] else ''
         vals = [x['date'], x['wd'], round(x['idx'], 1), x['sales'], x['disc'], x['qty'],
-                x['cost'], round(x['ad']), round(x['profit']),
+                unit_price, unit_cost, x['cost'], cost_rate,
+                round(x['ad']), round(x['profit']),
                 round(x['profit']/x['sales'], 4) if x['sales'] else '',
                 round(mer, 2) if mer else '', round(mer/(x['idx']/100), 2) if mer else '',
                 x['bud'] or '', round(x['ad']/x['bud'], 3) if x['bud'] else '', ' ／ '.join(memo)]
         for c, v in enumerate(vals, 1):
             cell = w.cell(rr, c, v); cell.border = thin
-            cell.font = NEG if (isinstance(v, (int, float)) and v < 0 and c in (9, 10)) else TD
+            cell.font = NEG if (isinstance(v, (int, float)) and v < 0 and c in (12, 13)) else TD
             if i % 2 == 1: cell.fill = ALT
-            if c in (4,5,7,8,9,13): cell.number_format = '#,##0'
-            if c in (10,14): cell.number_format = '0.0%'
-            if c in (3,11,12): cell.number_format = '0.00'
-            if c == 15: cell.alignment = Alignment(wrap_text=True, vertical='top')
+            if c in (4,5,7,8,9,11,12,16): cell.number_format = '#,##0'
+            if c in (10,13,17): cell.number_format = '0.0%'
+            if c in (3,14,15): cell.number_format = '0.00'
+            if c == 18: cell.alignment = Alignment(wrap_text=True, vertical='top')
         if mer:
-            w.cell(rr, 11).fill = GREEN if mer >= tg else (RED if mer < br else YEL)
-        if memo: w.cell(rr, 15).fill = YEL
+            w.cell(rr, 14).fill = GREEN if mer >= tg else (RED if mer < br else YEL)
+        if memo: w.cell(rr, 18).fill = YEL
         if x['date'] in HOLIDAYS:
             for c in range(1, 4): w.cell(rr, c).fill = GRAY
         rr += 1
-    for col, wid in zip('ABCDEFGHIJKLMNO', [12,6,9,16,10,8,11,11,11,9,8,11,10,9,40]):
+    for col, wid in zip('ABCDEFGHIJKLMNOPQR', [12,6,9,16,10,8,11,10,11,9,11,11,9,8,11,10,9,40]):
         w.column_dimensions[col].width = wid
     w.freeze_panes = f'A{top}'
-    w.auto_filter.ref = f'A{top-1}:O{rr-1}'
+    w.auto_filter.ref = f'A{top-1}:R{rr-1}'
 
 # ---- カタログ全部（テスト） ----
 w = wb.create_sheet('カタログ全部')
