@@ -7,11 +7,12 @@
 各商品タブ: 日付/曜日/曜日指数/売上(gross-値引)/値引/販売数/原価/広告費/利益/利益率/MER/曜日補正MER/日予算/消化率/メモ
 """
 import csv, sys, collections, datetime
-from openpyxl import Workbook
+from openpyxl import Workbook, load_workbook
 from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
 from openpyxl.utils import get_column_letter
 
 SALES, AD, OUT = sys.argv[1], sys.argv[2], sys.argv[3]
+INTO = sys.argv[4] if len(sys.argv) > 4 else None   # 既存ブックに商品タブを追記する場合はそのパス
 SNAP = '/home/user/LOOana/data/budget-snapshots.csv'
 
 COST = {'4WAY':1730,'害虫ブロッカー':867,'形状記憶日傘':1309,'完全遮光・形状記憶':1309,'卓上冷感クーラー':1996,
@@ -77,7 +78,7 @@ avg = sum(store[d] for d in base)/len(base)
 IDX = {k: sum(v)/len(v)/avg*100 for k, v in byw.items()}
 
 # ---- スタイル ----
-wb = Workbook()
+wb = load_workbook(INTO) if INTO else Workbook()
 TH = Font(name='Arial', bold=True, color='FFFFFF', size=10)
 TD = Font(name='Arial', size=10)
 NEG = Font(name='Arial', size=10, color='CC0000')
@@ -123,7 +124,10 @@ ADV = [n for n in TAB if any(A[CAMP.get(n, n)].values())]
 ADV.sort(key=lambda n: -sum(v[0]-v[1] for v in S[n].values()))
 
 # ---- Sheet: 一覧 ----
-ws = wb.active; ws.title = '一覧'
+if INTO:
+    ws = wb.create_sheet('一覧')
+else:
+    ws = wb.active; ws.title = '一覧'
 ws['A1'] = f'LOOTY 商品別 日次パフォーマンス（{DATES[0]}〜{DATES[-1]}・全てShopify/Metaの実測）'
 ws['A1'].font = Font(name='Arial', bold=True, size=13)
 ws['A2'] = '各商品タブに日次の 売上／値引／販売数／原価／広告費／利益／利益率／MER／曜日補正MER／日予算／消化率 を載せています。'
