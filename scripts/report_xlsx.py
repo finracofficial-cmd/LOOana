@@ -182,5 +182,40 @@ if data.get("flow"):
     ws3.column_dimensions["C"].width = 92
     ws3.freeze_panes = ws3.cell(hdr + 1, 2)
 
+# ---- 追加シート（data["extra"]: [{"name","title","header","rows","widths","money","pct","notes"}]） ----
+for ex in data.get("extra", []):
+    wse = wb.create_sheet(ex["name"])
+    wse["A1"] = ex["title"]
+    wse["A1"].font = Font(name="Arial", bold=True, size=12)
+    r = 3
+    for c, v in enumerate(ex["header"], 1): wse.cell(r, c, v)
+    style_header(wse, r, len(ex["header"]))
+    hdr = r
+    money = set(ex.get("money", [])); pct = set(ex.get("pct", [])); dec2 = set(ex.get("dec2", []))
+    for i, row in enumerate(ex["rows"]):
+        r += 1
+        if len(row) == 1 and isinstance(row[0], str):          # 区切り見出し
+            c = wse.cell(r, 1, row[0]); c.font = Font(name="Arial", bold=True, size=10, color="1F4E78")
+            for cc in range(1, len(ex["header"])+1): wse.cell(r, cc).fill = PatternFill("solid", fgColor="EAF1FB")
+            continue
+        for c, v in enumerate(row, 1):
+            cell = wse.cell(r, c, v); cell.border = thin; cell.font = TD
+            if isinstance(v, (int, float)):
+                if c in money: cell.number_format = "#,##0"
+                if c in pct:   cell.number_format = "0.0%"
+                if c in dec2:  cell.number_format = "0.00"
+                if v < 0: cell.font = NEG
+            else:
+                cell.alignment = Alignment(wrap_text=True, vertical="top")
+            if i % 2 == 1 and not cell.fill.fgColor.rgb == "00FFF2A8": cell.fill = ALT
+    for c, w in enumerate(ex.get("widths", []), 1):
+        wse.column_dimensions[wse.cell(hdr, c).column_letter].width = w
+    wse.freeze_panes = wse.cell(hdr + 1, 2)
+    if ex.get("notes"):
+        r += 2
+        for nt in ex["notes"]:
+            cell = wse.cell(r, 1, nt); cell.font = Font(name="Arial", size=9, color="606060")
+            cell.alignment = Alignment(wrap_text=True, vertical="top"); r += 1
+
 wb.save(sys.argv[2])
 print("saved", sys.argv[2])
