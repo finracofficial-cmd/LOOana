@@ -58,6 +58,8 @@ out['headline']=[
  ['売上(gross−値引)',s1,round(sat),round(s3/3),round(s7/7),round(s30/30),f'{(s1/(s7/7)-1)*100:+.1f}%'],
  ['原価(販売数ベース)',c1,'',round(c3/3),round(c7/7),round(c30/30),f'{(c1/(c7/7)-1)*100:+.1f}%'],
  ['広告費(カタログ含む)',round(a1),'',round(a3/3),round(a7/7),round(a30/30),f'{(a1/(a7/7)-1)*100:+.1f}%'],
+ ['総合原価(原価+広告費)',round(c1+a1),'',round((c3+a3)/3),round((c7+a7)/7),round((c30+a30)/30),f'{((c1+a1)/((c7+a7)/7)-1)*100:+.1f}%'],
+ ['総合原価率',f'{(c1+a1)/s1*100:.1f}%','',f'{(c3+a3)/s3*100:.1f}%',f'{(c7+a7)/s7*100:.1f}%',f'{(c30+a30)/s30*100:.1f}%',f'{((c1+a1)/s1-(c7+a7)/s7)*100:+.1f}pt'],
  ['利益',round(p1),'',round(p3/3),round(p7/7),round(p30/30),f'{(p1/(p7/7)-1)*100:+.1f}%'],
  ['利益率',f'{p1/s1*100:.1f}%','',f'{p3/s3*100:.1f}%',f'{p7/s7*100:.1f}%',f'{p30/s30*100:.1f}%',f'{(p1/s1-p7/s7)*100:+.1f}pt'],
  ['原価率',f'{c1/s1*100:.1f}%','',f'{c3/s3*100:.1f}%',f'{c7/s7*100:.1f}%',f'{c30/s30*100:.1f}%',f'{(c1/s1-c7/s7)*100:+.1f}pt'],
@@ -65,13 +67,16 @@ out['headline']=[
  ['手数料控除後利益',round(p1-f1),'',round(p3/3-s3/3*FEE),round(p7/7-s7/7*FEE),round(p30/30-s30/30*FEE),''],
  ['値引(内数)',sum(DC1.values()),'',round(sum(DC3.values())/3),round(sum(DC7.values())/7),round(sum(DC30.values())/30),'—'],
 ]
+def _srow(lbl,S,C,A,P,F):
+    TC=C+A   # 総合原価 = 原価 + 広告費
+    return [lbl,S,C,round(A),round(TC),round(TC/S,4),round(P),round(P/S,4),
+            round(F),round(P-F),round((P-F)/S,4),round(S/A,3)]
 out['summary']=[
- ['期間','売上','原価','広告費','利益','利益率','決済手数料','手数料後利益','手数料後利益率','MER'],
- ['前日(8/01 土)',s1,c1,round(a1),round(p1),round(p1/s1,4),round(f1),round(p1-f1),round((p1-f1)/s1,4),round(s1/a1,3)],
- ['3日(7/30-8/01)',s3,c3,round(a3),round(p3),round(p3/s3,4),round(f3),round(p3-f3),round((p3-f3)/s3,4),round(s3/a3,3)],
- ['7日(7/26-8/01)',s7,c7,round(a7),round(p7),round(p7/s7,4),round(f7),round(p7-f7),round((p7-f7)/s7,4),round(s7/a7,3)],
- ['30日(7/03-8/01)',s30,c30,round(a30),round(p30),round(p30/s30,4),round(f30),round(p30-f30),round((p30-f30)/s30,4),round(s30/a30,3)],
- ['📅当月累積(8/01・1日)',cs,cc,round(ca),round(cp),round(cp/cs,4),round(cs*FEE),round(cp-cs*FEE),round((cp-cs*FEE)/cs,4),round(cs/ca,3)],
+ _srow('前日(8/01 土)',s1,c1,a1,p1,f1),
+ _srow('3日(7/30-8/01)',s3,c3,a3,p3,f3),
+ _srow('7日(7/26-8/01)',s7,c7,a7,p7,f7),
+ _srow('30日(7/03-8/01)',s30,c30,a30,p30,f30),
+ _srow('📅当月累積(8/01・1日)',cs,cc,ca,cp,cs*FEE),
 ]
 prod=[['商品','7日売上','7日原価','7日広告費','7日利益','7日利益率','3日売上','3日利益','3日利益率','前日売上','前日利益','前日利益率','30日利益','7日MER','分岐','目標','余裕','7日販売数','現日予算','突合率']]
 for (n,S7,C7,A7,P7,S3,P3,Sd,Pd,S30,P30,mer,br,tg,bud,q7,q1,q3,q30,dc7) in rows:

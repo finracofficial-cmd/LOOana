@@ -58,10 +58,12 @@ ws["A1"].font = Font(name="Arial", bold=True, size=13)
 r = 3
 ws.cell(r, 1, "■ 昨日の全体実績 × 期間比較").font = Font(name="Arial", bold=True, size=11)
 r += 1
-hh = ["指標", "昨日", "同曜日平均", "3日平均/日", "7日平均/日", "30日平均/日", "昨日vs7日平均"]
+_hl = data["headline"]
+hh = _hl[0] if (_hl and _hl[0] and _hl[0][0] == "指標") else ["指標", "昨日", "同曜日平均", "3日平均/日", "7日平均/日", "30日平均/日", "昨日vs7日平均"]
+_hl = _hl[1:] if (_hl and _hl[0] and _hl[0][0] == "指標") else _hl
 for c, v in enumerate(hh, 1): ws.cell(r, c, v)
 style_header(ws, r, len(hh))
-for row in data["headline"]:
+for row in _hl:
     r += 1
     for c, v in enumerate(row, 1):
         cell = ws.cell(r, c, v); cell.font = TD; cell.border = thin
@@ -72,20 +74,27 @@ for row in data["headline"]:
 r += 2
 ws.cell(r, 1, "■ 期間別サマリー（カタログ広告費込み・全商品）").font = Font(name="Arial", bold=True, size=11)
 r += 1
-sh = ["期間", "売上(gross−値引)", "原価", "広告費", "利益", "利益率", "手数料(3.49%)", "控除後利益", "控除後利益率"]
+sh = ["期間", "売上(gross−値引)", "原価", "広告費", "総合原価(原価+広告費)", "総合原価率",
+      "利益", "利益率", "決済手数料(3.452%)", "手数料後利益", "手数料後利益率", "MER"]
 for c, v in enumerate(sh, 1): ws.cell(r, c, v)
 style_header(ws, r, len(sh))
-for row in data["summary"]:
+_sm = data["summary"]
+_sm = _sm[1:] if (_sm and _sm[0] and _sm[0][0] == "期間") else _sm
+SM_MONEY = (2, 3, 4, 5, 7, 9, 10)
+SM_PCT   = (6, 8, 11)
+for row in _sm:
     r += 1
     for c, v in enumerate(row, 1):
         cell = ws.cell(r, c, v); cell.font = TD; cell.border = thin
-        if isinstance(v, (int, float)) and c in (2,3,4,5,7,8): cell.number_format = "#,##0"
-        if isinstance(v, (int, float)) and c in (6,9): cell.number_format = "0.0%"
+        if isinstance(v, (int, float)) and c in SM_MONEY: cell.number_format = "#,##0"
+        if isinstance(v, (int, float)) and c in SM_PCT:   cell.number_format = "0.0%"
+        if isinstance(v, (int, float)) and c == 12:       cell.number_format = "0.00"
+        if c == 5: cell.fill = ALT
 r += 2
 for note in data.get("notes", []):
     ws.cell(r, 1, "・" + note).font = Font(name="Arial", size=9, color="606060")
     r += 1
-for col, w in zip("ABCDEFGHI", [22,14,12,12,12,9,12,12,12]): ws.column_dimensions[col].width = w
+for col, w in zip("ABCDEFGHIJKL", [22,15,12,12,17,10,12,9,13,13,13,7]): ws.column_dimensions[col].width = w
 ws.freeze_panes = "A5"
 
 # ---- Sheet2: 商品別 ----
