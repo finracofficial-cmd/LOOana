@@ -1764,3 +1764,66 @@ CPC/CTRは広告クリエイティブが決めるのでURLを変えても変わ�
 商品別の損益は「日傘合算」でしか見られなくなる（同じ商品なので実態としては正しい）。
 2本のキャンペーンの優劣は Meta のキャンペーン別コンバージョンで比率だけ見る。
 **判定は必ず「日傘合算の注文数・個数・利益」で行う。**
+
+## 【最重要ルール】Metaは広告費だけ。販売データは必ずShopify（2026-08-04ユーザー指定・厳格化）
+
+2026-08-04に同一原因で4件の誤りを出した。**Metaのコンバージョンデータを販売データとして使った**のが原因。
+
+| # | 誤り | 正 | 原因 |
+|---|---|---|---|
+| 1 | 完全遮光UV日傘の売価 5,980円 | **4,980円** | Metaのconversion value（カート全体の金額）÷購入数 を単価と誤認 |
+| 2 | 害虫ブロッカー 7/27週 利益 +5,629円 | **+356,032円** | Meta購入数（=注文数）× 1個あたり粗利。害虫は1.71個/注文 |
+| 3 | 害虫 8/4「赤字ライン」 | **+35,706円/MER 2.36** | 注文あたりCPAを1個分の粗利と比較 |
+| 4 | 全商品の週次利益ランキング | Shopify実測で全面差し替え | 全部Meta購入数ベースだった |
+
+### 分担（例外なし）
+
+**Metaから取ってよいのは配信指標だけ**（Shopifyに存在しないもの）:
+`cost` / `impressions` / `CPM` / `link_CTR` / `outbound_clicks` / `Frequency` / `reach`
+
+**必ずShopifyから取るもの**:
+`gross_sales`（売上）/ `net_items_sold`（個数）/ `orders`（注文数）/ `discounts` / `returns`
+**単価は必ず `gross_sales ÷ net_items_sold`。** variant priceの確認は `search_products` の `price`。
+
+**Metaから取ってはいけないもの（損益計算に使用禁止）**:
+- `offsite_conversions_fb_pixel_purchase` — 「注文数」であって「個数」ではない。さらに実測比 約91%
+- `offsite_conversion_value_fb_pixel_purchase` — カート全体の金額。商品売価ではない
+- MetaのROAS列 — 自己申告
+
+この2つは**突合サニティチェック（Meta計上率が70〜105%か）にのみ使う**。使うときは必ず「Meta計上」と明記する。
+
+### 混合指標の定義（分子と分母のソースが違うもの）
+| 指標 | 定義 |
+|---|---|
+| MER | Shopify `gross_sales − discounts` ÷ Meta `cost` |
+| CPA（注文） | Meta `cost` ÷ **Shopify `orders`** |
+| CVR | **Shopify `orders`** ÷ Meta `outbound_clicks` |
+| CPC | Meta `cost` ÷ Meta `outbound_clicks` |
+| RPM（判別式） | 粗利/個（Shopify） × CTR（Meta） × CVR（上記） × 1000 |
+
+### まとめ買い商品は「1注文あたり粗利」で判定する
+`分岐CPA(注文) = 粗利/個 × 個数/注文`
+害虫ブロッカーは 1.71個/注文なので、1個分の粗利3,127円と比べると必ず赤字に見える。
+正しい分岐は **5,342円/注文**。該当商品: **害虫ブロッカー・壁掛けディスペンサー**。
+レポートには `個数/注文` の列を必ず出し、1.2を超える商品には注文ベースの分岐CPAを併記する。
+
+### 機械ガード: `scripts/datarules.py`
+分析スクリプトは必ず `from datarules import *` して使う。
+- `check_meta_fields(fields)` — Metaクエリに禁止フィールドが混ざっていたら理由付きで例外
+- `Product` クラス — 売上系はShopify、広告費はMetaを受け取る。`price` / `gp_unit` / `gp_order` /
+  `cpa_order` / `cvr` / `mer` / `mer_be` / `profit` を実装済み。**手計算しない**
+- `reconcile(product, meta_orders)` — 突合率だけを出す。判断には使わない
+
+### Shopifyで分解できないケース（唯一の例外）
+Shopifyは**広告セット単位・クリエイティブ単位・キャンペーン単位に売上を分解できない**。
+同一商品を2本のキャンペーンで回している場合（日傘）や、カタログ広告のように商品横断の場合は、
+比率だけMetaから取る。**その数値は必ず「Meta計上・推計」とラベルする。**
+判定は必ず Shopify で取れる単位（商品合算）で行う。
+
+### 今日の分析のうち、Shopify実測で引き直しが必要なもの
+以下はMeta購入数を使っているため結論の数値が動く可能性がある。次回引き直す:
+- `scripts/why0804.py` のシフトシェア分解と「増額群 vs 据え置き群」
+  （※ 上段の 広告費+60.8% / 売上+2.3% / 増分MER 0.13 はShopify実測なので有効）
+- `scripts/pool_test0804.py` の「到達→購入率」（※ リーチ・頻度の結論は Meta 固有指標なので有効）
+- `scripts/umbrella0804.py` の週次CVR（Shopify基準では 3.07% vs 3.53%。Meta基準の 2.74% vs 3.85% より差は小さい）
+- `scripts/pool0804.py` のカタログCVR（カタログは商品横断でShopify分解不可 → Meta計上と明記して継続）
