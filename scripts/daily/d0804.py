@@ -23,11 +23,14 @@ MAP={'4WAY':'4WAY 取り付けOK 小型瞬間冷却ハンディファン','完�
 VAR={'ナノガラス脱毛パッド':{'d1':(37,12),'d3':(118,47),'d7':(232,96),'d30':(790,342)},   # (白/緑757, 黒/桃740)
      '壁掛けディスペンサー':{'d1':(0,0),'d3':(1,0),'d7':(6,1),'d30':(64,23)}}              # (3本2528, 2本1981)
 VARC={'ナノガラス脱毛パッド':(757,740),'壁掛けディスペンサー':(2528,1981)}
+for _d in VAR.values(): _d['cum']=_d['d3']      # 当月累積は現時点で3日窓と同一（CUM==D3をassert済み）
 # 窓内で売価が動いた商品はvariant別net_items_sold（返品0を確認済）を販売数として使用
 MIXQ={'ムダ毛シェーバー':{'d30':165},                # 7/27に5,980→6,980（30日窓のみ新旧混在）
       '湯上がりガーゼワンピース':{'d30':90},            # 30日窓に4,980期がある
       '完全遮光・接触冷感UVハット':{'d30':16},          # 7/31に5,980→4,980
       '3WAYサーキュレーター':{'d3':18,'d7':40,'d30':186}}   # 8/2に5,980→6,980
+for _d in MIXQ.values():
+    if 'd3' in _d: _d['cum']=_d['d3']           # 当月累積は現時点で3日窓と同一（CUM==D3をassert済み）
 HOL={'2026-07-20'}
 WD=['月','火','水','木','金','土','日']; wd=lambda d: WD[datetime.date(*map(int,d.split('-'))).weekday()]
 S=collections.defaultdict(lambda: collections.defaultdict(lambda:[0,0]))
@@ -50,7 +53,9 @@ byw=collections.defaultdict(list)
 for d in base: byw[wd(d)].append(STORE[d])
 avg=sum(STORE[d] for d in base)/len(base)
 IDX={k: sum(v)/len(v)/avg*100 for k,v in byw.items()}
+WIN={}   # key → その窓の日付リスト（qty内で不一致をassertし、窓キーの取り違えを機械的に防ぐ）
 def qty(n,days,key):
+    assert key in WIN and days==WIN[key], f'窓キーの取り違え: key={key} の日付リストと引数daysが不一致'
     g=sum(S[n][d][0] for d in days if d in S[n])
     if g==0: return 0,0
     if n in VAR:
@@ -67,6 +72,7 @@ def agg(days,key):
         if g==0 and dc==0: continue
         sal[n]=g-dc; dsc[n]=dc; qt[n],cst[n]=qty(n,days,key)
     return sal,dsc,qt,cst
+WIN.update(d1=D1,d3=D3,d7=D7,d30=D30)
 N1,DC1,Q1,K1=agg(D1,'d1'); N3,DC3,Q3,K3=agg(D3,'d3')
 N7,DC7,Q7,K7=agg(D7,'d7'); N30,DC30,Q30,K30=agg(D30,'d30')
 for lbl,N,days in [('前日',N1,D1),('3日',N3,D3),('7日',N7,D7),('30日',N30,D30)]:
@@ -91,7 +97,8 @@ for lbl,days,N,K in [('前日(8/03 月)',D1,N1,K1),('3日(8/01-8/03)',D3,N3,K3),
 # 当月累積(8/1〜)
 CUM=[d for d in ALLD if d>='2026-08-01']
 assert CUM==D3, (CUM,D3)  # 当月累積(8/1-8/3)は現時点で3日窓と同一
-NC,DCC,QC,KC=agg(CUM,'d3')
+WIN['cum']=CUM
+NC,DCC,QC,KC=agg(CUM,'cum')
 cs,cc,ca,cp=blk(CUM,NC,KC)
 print(f'{"📅当月累積(8/01)":<17} 売上{cs:>11,} 原価{cc:>10,} 広告費{ca:>10,.0f} 利益{cp:>10,.0f} 率{cp/cs*100:5.1f}% '
       f'手数料後{cp-cs*FEE:>10,.0f} ({(cp-cs*FEE)/cs*100:4.1f}%) MER{cs/ca:.3f}')
