@@ -7,9 +7,8 @@ FEE=0.03452
 # --- 8/7 予算スナップショット（8/6の実測値を引き継ぎ。W固定のみ 8/7 01:00 にMeta直読で20,000を確認）
 rows=list(csv.reader(open('/home/user/LOOana/data/budget-snapshots.csv')))
 hdr=rows[0]; body=[r for r in rows[1:] if r]
-b6=[r for r in body if r[0]=='2026-08-06']
-body=[r for r in body if r[0]!='2026-08-07']
-for r in b6: body.append(['2026-08-07',r[1],r[2],r[3]])
+if not any(r[0]=='2026-08-07' for r in body):      # 既に8/07行があれば上書きしない（当日の変更を消さないため）
+    for r in [x for x in body if x[0]=='2026-08-06']: body.append(['2026-08-07',r[1],r[2],r[3]])
 with open('/home/user/LOOana/data/budget-snapshots.csv','w',newline='') as f:
     w=csv.writer(f); w.writerow(hdr); w.writerows(body)
 BUD={r[2]:int(r[3]) for r in body if r[0]=='2026-08-07'}
