@@ -53,6 +53,7 @@
       "mcp__Supermetrics_Marketing_Analytics__campaign_update",
       "mcp__Supermetrics_Marketing_Analytics__resources_manage",
       "Bash(rm -rf *)"
-    ]
+    ],
+    "defaultMode": "dontAsk"
   }
 }
