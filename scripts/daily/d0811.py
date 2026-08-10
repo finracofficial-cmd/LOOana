@@ -29,6 +29,12 @@ VARC={'ナノガラス脱毛パッド':(757,740),'壁掛けディスペンサー
 MIXQ={'ムダ毛シェーバー':{'d30':202},'湯上がりガーゼワンピース':{'d30':52},
       '3WAYサーキュレーター':{'d30':166,'cum':26},'姿勢サポートチェア':{'d30':26,'cum':26},
       '完全遮光・接触冷感UVハット':{'d30':56}}
+# 売価の変更履歴（窓内で売価が動く商品は日ごとに当日の売価で数える）
+PRICEBYDATE={'優先配送':[('2026-08-11',590),('0000-00-00',536)]}   # (この日以降, 売価) を新しい順に
+def price_on(n,d):
+    for since,p in PRICEBYDATE[n]:
+        if d>=since: return p
+    return None
 HOL={'2026-07-20'}
 WD=['月','火','水','木','金','土','日']; wd=lambda d: WD[datetime.date(*map(int,d.split('-'))).weekday()]
 S=collections.defaultdict(lambda: collections.defaultdict(lambda:[0,0]))
@@ -58,6 +64,15 @@ def qty(n,days,key):
         if n=='ナノガラス脱毛パッド': assert (a+b)*3980==g,(n,key,a,b,g)
         if n=='壁掛けディスペンサー': assert a*6980+b*5980==g,(n,key,a,b,g)
         return a+b, a*c1+b*c2
+    if n in PRICEBYDATE:
+        q=0
+        for d in days:
+            gd=S[n][d][0] if d in S[n] else 0
+            if not gd: continue
+            pd=price_on(n,d); x=gd/pd
+            assert abs(x-round(x))<1e-6,(n,d,gd,pd)
+            q+=round(x)
+        return q, q*COST[n]
     if n in MIXQ and key in MIXQ[n]:
         q=MIXQ[n][key]; return q, q*COST[n]
     q=g/PRICE[n]; assert abs(q-round(q))<1e-6,(n,key,g,PRICE[n]); q=round(q)
