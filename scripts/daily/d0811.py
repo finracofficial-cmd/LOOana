@@ -22,12 +22,12 @@ PRICE={'4WAY':4980,'害虫ブロッカー':3980,'形状記憶日傘':4980,'完�
 MAP={'4WAY':'4WAY 取り付けOK 小型瞬間冷却ハンディファン','完全遮光・形状記憶':'完全遮光・形状記憶・晴雨兼用・UV日傘',
 '3WAYサーキュレーター':'3WAYサーキュレーター扇風機','壁掛けディスペンサー':'ディスペンサー'}
 # バリアント別実測（2026-08-07にShopifyへ4窓それぞれクエリして取得）
-VAR={'ナノガラス脱毛パッド':{'d1':(35,10),'d3':(94,45),'d7':(233,99),'d30':(835,364)},  # (白/緑757, 黒/桃740)
-     '壁掛けディスペンサー':{'d1':(0,0),'d3':(1,0),'d7':(2,0),'d30':(45,13)}}             # (3本2528, 2本1981)
+VAR={'ナノガラス脱毛パッド':{'d1':(35,10),'d3':(94,45),'d7':(233,99),'d30':(835,364),'cum':(351,146)},
+     '壁掛けディスペンサー':{'d1':(0,0),'d3':(1,0),'d7':(2,0),'d30':(45,13),'cum':(3,0)}}
 VARC={'ナノガラス脱毛パッド':(757,740),'壁掛けディスペンサー':(2528,1981)}
 # 窓内で売価が動いた商品はvariant別net_items_sold（返品0を実測確認済）を販売数として使用
 MIXQ={'ムダ毛シェーバー':{'d30':202},'湯上がりガーゼワンピース':{'d30':52},
-      '3WAYサーキュレーター':{'d30':166},'姿勢サポートチェア':{'d30':26},
+      '3WAYサーキュレーター':{'d30':166,'cum':26},'姿勢サポートチェア':{'d30':26,'cum':26},
       '完全遮光・接触冷感UVハット':{'d30':56}}
 HOL={'2026-07-20'}
 WD=['月','火','水','木','金','土','日']; wd=lambda d: WD[datetime.date(*map(int,d.split('-'))).weekday()]
@@ -70,15 +70,19 @@ def agg(days,key):
         if g==0 and dc==0: continue
         sal[n]=g-dc; dsc[n]=dc; qt[n],cst[n]=qty(n,days,key)
     return sal,dsc,qt,cst
-WIN.update(d1=D1,d3=D3,d7=D7,d30=D30)
+CUM=[d for d in ALLD if d>='2026-08-01']
+assert len(CUM)==10 and CUM[0]=='2026-08-01' and CUM[-1]=='2026-08-10'
+WIN.update(d1=D1,d3=D3,d7=D7,d30=D30,cum=CUM)
 N1,DC1,Q1,K1=agg(D1,'d1'); N3,DC3,Q3,K3=agg(D3,'d3')
 N7,DC7,Q7,K7=agg(D7,'d7'); N30,DC30,Q30,K30=agg(D30,'d30')
-for lbl,N,days in [('前日',N1,D1),('3日',N3,D3),('7日',N7,D7),('30日',N30,D30)]:
+NC,DCC,QC,KC=agg(CUM,'cum')
+for lbl,N,days in [('前日',N1,D1),('3日',N3,D3),('7日',N7,D7),('30日',N30,D30),('当月累積',NC,CUM)]:
     assert sum(N.values())==sum(STORE[d] for d in days),(lbl,)
 def A(days,n): return sum(AD[MAP.get(n,n)].get(d,0) for d in days)
 def CAT(days): return sum(AD['カタログ全部（テスト）'].get(d,0) for d in days)
 def ACCT(days): return sum(sum(AD[c].get(d,0) for c in AD) for d in days)
-pickle.dump(dict(D1=D1,D3=D3,D7=D7,D30=D30,STORE=STORE,GROSSD=GROSSD,IDX=IDX,
+assert sum(v[0] for n in S for d in CUM for v in [S[n][d]] if d in S[n])==10296944
+pickle.dump(dict(D1=D1,D3=D3,D7=D7,D30=D30,CUM=CUM,NC=NC,DCC=DCC,QC=QC,KC=KC,ACCTC=ACCT(CUM),CATC=CAT(CUM),AC={n:A(CUM,n) for n in NC},STORE=STORE,GROSSD=GROSSD,IDX=IDX,
   N1=N1,N3=N3,N7=N7,N30=N30,DC1=DC1,DC7=DC7,DC30=DC30,Q1=Q1,Q3=Q3,Q7=Q7,Q30=Q30,
   K1=K1,K3=K3,K7=K7,K30=K30,COST=COST,PRICE=PRICE,MAP=MAP,
   A1={n:A(D1,n) for n in N1},A3={n:A(D3,n) for n in N3},A7={n:A(D7,n) for n in N7},A30={n:A(D30,n) for n in N30},
