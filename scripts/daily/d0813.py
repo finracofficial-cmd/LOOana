@@ -30,11 +30,19 @@ MIXQ={'ムダ毛シェーバー':{'d30':196},'湯上がりガーゼワンピー�
       '3WAYサーキュレーター':{'d30':148,'cum':27},'姿勢サポートチェア':{'d30':36,'cum':36},
       '完全遮光・接触冷感UVハット':{'d30':63}}
 # 売価の変更履歴（窓内で売価が動く商品は日ごとに当日の売価で数える）
-PRICEBYDATE={'優先配送':[('0000-00-00',536)]}   # 商品ページは590円だが実課金は536円のまま（8/11実測で確認）
+PRICEBYDATE={'優先配送':[('0000-00-00',536)],                      # 商品ページは590円だが実課金は536円のまま
+             '接触冷感UVパーカー':[('0000-00-00',3980),('2026-08-14',4980)]}  # 8/13 09:58 JSTに値上げ
+MIXEDDAY={'接触冷感UVパーカー':{'2026-08-13':(3980,4980)}}          # 値上げ当日の新旧混在（旧価,新価）
 def price_on(n,d):
+    r=None
     for since,p in PRICEBYDATE[n]:
-        if d>=since: return p
-    return None
+        if d>=since: r=p
+    return r
+def mixed_qty(g,p_old,p_new):
+    for b in range(0, g//p_new + 1):
+        rem=g-b*p_new
+        if rem%p_old==0: return rem//p_old+b
+    raise AssertionError(('混在日を分解できない',g,p_old,p_new))
 HOL={'2026-07-20','2026-08-11'}
 WD=['月','火','水','木','金','土','日']; wd=lambda d: WD[datetime.date(*map(int,d.split('-'))).weekday()]
 S=collections.defaultdict(lambda: collections.defaultdict(lambda:[0,0]))
@@ -69,6 +77,8 @@ def qty(n,days,key):
         for d in days:
             gd=S[n][d][0] if d in S[n] else 0
             if not gd: continue
+            if n in MIXEDDAY and d in MIXEDDAY[n]:
+                q+=mixed_qty(gd,*MIXEDDAY[n][d]); continue
             pd=price_on(n,d); x=gd/pd
             assert abs(x-round(x))<1e-6,(n,d,gd,pd)
             q+=round(x)
