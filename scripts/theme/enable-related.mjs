@@ -14,11 +14,13 @@
  *   node enable-related.mjs --restore
  *   （実行時に作った .bak から書き戻す。そのあともう一度 push する）
  */
-import { readdirSync, readFileSync, writeFileSync, existsSync } from 'node:fs';
+import { readdirSync, readFileSync, writeFileSync, existsSync, mkdirSync } from 'node:fs';
 import { join } from 'node:path';
 
 const DIR = 'templates';
+const BACKUP = 'backup';          // templates/ の外に置く。中に置くと push 対象に混ざりうる
 const RESTORE = process.argv.includes('--restore');
+mkdirSync(BACKUP, { recursive: true });
 
 if (!existsSync(DIR)) {
   console.error(`${DIR}/ が見つかりません。shopify theme pull を実行したフォルダで動かしてください。`);
@@ -36,7 +38,7 @@ let skipped = 0;
 
 for (const f of files) {
   const path = join(DIR, f);
-  const bak = `${path}.bak`;
+  const bak = join(BACKUP, f);
 
   if (RESTORE) {
     if (!existsSync(bak)) { console.log(`  スキップ ${f}（.bak なし）`); skipped++; continue; }
