@@ -1,0 +1,175 @@
+CJへの問い合わせ 下書き（2026-08-15）
+
+1通で3件まとめて聞く。英語のまま貼れる形にしてある。
+数量はすべて Shopify 実測（8/01-14 の販売数を30日換算）。
+
+
+════════════════════════════════════════
+■ 日本語での要点（送る前に確認するところ）
+════════════════════════════════════════
+
+A. 新商品5品の見積り
+   全部に共通の条件が2つある。これを外すと日本で売れない。
+     ・AC電源（コンセント）に挿す部品を含めないこと
+     ・充電式のものは USBケーブルのみ同梱。ACアダプタ（充電器）を入れない
+
+   日本には電気用品安全法（PSE）があり、コンセントに挿す機器と
+   その充電器はPSEマークがないと販売できない。
+   USB 5V単体と12Vシガーソケットは対象外なので、そこに寄せる。
+
+   目標原価（送料込み・日本着）
+     車載シートヒーター（12V）        1,400円以下
+     電動スカルプブラシ（USB充電）      900円以下
+     発熱・防寒インソール（電気不要）    1,000円以下
+     フロントガラス凍結防止カバー       900円以下
+     USBフットヒーター（USB 5V）      1,400円以下
+
+B. 既存12品のACアダプタ同梱確認
+   いま売っている充電式・バッテリー内蔵の12品について、
+   「ACアダプタが箱に入っているか」を確認する。
+   入っているならPSEマークの有無を確認し、無ければ抜いてもらう。
+
+C. 主力6品の原価交渉
+   月間数量を提示して −10〜15% を狙う。上位3品で月274,584円。
+
+     商品                  月間数量   現原価   −10%で月   −15%で月
+     ナノガラス脱毛パッド      1,438個    750   +107,839  +161,759
+     4WAY ハンディファン        546個  1,730    +94,532  +141,798
+     接触冷感UVパーカー         504個  1,434    +72,212  +108,318
+     W固定スマホ車載ホルダー      523個  1,182    +61,802   +92,703
+     形状記憶日傘             461個  1,309    +60,308   +90,461
+     ムダ毛シェーバー           221個  2,798    +61,756   +92,634
+
+   ※ 4WAY・パーカー・日傘は夏物で9月から数量が落ちる。
+     交渉の材料になるのは今月まで。先に出すならいま。
+     通年商品はナノガラスと車載ホルダーの2つなので、
+     この2つは粘って交渉する価値がある。
+
+   ※ 害虫ブロッカーは販売を止めたので交渉対象から外してある。
+
+
+════════════════════════════════════════
+■ そのまま送れる文面（英語）
+════════════════════════════════════════
+
+Subject: Quote request (5 new items) + AC adapter check + price review for our top sellers
+
+Hello,
+
+We are a Japanese Shopify store selling around 400-500 orders per week.
+We have three requests in this message. Please answer them separately.
+
+
+--- 1. QUOTE REQUEST: 5 NEW ITEMS ---
+
+IMPORTANT — two conditions apply to ALL five items:
+
+  (a) The product must NOT include any part that plugs into an AC wall
+      outlet (100V).
+  (b) For rechargeable items, please include a USB cable ONLY.
+      Do NOT include an AC charging adapter in the box.
+
+Reason: Japan's Electrical Appliance and Material Safety Act (PSE)
+requires a PSE mark on AC-powered devices and on AC adapters.
+USB 5V-only devices and 12V car-socket devices are outside that scope.
+If an AC adapter is in the box, we cannot sell the product in Japan.
+
+Please quote unit cost delivered to Japan (shipping included) for:
+
+  1. Car seat heater, 12V cigarette-lighter plug only
+     - Universal fit for standard car seats
+     - No AC adapter, no household plug
+     - Target cost: under JPY 1,400 (approx USD 9.5) delivered
+
+  2. Electric scalp massage brush, USB rechargeable
+     - Waterproof (IPX6 or better)
+     - USB-C cable only, NO AC adapter in the box
+     - Target cost: under JPY 900 (approx USD 6.1) delivered
+
+  3. Thermal / insulating shoe insole, NON-ELECTRIC
+     - Aluminium film or thermal fibre type, no battery, no heating element
+     - Trimmable so one size fits most
+     - Target cost: under JPY 1,000 (approx USD 6.8) delivered
+
+  4. Car windshield frost / snow cover, NON-ELECTRIC
+     - Universal size for standard sedans and compact SUVs
+     - Target cost: under JPY 900 (approx USD 6.1) delivered
+
+  5. Under-desk foot warmer, USB 5V ONLY
+     - Powered from a USB port or a power bank
+     - USB cable only, NO AC adapter in the box
+     - Target cost: under JPY 1,400 (approx USD 9.5) delivered
+
+For each item please tell us:
+  - SKU number
+  - Unit cost delivered to Japan
+  - Exact list of what is inside the retail box (cable, adapter, manual, etc.)
+  - Whether any PSE-marked component is included
+  - Processing time and shipping time to Japan
+
+
+--- 2. AC ADAPTER CHECK ON ITEMS WE ALREADY SELL ---
+
+For each SKU below, please confirm:
+  (a) Is an AC charging adapter included in the retail box? Yes / No
+  (b) If yes, does that adapter carry a Japanese PSE mark? Yes / No
+  (c) If yes, can you ship the item WITHOUT the AC adapter
+      (USB cable only)? Yes / No
+
+  - 3-in-1 circulator fan (USB rechargeable)
+  - UV toothbrush sterilizer (USB rechargeable)
+  - Oral irrigator / water flosser (USB rechargeable)
+  - Nose EMS beauty device (USB rechargeable)
+  - Automatic soap dispenser (USB rechargeable)
+  - Neck massager (USB rechargeable)
+  - Desktop cooling fan / air cooler (rechargeable)
+  - 4-in-1 mini ice-pack handheld fan (battery)
+  - Waist-mounted portable fan (battery)
+  - Foldable handheld fan (battery)
+  - Body hair trimmer (rechargeable)
+  - Reciprocating shaver (rechargeable)
+
+We will send the exact SKU list in a follow-up message if you need it.
+This is important for us — we cannot legally sell an unmarked AC adapter
+in Japan, so we may need to change the packing list on these items.
+
+
+--- 3. PRICE REVIEW ON OUR TOP SELLERS ---
+
+Our current monthly volumes (actual, last 30 days annualised from our
+Shopify data) and current unit costs:
+
+  Item                                Monthly qty   Current cost (JPY)
+  Nano glass hair removal pad              1,438           750 / 757
+  4-in-1 mini ice-pack handheld fan          546         1,730
+  UV protection long-sleeve jacket           504         1,434
+  Car phone holder (double suction)          523         1,182
+  Shape-memory sun umbrella                  461         1,309
+  Body hair trimmer                          221         2,798
+
+We would like to discuss a 10-15% reduction on these items based on
+our sustained volume. We are planning to increase spend on the
+year-round items (nano glass pad, car phone holder) through autumn
+and winter, so a better cost would let us scale those faster.
+
+Please let us know what is possible.
+
+Thank you,
+LOOTY
+
+
+════════════════════════════════════════
+■ 返事が来たあとの動き
+════════════════════════════════════════
+
+1. の見積りが目標原価を超えていたら、その商品は出さない。
+   売価を上げて帳尻を合わせない。3,980円と4,980円のCVRは実測で
+   4.06% と 3.81%、5,980円で2.70%まで落ちるので、価格を上げた時点で
+   経済性が崩れる。原価が合わなければ次の候補に行く。
+
+2. で「ACアダプタ同梱・PSEマークなし」が出た商品は、
+   アダプタを抜いた構成に切り替えるまで在庫を止める判断が要る。
+   該当が出たらすぐ相談してください。
+
+3. は返事が来たら、下げ幅をそのまま原価表（SKILL）に反映して
+   分岐MER・目標MER・合格CPAを全部引き直します。
