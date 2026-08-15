@@ -47,10 +47,13 @@ ORDERS = [
  ('Shizuoka',[('バランスケアスリッパ',1)]), ('Tōkyō',[('4WAY 取り付けOK 小型瞬間冷却ハンディファン',2)]),
 ]
 
+# 2026-08-15: 害虫ブロッカー・保温プレートはPSEのため非公開にしたので、文言からも外す
+DELISTED = {'害虫ブロッカー', '保温プレート'}
+
 items, seen = [], set()
 for pv, lines in ORDERS:
     for name, qty in lines:
-        if name == '優先配送': continue
+        if name == '優先配送' or name in DELISTED: continue
         pref = PREF.get(pv, pv)
         txt = f"🛒 {pref}の方が「{name}」を{qty}個 購入しました" if qty > 1 \
               else f"🛒 {pref}の方が「{name}」を購入しました"
