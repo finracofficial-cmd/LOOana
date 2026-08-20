@@ -1,0 +1,144 @@
+================================================================
+LOOTY 季節タグ 適用リスト  2026-08-20
+================================================================
+
+Shopifyへの書き込みは .claude/settings.json の deny で塞がれているため、
+こちらからは適用できません。下記のどちらかで適用してください。
+
+  方法A（推奨・管理画面だけで完結）
+    Shopify管理画面 → 商品 → 対象にチェック → 「…」→ タグを追加
+    グループは5つなので5回で終わります
+  方法B（GraphiQL アプリを入れている場合）
+    末尾のミューテーションをそのまま貼る
+
+タグは追加のみ。既存タグは消しません（カイロの既存タグはそのまま残ります）。
+
+----------------------------------------------------------------
+■ 夏　→ 付けるタグ: 季節:夏　（7商品）
+----------------------------------------------------------------
+  9039335522546  瞬間冷却ハンディファン
+  9101154353394  4WAY 小型瞬間冷却ハンディファン
+  9098533404914  3WAYサーキュレーター扇風機
+  9167060828402  卓上冷感クーラー
+  9172590461170  5WAY腰掛けファン
+  9165019480306  瞬間冷感ポンチョ
+  9149121757426  湯上がりガーゼワンピース
+
+----------------------------------------------------------------
+■ 春+夏　→ 付けるタグ: 季節:春 , 季節:夏　（9商品）
+----------------------------------------------------------------
+  9030597509362  形状記憶日傘
+  9055404097778  完全遮光・形状記憶・晴雨兼用・UV日傘
+  9083813888242  接触冷感UVパーカー
+  9151620776178  接触冷感UVアームカバー
+  9131201102066  完全遮光・接触冷感UVハット
+  9103526691058  偏光・調光サングラス
+  9133240844530  害虫ブロッカー ※DRAFT
+  9011173589234  健康サンダル
+  9094571557106  リカバリーサンダル
+
+----------------------------------------------------------------
+■ 春+秋　→ 付けるタグ: 季節:春 , 季節:秋　（1商品）
+----------------------------------------------------------------
+  9206441836786  1秒折り畳みチェア ※停止済み
+
+----------------------------------------------------------------
+■ 秋+冬　→ 付けるタグ: 季節:秋 , 季節:冬　（3商品）
+----------------------------------------------------------------
+  8903938998514  ふわふわ裏起毛あったかソックス 3足セット ※UNLISTED
+  8908234916082  磁気吸着式 充電式カイロ ※UNLISTED
+  8914550456562  電気ブランケット ※UNLISTED
+
+----------------------------------------------------------------
+■ 通年　→ 付けるタグ: 季節:通年　（22商品）
+----------------------------------------------------------------
+  9056544817394  ナノガラス脱毛パッド
+  9161440428274  ムダ毛シェーバー
+  9150222172402  携帯電動シェーバー
+  9143404429554  スマートノーズEMS美顔器
+  9200652419314  快適マジックインソール
+  9012820967666  バランスケアスリッパ
+  9207945724146  3D足臭リセットブラシ
+  9027377168626  姿勢サポートチェア
+  9027409084658  姿勢サポートベルト
+  9035423678706  癒しの指圧マット
+  9184429736178  W固定スマホ車載ホルダー
+  9196746178802  2WAYシートボックス
+  8980331987186  ナノバブルシャワーヘッド
+  8999289651442  壁掛けディスペンサー
+  9005744095474  オートソープディスペンサー
+  9004929843442  ネックマッサージャー
+  9028960616690  ジェットウォッシャー
+  9036053348594  UV歯ブラシ除菌器
+  9092560912626  スタイルアップインナー
+  9204397670642  高吸水・速乾ヘアドライタオル
+  8921571492082  保温プレート ※DRAFT
+  8934499582194  優先配送 ※UNLISTED
+
+合計 42 商品
+
+================================================================
+方法B: GraphQL ミューテーション（グループごとに実行）
+================================================================
+
+# ■ 夏
+mutation {
+  a1: tagsAdd(id: "gid://shopify/Product/9039335522546", tags: ["季節:夏"]) { userErrors { message } }
+  a2: tagsAdd(id: "gid://shopify/Product/9101154353394", tags: ["季節:夏"]) { userErrors { message } }
+  a3: tagsAdd(id: "gid://shopify/Product/9098533404914", tags: ["季節:夏"]) { userErrors { message } }
+  a4: tagsAdd(id: "gid://shopify/Product/9167060828402", tags: ["季節:夏"]) { userErrors { message } }
+  a5: tagsAdd(id: "gid://shopify/Product/9172590461170", tags: ["季節:夏"]) { userErrors { message } }
+  a6: tagsAdd(id: "gid://shopify/Product/9165019480306", tags: ["季節:夏"]) { userErrors { message } }
+  a7: tagsAdd(id: "gid://shopify/Product/9149121757426", tags: ["季節:夏"]) { userErrors { message } }
+}
+
+# ■ 春+夏
+mutation {
+  a1: tagsAdd(id: "gid://shopify/Product/9030597509362", tags: ["季節:春", "季節:夏"]) { userErrors { message } }
+  a2: tagsAdd(id: "gid://shopify/Product/9055404097778", tags: ["季節:春", "季節:夏"]) { userErrors { message } }
+  a3: tagsAdd(id: "gid://shopify/Product/9083813888242", tags: ["季節:春", "季節:夏"]) { userErrors { message } }
+  a4: tagsAdd(id: "gid://shopify/Product/9151620776178", tags: ["季節:春", "季節:夏"]) { userErrors { message } }
+  a5: tagsAdd(id: "gid://shopify/Product/9131201102066", tags: ["季節:春", "季節:夏"]) { userErrors { message } }
+  a6: tagsAdd(id: "gid://shopify/Product/9103526691058", tags: ["季節:春", "季節:夏"]) { userErrors { message } }
+  a7: tagsAdd(id: "gid://shopify/Product/9133240844530", tags: ["季節:春", "季節:夏"]) { userErrors { message } }
+  a8: tagsAdd(id: "gid://shopify/Product/9011173589234", tags: ["季節:春", "季節:夏"]) { userErrors { message } }
+  a9: tagsAdd(id: "gid://shopify/Product/9094571557106", tags: ["季節:春", "季節:夏"]) { userErrors { message } }
+}
+
+# ■ 春+秋
+mutation {
+  a1: tagsAdd(id: "gid://shopify/Product/9206441836786", tags: ["季節:春", "季節:秋"]) { userErrors { message } }
+}
+
+# ■ 秋+冬
+mutation {
+  a1: tagsAdd(id: "gid://shopify/Product/8903938998514", tags: ["季節:秋", "季節:冬"]) { userErrors { message } }
+  a2: tagsAdd(id: "gid://shopify/Product/8908234916082", tags: ["季節:秋", "季節:冬"]) { userErrors { message } }
+  a3: tagsAdd(id: "gid://shopify/Product/8914550456562", tags: ["季節:秋", "季節:冬"]) { userErrors { message } }
+}
+
+# ■ 通年
+mutation {
+  a1: tagsAdd(id: "gid://shopify/Product/9056544817394", tags: ["季節:通年"]) { userErrors { message } }
+  a2: tagsAdd(id: "gid://shopify/Product/9161440428274", tags: ["季節:通年"]) { userErrors { message } }
+  a3: tagsAdd(id: "gid://shopify/Product/9150222172402", tags: ["季節:通年"]) { userErrors { message } }
+  a4: tagsAdd(id: "gid://shopify/Product/9143404429554", tags: ["季節:通年"]) { userErrors { message } }
+  a5: tagsAdd(id: "gid://shopify/Product/9200652419314", tags: ["季節:通年"]) { userErrors { message } }
+  a6: tagsAdd(id: "gid://shopify/Product/9012820967666", tags: ["季節:通年"]) { userErrors { message } }
+  a7: tagsAdd(id: "gid://shopify/Product/9207945724146", tags: ["季節:通年"]) { userErrors { message } }
+  a8: tagsAdd(id: "gid://shopify/Product/9027377168626", tags: ["季節:通年"]) { userErrors { message } }
+  a9: tagsAdd(id: "gid://shopify/Product/9027409084658", tags: ["季節:通年"]) { userErrors { message } }
+  a10: tagsAdd(id: "gid://shopify/Product/9035423678706", tags: ["季節:通年"]) { userErrors { message } }
+  a11: tagsAdd(id: "gid://shopify/Product/9184429736178", tags: ["季節:通年"]) { userErrors { message } }
+  a12: tagsAdd(id: "gid://shopify/Product/9196746178802", tags: ["季節:通年"]) { userErrors { message } }
+  a13: tagsAdd(id: "gid://shopify/Product/8980331987186", tags: ["季節:通年"]) { userErrors { message } }
+  a14: tagsAdd(id: "gid://shopify/Product/8999289651442", tags: ["季節:通年"]) { userErrors { message } }
+  a15: tagsAdd(id: "gid://shopify/Product/9005744095474", tags: ["季節:通年"]) { userErrors { message } }
+  a16: tagsAdd(id: "gid://shopify/Product/9004929843442", tags: ["季節:通年"]) { userErrors { message } }
+  a17: tagsAdd(id: "gid://shopify/Product/9028960616690", tags: ["季節:通年"]) { userErrors { message } }
+  a18: tagsAdd(id: "gid://shopify/Product/9036053348594", tags: ["季節:通年"]) { userErrors { message } }
+  a19: tagsAdd(id: "gid://shopify/Product/9092560912626", tags: ["季節:通年"]) { userErrors { message } }
+  a20: tagsAdd(id: "gid://shopify/Product/9204397670642", tags: ["季節:通年"]) { userErrors { message } }
+  a21: tagsAdd(id: "gid://shopify/Product/8921571492082", tags: ["季節:通年"]) { userErrors { message } }
+  a22: tagsAdd(id: "gid://shopify/Product/8934499582194", tags: ["季節:通年"]) { userErrors { message } }
+}
