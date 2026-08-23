@@ -1,0 +1,42 @@
+mutation LOOTYカテゴリ一括付与 {
+  t1: tagsAdd(id: "gid://shopify/Product/9207945724146", tags: ["足元"]) { userErrors { field message } }
+  t2: tagsAdd(id: "gid://shopify/Product/9206441836786", tags: ["姿勢・肩腰"]) { userErrors { field message } }
+  t3: tagsAdd(id: "gid://shopify/Product/9204397670642", tags: ["バス・洗面"]) { userErrors { field message } }
+  t4: tagsAdd(id: "gid://shopify/Product/9200652419314", tags: ["足元"]) { userErrors { field message } }
+  t5: tagsAdd(id: "gid://shopify/Product/9196746178802", tags: ["車"]) { userErrors { field message } }
+  t6: tagsAdd(id: "gid://shopify/Product/9184429736178", tags: ["車"]) { userErrors { field message } }
+  t7: tagsAdd(id: "gid://shopify/Product/9172590461170", tags: ["冷感"]) { userErrors { field message } }
+  t8: tagsAdd(id: "gid://shopify/Product/9167060828402", tags: ["冷感"]) { userErrors { field message } }
+  t9: tagsAdd(id: "gid://shopify/Product/9165019480306", tags: ["冷感"]) { userErrors { field message } }
+  t10: tagsAdd(id: "gid://shopify/Product/9161440428274", tags: ["脱毛・美容"]) { userErrors { field message } }
+  t11: tagsAdd(id: "gid://shopify/Product/9151620776178", tags: ["UV・日差し"]) { userErrors { field message } }
+  t12: tagsAdd(id: "gid://shopify/Product/9150222172402", tags: ["脱毛・美容"]) { userErrors { field message } }
+  t13: tagsAdd(id: "gid://shopify/Product/9149121757426", tags: ["バス・洗面"]) { userErrors { field message } }
+  t14: tagsAdd(id: "gid://shopify/Product/9143404429554", tags: ["脱毛・美容"]) { userErrors { field message } }
+  t15: tagsAdd(id: "gid://shopify/Product/9131201102066", tags: ["UV・日差し"]) { userErrors { field message } }
+  t16: tagsAdd(id: "gid://shopify/Product/9103526691058", tags: ["UV・日差し", "車"]) { userErrors { field message } }
+  t17: tagsAdd(id: "gid://shopify/Product/9101154353394", tags: ["冷感"]) { userErrors { field message } }
+  t18: tagsAdd(id: "gid://shopify/Product/9098533404914", tags: ["冷感"]) { userErrors { field message } }
+  t19: tagsAdd(id: "gid://shopify/Product/9094571557106", tags: ["足元"]) { userErrors { field message } }
+  t20: tagsAdd(id: "gid://shopify/Product/9092560912626", tags: ["脱毛・美容"]) { userErrors { field message } }
+  t21: tagsAdd(id: "gid://shopify/Product/9083813888242", tags: ["UV・日差し"]) { userErrors { field message } }
+  t22: tagsAdd(id: "gid://shopify/Product/9056544817394", tags: ["脱毛・美容"]) { userErrors { field message } }
+  t23: tagsAdd(id: "gid://shopify/Product/9055404097778", tags: ["UV・日差し"]) { userErrors { field message } }
+  t24: tagsAdd(id: "gid://shopify/Product/9039335522546", tags: ["冷感"]) { userErrors { field message } }
+  t25: tagsAdd(id: "gid://shopify/Product/9036053348594", tags: ["バス・洗面"]) { userErrors { field message } }
+  t26: tagsAdd(id: "gid://shopify/Product/9035423678706", tags: ["足元"]) { userErrors { field message } }
+  t27: tagsAdd(id: "gid://shopify/Product/9030597509362", tags: ["UV・日差し"]) { userErrors { field message } }
+  t28: tagsAdd(id: "gid://shopify/Product/9028960616690", tags: ["バス・洗面"]) { userErrors { field message } }
+  t29: tagsAdd(id: "gid://shopify/Product/9027409084658", tags: ["姿勢・肩腰"]) { userErrors { field message } }
+  t30: tagsAdd(id: "gid://shopify/Product/9027377168626", tags: ["姿勢・肩腰"]) { userErrors { field message } }
+  t31: tagsAdd(id: "gid://shopify/Product/9012820967666", tags: ["足元"]) { userErrors { field message } }
+  t32: tagsAdd(id: "gid://shopify/Product/9011173589234", tags: ["足元"]) { userErrors { field message } }
+  t33: tagsAdd(id: "gid://shopify/Product/9005744095474", tags: ["バス・洗面"]) { userErrors { field message } }
+  t34: tagsAdd(id: "gid://shopify/Product/9004929843442", tags: ["姿勢・肩腰"]) { userErrors { field message } }
+  t35: tagsAdd(id: "gid://shopify/Product/8999289651442", tags: ["バス・洗面"]) { userErrors { field message } }
+  t36: tagsAdd(id: "gid://shopify/Product/8980331987186", tags: ["バス・洗面", "春", "夏", "秋", "冬"]) { userErrors { field message } }
+  t37: tagsAdd(id: "gid://shopify/Product/8921571492082", tags: ["あたたか"]) { userErrors { field message } }
+  t38: tagsAdd(id: "gid://shopify/Product/8914550456562", tags: ["あたたか"]) { userErrors { field message } }
+  t39: tagsAdd(id: "gid://shopify/Product/8908234916082", tags: ["あたたか"]) { userErrors { field message } }
+  t40: tagsAdd(id: "gid://shopify/Product/8903938998514", tags: ["足元", "あたたか"]) { userErrors { field message } }
+}

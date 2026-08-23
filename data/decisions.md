@@ -1961,3 +1961,31 @@ W-1(8/09-15) 実売637,994／広告230,865／MER2.76 → W0(8/16-22) 実売516,6
 `graphql_mutation` は `requires approval` のまま。**`settings.json` の変更（8/21にallowへ移動）は
 このセッションが開始した後に行ったため反映されていない。次に新しいセッションを開始すれば通る見込み。**
 今回も管理画面（7回＋予備1回＋季節1件の一括タグ追加）かGraphiQLで適用してもらう。
+
+### 🚨 2026-08-23 訂正: Shopifyへの書き込みが通らない原因は settings.json ではなかった
+
+前回「`settings.json` の変更がセッション途中で反映されないから。次のセッションなら通る見込み」と書いたが**誤り**。
+実測で確認:
+```
+allow に mcp__Shopify__graphql_mutation : True   ← 入っている
+deny  に mcp__Shopify__graphql_mutation : False  ← 入っていない
+defaultMode: dontAsk
+→ それでも "MCP tool call requires approval"
+```
+**原因は Shopify MCP サーバー側の仕様。** `graphql_mutation` のツール説明に
+「The host app will prompt the user for confirmation before executing」と明記されており、
+**このリモートセッションには確認プロンプトの出し先がないため、構造的に成立しない。**
+
+→ **新しいセッションを開いても直らない。** 同じ理由で `run-analytics-query` も 2026-08-12 以降ずっと弾かれている
+（ShopifyQLは `graphql_query` の `shopifyqlQuery` 経由で代替できているので実害なし）。
+
+**したがって Shopify への書き込みは、当面すべてユーザーが管理画面かGraphiQLで実行する。**
+私ができるのは「1回の操作で終わる形」まで作ることまで。
+（8/21に `graphql_mutation` を deny から allow へ移した変更は、**無害だが無意味**だった。
+　書き込みガードとしては他の deny 群と CLAUDE.md の方針が生きているので、戻さず放置する）
+
+### 納品: 1回の実行で終わるミューテーション
+`data/tags/category-mutation-2026-08-23.graphql`
+- **1商品1呼び出しにまとめて40件**（カテゴリ7＋予備1＋ナノバブルの季節タグ是正を全部含む）
+- コスト概算 400ポイント / 上限2000 → **1回の実行で収まる**
+- GraphiQL アプリに貼って1回実行するだけ。管理画面の一括タグ追加なら8回＋1回
