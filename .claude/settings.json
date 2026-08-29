@@ -87,7 +87,13 @@
       "Bash(du *)",
       "Bash(cd *)",
       "Bash(true)",
-      "Bash(:)"
+      "Bash(:)",
+      "mcp__Shopify",
+      "mcp__Supermetrics_Marketing_Analytics",
+      "Bash",
+      "WebSearch",
+      "WebFetch",
+      "TodoWrite"
     ],
     "deny": [
       "mcp__Shopify__update-product",
