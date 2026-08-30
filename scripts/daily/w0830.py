@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """[8/30終端に固定した窓ビルダー] 2026-08-31 定例（昨日=8/30 日 実績）。実測のみ・毎回ゼロから積み直す。"""
 import csv, collections, datetime, json, pickle
-AD0830=None  # ← append0830_ad.py 実行後に実測合計を入れる
+AD0830=264544  # data_query 実測（Asia/Tokyo）。アカウントレベル1本と Σキャンペーン が差0円で一致
 B='/home/user/LOOana/data/daily/'
 COST={'4WAY':1730,'害虫ブロッカー':867,'形状記憶日傘':1309,'完全遮光・形状記憶':1309,'卓上冷感クーラー':1996,
 '接触冷感UVパーカー':1434,'5WAY腰掛けファン':1848,'偏光・調光サングラス':893,'3WAYサーキュレーター':2485,
@@ -65,7 +65,7 @@ AD=collections.defaultdict(lambda: collections.defaultdict(float))
 for r in csv.DictReader(open(B+'daily_ad.csv',encoding='utf-8')):
     AD[r['campaign']][r['date']]+=float(r['cost'])
 ALLD=sorted({d for v in S.values() for d in v})
-# 2026-08-31: 8/30まで揃った（広告費は health_check 30日 − CSV 29日 で導出・検算済み）。窓は8/30終端。
+# 2026-08-31: 8/30まで揃った（広告費は data_query の実測。8/29も確定値へ訂正済み）。窓は8/30終端。
 END='2026-08-30'; ALLD=[d for d in ALLD if d<=END]
 D1=ALLD[-1:]; D3=ALLD[-3:]; D7=ALLD[-7:]; D30=[d for d in ALLD if d>='2026-08-01']
 assert D1==['2026-08-30'] and D3[0]=='2026-08-28' and D7[0]=='2026-08-24', (D1,D3[0],D7[0])
