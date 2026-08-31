@@ -3,7 +3,7 @@
 import pickle, csv, datetime, collections, statistics
 from openpyxl import Workbook
 from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
-R = pickle.load(open('/tmp/rep0830w.pkl', 'rb')); FEE = 0.03452
+R = pickle.load(open('/tmp/rep0830w.pkl', 'rb')); FEE = 0.03423   # 2026-09-01 月次再計測（SP79.7% + スマホ17.1% + Paidy3.2%）
 D1, D3, D7, D30, CUM = R['D1'], R['D3'], R['D7'], R['D30'], R['CUM']
 SNAP = '2026-08-30b'   # ★8/30 昼にユーザーが6セット見直した後の実測（Meta直読で確認）
 rows = list(csv.reader(open('data/budget-snapshots.csv'))); body = [r for r in rows[1:] if r]
@@ -264,7 +264,7 @@ sh('全体サマリー', ['全体サマリー（売上=Shopify gross−値引・
  '★8/30の広告費は data_query がブロックされたため health_check(8/01-8/30実測) − CSV(8/01-8/29実測) で導出。'
  '窓の検証: ビジュアル耳かき(8/28開始)は CSV 10,675 / HC 20,554 → 8/30 = 9,879円。'
  '3D足臭は8/29停止で HC=CSV=85,838 → 8/30 = 0円。推計ではなく2つの実測の差',
- '決済ブレンド率 3.452%（2026-08-01再計測: SP76.2%×3.25% ＋ KOMOJUスマホ16.3%×4.1% ＋ Paidy7.5%×4.1%）',
+ '決済ブレンド率 3.423%（2026-09-01再計測: SP79.7%×3.25% ＋ KOMOJUスマホ17.1%×4.1% ＋ Paidy3.2%×4.1%。前回3.452%からPaidyが半減）',
  f'7日の全店CVR（Shopifyセッション基準）= {STORE_ORD7}注文 ÷ {STORE_SESS7:,}セッション = {STORE_ORD7/STORE_SESS7:.2%}'],
  ['窓','実売','原価','広告費','総合原価','総合原価率','利益','利益率','MER','分岐MER','決済手数料','手数料控除後利益','手数料後利益率'],
  SUMR, [20,14,13,13,13,11,13,10,8,9,12,15,12],
