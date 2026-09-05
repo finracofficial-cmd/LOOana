@@ -1,0 +1,58 @@
+{%- comment -%}
+  LOOTY 商品ページ用「読みもの」セクション（2026-09-05）
+  貼り付け先: Shopify管理画面 → オンラインストア → テーマ → カスタマイズ
+             → 上部のテンプレート切替で「商品」を選択 → セクションを追加 → カスタムLiquid
+             → 下の全文を貼り付け → 位置を「よく一緒に購入されている商品」の上へドラッグ → 保存
+  仕組み: 各記事に付けた pid-<商品ID> タグで、その商品の記事だけを自動表示する（ブログ名に依存しない）。
+         商品ごとの設定は不要。1回貼れば全商品に効く。記事が無い商品では何も表示されない。
+{%- endcomment -%}
+
+{%- assign lty_target = 'pid-' | append: product.id -%}
+{%- assign lty_found = null -%}
+{%- for lty_b in blogs -%}
+  {%- unless lty_found -%}
+    {%- for lty_a in lty_b.articles -%}
+      {%- if lty_a.tags contains lty_target -%}
+        {%- assign lty_found = lty_a -%}
+        {%- break -%}
+      {%- endif -%}
+    {%- endfor -%}
+  {%- endunless -%}
+{%- endfor -%}
+
+{%- if lty_found -%}
+<div class="lty-read">
+  <style>
+    .lty-read{--acc:#40695e;--accbg:#eef3f1;--line:#e7e3da;--sub:#7a766d;
+      max-width:1100px;margin:0 auto;padding:28px 16px 8px}
+    .lty-read__kick{display:inline-block;font-size:.72rem;letter-spacing:.22em;font-weight:700;
+      color:var(--acc);background:var(--accbg);padding:.35em 1em;border-radius:99px}
+    .lty-read__card{display:flex;gap:18px;align-items:center;margin-top:14px;padding:16px;
+      background:#fff;border:1px solid var(--line);border-radius:16px;text-decoration:none;color:inherit;
+      transition:box-shadow .2s ease,transform .2s ease}
+    .lty-read__card:hover{box-shadow:0 6px 20px rgba(0,0,0,.07);transform:translateY(-2px)}
+    .lty-read__img{flex:0 0 132px;width:132px;height:132px;object-fit:cover;border-radius:12px;background:#f4f2ec}
+    .lty-read__body{flex:1 1 auto;min-width:0}
+    .lty-read__title{font-size:1.05rem;font-weight:800;line-height:1.55;margin:0 0 .4em;color:#26241f}
+    .lty-read__ex{font-size:.9rem;line-height:1.75;color:#55524a;margin:0}
+    .lty-read__more{display:inline-block;margin-top:.7em;font-size:.88rem;font-weight:700;color:var(--acc)}
+    @media (max-width:600px){
+      .lty-read__card{flex-direction:column;align-items:flex-start;gap:12px}
+      .lty-read__img{flex:none;width:100%;height:190px}
+    }
+  </style>
+
+  <span class="lty-read__kick">READ MORE</span>
+  <a class="lty-read__card" href="{{ lty_found.url }}">
+    {%- if lty_found.image -%}
+      <img class="lty-read__img" src="{{ lty_found.image | image_url: width: 400 }}"
+           alt="{{ lty_found.title | escape }}" loading="lazy" width="132" height="132">
+    {%- endif -%}
+    <span class="lty-read__body">
+      <span class="lty-read__title">{{ lty_found.title }}</span>
+      <span class="lty-read__ex">{{ lty_found.excerpt_or_content | strip_html | truncate: 110 }}</span>
+      <span class="lty-read__more">記事を読む →</span>
+    </span>
+  </a>
+</div>
+{%- endif -%}
