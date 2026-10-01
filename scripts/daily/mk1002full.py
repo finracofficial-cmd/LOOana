@@ -178,15 +178,21 @@ for n in sorted(R['N7'], key=lambda x: -R['N7'][x]):
     mm = mer * 0.7; per = mm * gm - 1
     ends = [mer * x * gm - 1 for x in (0.6, 0.7, 0.8)]
     rob = '一致' if (all(e > 0 for e in ends) or all(e < 0 for e in ends)) else '⚠️符号が割れる'
-    SIMPLE.append([n, round(mer, 2), round(s3 / a3, 2) if a3 else '', round(s1 / a1, 2) if a1 else '',
+    SIMPLE.append([n, BUD.get(cp, '停止中'), round(mer, 2), round(s3 / a3, 2) if a3 else '', round(s1 / a1, 2) if a1 else '',
         round(be, 2), round(tg, 2) if tg else '', round(p7), round(p3), round(p1),
         round(wu, 3) if wu else '', round(per, 3), rob, st, tri])
+_shown = {MAP.get(r[0], r[0]) for r in SIMPLE}
+for _cp in sorted(BUD, key=lambda c: -BUD[c]):
+    if _cp not in _shown: SIMPLE.append([_cp + ('　※全商品横断' if 'カタログ' in _cp else ''), BUD[_cp]] + ['—'] * 13)
+assert sum(r[1] for r in SIMPLE if isinstance(r[1], int)) == sum(BUD.values())
+SIMPLE.append(['合計（Meta日予算）', sum(BUD.values())] + [''] * 13)
 sh('シンプル判定', ['LOOTY 2026-10-02 定例（昨日=10/1 木）',
  '状態: 🚨縮小・停止=7日MER<分岐 or 7日利益マイナス ／ 🔧改善=3日MER<分岐 or 余裕<0.30 ／ 🚀伸ばす候補=7日MER≥目標かつ週消化率≥95% ／ ✅維持',
  '3窓判定（3日/5日/7日・すべて10/1終端）が本番の意思決定ルール。窓が1つでも割れたら据え置き＝動かさない',
- '「広告費1円あたり利益」= 限界MER×粗利率 − 1（限界MER = 平均MER×0.7）。頑健性は×0.6/0.7/0.8 の3端で符号が変わらないかを見る'],
- ['商品','7日MER','3日MER','前日MER','分岐','目標','7日利益','3日利益','前日利益','週消化率','1円あたり利益','頑健性','状態','3窓判定'],
- SIMPLE, [26,9,9,9,8,8,12,12,12,10,12,13,14,30], {7:'#,##0',8:'#,##0',9:'#,##0',10:'0.0%'})
+ '「広告費1円あたり利益」= 限界MER×粗利率 − 1（限界MER = 平均MER×0.7）。頑健性は×0.6/0.7/0.8 の3端で符号が変わらないかを見る',
+ f'現日予算 = 今後1日に設定している広告費（{SNAP} 時点のMeta日予算・広告セット合計）。最終行に全体合計 {sum(BUD.values()):,}円'],
+ ['商品','現日予算','7日MER','3日MER','前日MER','分岐','目標','7日利益','3日利益','前日利益','週消化率','1円あたり利益','頑健性','状態','3窓判定'],
+ SIMPLE, [26,11,9,9,9,8,8,12,12,12,10,12,13,14,30], {2:'#,##0',8:'#,##0',9:'#,##0',10:'#,##0',11:'0.0%'})
 
 # ---------- 2 ネクストアクション ----------
 NA = [

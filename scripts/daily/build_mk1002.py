@@ -176,5 +176,25 @@ REP.append((block(src, "JUDGE = [\n ['10/1本朝'", "'Shopify Flow設定はユ�
 for old, new in REP:
     assert src.count(old) == 1, ('置換対象が一意でない/見つからない', old[:70], src.count(old))
     src = src.replace(old, new)
+
+# --- 2026-10-02 ユーザー指定: シンプル判定に「現日予算（今後1日に設定している広告費）」列と合計行を追加（以後のレポートに引き継ぐ）---
+SIMPLE_REP = [
+ ("    SIMPLE.append([n, round(mer, 2), round(s3 / a3, 2) if a3 else '', round(s1 / a1, 2) if a1 else '',",
+  "    SIMPLE.append([n, BUD.get(cp, '停止中'), round(mer, 2), round(s3 / a3, 2) if a3 else '', round(s1 / a1, 2) if a1 else '',"),
+ (" '「広告費1円あたり利益」= 限界MER×粗利率 − 1（限界MER = 平均MER×0.7）。頑健性は×0.6/0.7/0.8 の3端で符号が変わらないかを見る'],\n ['商品','7日MER',",
+  " '「広告費1円あたり利益」= 限界MER×粗利率 − 1（限界MER = 平均MER×0.7）。頑健性は×0.6/0.7/0.8 の3端で符号が変わらないかを見る',\n f'現日予算 = 今後1日に設定している広告費（{SNAP} 時点のMeta日予算・広告セット合計）。最終行に全体合計 {sum(BUD.values()):,}円'],\n ['商品','現日予算','7日MER',"),
+ (" SIMPLE, [26,9,9,9,8,8,12,12,12,10,12,13,14,30], {7:'#,##0',8:'#,##0',9:'#,##0',10:'0.0%'})",
+  " SIMPLE, [26,11,9,9,9,8,8,12,12,12,10,12,13,14,30], {2:'#,##0',8:'#,##0',9:'#,##0',10:'#,##0',11:'0.0%'})"),
+ ("sh('シンプル判定', [",
+  "_shown = {MAP.get(r[0], r[0]) for r in SIMPLE}\n"
+  "for _cp in sorted(BUD, key=lambda c: -BUD[c]):\n"
+  "    if _cp not in _shown: SIMPLE.append([_cp + ('　※全商品横断' if 'カタログ' in _cp else ''), BUD[_cp]] + ['—'] * 13)\n"
+  "assert sum(r[1] for r in SIMPLE if isinstance(r[1], int)) == sum(BUD.values())\n"
+  "SIMPLE.append(['合計（Meta日予算）', sum(BUD.values())] + [''] * 13)\n"
+  "sh('シンプル判定', ["),
+]
+for old, new in SIMPLE_REP:
+    assert src.count(old) == 1, ('シンプル判定の置換対象が一意でない', old[:60], src.count(old))
+    src = src.replace(old, new)
 open('scripts/daily/mk1002full.py', 'w').write(src)
 print('mk1002full.py written,', len(src.splitlines()), 'lines')
