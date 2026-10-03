@@ -7175,3 +7175,9 @@ descriptionHtmlの見出しが「**🏠 4つのカラーで**〜」だが、**�
 - 直近100注文サンプルで8,000円以上は約4%（1万円以上は約3%）。優先配送の無料化による売上減は 9/03〜10/02 実測で6件×790円＝月約4,740円
 - 手順書・設計書の金額をすべて8,000円に更新（注文確認メールの条件は subtotal_price >= 800000）
 - Monster Cartの「カートがオンか」の確認方法を、お店側で商品をカートに入れて横からカート画面が出るかで見る方法に差し替え
+
+### 2026-10-03 17時 Monster Cartの画面（ユーザーのスクショ）で確認
+- Cart Setup で「Cart is Live」＝カートはオン。左メニュー: Cart Setup／Upsell Campaigns／Sticky Cart／Integrations／Your plan
+- 優先配送は「Monster Campaign - One tick upsell」（カート内のチェックで790円追加）として販売中
+- 1万円→8,000円特典は「Upsell Campaigns」の **Add To Unlock（進捗バー＋無料ギフト）** で作る案内に修正（手順書の「Rewards／Progress Bar」は実在しない名前だった）
+- ⚠️ カート上部に「あなたの商品は14:57分の間、確保されています」の表示（実際には在庫を確保していない）→ 商品ページのループタイマーと同じ問題。Cart Setup → Header で消せるはずと案内
