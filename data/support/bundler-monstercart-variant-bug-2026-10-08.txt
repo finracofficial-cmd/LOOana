@@ -1,0 +1,72 @@
+【送付先】Bundler（Product Bundles）サポート と Monster Cart（Monster CartDrawer Upsell）サポートに同じ文面を送る
+【添付】スクショ3枚（①3個・色違いで選んだ商品ページ ②カートが「ブラック×3」になった画面 ③「お値引き額反映中…」で止まる画面）
+【件名】Quantity break: per-item variant selections are ignored when added to cart (Bundler + Monster Cart)
+
+------------------------------------------------------------
+（英語版：こちらを送ってください）
+------------------------------------------------------------
+
+Hello,
+
+I am contacting both the Bundler team and the Monster Cart team about the same issue, because it seems to happen where your two apps interact. I would appreciate it if you could check it from your side.
+
+Store: h8ct0k-r2.myshopify.com (looty-japan.com)
+Apps: Bundler - Product Bundles (quantity break "数量割引") / Monster CartDrawer Upsell (cart drawer)
+Theme: custom theme based on Dawn (no theme changes since Oct 3)
+
+Issue 1: Per-item variant selections are ignored
+Steps to reproduce (iPhone / Safari):
+1. Open this product page:
+   https://looty-japan.com/products/seat-hook-chair-back-hidden-small-rear-row-fur-creative-upgrade-seat-flip-back-row-object-storage-car-bag
+2. In the Bundler quantity break widget, select "3 items, 15% off".
+3. In the per-item variant pickers, choose #1 Black, #2 Brown, #3 Grey.
+4. Tap "Add to cart".
+
+Expected: 3 separate lines in the cart (Black x1, Brown x1, Grey x1).
+Actual: The Monster Cart drawer opens with only "Black x3". The colors chosen for #2 and #3 are lost.
+
+This affects every product with variants, not only this one. For products with sizes (e.g. insoles), customers may receive the wrong sizes. We have not changed any Bundler or Monster Cart settings recently, and we do not know when this started.
+
+Issue 2: Checkout takes about 5 seconds only when a bundle discount applies
+- With 3 items (quantity break discount applied), tapping the checkout button shows "Applying discount..." (お値引き額反映中…) for about 5 seconds before the checkout page opens.
+- With 1 item (no discount), the checkout page opens immediately.
+
+Questions:
+1. Is this a known compatibility issue between Bundler quantity breaks (with the variant picker) and Monster Cart's add-to-cart / cart drawer?
+2. Which app should handle the add-to-cart in this case, and is there a setting on our side to fix it?
+3. Can the 5-second delay during discount syncing be reduced?
+
+Screenshots are attached. I can provide a collaborator access request or more details if needed.
+
+Thank you very much for your help.
+
+LOOTY
+
+------------------------------------------------------------
+（日本語訳：内容確認用。送らなくてOK）
+------------------------------------------------------------
+
+BundlerとMonster Cartの両方に同じ内容を送っています。2つのアプリが連携する部分で起きているようなので、それぞれ確認をお願いします。
+
+ストア: h8ct0k-r2.myshopify.com（looty-japan.com）
+アプリ: Bundler（数量割引の「数量割引」）／Monster Cart（カートドロワー）
+テーマ: Dawnベースのカスタムテーマ（10/3以降変更なし）
+
+不具合1: まとめ買いで1個ずつ選んだ色が無視される
+再現手順（iPhone / Safari）:
+1. 上記の商品ページを開く
+2. Bundlerのまとめ買い欄で「3個購入で15%オフ」を選ぶ
+3. 1個目ブラック・2個目ブラウン・3個目グレーを選ぶ
+4. 「カートに追加する」を押す
+期待: カートに3行（黒1・茶1・グレー1）
+実際: Monster Cartのカートが開き「ブラック×3」だけ。2個目と3個目の色が消える
+→ この商品だけでなく、色やサイズがある全商品で起きる。サイズのある商品（インソールなど）では違うサイズが届く恐れがある。最近BundlerもMonster Cartも設定は変えておらず、いつから起きているかは分からない
+
+不具合2: 割引があるときだけ、決済画面まで約5秒かかる
+- 3個（まとめ買い割引あり）だと「お値引き額反映中…」で約5秒止まってから決済画面に進む
+- 1個（割引なし）だとすぐ進む
+
+質問:
+1. Bundlerの数量割引（色選択あり）とMonster Cartのカート追加の相性問題として、既に把握されていますか？
+2. この場合どちらのアプリがカート追加を担当すべきで、こちらで直せる設定はありますか？
+3. 割引反映中の5秒の待ちは短くできますか？
