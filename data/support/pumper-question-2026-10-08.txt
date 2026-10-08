@@ -1,0 +1,43 @@
+【送付先】Pumper Bundles（Quantity Breaks）サポート ※アプリ管理画面のチャットから
+【件名】Quantity break discount for orders that don't go through the widget (Instagram Shop / existing carts)
+
+------------------------------------------------------------
+（英語版：こちらを送ってください）
+------------------------------------------------------------
+
+Hello,
+
+We switched to Pumper today (store: h8ct0k-r2.myshopify.com / looty-japan.com) with a quantity break offer for all products: 1 item = regular price, 2 items = 10% off, 3 items = 15% off. The widget works well, including different variants per item. Thank you.
+
+We found that some orders with 2+ units of the same product did not receive the discount:
+
+1. Instagram / Facebook Shop checkout (sales channel "Facebook & Instagram")
+   The customer built the cart inside Instagram and went straight to checkout, so the line items have no Pumper properties (_pumper_v2_basic-tier) and no discount was applied.
+   With our previous app, the discount was a store-wide automatic discount, so these orders also got 10% off.
+
+2. Carts created before we installed Pumper
+   A returning customer checked out a cart that already had 2 units of the same product, and the discount was not applied (no Pumper properties on the line).
+
+Questions:
+1. Can the quantity break discount be applied based on cart quantity (2+ units of the same product), even when the items were not added through the Pumper widget?
+2. If yes, which setting should we use? If not, is this on your roadmap?
+3. If one cart contains two different products, each with 2 units, does each product get its own 10% discount?
+
+Thank you for your help.
+
+LOOTY
+
+------------------------------------------------------------
+（日本語訳：内容確認用。送らなくてOK）
+------------------------------------------------------------
+
+本日Pumperに切り替えました（全商品：1個は通常価格／2個で10%オフ／3個で15%オフ）。1個ずつ違う色を選ぶのも含めて、まとめ買い欄はきちんと動いています。
+
+同じ商品を2個以上買ったのに、割引が付かなかった注文があります。
+1. Instagram/Facebookショップでの購入：Instagramの中でカートを作って、そのまま決済。Pumperの印（行プロパティ）が付かず、割引もなし。前のアプリはお店全体の自動割引だったので、この経路でも10%引きになっていた。
+2. Pumperを入れる前に作られたカート：再訪したお客さんが、前から入っていた同じ商品2個のカートで決済し、割引が付かなかった。
+
+質問:
+1. まとめ買い欄を通らなくても、カートに同じ商品が2個以上あれば割引を付けられますか？
+2. できるならどの設定ですか？できないなら、今後対応する予定はありますか？
+3. 1つのカートに違う商品が2個ずつ入っている場合、商品ごとにそれぞれ10%引きになりますか？
