@@ -150,7 +150,39 @@ sh('収益', [f'LOOTY 収益レポート 2026-10-13（昨日 = 10/12 月）',
 # ---------- 1 シンプル判定 ----------
 def blk(n, N, K, A_):
     s = N.get(n, 0); k = K.get(n, 0); a = A_.get(n, 0); return s, k, a, s - k - a
-SIMPLE = []
+# --- 予算アクション用: 最新スナップショット（同日の追記 b/c を含む）と最終変更日 ---
+_keys = sorted({r[0] for r in body})
+LATEST = max(k for k in _keys if k[:10] == SNAP[:10])
+BUDL = collections.defaultdict(int)
+for r in body:
+    if r[0] == LATEST: BUDL[r[1]] += int(r[3])
+_BK = collections.defaultdict(lambda: collections.defaultdict(int))
+for r in body: _BK[r[0]][r[1]] += int(r[3])
+def last_change(cp):
+    """予算が最後に変わったスナップショットの日付（その日を変更後の初日とする＝実験P2の慣行と同じ）"""
+    ch, prev = None, None
+    for k in _keys:
+        v = _BK[k].get(cp, 0)
+        if prev is not None and v != prev and v and prev: ch = k[:10]
+        prev = v
+    return ch
+# 宣言済みの判定日（decisions.md の判定カレンダー）。判定日前は動かさない
+CAL = {'伸縮ガラスクリーナー': ('2026-10-16', '10/16 sabu新CR判定・10/17 減額判定'),
+       'W固定スマホ車載ホルダー': ('2026-10-17', '10/17 減額判定'),
+       '4-in-1マルチクリーナー': ('2026-10-16', '10/16 増額判定（増分MER≥4.43で+25%）'),
+       'バランスケアスリッパ': ('2026-10-15', '10/15 減額判定'),
+       'ポータブルヒートシーラー': ('2026-10-19', '10/19 新商品7日判定'),}
+TODAY = SNAP[:10]
+SMALL = 10000
+def band(r, wu, small):
+    if r is None: return '—'
+    if r < 1.25: return '🔻減額・停止'
+    if r < 1.43: return '⏸据え置き（小予算・テストしない）' if small else '↘減額テスト（−20〜25%）'
+    if r < 1.86: return '⏸据え置き（最適帯）'
+    if wu is not None and wu >= 0.95: return '⬆増額テスト（+20〜25%）'
+    return '⏸据え置き（倍率は高いが予算を使い切れていない）'
+
+SIMPLE = []; ACT = []
 for n in sorted(R['N7'], key=lambda x: -R['N7'][x]):
     a7 = R['A7'].get(n, 0)
     if not a7: continue
@@ -175,21 +207,64 @@ for n in sorted(R['N7'], key=lambda x: -R['N7'][x]):
     mm = mer * 0.7; per = mm * gm - 1
     ends = [mer * x * gm - 1 for x in (0.6, 0.7, 0.8)]
     rob = '一致' if (all(e > 0 for e in ends) or all(e < 0 for e in ends)) else '⚠️符号が割れる'
-    SIMPLE.append([n, BUD.get(cp, '停止中'), round(mer, 2), round(s3 / a3, 2) if a3 else '', round(s1 / a1, 2) if a1 else '',
+    # --- 倍率（MER÷分岐）と予算アクション ---
+    r7 = mer / be; r3 = (s3 / a3) / be if a3 else None; r1 = (s1 / a1) / be if a1 else None
+    cur = BUDL.get(cp); small = bool(cur) and cur <= SMALL
+    first_ad = min((d for d, v in ADd[cp].items() if v > 0), default=None)
+    chg = last_change(cp)
+    post = [d for d in ALLD if chg and d >= chg]
+    if chg and chg > D7[0]:
+        if post:
+            sp, cp_, ap = win(n, post); rj = (sp / ap) / be if ap else None
+            basis = f'変更後{len(post)}日（{chg[5:].replace("-", "/")}〜）'
+        else:
+            rj, basis = r7, f'7日（{chg[5:].replace("-", "/")} 変更後の実績はまだ無い）'
+    else:
+        rj, basis = r7, '7日'
+    if not cur:
+        act, memo = '⛔停止中', '予算ゼロ（停止済み）'
+    elif first_ad and first_ad > D7[0]:
+        act, memo = '🆕新商品・学習中（触らない）', CAL.get(n, ('', '購入50件まで判定保留'))[1]
+    elif n in CAL and CAL[n][0] > TODAY:
+        act, memo = f'⏳判定待ち（{CAL[n][0][5:].replace("-", "/")}）', CAL[n][1] + f'。参考: いまの帯＝{band(rj, wu, small)}' + ('（変更後の日数が少ない・参考値）' if basis != '7日' and len(post) < 3 else '')
+    elif chg and chg > D7[0] and len(post) < 3:
+        _j = (datetime.date.fromisoformat(chg) + datetime.timedelta(days=3)).isoformat()
+        act, memo = f'⏳変更直後・据え置き（{_j[5:].replace("-", "/")}判定）', f'変更後のデータが{len(post)}日分しかない。参考: いまの帯＝{band(rj, wu, small)}'
+    else:
+        act = band(rj, wu, small)
+        memo = '小予算: 倍率<1.25になったら減額・停止' if small and rj is not None and rj >= 1.25 else ''
+        if rj is not None and r3 is not None and r3 < 1.25 <= rj: memo = (memo + '／' if memo else '') + '⚠️3日倍率が1.25割れ・次回要注意'
+    ACT.append(act)
+    SIMPLE.append([n, cur if cur else '停止中', act, round(rj, 2) if rj is not None else '', basis,
+        round(r7, 2), round(r3, 2) if r3 is not None else '', round(r1, 2) if r1 is not None else '', memo,
+        round(mer, 2), round(s3 / a3, 2) if a3 else '', round(s1 / a1, 2) if a1 else '',
         round(be, 2), round(tg, 2) if tg else '', round(p7), round(p3), round(p1),
         round(wu, 3) if wu else '', round(per, 3), rob, st, tri])
+NC = len(SIMPLE[0])
 _shown = {MAP.get(r[0], r[0]) for r in SIMPLE}
-for _cp in sorted(BUD, key=lambda c: -BUD[c]):
-    if _cp not in _shown: SIMPLE.append([_cp + ('　※全商品横断' if 'カタログ' in _cp else ''), BUD[_cp]] + ['—'] * 13)
-assert sum(r[1] for r in SIMPLE if isinstance(r[1], int)) == sum(BUD.values())
-SIMPLE.append(['合計（Meta日予算）', sum(BUD.values())] + [''] * 13)
-sh('シンプル判定', ['LOOTY 2026-10-13 定例（昨日=10/12 月）',
- '状態: 🚨縮小・停止=7日MER<分岐 or 7日利益マイナス ／ 🔧改善=3日MER<分岐 or 余裕<0.30 ／ 🚀伸ばす候補=7日MER≥目標かつ週消化率≥95% ／ ✅維持',
- '3窓判定（3日/5日/7日・すべて10/12終端）が本番の意思決定ルール。窓が1つでも割れたら据え置き＝動かさない',
- '「広告費1円あたり利益」= 限界MER×粗利率 − 1（限界MER = 平均MER×0.7）。頑健性は×0.6/0.7/0.8 の3端で符号が変わらないかを見る',
- f'現日予算 = 今後1日に設定している広告費（{SNAP} 時点のMeta日予算・広告セット合計）。最終行に全体合計 {sum(BUD.values()):,}円'],
- ['商品','現日予算','7日MER','3日MER','前日MER','分岐','目標','7日利益','3日利益','前日利益','週消化率','1円あたり利益','頑健性','状態','3窓判定'],
- SIMPLE, [26,11,9,9,9,8,8,12,12,12,10,12,13,14,30], {2:'#,##0',8:'#,##0',9:'#,##0',10:'#,##0',11:'0.0%'})
+for _cp in sorted(BUDL, key=lambda c: -BUDL[c]):
+    if _cp not in _shown: SIMPLE.append([_cp + ('　※全商品横断' if 'カタログ' in _cp else ''), BUDL[_cp]] + ['—'] * (NC - 2))
+assert sum(r[1] for r in SIMPLE if isinstance(r[1], int)) == sum(BUDL.values())
+SIMPLE.append(['合計（Meta日予算）', sum(BUDL.values())] + [''] * (NC - 2))
+_ws = sh('シンプル判定', [f'LOOTY {SNAP} 定例（昨日={D1[0][5:].replace("-", "/")}）',
+ '■ 予算をどうするかは「予算アクション」列だけ見ればよい。根拠は「判断倍率」（倍率 = MER ÷ 分岐MER。1.00で広告費トントン）',
+ '■ 倍率の帯: 1.25未満=🔻減額・停止 ／ 1.25〜1.43=↘減額テスト ／ 1.43〜1.86=⏸据え置き（最適帯） ／ 1.86以上かつ週消化率95%以上=⬆増額テスト（+20〜25%）',
+ '　なぜ1.43: 追加で使った広告費の効き（限界MER）は平均MERの約0.7倍（8/6実測）。1.43×0.7=1.00＝最後の1円がトントンになる線。1.25〜1.67は前提0.6〜0.8次第で黒字にも赤字にもなる「符号割れ」帯',
+ '■ 判断倍率は原則「7日倍率」。7日以内に予算を変えた商品は「変更後の日だけ」の倍率で見る（変更前の予算の成績で判断しない）',
+ f'■ 例外: 予算{SMALL:,}円以下の小さい商品は効果が小さいのでテストしない（1.25未満で減額・停止だけ）／広告開始7日以内は新商品で触らない／判定日を宣言済みの商品はその日まで動かさない（⏳）',
+ '■ 3日・前日倍率は監視用（単日で動かさない）。増額・減額の結果は判定日に増分MERで合否を出す',
+ f'現日予算 = {LATEST} 時点のMeta日予算（広告セット合計）。最終行に全体合計 {sum(BUDL.values()):,}円'],
+ ['商品','現日予算','予算アクション','判断倍率','判断に使った期間','7日倍率','3日倍率','前日倍率','次回判定・メモ',
+  '7日MER','3日MER','前日MER','分岐','目標','7日利益','3日利益','前日利益','週消化率','1円あたり利益','頑健性','状態','3窓判定'],
+ SIMPLE, [26,11,30,9,18,8,8,8,44,8,8,8,7,7,12,12,12,9,11,12,12,28],
+ {2:'#,##0',4:'0.00',6:'0.00',7:'0.00',8:'0.00',15:'#,##0',16:'#,##0',17:'#,##0',18:'0.0%'})
+_FILL = {'🔻': 'F8CBAD', '↘': 'FCE4D6', '⏸': 'E2EFDA', '⬆': 'C6EFCE', '⏳': 'FFF2CC', '🆕': 'DDEBF7', '⛔': 'D9D9D9'}
+for _row in _ws.iter_rows(min_col=3, max_col=3):
+    _c = _row[0]
+    if isinstance(_c.value, str) and _c.value[:1] in _FILL:
+        _c.fill = PatternFill('solid', fgColor=_FILL[_c.value[:1]]); _c.font = Font(name='Arial', size=10, bold=True)
+for _row in _ws.iter_rows(min_col=4, max_col=4):
+    if isinstance(_row[0].value, float): _row[0].font = Font(name='Arial', size=10, bold=True)
 
 # ---------- 2 ネクストアクション ----------
 NA = [
