@@ -7864,3 +7864,9 @@ descriptionHtmlの見出しが「**🏠 4つのカラーで**〜」だが、**�
   - ⚠️ **Judge.meレビュー3件は不使用**: 10/15 9:04〜9:07 JSTの3分間に投稿・購入者確認なし。「お急ぎ対応して頂きました」は配信開始前の時点ではありえない内容（眉シェーバー・シーラーと同じ型）
   - 内部リンクは入れていない: 関連記事No.30（スタイルアップインナー）に「痩身エステ／ダイエットサプリの費用比較」「効果は半永久的に持続」、骨盤・姿勢に触れるレビューの引用があり、送客先として不適切。No.30自体の修正をユーザーに提案
   - 公開（articleCreate）はユーザーの確認待ち
+- **10/15 ユーザー「登録してー」→ ブログ記事47本目を公開**
+  - **Article ID** `gid://shopify/Article/635780956402` / handle `high-waist-shape-pants-guide` / 公開 10/15 09:40 JST（ブログ「商品紹介記事」gid://shopify/Blog/102255919346）
+  - タグ pid-15430574375154・ハイウエストシェイプパンツ・使い方／アイキャッチ=商品画像 LOOTY_12f721ae….png／summary・SEOタイトル/説明文は作成時に設定（userErrorsなし）
+  - 公開ページで確認: 200・titleタグ＝SEOタイトル・SEO説明文反映・og:image反映・Q&A6問表示・ブログ一覧に掲載・商品ページ200
+  - ローカル控え `data/lp/blog-high-waist-shape-pants-2026-10-15.html`（本文は先頭コメントの後の `<div class="lty">` 以下）／blog-indexに47本目を追記
+  - 公開直後にShopify MCPが再接続されたため、get-shop-infoで再確認した: LOOTY / looty-japan.com ✓
