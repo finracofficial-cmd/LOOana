@@ -249,7 +249,8 @@ def series(name):
             q = round(g / p)
         else:                       # 窓内で売価が変動し構成が解けない商品は数量を出さない
             q = None
-        cost = q * COST.get(name, 0) if q is not None else None
+        _uc = 732 if (name == '高見えレザーヘッドレストフック' and d >= '2026-10-07') else COST.get(name, 0)   # フックは10/7からCJ原価732円
+        cost = q * _uc if q is not None else None
         profit = sales - (cost or 0) - cost_ad
         bud = B.get(camp, {}).get(d)
         out.append(dict(date=d, wd=wd(d), idx=IDX[wd(d)], sales=sales, disc=dc, qty=q,
