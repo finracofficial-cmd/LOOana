@@ -8666,3 +8666,4 @@ descriptionHtmlの見出しが「**🏠 4つのカラーで**〜」だが、**�
 - 「Shop Pay」記録の決済に、その場で初めてShop Payへ登録した人が含まれるかはこのデータでは判別できない
 - 参考: この構成で決済手数料ブレンド率を計算すると 3.379%（Shopify Payments 84.8%×3.25%＋KOMOJU 15.2%×4.1%）。8/1計測の3.452%より低い。正式な更新は毎月1日の再計測で行う
 - 検証（ユーザー「ほんまに？」）: GraphQL で注文ごとの決済記録を直接確認。10/25 の直近50注文（#30297〜#30346）: Shop Pay（transactions.paymentDetails.wallet=SHOPIFY_PAY・gateway shopify_payments）34件／Apple Pay 8／Google Pay 1／カード入力（wallet なし）1／KOMOJUスマホ決済 5／Paidy 1 → 注文単位でも Shop Pay が最多。30日集計（51.1%）と方向が一致
+- ユーザー「Shop Payが使えなくなったら売上への影響は？」: 実測で言えるのは①Shop Pay経由 8,756,707円/30日（53.1%・1日平均約29万円）②Shop Pay・Apple Pay・Google Pay・カード入力はすべて同じ決済口 shopify_payments（13,983,694円・84.8%）、別口はKOMOJU（15.2%）だけ。Shop Payだけが無くなった場合に何割が他の払い方へ移るかは、LOOTYにShop Payなしの期間のデータがないため不明（推計しない）。チャージバック件数は API の権限（read_shopify_payments）がなく取得できなかった
