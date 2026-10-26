@@ -8665,3 +8665,4 @@ descriptionHtmlの見出しが「**🏠 4つのカラーで**〜」だが、**�
 - 金額比率: Shop Pay 53.1%・Apple Pay 18.4%・Google Pay 1.9%・カード入力 11.4%・スマホ決済 10.7%・Paidy 4.5%。客単価 Shop Pay 5,212／Apple 4,861／Google 4,779／カード 4,866／スマホ決済 4,612／Paidy 5,021円
 - 「Shop Pay」記録の決済に、その場で初めてShop Payへ登録した人が含まれるかはこのデータでは判別できない
 - 参考: この構成で決済手数料ブレンド率を計算すると 3.379%（Shopify Payments 84.8%×3.25%＋KOMOJU 15.2%×4.1%）。8/1計測の3.452%より低い。正式な更新は毎月1日の再計測で行う
+- 検証（ユーザー「ほんまに？」）: GraphQL で注文ごとの決済記録を直接確認。10/25 の直近50注文（#30297〜#30346）: Shop Pay（transactions.paymentDetails.wallet=SHOPIFY_PAY・gateway shopify_payments）34件／Apple Pay 8／Google Pay 1／カード入力（wallet なし）1／KOMOJUスマホ決済 5／Paidy 1 → 注文単位でも Shop Pay が最多。30日集計（51.1%）と方向が一致
