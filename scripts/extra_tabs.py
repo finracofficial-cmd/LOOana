@@ -119,3 +119,38 @@ for row in prow:
     r += 1
 for i in range(2, len(pcols) + 1): ws.column_dimensions[ws.cell(1, i).column_letter].width = 11
 wb.save(OUT); print('実CPA / 7日積み上げ sheets added:', OUT)
+
+# ---- 実CPA 週次推移（絶対評価つき）----
+def wk(d): x = datetime.date.fromisoformat(d); return (x - datetime.timedelta(days=x.weekday())).isoformat()
+weeks = sorted({wk(d) for d in ALLD if d >= (datetime.date.fromisoformat(D1[0]) - datetime.timedelta(days=62)).isoformat()})
+rows = []
+for n in names:
+    row = [n]; be7 = None
+    s7, q7, c7, a7, bad = win(n, D7); be = round((s7 - c7) / q7) if q7 else None
+    row.append(be); series = []
+    for w in weeks:
+        ds = [d for d in ALLD if wk(d) == w]
+        s, q, c, a, bad = win(n, ds)
+        v = round(a / q) if (q and a) else None; series.append(v); row.append(v)
+    full = [v for v in series[:-1] if v]  # 直近の週（進行中）を除いた確定週
+    last_full = full[-1] if full else None
+    margin = (be - last_full) if (be and last_full) else None
+    margin_pct = round(margin / be * 100) if margin is not None else None
+    hist_min = min(full) if full else None
+    vs_best = round((last_full / hist_min - 1) * 100) if (last_full and hist_min) else None
+    if margin_pct is None: verdict = '—'
+    elif margin_pct >= 40: verdict = '◎ 余裕大'
+    elif margin_pct >= 25: verdict = '○ 余裕あり'
+    elif margin_pct >= 10: verdict = '△ 薄い'
+    else: verdict = '✕ 分岐割れ'
+    trend = '—'
+    if len(full) >= 3:
+        a3 = sum(full[-3:]) / 3; b3 = sum(full[-6:-3]) / 3 if len(full) >= 6 else (sum(full[:-3]) / len(full[:-3]) if full[:-3] else None)
+        if b3: trend = '↑悪化' if a3 > b3 * 1.15 else ('↓改善' if a3 < b3 * 0.85 else '→横ばい')
+    rows.append(row + [last_full, margin, margin_pct, hist_min, vs_best, trend, verdict])
+rows.sort(key=lambda r: -(r[-5] or -1))
+cols = ['商品', '分岐CPA(7日実測)'] + [f'{w[5:]}週' for w in weeks] + ['直近確定週 実CPA', '余裕額(分岐−実CPA)', '余裕率%', '過去最良週', '最良比%', '直近3週の傾向', '絶対評価']
+sheet('実CPA週次', [f'週別 実CPA（広告÷Shopify個数・月曜始まり）。最後の週は進行中（{D1[0][5:]}まで）。絶対評価は直近の確定週の実CPAを分岐CPAと比べたもの（余裕率 = (分岐−実CPA)÷分岐）',
+  '◎ 余裕40%以上 ／ ○ 25〜40% ／ △ 10〜25% ／ ✕ 分岐割れ。傾向 = 直近3確定週の平均 vs その前3週（±15%で判定）。「過去より悪い」と「分岐より余裕がある」は別の軸なので両方を併記'],
+ cols, rows, [26, 10] + [8] * len(weeks) + [10, 11, 8, 9, 8, 10, 10], {c: '#,##0' for c in range(2, len(cols) + 1)}, pos=3)
+wb.save(OUT); print('実CPA週次 sheet added')
