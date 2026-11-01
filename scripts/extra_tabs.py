@@ -65,6 +65,7 @@ def sheet(title, note, cols, rows, widths, fmt, pos=None):
 # ---- 実CPA ----
 rows = []
 names = [n for n in S if n and n != '優先配送' and any(AD[MAP.get(n, n)].get(d, 0) for d in D30)]
+names += [n for n, c in MAP.items() if n not in names and n not in S and any(AD[c].get(d, 0) for d in D30)]   # 広告費はあるがまだ売上0の商品（出稿直後など）も載せる
 for n in names:
     s7, q7, c7, a7, bad = win(n, D7)
     be = None
@@ -94,30 +95,51 @@ for i, d in enumerate(D7, 1):
     rows.append([f'{i}日目 {d[5:]}({WD[datetime.date.fromisoformat(d).weekday()]})', s, k, a, p, (p - prev) if prev is not None else None, cum])
     prev = p
 hdr = ['日', '実売', '原価', '広告費', '日次利益', '前日比', '積み上げ利益']
-# 商品別
+# 商品別（2026-11-01 ユーザー要望: 広告が今稼働しているか／止まっているかを分かるようにする）
+# 広告の状態 = レポート作成日（前日の翌日）までで最新の予算スナップショット（budget-snapshots.csv）にそのキャンペーンの日予算があるか
+_snaps = collections.defaultdict(lambda: collections.defaultdict(int))
+for _r in csv.reader(open('data/budget-snapshots.csv', encoding='utf-8')):
+    if len(_r) >= 4 and _r[3].isdigit(): _snaps[_r[0]][_r[1]] += int(_r[3])
+_rep = (datetime.date.fromisoformat(D1[0]) + datetime.timedelta(days=1)).isoformat()
+SNAPKEY = max(k for k in _snaps if k[:10] <= _rep); BUDNOW = _snaps[SNAPKEY]
+def ad_status(n):
+    cp = MAP.get(n, n); spent = sorted(d for d, v in AD[cp].items() if v > 0)
+    if BUDNOW.get(cp, 0) > 0:
+        st = f'🟢 稼働中 {BUDNOW[cp]:,}円/日'
+        if spent and spent[0] >= D7[0]: st += f'（{spent[0][5:].replace("-", "/")}〜）'
+        return 0, st
+    return 1, f'⏸ 停止中（最終消化 {spent[-1][5:].replace("-", "/")}）' if spent else '⏸ 停止中'
 prow = []
 for n in names:
-    cum = 0; prev = None; row = [n]
+    cum = 0; prev = None; grp, st = ad_status(n); row = [n, st]
     for d in D7:
         s = (S[n][d][0] - S[n][d][1]) if d in S[n] else 0
         x, y = qc(n, d) if d in S[n] else (0, 0)
         a = AD[MAP.get(n, n)].get(d, 0); p = s - (y or 0) - a; cum += p
         row += [round(p), round(cum)]
-    prow.append(row)
-prow.sort(key=lambda r: -r[-1])
-pcols = ['商品'] + [x for i, d in enumerate(D7, 1) for x in (f'{i}日目 利益', f'{i}日目 積み上げ')]
-sheet('7日積み上げ', [f'直近7日（{D7[0][5:]}〜{D7[-1][5:]}）の日次利益を1日目から積み上げ。利益 = 実売（値引後）− 原価 − Meta広告費。前日比 = その日の利益 − 前日の利益', '下段は商品別（広告費はキャンペーン別、カタログ全部は全店のみに含む）'],
+    prow.append((grp, row))
+prow.sort(key=lambda t: (t[0], -t[1][-1]))
+pcols = ['商品', '広告の状態'] + [x for i, d in enumerate(D7, 1) for x in (f'{i}日目 利益', f'{i}日目 積み上げ')]
+sheet('7日積み上げ', [f'直近7日（{D7[0][5:]}〜{D7[-1][5:]}）の日次利益を1日目から積み上げ。利益 = 実売（値引後）− 原価 − Meta広告費。前日比 = その日の利益 − 前日の利益', '下段は商品別（広告費はキャンペーン別、カタログ全部は全店のみに含む）',
+  f'下段の「広告の状態」は {SNAPKEY} 時点のMeta日予算（budget-snapshots.csv）で判定。🟢稼働中を上・⏸停止中を下にまとめ、それぞれ7日の積み上げ利益が大きい順'],
  hdr, rows, [18, 11, 10, 11, 11, 11, 13], {2: '#,##0', 3: '#,##0', 4: '#,##0', 5: '#,##0', 6: '#,##0', 7: '#,##0'}, pos=3)
 ws = wb['7日積み上げ']; r = ws.max_row + 2
 for c, v in enumerate(pcols, 1):
     x = ws.cell(r, c, v); x.font = TH; x.fill = HEAD; x.border = thin; x.alignment = Alignment(horizontal='center', vertical='center', wrap_text=True)
 ws.row_dimensions[r].height = 30; r += 1
-for row in prow:
+ON = PatternFill('solid', fgColor='E2EFDA'); OFF = PatternFill('solid', fgColor='EDEDED'); GREY = Font(name='Arial', size=10, color='808080')
+_last = None
+for grp, row in prow:
+    if _last is not None and grp != _last: r += 1   # 稼働中と停止中の間を1行空ける
+    _last = grp
     for c, v in enumerate(row, 1):
-        x = ws.cell(r, c, v); x.border = thin; x.font = NEG if isinstance(v, (int, float)) and v < 0 else TD
-        if c > 1: x.number_format = '#,##0'
+        x = ws.cell(r, c, v); x.border = thin
+        x.font = NEG if isinstance(v, (int, float)) and v < 0 else (GREY if grp else TD)
+        if c == 2: x.fill = OFF if grp else ON
+        if c > 2: x.number_format = '#,##0'
     r += 1
-for i in range(2, len(pcols) + 1): ws.column_dimensions[ws.cell(1, i).column_letter].width = 11
+ws.column_dimensions['B'].width = 24
+for i in range(3, len(pcols) + 1): ws.column_dimensions[ws.cell(1, i).column_letter].width = 11
 wb.save(OUT); print('実CPA / 7日積み上げ sheets added:', OUT)
 
 # ---- 実CPA 週次推移（絶対評価つき）----
