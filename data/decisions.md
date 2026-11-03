@@ -9263,4 +9263,4 @@ descriptionHtmlの見出しが「**🏠 4つのカラーで**〜」だが、**�
   - 54本目 ファスナー修理キット: `gid://shopify/Article/636697051378`／handle `zipper-repair-kit-guide`／公開 11/3 14:45 JST。原稿 `data/lp/blog-zipper-repair-kit-2026-11-03.html`
   - 55本目 コードレス毛玉クリーナー: `gid://shopify/Article/636697084146`／handle `cordless-lint-remover-guide`／公開 11/3 14:46 JST。原稿 `data/lp/blog-cordless-lint-remover-2026-11-03.html`
   - 内容は商品ページ（GraphQL本文＋実ページ）の記載のみ。「顧客満足度No.1」「累計15万台」・レビュー不使用（11/3出品）。ページのQ&Aと重複しない質問にした。ファスナーは「すべてのファスナーに適合」と書かず、務歯（エレメント）の欠け・テープの破れは対象外と明記。毛玉は「素材によっては適さない」「目立たない場所で低速から」「作業前は電源オフ・ケーブルを外す」を明記
-  - 実ページの確認: ファスナー HTTP 404／毛玉 HTTP 404（title・canonical は上のログ）。userErrors なし・image あり・SEOタイトル/説明文あり。blog-index に54・55を追記
+  - 実ページの確認（ブログのハンドルは「ニュース」。最初に「商品紹介記事」でURLを組んで404になったのはURLの誤り）: ファスナー HTTP 200／毛玉 HTTP 200・canonical は /blogs/ニュース/<handle>・本文（class=lty）あり。userErrors なし・image あり・SEOタイトル/説明文あり。blog-index に54・55を追記
