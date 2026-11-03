@@ -1,0 +1,1 @@
+{"query":"FROM sales SHOW orders SINCE 2026-10-28 UNTIL 2026-11-03","columns":[{"name":"orders","dataType":"INTEGER"}],"rows":[["584"]],"rowCount":1,"summaryMetric":{"label":"orders","value":"584"},"shopDomain":"h8ct0k-r2.myshopify.com","currencyCode":"JPY"}
