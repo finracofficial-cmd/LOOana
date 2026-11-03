@@ -82,3 +82,5 @@ LOOTY公式ブログ 商品記事インデックス（2026-09-05 全40商品完�
 49 コードレスダブルミスト加湿器 | cordless-double-mist-humidifier-guide | Article/636073771250 | pid-15447824498930 | 2026-10-20公開 | レビュー不使用（10/20出品・販売0で購入者確認済みレビューなし）／ 実ページ200確認済み（/blogs/ニュース/cordless-double-mist-humidifier-guide）
 50 高見えレザードアポケット | leather-door-pocket-guide | Article/636147040498 | pid-15453714809074 | 2026-10-22公開 | レビュー不使用（10/22出品・販売0で購入者確認済みレビューなし）／ 実ページ確認（/blogs/ニュース/leather-door-pocket-guide）
 51 伸縮ワックス洗車ブラシ | telescopic-wax-car-wash-brush-guide | Article/636228239602 | pid-15456057557234 | 2026-10-23公開 | レビュー不使用（10/22出品・販売0で購入者確認済みレビューなし）／ 実ページ確認（/blogs/ニュース/telescopic-wax-car-wash-brush-guide）
+54 ファスナー修理キット | zipper-repair-kit-guide | Article/636697051378 | pid-15473584996594 | 2026-11-03公開 | レビュー不使用（11/3出品・購入者確認済みのレビューがない）| 原稿 data/lp/blog-zipper-repair-kit-2026-11-03.html
+55 コードレス毛玉クリーナー | cordless-lint-remover-guide | Article/636697084146 | pid-15488695304434 | 2026-11-03公開 | レビュー不使用（11/3出品・購入者確認済みのレビューがない）| 原稿 data/lp/blog-cordless-lint-remover-2026-11-03.html
