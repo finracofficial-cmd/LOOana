@@ -1,0 +1,10 @@
+# FROM sessions SHOW sessions, sessions_with_cart_additions, sessions_that_reached_checkout, sessions_that_completed_checkout WHERE hour_of_day <= 18 GROUP BY day SINCE 2026-10-28 UNTIL 2026-11-04（店全体・11/04 19:5x取得）
+# day,sessions,cart_add,reached_checkout,completed
+2026-10-28,2299,139,128,64
+2026-10-29,2551,127,121,66
+2026-10-30,2008,112,95,55
+2026-10-31,2097,121,105,55
+2026-11-01,2174,136,127,79
+2026-11-02,2055,105,93,54
+2026-11-03,2520,126,110,68
+2026-11-04,1711,101,90,49
