@@ -1,0 +1,1 @@
+{"query": "FROM sales SHOW orders SINCE 2026-11-01 UNTIL 2026-11-07", "rows": [["617"]]}
