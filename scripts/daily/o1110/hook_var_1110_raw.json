@@ -1,0 +1,1 @@
+{"query": "FROM sales SHOW gross_sales, net_items_sold WHERE product_title CONTAINS 'ヘッドレストフック' GROUP BY product_variant_title SINCE 2026-11-10 UNTIL 2026-11-10 LIMIT 20", "note": "11/11 00時台取得", "rows": [["グレー", "3980", "1"], ["ブラウン", "3980", "1"]]}

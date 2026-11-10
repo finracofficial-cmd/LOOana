@@ -1,0 +1,1 @@
+{"query": "ordersCount created_at 2026-11-10 JST（全件・7,000円以上・8,000円以上・10,000円以上）", "note": "11/11 00時台取得", "result": {"data": {"all": {"count": 75, "precision": "EXACT"}, "b7": {"count": 12, "precision": "EXACT"}, "b8": {"count": 2, "precision": "EXACT"}, "b10": {"count": 2, "precision": "EXACT"}}}}

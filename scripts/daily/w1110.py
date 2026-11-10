@@ -1,0 +1,168 @@
+# -*- coding: utf-8 -*-
+"""[11/10終端の窓ビルダー] 2026-11-11 定例（昨日=11/10 火 実績。11/09の広告費は確定値に上書き済み）。実測のみ・毎回ゼロから積み直す。原価は9/20反映のCJ最新表（再調達原価ベース）。"""
+import csv, collections, datetime, json, pickle
+AD1110=165063  # キャンペーン合算（暫定・11/11 00時台 fresh取得）。11/10 終日の最終 14セット・182,000円（00:29 6商品変更・シーラー停止／15:20 アーチフィット新規）
+B='/home/user/LOOana/data/daily/'
+COST={'アーチフィット逆ヒールサンダル':1241,'シリコンホールド膝サポーター':1586,'電動眉シェーバー':974,'4WAY':1730,'害虫ブロッカー':867,'形状記憶日傘':1309,'完全遮光・形状記憶':1309,'卓上冷感クーラー':1996,
+'接触冷感UVパーカー':1434,'5WAY腰掛けファン':1848,'偏光・調光サングラス':893,'3WAYサーキュレーター':2485,
+'接触冷感UVアームカバー':784,'健康サンダル':1162,'瞬間冷感ポンチョ':987,'ムダ毛シェーバー':2798,
+'携帯電動シェーバー':1764,'バランスケアスリッパ':1304,'湯上がりガーゼワンピース':1968,'UV歯ブラシ除菌器':3240,
+'優先配送':0,'瞬間冷却ハンディファン':2053,'完全遮光・接触冷感UVハット':1411,'ネックマッサージャー':3034,
+'リカバリーサンダル':1309,'ナノバブルシャワーヘッド':2255,'姿勢サポートベルト':1429,'癒しの指圧マット':1648,
+'スマートノーズEMS美顔器':2453,'W固定スマホ車載ホルダー':1069,'ジェットウォッシャー':1259,'ビジュアル耳かき':1625,'姿勢サポートチェア':1811,
+'2WAYシートボックス':1547,'オートソープディスペンサー':3191,'スタイルアップインナー':1202,'快適マジックインソール':677,'むくみ取りかっさ':1149,'温感EMSフェイシャルワンド':2079,'4-in-1マルチクリーナー':2961,'ヘアドライタオル':859,'1秒折り畳みチェア':1455,'3D足臭リセットブラシ':598,'伸縮ガラスクリーナー':988,'ポータブルヒートシーラー':1119,'高見えレザーヘッドレストフック':1344,'もちふわ肉球サンダル':1165,'電動温熱カッサ':2483,'ハイウエストシェイプパンツ':845,'ロングニトリル家事手袋':700,'コードレスダブルミスト加湿器':1686,'高見えレザードアポケット':666,'伸縮ワックス洗車ブラシ':1600,'マグネットドアクッション':577,'ふわとろ高密度ブランケット':2842,'ファスナー修理キット':500,'コードレス毛玉クリーナー':1307,'ワイド水切りワイパー':963,'クリアビューレインガードフィルム':798}  # ドアクッション10/31出稿（4個入り1バリアント577）。ブランケットは10/31出稿・ノーマル2,842／ラージ3,887・4,703（販売が出たらバリアント加重・下でassert）  # 加湿器は10/20出稿（Shopify unitCost 1,686）・ドアポケット10/22出稿（全5色666）・洗車ブラシ10/23出稿（2色とも1,600）  # 手袋は仮置き（キャラなし691〜700／キャラあり708〜717）。販売が出たらバリアント加重に切り替える  # シェイプパンツはサイズ別原価845〜867。販売が出たらバリアント加重にする（下でassert）
+PRICE={'アーチフィット逆ヒールサンダル':3980,'シリコンホールド膝サポーター':4980,'電動眉シェーバー':3980,'4WAY':4980,'害虫ブロッカー':3980,'形状記憶日傘':4980,'完全遮光・形状記憶':4980,'卓上冷感クーラー':5980,
+'接触冷感UVパーカー':3980,'5WAY腰掛けファン':4980,'偏光・調光サングラス':3980,'3WAYサーキュレーター':6980,
+'接触冷感UVアームカバー':3980,'健康サンダル':4980,'瞬間冷感ポンチョ':3980,'携帯電動シェーバー':4980,
+'バランスケアスリッパ':4980,'湯上がりガーゼワンピース':5980,'UV歯ブラシ除菌器':8980,'瞬間冷却ハンディファン':5980,
+'完全遮光・接触冷感UVハット':4980,'ナノバブルシャワーヘッド':6980,'ネックマッサージャー':8980,
+'リカバリーサンダル':3980,'姿勢サポートベルト':5980,'癒しの指圧マット':5980,'優先配送':536,
+'ナノガラス脱毛パッド':3980,'ムダ毛シェーバー':6980,'壁掛けディスペンサー':6980,
+'スマートノーズEMS美顔器':5980,'W固定スマホ車載ホルダー':3980,'ジェットウォッシャー':4980,'ビジュアル耳かき':4980,'姿勢サポートチェア':5980,
+'2WAYシートボックス':4980,'オートソープディスペンサー':7980,'スタイルアップインナー':3980,'快適マジックインソール':3980,'むくみ取りかっさ':3980,'温感EMSフェイシャルワンド':5980,'4-in-1マルチクリーナー':6980,'ヘアドライタオル':3980,'1秒折り畳みチェア':4980,'3D足臭リセットブラシ':3980,'伸縮ガラスクリーナー':3980,'ポータブルヒートシーラー':3980,'高見えレザーヘッドレストフック':3980,'もちふわ肉球サンダル':3980,'電動温熱カッサ':6980,'ハイウエストシェイプパンツ':3980,'ロングニトリル家事手袋':3980,'コードレスダブルミスト加湿器':4980,'高見えレザードアポケット':3980,'伸縮ワックス洗車ブラシ':4980,'マグネットドアクッション':3980,'ふわとろ高密度ブランケット':6980,'ファスナー修理キット':3980,'コードレス毛玉クリーナー':4980,'ワイド水切りワイパー':3980,'クリアビューレインガードフィルム':3980}
+MAP={'アーチフィット逆ヒールサンダル':'アーチフィット逆ヒールサンダル','シリコンホールド膝サポーター':'シリコンホールド膝サポーター','ネックマッサージャー':'ネックマッサージャー2','4WAY':'4WAY 取り付けOK 小型瞬間冷却ハンディファン','完全遮光・形状記憶':'完全遮光・形状記憶・晴雨兼用・UV日傘',
+'3WAYサーキュレーター':'3WAYサーキュレーター扇風機','壁掛けディスペンサー':'ディスペンサー',
+'ヘアドライタオル':'高吸水・速乾ヘアドライタオル','ハイウエストシェイプパンツ':'ハイウエストシェイプパンツ','ロングニトリル家事手袋':'ロングニトリル家事手袋','コードレスダブルミスト加湿器':'コードレスダブルミスト加湿器','高見えレザードアポケット':'高見えレザードアポケット','伸縮ワックス洗車ブラシ':'伸縮ワックス洗車ブラシ','マグネットドアクッション':'マグネットドアクッション','ふわとろ高密度ブランケット':'ふわとろ高密度ブランケット','ファスナー修理キット':'ファスナー修理キット','コードレス毛玉クリーナー':'コードレス毛玉クリーナー','ワイド水切りワイパー':'ワイド水切りワイパー','クリアビューレインガードフィルム':'クリアビューレインガードフィルム'}
+# バリアント別実測（2026-08-07にShopifyへ4窓それぞれクエリして取得）
+VAR={'ナノガラス脱毛パッド':{'d1':(30,12),'d3':(69,34),'d7':(211,102),'d30':(867,381),'cum':(468,203)},
+     '壁掛けディスペンサー':{'d1':(0,0),'d3':(0,2),'d7':(1,2),'d30':(32,10),'cum':(3,2)}}
+VARCD={'高見えレザーヘッドレストフック':('2026-10-07',732)}  # 10/7からCJ原価732円（原価表: 商品$1.20＋送料$3.32）。Shopifyは10/16に732へ更新
+VARC={'ナノガラス脱毛パッド':(757,740),'壁掛けディスペンサー':(2604,2114),'高見えレザーヘッドレストフック':(1275,1344)}  # フック: ブラック1,275／ブラウン・グレー1,344（Shopify unitCost・9/9更新）。10/16から加重
+# 窓内で売価が動いた商品はvariant別net_items_sold（返品0を実測確認済）を販売数として使用
+PRICEBYDATE={'ネックマッサージャー':[('0000-00-00',9980),('2026-09-02',8980)],   # 9/02〜10/02は販売0件の間に値下げ（日付は窓の外）
+ '優先配送':[('0000-00-00',536),('2026-08-23',790)],                       # 商品ページは590円だが実課金は536円のまま
+ '接触冷感UVパーカー':[('0000-00-00',3980),('2026-08-14',4980),('2026-08-16',3980)],  # 8/13 09:58 値上げ → 8/15 07:10 戻し
+ 'ムダ毛シェーバー':[('0000-00-00',5980),('2026-07-28',6980)],     # 7/27 値上げ
+ '3WAYサーキュレーター':[('0000-00-00',5980),('2026-08-03',6980)], # 8/02 値上げ
+ '完全遮光・接触冷感UVハット':[('0000-00-00',5980),('2026-07-24',4980)],
+ '姿勢サポートチェア':[('0000-00-00',7980),('2026-08-03',5980)],   # 8/04に5,980で広告再開
+ '湯上がりガーゼワンピース':[('0000-00-00',4980),('2026-07-20',5980)]}
+MIXEDDAY={'優先配送':{'2026-08-21':(536,790)},
+ '接触冷感UVパーカー':{'2026-08-13':(3980,4980),'2026-08-15':(4980,3980)},         # 値上げ当日の新旧混在（旧価,新価）
+ 'ムダ毛シェーバー':{'2026-07-27':(5980,6980)},
+ '3WAYサーキュレーター':{'2026-08-02':(5980,6980)},
+ '湯上がりガーゼワンピース':{'2026-07-19':(4980,5980)}}
+def price_on(n,d):
+    r=None
+    for since,p in PRICEBYDATE[n]:
+        if d>=since: r=p
+    return r
+def mixed_qty(g,p_old,p_new):
+    for b in range(0, g//p_new + 1):
+        rem=g-b*p_new
+        if rem%p_old==0: return rem//p_old+b
+    raise AssertionError(('混在日を分解できない',g,p_old,p_new))
+HOL={'2026-07-20','2026-08-11','2026-09-21','2026-09-22','2026-09-23','2026-10-12','2026-11-03'}  # 海の日・山の日・敬老の日・国民の休日・秋分の日・スポーツの日・文化の日
+WD=['月','火','水','木','金','土','日']; wd=lambda d: WD[datetime.date(*map(int,d.split('-'))).weekday()]
+S=collections.defaultdict(lambda: collections.defaultdict(lambda:[0,0]))
+for r in csv.DictReader(open(B+'daily_sales.csv',encoding='utf-8')):
+    S[r['name']][r['date']][0]+=int(r['gross']); S[r['name']][r['date']][1]+=int(r['disc'])
+V=collections.defaultdict(lambda: collections.defaultdict(int))   # V[商品][日付][原価グループ]
+for r in csv.DictReader(open(B+'daily_variant.csv',encoding='utf-8')):
+    V[r['name']][r['date']] = V[r['name']].get(r['date'],{}) if isinstance(V[r['name']].get(r['date']),dict) else {}
+VG=collections.defaultdict(lambda: collections.defaultdict(lambda: collections.defaultdict(int)))
+for r in csv.DictReader(open(B+'daily_variant.csv',encoding='utf-8')):
+    VG[r['name']][r['date']][r['cost_group']] += int(r['gross'])
+AD=collections.defaultdict(lambda: collections.defaultdict(float))
+for r in csv.DictReader(open(B+'daily_ad.csv',encoding='utf-8')):
+    AD[r['campaign']][r['date']]+=float(r['cost'])
+ALLD=sorted({d for v in S.values() for d in v})
+END='2026-11-10'; ALLD=[d for d in ALLD if d<=END]
+D1=ALLD[-1:]; D3=ALLD[-3:]; D7=ALLD[-7:]; D30=ALLD[-30:]
+assert D1==['2026-11-10'] and D3[0]=='2026-11-08' and D7[0]=='2026-11-04', (D1,D3[0],D7[0])
+assert len(D30)==30 and D30[0]=='2026-10-12', (len(D30),D30[0])
+assert not any(S['アーチフィット逆ヒールサンダル'][d][0] for d in S['アーチフィット逆ヒールサンダル']), 'アーチフィットに販売あり→サイズ別原価（1,176/1,192/1,208/1,225/1,241）で加重すること'
+assert not any(S['ふわとろ高密度ブランケット'][d][0] for d in S['ふわとろ高密度ブランケット']), 'ブランケットに販売あり→バリアント別原価（ノーマル2,842／ラージ3,887・4,703）で加重すること'
+assert not any('シェイプパンツ' in n and any(S[n][d][0] for d in S[n]) for n in S), 'シェイプパンツに販売あり→バリアント別原価で加重すること'
+# 家事手袋: 10/29に初販売1個（ブルー/キャラクターなし/L・Shopify unitCost 700）→ COST 700 はその実測値。2個目以降が出たらバリアント加重にする
+assert sum(S['ロングニトリル家事手袋'][d][0] for d in S['ロングニトリル家事手袋'])==3980, '家事手袋に2個目→バリアント別原価で加重すること'
+STORE={d: sum(v[d][0]-v[d][1] for v in S.values() if d in v) for d in ALLD}
+GROSSD={d: sum(v[d][0] for v in S.values() if d in v) for d in ALLD}
+base=[d for d in ALLD[-30:] if d not in HOL]
+byw=collections.defaultdict(list)
+for d in base: byw[wd(d)].append(STORE[d])
+avg=sum(STORE[d] for d in base)/len(base)
+IDX={k: sum(v)/len(v)/avg*100 for k,v in byw.items()}
+WIN={}
+def qty(n,days,key):
+    assert key in WIN and days==WIN[key], f'窓キー取り違え key={key}'
+    g=sum(S[n][d][0] for d in days if d in S[n])
+    if g==0: return 0,0
+    if n in VARC:
+        # 窓ごとの手打ちをやめ、日次バリアントCSVから毎回積み直す（冪等）
+        GP={'ナノガラス脱毛パッド':{'白緑':3980,'黒桃':3980},'高見えレザーヘッドレストフック':{'黒':3980,'茶灰':3980},
+            '壁掛けディスペンサー':{'3本':6980,'2本':5980}}
+        CG={'ナノガラス脱毛パッド':{'白緑':VARC[n][0],'黒桃':VARC[n][1]},'高見えレザーヘッドレストフック':{'黒':VARC[n][0],'茶灰':VARC[n][1]},
+            '壁掛けディスペンサー':{'3本':VARC[n][0],'2本':VARC[n][1]}}
+        q=0; cost=0; chk=0
+        for d in days:
+            for grp,gg in VG[n].get(d,{}).items():
+                if not gg: continue
+                x=gg/GP[n][grp]
+                assert abs(x-round(x))<1e-6,(n,d,grp,gg)
+                x=round(x); q+=x; cost+=x*(VARCD[n][1] if n in VARCD and d>=VARCD[n][0] else CG[n][grp]); chk+=gg
+        assert chk==g,(n,key,chk,g)   # バリアント合計 = その窓の gross
+        return q, cost
+    if n in PRICEBYDATE:
+        q=0
+        for d in days:
+            gd=S[n][d][0] if d in S[n] else 0
+            if not gd: continue
+            if n in MIXEDDAY and d in MIXEDDAY[n]:
+                q+=mixed_qty(gd,*MIXEDDAY[n][d]); continue
+            pd=price_on(n,d); x=gd/pd
+            assert abs(x-round(x))<1e-6,(n,d,gd,pd)
+            q+=round(x)
+        return q, q*COST[n]
+    q=g/PRICE[n]; assert abs(q-round(q))<1e-6,(n,key,g,PRICE[n]); q=round(q)
+    return q, q*COST[n]
+def agg(days,key):
+    sal={};dsc={};qt={};cst={}
+    for n,v in S.items():
+        if n=='': continue
+        g=sum(v[d][0] for d in days if d in v); dc=sum(v[d][1] for d in days if d in v)
+        if g==0 and dc==0: continue
+        sal[n]=g-dc; dsc[n]=dc; qt[n],cst[n]=qty(n,days,key)
+    return sal,dsc,qt,cst
+CUM=[d for d in ALLD if d>='2026-11-01']   # 当月累積 = 11月（10日目）
+assert len(CUM)==10 and CUM[0]=='2026-11-01'
+WIN.update(d1=D1,d3=D3,d7=D7,d30=D30,cum=CUM)
+N1,DC1,Q1,K1=agg(D1,'d1'); N3,DC3,Q3,K3=agg(D3,'d3')
+N7,DC7,Q7,K7=agg(D7,'d7'); N30,DC30,Q30,K30=agg(D30,'d30')
+NC,DCC,QC,KC=agg(CUM,'cum')
+for lbl,N,days in [('前日',N1,D1),('3日',N3,D3),('7日',N7,D7),('30日',N30,D30),('当月累積',NC,CUM)]:
+    assert sum(N.values())==sum(STORE[d] for d in days),(lbl,)
+def A(days,n): return sum(AD[MAP.get(n,n)].get(d,0) for d in days)
+def CAT(days): return sum(AD[c].get(d,0) for c in ('カタログ全部（テスト）','カタログ全部（テスト） 夏以外') for d in days)
+def ACCT(days): return sum(sum(AD[c].get(d,0) for c in AD) for d in days)
+# 11/10の縦照合（全店1クエリ実測 gross 375,780円 / 値引 10,547円 / 注文75件 / 点数103（VIP特典11・返品0））。11/09は gross 405,870 / 値引 11,743 / 79件
+assert GROSSD['2026-11-05']==461960 and sum(S[n]['2026-11-05'][1] for n in S if '2026-11-05' in S[n])==19069
+assert GROSSD['2026-11-04']==418140 and sum(S[n]['2026-11-04'][1] for n in S if '2026-11-04' in S[n])==20162
+assert GROSSD['2026-11-06']==530580 and sum(S[n]['2026-11-06'][1] for n in S if '2026-11-06' in S[n])==20707
+assert GROSSD['2026-11-07']==501240 and sum(S[n]['2026-11-07'][1] for n in S if '2026-11-07' in S[n])==18512
+assert GROSSD['2026-11-08']==598010 and sum(S[n]['2026-11-08'][1] for n in S if '2026-11-08' in S[n])==17913
+assert GROSSD['2026-11-09']==405870 and sum(S[n]['2026-11-09'][1] for n in S if '2026-11-09' in S[n])==11743
+assert GROSSD['2026-11-10']==375780 and sum(S[n]['2026-11-10'][1] for n in S if '2026-11-10' in S[n])==10547
+assert abs(ACCT(D1)-AD1110)<1, ('11/10 広告費 照合', ACCT(D1))
+assert abs(sum(AD[c].get('2026-11-09',0) for c in AD)-200083)<1, '11/09確定'
+assert abs(sum(AD[c].get('2026-11-08',0) for c in AD)-241135)<1, '11/08確定'
+assert abs(sum(AD[c].get('2026-11-07',0) for c in AD)-198251)<1, '11/07確定'
+assert abs(sum(AD[c].get('2026-11-06',0) for c in AD)-188737)<1, '11/06確定'
+assert abs(sum(AD[c].get('2026-11-05',0) for c in AD)-203877)<1, '11/05確定'
+assert abs(sum(AD[c].get('2026-11-04',0) for c in AD)-187231)<1, '11/04確定'
+assert abs(sum(AD[c].get('2026-11-03',0) for c in AD)-212735)<1, '11/03確定'
+assert abs(sum(AD[c].get('2026-11-02',0) for c in AD)-216365)<1, '11/02確定'
+assert abs(sum(AD[c].get('2026-11-01',0) for c in AD)-230113)<1, '11/01確定'
+ALLN=set(N1)|set(N3)|set(N7)|set(N30)|set(NC)
+for _n,_c in MAP.items():   # 広告費はあるが売上0の商品（新規出稿直後など）も広告費を商品側に載せる
+    if any(AD[_c].get(d,0) for d in D30): ALLN.add(_n)
+pickle.dump(dict(D1=D1,D3=D3,D7=D7,D30=D30,CUM=CUM,NC=NC,DCC=DCC,QC=QC,KC=KC,ACCTC=ACCT(CUM),CATC=CAT(CUM),AC={n:A(CUM,n) for n in ALLN},STORE=STORE,GROSSD=GROSSD,IDX=IDX,
+  N1=N1,N3=N3,N7=N7,N30=N30,DC1=DC1,DC7=DC7,DC30=DC30,Q1=Q1,Q3=Q3,Q7=Q7,Q30=Q30,
+  K1=K1,K3=K3,K7=K7,K30=K30,COST=COST,PRICE=PRICE,MAP=MAP,
+  A1={n:A(D1,n) for n in ALLN},A3={n:A(D3,n) for n in ALLN},A7={n:A(D7,n) for n in ALLN},A30={n:A(D30,n) for n in ALLN},
+  CAT1=CAT(D1),CAT3=CAT(D3),CAT7=CAT(D7),CAT30=CAT(D30),
+  ACCT1=ACCT(D1),ACCT3=ACCT(D3),ACCT7=ACCT(D7),ACCT30=ACCT(D30)),open('/tmp/rep1110w.pkl','wb'))
+print('窓 D1',D1,'D3',D3[0],'D7',D7[0],'D30',D30[0],'-',D30[-1])
+print('全店 実売 前日',f"{sum(N1.values()):,}",'3日',f"{sum(N3.values()):,}",'7日',f"{sum(N7.values()):,}",'30日',f"{sum(N30.values()):,}")
+print('広告 前日',f"{ACCT(D1):,.0f}",'7日',f"{ACCT(D7):,.0f}",'30日',f"{ACCT(D30):,.0f}")
+print('曜日指数', {k:round(v,1) for k,v in sorted(IDX.items(),key=lambda x:-x[1])})
