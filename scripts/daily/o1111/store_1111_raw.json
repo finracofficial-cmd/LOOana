@@ -1,0 +1,1 @@
+{"query": "FROM sales SHOW gross_sales, discounts, net_items_sold, returns, orders SINCE 2026-11-11 UNTIL 2026-11-11", "note": "11/12 00時台取得", "rows": [["346920", "-8756", "94", "0", "72"]]}
