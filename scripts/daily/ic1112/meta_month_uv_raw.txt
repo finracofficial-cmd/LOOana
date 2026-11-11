@@ -1,0 +1,5 @@
+# data_query FA・11/12 01時ごろ取得・2025-12-01〜2026-06-28・Asia/Tokyo・filter: adcampaign_name =@ 歯ブラシ
+[3]{Yearmonth,adcampaign_name,cost,offsite_conversions_fb_pixel_purchase}:
+  2026|04,UV歯ブラシ除菌器,142039,62
+  2026|05,UV歯ブラシ除菌器,654819,169
+  2026|06,UV歯ブラシ除菌器,358646,101
