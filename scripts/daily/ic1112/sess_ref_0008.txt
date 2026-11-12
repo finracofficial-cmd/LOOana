@@ -1,0 +1,25 @@
+# FROM sessions SHOW sessions, sessions_with_cart_additions, sessions_that_completed_checkout WHERE hour_of_day <= 8 GROUP BY day, referrer_source, referrer_name SINCE 2026-11-10 UNTIL 2026-11-12 ORDER BY day ASC LIMIT 60（11/12 09:1x取得）
+# day,referrer_source,referrer_name,sessions,carts,completed
+2026-11-10,search,yahoo!,1,0,0
+2026-11-10,social,facebook,105,2,2
+2026-11-10,direct,,236,8,4
+2026-11-10,search,google,4,1,1
+2026-11-10,unknown,threads,8,1,1
+2026-11-10,social,instagram,264,15,8
+2026-11-10,unknown,shopify,2,0,0
+2026-11-11,social,facebook,140,12,6
+2026-11-11,search,yahoo!,4,1,1
+2026-11-11,social,tiktok,2,0,0
+2026-11-11,unknown,docomo,1,0,0
+2026-11-11,social,instagram,263,20,13
+2026-11-11,unknown,threads,7,1,0
+2026-11-11,direct,,166,7,4
+2026-11-11,search,google,4,0,0
+2026-11-12,email,gmail,1,0,0
+2026-11-12,search,yahoo!,2,0,0
+2026-11-12,social,facebook,152,9,4
+2026-11-12,search,google,10,2,1
+2026-11-12,unknown,threads,11,0,0
+2026-11-12,social,instagram,301,19,13
+2026-11-12,unknown,shopify,1,0,0
+2026-11-12,direct,,187,8,6
