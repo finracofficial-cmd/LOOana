@@ -1,0 +1,225 @@
+{
+ "multi_4in1": {
+  "steps": [
+   "clicked add-to-cart"
+  ],
+  "status": 200,
+  "pageInfo": {
+   "priceArea": "in-1マルチクリーナー【顧客満足度No.1獲得商品🥇】【全国送料無料🚗】 ¥15,980 ¥6,980 56% OFF 残りわずか お早めに 税込。 全国一律送料無料 🥇 日本の家庭で選ばれている総合ハンディクリーナー No.1 👇カラーをお選びいただけます！ マッドブラック シルバーパープル バリエーションは売り切れているか販売できません キーボードの隙間のホコリも、シートの奥",
+   "soldout": true,
+   "options": [
+    "👇カラーをお選びいただけます！",
+    "数量\n                    \n\n\n  \n\n"
+   ],
+   "radios": [
+    "マッドブラック*",
+    "シルバーパープル"
+   ]
+  },
+  "btnCount": 1,
+  "btnText": "カートに追加する",
+  "btnDisabled": false,
+  "cart": {
+   "item_count": 1,
+   "total_price": 698000,
+   "items": [
+    {
+     "title": "【本日終了⏰】【累計15万台突破🏆】LOOTY 4-in-1マルチクリーナー【",
+     "qty": 1,
+     "price": 698000
+    }
+   ]
+  },
+  "urlAfterAdd": "https://looty-japan.com/products/portable-small-wireless-mini-dust-blower",
+  "checkout": {
+   "status": 200,
+   "url": "https://looty-japan.com/checkouts/cn/hWNJ2teNkwNc6EmQj4LYMS14/ja-jp",
+   "title": "お支払い - LOOTY"
+  },
+  "checkoutHas": {
+   "email": true,
+   "pay": true,
+   "total": "",
+   "shopPay": false,
+   "errorText": []
+  },
+  "checkoutTextHead": "スキップしてコンテンツに移動する LOOTY オンラインストアに移動します 注文サマリー 合計金額 ￥6,980 LOOTY お支払い かんたん決済 または 連絡先 ログイン メールアドレス 注文の確認とカートのリマインダーに使用されます ",
+  "pageErrors": [
+   "TypeError: Cannot set properties of null (setting 'textContent')",
+   "TypeError: Cannot set properties of null (setting 'textContent')",
+   "TypeError: Cannot set properties of null (setting 'textContent')",
+   "TypeError: Cannot set properties of null (setting 'textContent')",
+   "TypeError: Cannot set properties of null (setting 'textContent')"
+  ]
+ },
+ "brush": {
+  "steps": [
+   "clicked add-to-cart"
+  ],
+  "status": 200,
+  "pageInfo": {
+   "priceArea": " 伸縮ワックス洗車ブラシ【顧客満足度No.1獲得商品🥇】【全国送料無料🚗】 ¥12,890 ¥4,980 61% OFF 残りわずか お早めに 税込。 全国一律送料無料 🥇 日本の家庭で選ばれている洗車グッズ No.1 👇カラーをお選びいただけます！ ベージュ（明るい毛糸） ブラウン（茶色い毛糸） 朝バタつく時も、週末のドライブ前も、握ってボディの上をサッと払うだけ。🌟 ワック",
+   "soldout": false,
+   "options": [
+    "👇カラーをお選びいただけます！",
+    "数量\n                    \n\n\n  \n\n"
+   ],
+   "radios": [
+    "ベージュ（明るい毛糸）*",
+    "ブラウン（茶色い毛糸）"
+   ]
+  },
+  "btnCount": 1,
+  "btnText": "カートに追加する",
+  "btnDisabled": false,
+  "cart": {
+   "item_count": 1,
+   "total_price": 498000,
+   "items": [
+    {
+     "title": "【本日終了⏰】【累計15万台突破🏆】LOOTY 伸縮ワックス洗車ブラシ【顧客満",
+     "qty": 1,
+     "price": 498000
+    }
+   ]
+  },
+  "urlAfterAdd": "https://looty-japan.com/products/car-wash-cotton-thread-telescopic-wax-mop",
+  "checkout": {
+   "status": 200,
+   "url": "https://looty-japan.com/checkouts/cn/hWNJ2tgqhngErphAAej3OdN4/ja-jp",
+   "title": "お支払い - LOOTY"
+  },
+  "checkoutHas": {
+   "email": true,
+   "pay": true,
+   "total": "",
+   "shopPay": false,
+   "errorText": []
+  },
+  "checkoutTextHead": "スキップしてコンテンツに移動する LOOTY オンラインストアに移動します 注文サマリー 合計金額 ￥4,980 LOOTY お支払い かんたん決済 または 連絡先 ログイン メールアドレス 注文の確認とカートのリマインダーに使用されます ",
+  "pageErrors": [
+   "TypeError: Cannot set properties of null (setting 'textContent')",
+   "TypeError: Cannot set properties of null (setting 'textContent')",
+   "TypeError: Cannot set properties of null (setting 'textContent')",
+   "TypeError: Cannot set properties of null (setting 'textContent')",
+   "TypeError: Cannot set properties of null (setting 'textContent')"
+  ]
+ },
+ "door": {
+  "steps": [
+   "clicked add-to-cart"
+  ],
+  "status": 200,
+  "pageInfo": {
+   "priceArea": "マグネットドアクッション【顧客満足度No.1獲得商品🥇】【全国送料無料🚗】 ¥9,980 ¥3,980 60% OFF 残りわずか お早めに 税込。 全国一律送料無料 🥇 幅広い車種に対応。愛車のドアに、ピタッと後付け！ ドアケアグッズNo1 👇カラーをお選びいただけます！ ブラック 👇数量をお選びいただけます！ 4個入り 朝バタつく時も、夜遅く帰宅した時も、ドアを閉めるたびの「",
+   "soldout": false,
+   "options": [
+    "👇カラーをお選びいただけます！",
+    "👇数量をお選びいただけます！",
+    "数量\n                    \n\n\n  \n\n"
+   ],
+   "radios": [
+    "ブラック*",
+    "4個入り*"
+   ]
+  },
+  "btnCount": 1,
+  "btnText": "カートに追加する",
+  "btnDisabled": false,
+  "cart": {
+   "item_count": 1,
+   "total_price": 398000,
+   "items": [
+    {
+     "title": "【本日終了⏰】【累計15万台突破🏆】LOOTY マグネットドアクッション【顧客",
+     "qty": 1,
+     "price": 398000
+    }
+   ]
+  },
+  "urlAfterAdd": "https://looty-japan.com/products/silicone-magnetic-door-lock-damping-pad-for-tesla-refresh-model-protective-accessory",
+  "checkout": {
+   "status": 200,
+   "url": "https://looty-japan.com/checkouts/cn/hWNJ2tjHJlcnGy6c5iWaArJa/ja-jp",
+   "title": "お支払い - LOOTY"
+  },
+  "checkoutHas": {
+   "email": true,
+   "pay": true,
+   "total": "",
+   "shopPay": false,
+   "errorText": []
+  },
+  "checkoutTextHead": "スキップしてコンテンツに移動する LOOTY オンラインストアに移動します 注文サマリー 合計金額 ￥3,980 LOOTY お支払い かんたん決済 または 連絡先 ログイン メールアドレス 注文の確認とカートのリマインダーに使用されます ",
+  "pageErrors": [
+   "TypeError: Cannot set properties of null (setting 'textContent')",
+   "TypeError: Cannot set properties of null (setting 'textContent')",
+   "TypeError: Cannot set properties of null (setting 'textContent')",
+   "TypeError: Cannot set properties of null (setting 'textContent')",
+   "TypeError: Cannot set properties of null (setting 'textContent')"
+  ]
+ },
+ "insole": {
+  "steps": [
+   "clicked add-to-cart"
+  ],
+  "status": 200,
+  "pageInfo": {
+   "priceArea": " 快適マジックインソール【顧客満足度No.1獲得商品🥇】【全国送料無料🚗】 ¥9,980 ¥3,980 60% OFF 残りわずか お早めに 税込。 全国一律送料無料 🥇 立ち仕事・スポーツ好きに選ばれている疲労対策インソール No.1 👇カラーをお選びいただけます！ ブラック グレー オレンジ グリーン バリエーションは売り切れているか販売できません 👇サイズをお選びいただけ",
+   "soldout": true,
+   "options": [
+    "👇カラーをお選びいただけます！",
+    "👇サイズをお選びいただけます！",
+    "数量\n                    \n\n\n  \n\n"
+   ],
+   "radios": [
+    "ブラック*",
+    "グレー",
+    "オレンジ",
+    "グリーン",
+    "22.5~23.5cm（35~36）*",
+    "23.5~24.5cm（37~38）",
+    "24.5~25.5cm（39~40）",
+    "25.5~26.5cm（41~42）",
+    "26.5~27.5cm（43~44）",
+    "27.5~28.5cm（45~46）",
+    "28.5~29.5cm（47~48）"
+   ]
+  },
+  "btnCount": 1,
+  "btnText": "カートに追加する",
+  "btnDisabled": false,
+  "cart": {
+   "item_count": 1,
+   "total_price": 398000,
+   "items": [
+    {
+     "title": "【本日終了⏰】【累計15万台突破🏆】LOOTY 快適マジックインソール【顧客満",
+     "qty": 1,
+     "price": 398000
+    }
+   ]
+  },
+  "urlAfterAdd": "https://looty-japan.com/products/soft-super-sports-shock-absorption-sweat-absorbent-sockliner-with-massage-function",
+  "checkout": {
+   "status": 200,
+   "url": "https://looty-japan.com/checkouts/cn/hWNJ2tllUJNv4KIsF10AF40A/ja-jp",
+   "title": "お支払い - LOOTY"
+  },
+  "checkoutHas": {
+   "email": true,
+   "pay": true,
+   "total": "",
+   "shopPay": false,
+   "errorText": []
+  },
+  "checkoutTextHead": "スキップしてコンテンツに移動する LOOTY オンラインストアに移動します 注文サマリー 合計金額 ￥3,980 LOOTY お支払い かんたん決済 または 連絡先 ログイン メールアドレス 注文の確認とカートのリマインダーに使用されます ",
+  "pageErrors": [
+   "TypeError: Failed to fetch",
+   "TypeError: Cannot set properties of null (setting 'textContent')",
+   "TypeError: Cannot set properties of null (setting 'textContent')",
+   "TypeError: Cannot set properties of null (setting 'textContent')",
+   "TypeError: Cannot set properties of null (setting 'textContent')"
+  ]
+ }
+}
