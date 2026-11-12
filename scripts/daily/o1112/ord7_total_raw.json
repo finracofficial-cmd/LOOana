@@ -1,0 +1,9 @@
+{
+"query": "FROM sales SHOW orders SINCE 2026-11-06 UNTIL 2026-11-12",
+"note": "11/13 01時台取得",
+"rows": [
+[
+"600"
+]
+]
+}

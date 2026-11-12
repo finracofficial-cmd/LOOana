@@ -1,0 +1,23 @@
+# data_query FA fresh・11/13 01時台取得・11/12 広告セット別（adsetdaily_budget は遅延あり＝参考外。予算は campaign_and_resource_get 直読が正）
+[21]{adcampaign_name,adset_name,adsetstatus,adsetdaily_budget,cost,offsite_conversions_fb_pixel_purchase,offsite_conversion_value_fb_pixel_purchase,impressions,link_clicks,landing_page_views,offsite_conversions_fb_pixel_add_to_cart}:
+  ワイド水切りワイパー,ワイド水切りワイパー,ACTIVE,22000,24659,14,64884,7868,281,269,45
+  伸縮ガラスクリーナー,伸縮ガラスクリーナー sabu,ACTIVE,16000,18527,7,31044,8405,260,244,26
+  ナノガラス脱毛パッド,ナノガラス脱毛パッド２,ACTIVE,16000,17933,12,51734,14059,266,252,24
+  W固定スマホ車載ホルダー,W固定スマホ車載ホルダー -sab,ACTIVE,13000,15464,9,45173,8843,225,211,16
+  伸縮ワックス洗車ブラシ,伸縮ワックス洗車ブラシ,ACTIVE,12000,13379,1,4980,2926,104,102,9
+  伸縮ガラスクリーナー,伸縮ガラスクリーナー,ACTIVE,13000,12184,8,38208,4089,159,144,24
+  快適マジックインソール,快適マジックインソール,ACTIVE,10000,10232,4,19104,5185,98,90,16
+  カタログ全部（テスト）,カタログ全部（テスト）,ACTIVE,9000,9734,null,null,2716,96,83,4
+  W固定スマホ車載ホルダー,W固定スマホ車載ホルダー,ACTIVE,10000,8702,1,3980,2729,103,97,4
+  マグネットドアクッション,マグネットドアクッション,ACTIVE,8000,8652,5,23084,2017,102,91,8
+  防風あったか裏起毛パンツ,防風あったか裏起毛パンツ,ACTIVE,8000,8644,3,21293,2924,101,100,7
+  4-in-1マルチクリーナー,4-in-1マルチクリーナー,ACTIVE,8000,8479,2,14750,3991,137,130,12
+  クリアビューレインガードフィルム,クリアビューレインガードフィルム,PAUSED,10000,5752,null,null,1173,45,41,null
+  UV歯ブラシ除菌器,UV歯ブラシ除菌器,CAMPAIGN_PAUSED,10000,5651,null,null,2029,52,43,null
+  高見えレザーヘッドレストフック,高見えレザーヘッドレストフック - 1112複製,CAMPAIGN_PAUSED,8000,4690,1,3980,1096,31,26,1
+  バランスケアスリッパ,バランスケアスリッパ,CAMPAIGN_PAUSED,8000,4286,null,null,1878,30,28,null
+  すき間収納シートポケット,すき間収納シートポケット,CAMPAIGN_PAUSED,8000,4270,null,null,819,29,24,2
+  クリアビューレインガードフィルム,クリアビューレインガードフィルム - コピー,CAMPAIGN_PAUSED,5000,1766,null,null,464,26,25,null
+  コードレスダブルミスト加湿器,コードレスダブルミスト加湿器,CAMPAIGN_PAUSED,8000,136,null,null,36,1,3,null
+  ポータブルヒートシーラー,ポータブルヒートシーラー,CAMPAIGN_PAUSED,8000,0,null,null,null,null,null,null
+  姿勢サポートチェア,姿勢サポートチェア,CAMPAIGN_PAUSED,9000,0,null,null,null,null,1,null
