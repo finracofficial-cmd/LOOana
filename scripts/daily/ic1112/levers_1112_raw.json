@@ -1,0 +1,78 @@
+{
+ "note": "11/12 10:1x取得",
+ "returning_30d": {
+  "query": "FROM sales SHOW orders, customers, new_customers, returning_customers, returning_customer_rate SINCE 2026-10-13 UNTIL 2026-11-11",
+  "rows": [
+   [
+    "2770",
+    "2681",
+    "2520",
+    "232",
+    "0.0865348750466244"
+   ]
+  ]
+ },
+ "referrer_30d": {
+  "query": "FROM sessions SHOW sessions, sessions_that_completed_checkout GROUP BY referrer_source SINCE 2026-10-13 UNTIL 2026-11-11 ORDER BY sessions DESC LIMIT 10",
+  "rows": [
+   [
+    "social",
+    "63952",
+    "2027"
+   ],
+   [
+    "direct",
+    "28661",
+    "602"
+   ],
+   [
+    "search",
+    "1187",
+    "67"
+   ],
+   [
+    "unknown",
+    "1186",
+    "18"
+   ],
+   [
+    "email",
+    "135",
+    "0"
+   ],
+   [
+    "",
+    "12",
+    "4"
+   ]
+  ]
+ },
+ "graphql": {
+  "customers_all": {
+   "count": 33915,
+   "precision": "EXACT"
+  },
+  "vip1000_orders_since_1013": {
+   "count": 1
+  },
+  "abandoned_checkouts_1105_1111": {
+   "count": 125
+  },
+  "apps": [
+   "Messaging",
+   "Judge.me Reviews",
+   "Bundler - Bundles App",
+   "CJdropshipping: Much Faster",
+   "Kaching Bundles",
+   "Monster Cart Upsell+Free Gifts",
+   "Flow",
+   "Selleasy",
+   "Shopify Claude Connector App",
+   "Supermetrics",
+   "Search & Discovery",
+   "ProveSource",
+   "Pumper Bundles"
+  ],
+  "memo": "customersCount の subscribed / orders_count>=2 は全件と同じ数が返った（絞り込みが効いていない）ので使わない"
+ }
+}
