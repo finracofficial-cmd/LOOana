@@ -1,0 +1,27 @@
+{
+"query": "FROM sessions SHOW sessions, sessions_with_cart_additions, sessions_that_reached_checkout, sessions_that_completed_checkout WHERE landing_page_path = '/products/car-seat-gap-plug-strip-storage-box' GROUP BY day SINCE 2026-11-11 UNTIL 2026-11-12 ORDER BY day ASC LIMIT 10",
+"note": "11/12 09:3x取得",
+"columns": [
+"day",
+"sessions",
+"sessions_with_cart_additions",
+"sessions_that_reached_checkout",
+"sessions_that_completed_checkout"
+],
+"rows": [
+[
+"2026-11-11",
+"4",
+"1",
+"1",
+"1"
+],
+[
+"2026-11-12",
+"22",
+"1",
+"1",
+"0"
+]
+]
+}
