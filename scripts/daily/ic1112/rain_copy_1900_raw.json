@@ -1,0 +1,91 @@
+{
+ "meta_ad": {
+  "fields": [
+   "adset_name",
+   "ad_name",
+   "adstatus",
+   "cost",
+   "impressions",
+   "link_clicks",
+   "landing_page_views",
+   "offsite_conversions_fb_pixel_add_to_cart",
+   "offsite_conversions_fb_pixel_initiate_checkout",
+   "offsite_conversions_fb_pixel_purchase"
+  ],
+  "cache_time": null,
+  "rows": [
+   "クリアビューレインガードフィルム,A,ADSET_PAUSED,5724,1166,45,41,null,null,null",
+   "クリアビューレインガードフィルム - コピー,A,ACTIVE,1721,457,26,20,null,null,null"
+  ]
+ },
+ "shop_utm": {
+  "query": "FROM sessions SHOW sessions, sessions_with_cart_additions, sessions_that_reached_checkout, sessions_that_completed_checkout WHERE landing_page_path = '/products/waterproof-film-for-car-rearview-mirror' GROUP BY utm_content SINCE 2026-11-12 UNTIL 2026-11-12 ORDER BY sessions DESC LIMIT 10",
+  "rows": [
+   [
+    "52583584030412",
+    "42",
+    "0",
+    "0",
+    "0"
+   ],
+   [
+    "52585126660412",
+    "30",
+    "0",
+    "0",
+    "0"
+   ],
+   [
+    "",
+    "6",
+    "0",
+    "0",
+    "0"
+   ],
+   [
+    "Facebook_UA",
+    "2",
+    "1",
+    "1",
+    "0"
+   ]
+  ],
+  "note": "11/12 19:0x取得（今日の途中）"
+ },
+ "meta_hour_adset": {
+  "fields": [
+   "adset_name",
+   "hourly_stats_aggregated_by_advertiser_time_zone",
+   "cost",
+   "impressions",
+   "link_clicks",
+   "landing_page_views",
+   "offsite_conversions_fb_pixel_add_to_cart",
+   "offsite_conversions_fb_pixel_purchase"
+  ],
+  "cache_time": "2026-11-12T09:58:48+00:00",
+  "rows": [
+   "クリアビューレインガードフィルム,\"00:00:00 - 00:59:59\",272,43,2,1,null,null",
+   "クリアビューレインガードフィルム,\"01:00:00 - 01:59:59\",436,55,5,5,null,null",
+   "クリアビューレインガードフィルム,\"02:00:00 - 02:59:59\",131,34,1,1,null,null",
+   "クリアビューレインガードフィルム,\"03:00:00 - 03:59:59\",267,57,4,4,null,null",
+   "クリアビューレインガードフィルム,\"04:00:00 - 04:59:59\",276,61,1,1,null,null",
+   "クリアビューレインガードフィルム,\"05:00:00 - 05:59:59\",565,104,9,6,null,null",
+   "クリアビューレインガードフィルム,\"06:00:00 - 06:59:59\",615,136,3,4,null,null",
+   "クリアビューレインガードフィルム,\"07:00:00 - 07:59:59\",992,201,7,6,null,null",
+   "クリアビューレインガードフィルム,\"08:00:00 - 08:59:59\",760,179,4,6,null,null",
+   "クリアビューレインガードフィルム,\"09:00:00 - 09:59:59\",538,135,3,1,null,null",
+   "クリアビューレインガードフィルム,\"10:00:00 - 10:59:59\",797,142,6,6,null,null",
+   "クリアビューレインガードフィルム,\"11:00:00 - 11:59:59\",75,19,null,null,null,null",
+   "クリアビューレインガードフィルム,\"12:00:00 - 12:59:59\",0,0,null,null,null,null",
+   "クリアビューレインガードフィルム - コピー,\"11:00:00 - 11:59:59\",151,56,4,2,null,null",
+   "クリアビューレインガードフィルム - コピー,\"12:00:00 - 12:59:59\",454,140,7,8,null,null",
+   "クリアビューレインガードフィルム - コピー,\"13:00:00 - 13:59:59\",161,40,1,1,null,null",
+   "クリアビューレインガードフィルム - コピー,\"14:00:00 - 14:59:59\",225,36,4,4,null,null",
+   "クリアビューレインガードフィルム - コピー,\"15:00:00 - 15:59:59\",124,50,4,3,null,null",
+   "クリアビューレインガードフィルム - コピー,\"16:00:00 - 16:59:59\",118,40,null,1,null,null",
+   "クリアビューレインガードフィルム - コピー,\"17:00:00 - 17:59:59\",278,57,5,1,null,null",
+   "クリアビューレインガードフィルム - コピー,\"18:00:00 - 18:59:59\",210,38,1,null,null,null"
+  ]
+ }
+}
