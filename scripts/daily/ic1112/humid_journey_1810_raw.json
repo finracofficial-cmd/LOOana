@@ -1,0 +1,58 @@
+{
+ "journey": {
+  "data": {
+   "order": {
+    "createdAt": "2026-11-12T07:50:43Z",
+    "customerJourneySummary": {
+     "ready": true,
+     "customerOrderIndex": 1,
+     "daysToConversion": 1,
+     "momentsCount": {
+      "count": 1
+     },
+     "firstVisit": {
+      "occurredAt": "2026-11-12T07:47:51Z",
+      "source": "Instagram",
+      "sourceType": null,
+      "landingPage": "https://looty-japan.com/products/soft-silicone-car-squeegee-integrated-windshield-glass-scraper-tool-scratch-free-paint-safe-auto-washing-accessory-for-home-use",
+      "referrerUrl": "https://instagram.com/",
+      "utmParameters": {
+       "source": "facebook",
+       "medium": "paid",
+       "campaign": "52583270619412",
+       "content": "52583270619612"
+      }
+     },
+     "lastVisit": {
+      "occurredAt": "2026-11-12T07:47:51Z",
+      "source": "Instagram",
+      "sourceType": null,
+      "landingPage": "https://looty-japan.com/products/soft-silicone-car-squeegee-integrated-windshield-glass-scraper-tool-scratch-free-paint-safe-auto-washing-accessory-for-home-use",
+      "referrerUrl": "https://instagram.com/",
+      "utmParameters": {
+       "source": "facebook",
+       "medium": "paid",
+       "campaign": "52583270619412",
+       "content": "52583270619612"
+      }
+     }
+    }
+   }
+  }
+ },
+ "meta": {
+  "fields": [
+   "date",
+   "adcampaign_name",
+   "cost",
+   "link_clicks",
+   "offsite_conversions_fb_pixel_purchase",
+   "offsite_conversion_value_fb_pixel_purchase"
+  ],
+  "schedule_id": "bebdf0291ca35c2ef6d0097d347290e2807c3bf05aa03beb91e85cae5a979700",
+  "rows": [
+   "2026-11-11,コードレスダブルミスト加湿器,3650,29,null,null",
+   "2026-11-12,コードレスダブルミスト加湿器,136,1,null,null"
+  ]
+ }
+}
