@@ -1,0 +1,121 @@
+{
+ "rain": {
+  "query": "FROM sessions SHOW sessions, sessions_with_cart_additions, sessions_that_reached_checkout, sessions_that_completed_checkout WHERE landing_page_path = '/products/waterproof-film-for-car-rearview-mirror' AND hour_of_day <= 17 GROUP BY day SINCE 2026-11-05 UNTIL 2026-11-12 ORDER BY day ASC LIMIT 10",
+  "rows": [
+   [
+    "2026-11-06",
+    "103",
+    "6",
+    "5",
+    "4"
+   ],
+   [
+    "2026-11-07",
+    "80",
+    "10",
+    "8",
+    "6"
+   ],
+   [
+    "2026-11-08",
+    "182",
+    "21",
+    "18",
+    "11"
+   ],
+   [
+    "2026-11-09",
+    "154",
+    "15",
+    "12",
+    "6"
+   ],
+   [
+    "2026-11-10",
+    "95",
+    "7",
+    "7",
+    "5"
+   ],
+   [
+    "2026-11-11",
+    "97",
+    "3",
+    "3",
+    "1"
+   ],
+   [
+    "2026-11-12",
+    "77",
+    "1",
+    "1",
+    "0"
+   ]
+  ],
+  "shopDomain": "h8ct0k-r2.myshopify.com",
+  "note": "11/12 18:3x取得（0〜17時台）"
+ },
+ "brush": {
+  "query": "FROM sessions SHOW sessions, sessions_with_cart_additions, sessions_that_reached_checkout, sessions_that_completed_checkout WHERE landing_page_path = '/products/car-wash-cotton-thread-telescopic-wax-mop' AND hour_of_day <= 17 GROUP BY day SINCE 2026-11-05 UNTIL 2026-11-12 ORDER BY day ASC LIMIT 10",
+  "rows": [
+   [
+    "2026-11-05",
+    "183",
+    "12",
+    "11",
+    "6"
+   ],
+   [
+    "2026-11-06",
+    "132",
+    "10",
+    "10",
+    "3"
+   ],
+   [
+    "2026-11-07",
+    "161",
+    "16",
+    "16",
+    "7"
+   ],
+   [
+    "2026-11-08",
+    "187",
+    "13",
+    "13",
+    "8"
+   ],
+   [
+    "2026-11-09",
+    "148",
+    "14",
+    "12",
+    "6"
+   ],
+   [
+    "2026-11-10",
+    "95",
+    "9",
+    "8",
+    "4"
+   ],
+   [
+    "2026-11-11",
+    "85",
+    "6",
+    "5",
+    "1"
+   ],
+   [
+    "2026-11-12",
+    "87",
+    "5",
+    "3",
+    "1"
+   ]
+  ],
+  "shopDomain": "h8ct0k-r2.myshopify.com",
+  "note": "11/12 18:3x取得（0〜17時台）"
+ }
+}
