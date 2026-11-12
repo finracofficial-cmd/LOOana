@@ -1,0 +1,207 @@
+{
+ "pants_urakimou": {
+  "steps": [
+   "clicked add-to-cart"
+  ],
+  "status": 200,
+  "btnCount": 1,
+  "btnText": "カートに追加する",
+  "btnDisabled": false,
+  "cart": {
+   "item_count": 1,
+   "total_price": 398000,
+   "items": [
+    {
+     "title": "【本日終了⏰】【累計15万台突破🏆】LOOTY 防風あったか裏起毛パンツ【顧客",
+     "qty": 1,
+     "price": 398000
+    }
+   ]
+  },
+  "urlAfterAdd": "https://looty-japan.com/products/winter-sweatwear-men-plush-thick-fleece-sweatpant-lambswool-thermal-trousers-casual-pan",
+  "checkout": {
+   "status": 200,
+   "url": "https://looty-japan.com/checkouts/cn/hWNJ2oPyc5AuKs8BzdXtmgDa/ja-jp",
+   "title": "お支払い - LOOTY"
+  },
+  "checkoutHas": {
+   "email": true,
+   "pay": true,
+   "total": "",
+   "shopPay": false,
+   "errorText": []
+  },
+  "checkoutTextHead": "スキップしてコンテンツに移動する LOOTY オンラインストアに移動します 注文サマリー 合計金額 ￥3,980 LOOTY お支払い かんたん決済 または 連絡先 ログイン メー",
+  "pageErrors": [
+   "TypeError: Cannot set properties of null (setting 'textContent')",
+   "TypeError: Cannot set properties of null (setting 'textContent')",
+   "TypeError: Cannot set properties of null (setting 'textContent')",
+   "TypeError: Cannot set properties of null (setting 'textContent')",
+   "TypeError: Cannot set properties of null (setting 'textContent')"
+  ]
+ },
+ "rainguard": {
+  "steps": [
+   "clicked add-to-cart"
+  ],
+  "status": 200,
+  "btnCount": 1,
+  "btnText": "カートに追加する",
+  "btnDisabled": false,
+  "cart": {
+   "item_count": 1,
+   "total_price": 398000,
+   "items": [
+    {
+     "title": "【本日終了⏰】【累計15万台突破🏆】LOOTY クリアビューレインガードフィル",
+     "qty": 1,
+     "price": 398000
+    }
+   ]
+  },
+  "urlAfterAdd": "https://looty-japan.com/products/waterproof-film-for-car-rearview-mirror",
+  "checkout": {
+   "status": 200,
+   "url": "https://looty-japan.com/checkouts/cn/hWNJ2oSPIsq9nQtMqgYbDGAk/ja-jp",
+   "title": "お支払い - LOOTY"
+  },
+  "checkoutHas": {
+   "email": true,
+   "pay": true,
+   "total": "",
+   "shopPay": false,
+   "errorText": []
+  },
+  "checkoutTextHead": "スキップしてコンテンツに移動する LOOTY オンラインストアに移動します 注文サマリー 合計金額 ￥3,980 LOOTY お支払い かんたん決済 または 連絡先 ログイン メー",
+  "pageErrors": [
+   "TypeError: Cannot set properties of null (setting 'textContent')",
+   "TypeError: Cannot set properties of null (setting 'textContent')",
+   "TypeError: Cannot set properties of null (setting 'textContent')",
+   "TypeError: Cannot set properties of null (setting 'textContent')",
+   "TypeError: Cannot set properties of null (setting 'textContent')"
+  ]
+ },
+ "gap_default": {
+  "steps": [
+   "clicked add-to-cart"
+  ],
+  "status": 200,
+  "btnCount": 1,
+  "btnText": "カートに追加する",
+  "btnDisabled": false,
+  "cart": {
+   "item_count": 1,
+   "total_price": 398000,
+   "items": [
+    {
+     "title": "【本日終了⏰】【累計15万台突破🏆】LOOTY すき間収納シートポケット【顧客",
+     "qty": 1,
+     "price": 398000
+    }
+   ]
+  },
+  "urlAfterAdd": "https://looty-japan.com/products/car-seat-gap-plug-strip-storage-box",
+  "checkout": {
+   "status": 200,
+   "url": "https://looty-japan.com/checkouts/cn/hWNJ2oUpYJCbDQGhQAvW7NMg/ja-jp",
+   "title": "お支払い - LOOTY"
+  },
+  "checkoutHas": {
+   "email": true,
+   "pay": true,
+   "total": "",
+   "shopPay": false,
+   "errorText": []
+  },
+  "checkoutTextHead": "スキップしてコンテンツに移動する LOOTY オンラインストアに移動します 注文サマリー 合計金額 ￥3,980 LOOTY お支払い かんたん決済 または 連絡先 ログイン メー",
+  "pageErrors": [
+   "TypeError: Cannot set properties of null (setting 'textContent')",
+   "TypeError: Cannot set properties of null (setting 'textContent')",
+   "TypeError: Cannot set properties of null (setting 'textContent')",
+   "TypeError: Cannot set properties of null (setting 'textContent')",
+   "TypeError: Cannot set properties of null (setting 'textContent')"
+  ]
+ },
+ "car": {
+  "steps": [
+   "clicked add-to-cart"
+  ],
+  "status": 200,
+  "btnCount": 1,
+  "btnText": "カートに追加する",
+  "btnDisabled": false,
+  "cart": {
+   "item_count": 1,
+   "total_price": 398000,
+   "items": [
+    {
+     "title": "【本日終了⏰】【累計15万台突破🏆】LOOTY W固定スマホ車載ホルダー【顧客",
+     "qty": 1,
+     "price": 398000
+    }
+   ]
+  },
+  "urlAfterAdd": "https://looty-japan.com/products/vacuum-adsorption-car-mobile-phone-folding-360-rotating-suction-cup-bracket",
+  "checkout": {
+   "status": 200,
+   "url": "https://looty-japan.com/checkouts/cn/hWNJ2oXFmvJBwpautOtpp72o/ja-jp",
+   "title": "お支払い - LOOTY"
+  },
+  "checkoutHas": {
+   "email": true,
+   "pay": true,
+   "total": "",
+   "shopPay": false,
+   "errorText": []
+  },
+  "checkoutTextHead": "スキップしてコンテンツに移動する LOOTY オンラインストアに移動します 注文サマリー 合計金額 ￥3,980 LOOTY お支払い かんたん決済 または 連絡先 ログイン メー",
+  "pageErrors": [
+   "TypeError: Cannot set properties of null (setting 'textContent')",
+   "TypeError: Cannot set properties of null (setting 'textContent')",
+   "TypeError: Cannot set properties of null (setting 'textContent')",
+   "TypeError: Cannot set properties of null (setting 'textContent')",
+   "TypeError: Cannot set properties of null (setting 'textContent')"
+  ]
+ },
+ "nano": {
+  "steps": [
+   "clicked add-to-cart"
+  ],
+  "status": 200,
+  "btnCount": 1,
+  "btnText": "カートに追加する",
+  "btnDisabled": false,
+  "cart": {
+   "item_count": 1,
+   "total_price": 398000,
+   "items": [
+    {
+     "title": "【在庫セール⏰】【累計15万台突破🏆】LOOTY ナノガラス脱毛パッド【顧客満",
+     "qty": 1,
+     "price": 398000
+    }
+   ]
+  },
+  "urlAfterAdd": "https://looty-japan.com/products/washable-reusable-fuzz-remover",
+  "checkout": {
+   "status": 200,
+   "url": "https://looty-japan.com/checkouts/cn/hWNJ2oZf0MojLynekNLZJH4E/ja-jp",
+   "title": "お支払い - LOOTY"
+  },
+  "checkoutHas": {
+   "email": true,
+   "pay": true,
+   "total": "",
+   "shopPay": false,
+   "errorText": []
+  },
+  "checkoutTextHead": "スキップしてコンテンツに移動する LOOTY オンラインストアに移動します 注文サマリー 合計金額 ￥3,980 LOOTY お支払い かんたん決済 または 連絡先 ログイン メー",
+  "pageErrors": [
+   "TypeError: Cannot set properties of null (setting 'textContent')",
+   "TypeError: Cannot set properties of null (setting 'textContent')",
+   "TypeError: Cannot set properties of null (setting 'textContent')",
+   "TypeError: Cannot set properties of null (setting 'textContent')",
+   "TypeError: Cannot set properties of null (setting 'textContent')"
+  ]
+ }
+}
