@@ -16,7 +16,7 @@ a, b = agg(P1), agg(P2)
 tot = lambda t: (sum(v[0] for v in t.values()), sum(v[1] for v in t.values()), sum(v[2] for v in t.values()))
 ca, ia, ka = tot(a); cb, ib, kb = tot(b)
 print(f'全体 1クリックの広告費: {ca/ka:.1f}円 → {cb/kb:.1f}円（{((cb/kb)/(ca/ka)-1)*100:+.0f}%）・表示単価 {ca/ia*1000:,.0f}→{cb/ib*1000:,.0f}（{((cb/ib)/(ca/ia)-1)*100:+.0f}%）・クリック率 {ka/ia*100:.2f}→{kb/ib*100:.2f}%')
-common = [n for n in b if n in a and a[n][2] >= 100 and b[n][2] >= 100]   # 両期間でクリック100以上
+common = [n for n in b if n in a and a[n][2] > 0 and b[n][2] > 0]   # 両期間でクリックがある商品
 c1 = sum(a[n][0] for n in common); k1 = sum(a[n][2] for n in common); c2 = sum(b[n][0] for n in common); k2 = sum(b[n][2] for n in common)
 kmix = sum(b[n][0] / (a[n][0] / a[n][2]) for n in common)
 print(f'両期間に出ていた{len(common)}本: {c1/k1:.1f}円 → {c2/k2:.1f}円。配分だけ変わって商品ごとの単価が同じだった場合 {c2/kmix:.1f}円')

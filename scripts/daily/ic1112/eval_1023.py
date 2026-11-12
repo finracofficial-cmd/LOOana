@@ -41,7 +41,7 @@ print(f"  今日の利益（0〜9時台・広告費は着地途中）: {net(T)-c
 # 9時台の広告費がまだ着地途中の場合
 for add in (2400, 2600):
     print(f"  9時台の広告費があと{add:,}円増えた場合: 広告費 {ad(T)+add:,}・MER {net(T)/(ad(T)+add):.2f}・倍率 {(net(T)-cogs(T))/(ad(T)+add):.2f}")
-print(f"  9時台だけの広告費: 今日 {H[(T,9)][0]:,}（取得10:2x）／ 昨日 {H[(Y,9)][0]:,}（確定後）。0〜8時台: 今日 {sum(H[(T,h)][0] for h in range(10)):,} ／ 昨日 {sum(H[(Y,h)][0] for h in range(10)):,}")
+print(f"  9時台だけの広告費: 今日 {H[(T,9)][0]:,}（取得10:2x）／ 昨日 {H[(Y,9)][0]:,}（確定後）。0〜8時台: 今日 {sum(H[(T,h)][0] for h in range(9)):,} ／ 昨日 {sum(H[(Y,h)][0] for h in range(9)):,}")
 # 終日との関係
 FS = collections.defaultdict(int); FA = collections.defaultdict(float)
 for x in csv.DictReader(open(R + 'data/daily/daily_sales.csv')): FS[x['date']] += int(x['gross']) - int(x['disc'])
