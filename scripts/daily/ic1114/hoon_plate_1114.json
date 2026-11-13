@@ -1,0 +1,72 @@
+{
+ "query": "products(query:\"title:*保温プレート*\") status/price/unitCost/totalInventory",
+ "note": "11/14 08時台取得",
+ "result": {
+  "data": {
+   "products": {
+    "nodes": [
+     {
+      "title": "【本日終了⏰】【累計15万台突破🏆】LOOTY保温プレート【顧客満足度No.1獲得商品🥇】【全国送料無料🚗】",
+      "status": "DRAFT",
+      "handle": "保温プレート",
+      "updatedAt": "2026-09-25T08:21:41Z",
+      "totalInventory": 5909,
+      "variants": {
+       "nodes": [
+        {
+         "title": "ホワイトベージュ",
+         "price": "8990",
+         "inventoryItem": {
+          "unitCost": {
+           "amount": "3703.0"
+          }
+         }
+        }
+       ]
+      }
+     },
+     {
+      "title": "[本日終了！NO.１位 獲得]　LOOTY保温プレート (コピー)",
+      "status": "DRAFT",
+      "handle": "本日終了-no-１位-獲得-looty保温プレート-コピー",
+      "updatedAt": "2026-06-28T03:07:16Z",
+      "totalInventory": 5909,
+      "variants": {
+       "nodes": [
+        {
+         "title": "Default Title",
+         "price": "8990",
+         "inventoryItem": {
+          "unitCost": {
+           "amount": "3952.0"
+          }
+         }
+        }
+       ]
+      }
+     },
+     {
+      "title": "【本日終了⏰】【累計15万個突破🏆】LOOTY保温プレート【No.1獲得商品🥇】 (20260228)",
+      "status": "DRAFT",
+      "handle": "本日終了⏰-累計15万個突破🏆-looty保温プレート-no-1獲得商品-20260228",
+      "updatedAt": "2026-06-28T03:07:16Z",
+      "totalInventory": 5909,
+      "variants": {
+       "nodes": [
+        {
+         "title": "Default Title",
+         "price": "8990",
+         "inventoryItem": {
+          "unitCost": {
+           "amount": "3952.0"
+          }
+         }
+        }
+       ]
+      }
+     }
+    ]
+   }
+  }
+ }
+}
