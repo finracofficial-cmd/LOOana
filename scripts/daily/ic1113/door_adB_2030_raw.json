@@ -1,0 +1,45 @@
+{
+ "door_ad_daily_1106_1113": {
+  "fields": [
+   "date",
+   "ad_name",
+   "cost",
+   "impressions",
+   "link_clicks",
+   "landing_page_views",
+   "offsite_conversions_fb_pixel_add_to_cart",
+   "offsite_conversions_fb_pixel_purchase"
+  ],
+  "rows": [
+   "2026-11-06,A,12732,3665,185,169,15,7",
+   "2026-11-07,A,14367,4613,250,223,16,3",
+   "2026-11-08,A,10274,3997,218,192,8,2",
+   "2026-11-09,A,7676,2368,114,94,7,2",
+   "2026-11-10,A,6746,1482,74,67,6,4",
+   "2026-11-11,A,11651,2358,113,101,4,1",
+   "2026-11-12,A,8693,2021,102,91,8,5",
+   "2026-11-13,A,5211,1178,41,34,null,null",
+   "2026-11-13,B,2477,522,26,19,3,3"
+  ]
+ },
+ "door_brush_ad_15_23": {
+  "fields": [
+   "adcampaign_name",
+   "ad_name",
+   "cost",
+   "impressions",
+   "link_clicks",
+   "landing_page_views",
+   "offsite_conversions_fb_pixel_add_to_cart",
+   "offsite_conversions_fb_pixel_initiate_checkout",
+   "offsite_conversions_fb_pixel_purchase"
+  ],
+  "rows": [
+   "マグネットドアクッション,A,858,252,6,7,null,null,null",
+   "マグネットドアクッション,B,2477,522,26,19,3,5,3",
+   "伸縮ワックス洗車ブラシ,A,1985,459,15,12,4,1,null",
+   "伸縮ワックス洗車ブラシ,B,1071,249,7,4,4,2,1"
+  ]
+ },
+ "note": "11/13 20:3x取得（fresh）。広告Bは15時台に追加。door_brush_ad_15_23 は15〜23時台（今日は20時台途中まで）"
+}
