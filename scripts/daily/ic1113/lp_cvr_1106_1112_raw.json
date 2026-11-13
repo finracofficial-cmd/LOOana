@@ -1,0 +1,160 @@
+{
+ "query": "FROM sessions SHOW sessions, sessions_with_cart_additions, sessions_that_reached_checkout, sessions_that_completed_checkout GROUP BY landing_page_path SINCE 2026-11-06 UNTIL 2026-11-12 ORDER BY sessions DESC LIMIT 20",
+ "note": "11/13 15:4x取得・ハンドル→商品名は graphql products(handle) で確認",
+ "handle_to_product": {
+  "nano-fine-fiber-defogging-and-windproof-window-cleaning-brush": "伸縮ガラスクリーナー",
+  "vacuum-adsorption-car-mobile-phone-folding-360-rotating-suction-cup-bracket": "W固定スマホ車載ホルダー",
+  "washable-reusable-fuzz-remover": "ナノガラス脱毛パッド",
+  "soft-silicone-car-squeegee-integrated-windshield-glass-scraper-tool-scratch-free-paint-safe-auto-washing-accessory-for-home-use": "ワイド水切りワイパー",
+  "portable-small-wireless-mini-dust-blower": "4-in-1マルチクリーナー",
+  "car-wash-cotton-thread-telescopic-wax-mop": "伸縮ワックス洗車ブラシ",
+  "waterproof-film-for-car-rearview-mirror": "クリアビューレインガードフィルム",
+  "silicone-magnetic-door-lock-damping-pad-for-tesla-refresh-model-protective-accessory": "マグネットドアクッション",
+  "soft-super-sports-shock-absorption-sweat-absorbent-sockliner-with-massage-function": "快適マジックインソール",
+  "student-children-cushion-chair-waist-support": "姿勢サポートチェア",
+  "small-portable-mini-sealing-machine-heat-seal-food-hand-press-snack-plastic-bag": "ポータブルヒートシーラー",
+  "smart-uv-light-oscillating-humidifier": "コードレスダブルミスト加湿器"
+ },
+ "rows": [
+  [
+   "/products/nano-fine-fiber-defogging-and-windproof-window-cleaning-brush",
+   "3269",
+   "195",
+   "177",
+   "108"
+  ],
+  [
+   "/products/vacuum-adsorption-car-mobile-phone-folding-360-rotating-suction-cup-bracket",
+   "3086",
+   "155",
+   "134",
+   "76"
+  ],
+  [
+   "/products/washable-reusable-fuzz-remover",
+   "2254",
+   "113",
+   "103",
+   "58"
+  ],
+  [
+   "/products/soft-silicone-car-squeegee-integrated-windshield-glass-scraper-tool-scratch-free-paint-safe-auto-washing-accessory-for-home-use",
+   "1956",
+   "166",
+   "155",
+   "110"
+  ],
+  [
+   "/products/portable-small-wireless-mini-dust-blower",
+   "1236",
+   "59",
+   "49",
+   "21"
+  ],
+  [
+   "/products/car-wash-cotton-thread-telescopic-wax-mop",
+   "1186",
+   "94",
+   "86",
+   "42"
+  ],
+  [
+   "/products/waterproof-film-for-car-rearview-mirror",
+   "1087",
+   "87",
+   "75",
+   "51"
+  ],
+  [
+   "/products/silicone-magnetic-door-lock-damping-pad-for-tesla-refresh-model-protective-accessory",
+   "1079",
+   "56",
+   "49",
+   "27"
+  ],
+  [
+   "/products/soft-super-sports-shock-absorption-sweat-absorbent-sockliner-with-massage-function",
+   "819",
+   "48",
+   "39",
+   "22"
+  ],
+  [
+   "/products/student-children-cushion-chair-waist-support",
+   "640",
+   "26",
+   "20",
+   "11"
+  ],
+  [
+   "/",
+   "624",
+   "17",
+   "14",
+   "5"
+  ],
+  [
+   "/products/small-portable-mini-sealing-machine-heat-seal-food-hand-press-snack-plastic-bag",
+   "592",
+   "19",
+   "16",
+   "13"
+  ],
+  [
+   "/products/smart-uv-light-oscillating-humidifier",
+   "523",
+   "17",
+   "15",
+   "11"
+  ],
+  [
+   "/products/winter-sweatwear-men-plush-thick-fleece-sweatpant-lambswool-thermal-trousers-casual-pants-waterproof-windproof-warm-cotton-pants",
+   "143",
+   "7",
+   "6",
+   "4"
+  ],
+  [
+   "/products/running-patellar-meniscus-protective-strap-cycling-sports-gear",
+   "89",
+   "4",
+   "3",
+   "1"
+  ],
+  [
+   "/products/smart-toothbrush-sterilizer",
+   "65",
+   "0",
+   "0",
+   "0"
+  ],
+  [
+   "/products/toe-spreading-inward-toeing-correction-arch-trainer",
+   "56",
+   "0",
+   "0",
+   "0"
+  ],
+  [
+   "/products/home-indoor-non-slip-thick-soled-arch-support-corrective-sandals",
+   "56",
+   "1",
+   "1",
+   "0"
+  ],
+  [
+   "/products/seat-hook-chair-back-hidden-small-rear-row-fur-creative-upgrade-seat-flip-back-row-object-storage-car-bag",
+   "49",
+   "2",
+   "1",
+   "1"
+  ],
+  [
+   "/collections/車用グッズ",
+   "45",
+   "8",
+   "6",
+   "3"
+  ]
+ ]
+}
