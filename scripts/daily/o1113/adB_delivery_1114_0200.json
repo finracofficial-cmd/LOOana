@@ -1,0 +1,16 @@
+{
+ "fields": [
+  "adset_name",
+  "ad_name",
+  "adstatus",
+  "cost",
+  "impressions",
+  "link_clicks"
+ ],
+ "rows": [
+  "ワイド水切りワイパー,A,ACTIVE,1066,334,5",
+  "伸縮ガラスクリーナー sabu,A,ACTIVE,649,287,10",
+  "伸縮ガラスクリーナー,A,ACTIVE,485,117,5"
+ ],
+ "note": "11/14 02時台取得（fresh）。今日0時台〜のクリーナー・ワイパーの広告別。表示があるのは各Aだけ（クリーナーB・ワイパーBはまだ表示0）"
+}
