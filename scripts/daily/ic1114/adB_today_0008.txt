@@ -1,0 +1,10 @@
+# data_query FA fresh・11/14 08時台取得（今日0時〜08時台・広告別）・adcampaign_name,adset_name,ad_name,cost,impressions,link_clicks,landing_page_views,offsite_conversions_fb_pixel_add_to_cart,offsite_conversions_fb_pixel_initiate_checkout,offsite_conversions_fb_pixel_purchase
+ワイド水切りワイパー,ワイド水切りワイパー,A,5656,1876,51,39,6,2,0
+伸縮ガラスクリーナー,伸縮ガラスクリーナー sabu,A,4064,1705,55,42,1,2,2
+伸縮ガラスクリーナー,伸縮ガラスクリーナー,A,2829,894,41,35,5,1,0
+マグネットドアクッション,マグネットドアクッション,B,2262,473,28,24,6,1,1
+伸縮ワックス洗車ブラシ,伸縮ワックス洗車ブラシ,A,2128,528,18,17,7,10,2
+ワイド水切りワイパー,ワイド水切りワイパー,B,514,165,5,5,5,2,0
+伸縮ワックス洗車ブラシ,伸縮ワックス洗車ブラシ,B,381,90,8,6,0,0,0
+マグネットドアクッション,マグネットドアクッション,A,96,25,2,2,1,1,0
+伸縮ガラスクリーナー,伸縮ガラスクリーナー,B,3,6,0,0,0,0,0

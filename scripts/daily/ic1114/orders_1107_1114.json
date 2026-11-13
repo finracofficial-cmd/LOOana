@@ -1,0 +1,1308 @@
+{
+"data": {
+"orders": {
+"nodes": [
+{
+"name": "#31937",
+"createdAt": "2026-11-13T22:49:07Z",
+"paymentGatewayNames": [
+"shopify_payments"
+],
+"displayFinancialStatus": "PAID",
+"currentTotalPriceSet": {
+"shopMoney": {
+"amount": "3980.0"
+}
+}
+},
+{
+"name": "#31936",
+"createdAt": "2026-11-13T22:40:02Z",
+"paymentGatewayNames": [
+"shopify_payments"
+],
+"displayFinancialStatus": "PAID",
+"currentTotalPriceSet": {
+"shopMoney": {
+"amount": "3980.0"
+}
+}
+},
+{
+"name": "#31935",
+"createdAt": "2026-11-13T22:30:32Z",
+"paymentGatewayNames": [
+"shopify_payments"
+],
+"displayFinancialStatus": "PAID",
+"currentTotalPriceSet": {
+"shopMoney": {
+"amount": "8964.0"
+}
+}
+},
+{
+"name": "#31934",
+"createdAt": "2026-11-13T22:06:22Z",
+"paymentGatewayNames": [
+"shopify_payments"
+],
+"displayFinancialStatus": "PAID",
+"currentTotalPriceSet": {
+"shopMoney": {
+"amount": "7164.0"
+}
+}
+},
+{
+"name": "#31933",
+"createdAt": "2026-11-13T21:59:00Z",
+"paymentGatewayNames": [
+"KOMOJU - スマホ決済 (Smartphone Payments)"
+],
+"displayFinancialStatus": "PAID",
+"currentTotalPriceSet": {
+"shopMoney": {
+"amount": "7164.0"
+}
+}
+},
+{
+"name": "#31932",
+"createdAt": "2026-11-13T21:00:41Z",
+"paymentGatewayNames": [
+"shopify_payments"
+],
+"displayFinancialStatus": "PAID",
+"currentTotalPriceSet": {
+"shopMoney": {
+"amount": "6980.0"
+}
+}
+},
+{
+"name": "#31931",
+"createdAt": "2026-11-13T16:08:01Z",
+"paymentGatewayNames": [
+"shopify_payments"
+],
+"displayFinancialStatus": "PAID",
+"currentTotalPriceSet": {
+"shopMoney": {
+"amount": "3980.0"
+}
+}
+},
+{
+"name": "#31930",
+"createdAt": "2026-11-13T15:22:29Z",
+"paymentGatewayNames": [
+"shopify_payments"
+],
+"displayFinancialStatus": "PAID",
+"currentTotalPriceSet": {
+"shopMoney": {
+"amount": "4980.0"
+}
+}
+},
+{
+"name": "#31929",
+"createdAt": "2026-11-13T15:13:06Z",
+"paymentGatewayNames": [
+"shopify_payments"
+],
+"displayFinancialStatus": "PAID",
+"currentTotalPriceSet": {
+"shopMoney": {
+"amount": "7164.0"
+}
+}
+},
+{
+"name": "#31928",
+"createdAt": "2026-11-13T15:08:46Z",
+"paymentGatewayNames": [
+"shopify_payments"
+],
+"displayFinancialStatus": "PAID",
+"currentTotalPriceSet": {
+"shopMoney": {
+"amount": "7960.0"
+}
+}
+},
+{
+"name": "#31927",
+"createdAt": "2026-11-13T14:42:48Z",
+"paymentGatewayNames": [
+"shopify_payments"
+],
+"displayFinancialStatus": "PAID",
+"currentTotalPriceSet": {
+"shopMoney": {
+"amount": "3980.0"
+}
+}
+},
+{
+"name": "#31926",
+"createdAt": "2026-11-13T14:23:15Z",
+"paymentGatewayNames": [
+"shopify_payments"
+],
+"displayFinancialStatus": "PAID",
+"currentTotalPriceSet": {
+"shopMoney": {
+"amount": "5980.0"
+}
+}
+},
+{
+"name": "#31925",
+"createdAt": "2026-11-13T13:47:24Z",
+"paymentGatewayNames": [
+"shopify_payments"
+],
+"displayFinancialStatus": "PAID",
+"currentTotalPriceSet": {
+"shopMoney": {
+"amount": "3980.0"
+}
+}
+},
+{
+"name": "#31924",
+"createdAt": "2026-11-13T13:42:05Z",
+"paymentGatewayNames": [
+"shopify_payments"
+],
+"displayFinancialStatus": "PAID",
+"currentTotalPriceSet": {
+"shopMoney": {
+"amount": "7164.0"
+}
+}
+},
+{
+"name": "#31923",
+"createdAt": "2026-11-13T13:27:46Z",
+"paymentGatewayNames": [
+"shopify_payments"
+],
+"displayFinancialStatus": "PAID",
+"currentTotalPriceSet": {
+"shopMoney": {
+"amount": "3980.0"
+}
+}
+},
+{
+"name": "#31922",
+"createdAt": "2026-11-13T13:10:59Z",
+"paymentGatewayNames": [
+"shopify_payments"
+],
+"displayFinancialStatus": "PAID",
+"currentTotalPriceSet": {
+"shopMoney": {
+"amount": "3980.0"
+}
+}
+},
+{
+"name": "#31921",
+"createdAt": "2026-11-13T12:51:44Z",
+"paymentGatewayNames": [
+"shopify_payments"
+],
+"displayFinancialStatus": "PAID",
+"currentTotalPriceSet": {
+"shopMoney": {
+"amount": "3980.0"
+}
+}
+},
+{
+"name": "#31920",
+"createdAt": "2026-11-13T12:27:56Z",
+"paymentGatewayNames": [
+"shopify_payments"
+],
+"displayFinancialStatus": "PAID",
+"currentTotalPriceSet": {
+"shopMoney": {
+"amount": "10764.0"
+}
+}
+},
+{
+"name": "#31919",
+"createdAt": "2026-11-13T12:10:25Z",
+"paymentGatewayNames": [
+"shopify_payments"
+],
+"displayFinancialStatus": "PAID",
+"currentTotalPriceSet": {
+"shopMoney": {
+"amount": "3980.0"
+}
+}
+},
+{
+"name": "#31918",
+"createdAt": "2026-11-13T11:57:14Z",
+"paymentGatewayNames": [
+"shopify_payments"
+],
+"displayFinancialStatus": "PAID",
+"currentTotalPriceSet": {
+"shopMoney": {
+"amount": "3980.0"
+}
+}
+},
+{
+"name": "#31917",
+"createdAt": "2026-11-13T11:37:16Z",
+"paymentGatewayNames": [
+"shopify_payments"
+],
+"displayFinancialStatus": "PAID",
+"currentTotalPriceSet": {
+"shopMoney": {
+"amount": "4980.0"
+}
+}
+},
+{
+"name": "#31916",
+"createdAt": "2026-11-13T11:27:53Z",
+"paymentGatewayNames": [
+"shopify_payments"
+],
+"displayFinancialStatus": "PAID",
+"currentTotalPriceSet": {
+"shopMoney": {
+"amount": "6980.0"
+}
+}
+},
+{
+"name": "#31915",
+"createdAt": "2026-11-13T11:18:57Z",
+"paymentGatewayNames": [
+"shopify_payments"
+],
+"displayFinancialStatus": "PAID",
+"currentTotalPriceSet": {
+"shopMoney": {
+"amount": "3980.0"
+}
+}
+},
+{
+"name": "#31914",
+"createdAt": "2026-11-13T10:57:52Z",
+"paymentGatewayNames": [
+"shopify_payments"
+],
+"displayFinancialStatus": "PAID",
+"currentTotalPriceSet": {
+"shopMoney": {
+"amount": "3980.0"
+}
+}
+},
+{
+"name": "#31913",
+"createdAt": "2026-11-13T10:36:31Z",
+"paymentGatewayNames": [
+"shopify_payments"
+],
+"displayFinancialStatus": "PAID",
+"currentTotalPriceSet": {
+"shopMoney": {
+"amount": "7164.0"
+}
+}
+},
+{
+"name": "#31912",
+"createdAt": "2026-11-13T10:33:17Z",
+"paymentGatewayNames": [
+"KOMOJU - スマホ決済 (Smartphone Payments)"
+],
+"displayFinancialStatus": "PAID",
+"currentTotalPriceSet": {
+"shopMoney": {
+"amount": "3980.0"
+}
+}
+},
+{
+"name": "#31911",
+"createdAt": "2026-11-13T10:19:08Z",
+"paymentGatewayNames": [
+"shopify_payments"
+],
+"displayFinancialStatus": "PAID",
+"currentTotalPriceSet": {
+"shopMoney": {
+"amount": "7964.0"
+}
+}
+},
+{
+"name": "#31910",
+"createdAt": "2026-11-13T10:17:51Z",
+"paymentGatewayNames": [
+"shopify_payments"
+],
+"displayFinancialStatus": "PAID",
+"currentTotalPriceSet": {
+"shopMoney": {
+"amount": "3980.0"
+}
+}
+},
+{
+"name": "#31909",
+"createdAt": "2026-11-13T10:13:20Z",
+"paymentGatewayNames": [
+"shopify_payments"
+],
+"displayFinancialStatus": "PAID",
+"currentTotalPriceSet": {
+"shopMoney": {
+"amount": "3980.0"
+}
+}
+},
+{
+"name": "#31908",
+"createdAt": "2026-11-13T08:59:39Z",
+"paymentGatewayNames": [
+"shopify_payments"
+],
+"displayFinancialStatus": "PAID",
+"currentTotalPriceSet": {
+"shopMoney": {
+"amount": "3980.0"
+}
+}
+},
+{
+"name": "#31907",
+"createdAt": "2026-11-13T08:03:08Z",
+"paymentGatewayNames": [
+"shopify_payments"
+],
+"displayFinancialStatus": "PAID",
+"currentTotalPriceSet": {
+"shopMoney": {
+"amount": "3980.0"
+}
+}
+},
+{
+"name": "#31906",
+"createdAt": "2026-11-13T07:02:11Z",
+"paymentGatewayNames": [
+"shopify_payments"
+],
+"displayFinancialStatus": "PAID",
+"currentTotalPriceSet": {
+"shopMoney": {
+"amount": "3980.0"
+}
+}
+},
+{
+"name": "#31905",
+"createdAt": "2026-11-13T06:37:21Z",
+"paymentGatewayNames": [
+"shopify_payments"
+],
+"displayFinancialStatus": "PAID",
+"currentTotalPriceSet": {
+"shopMoney": {
+"amount": "3980.0"
+}
+}
+},
+{
+"name": "#31904",
+"createdAt": "2026-11-13T04:38:44Z",
+"paymentGatewayNames": [
+"shopify_payments"
+],
+"displayFinancialStatus": "PAID",
+"currentTotalPriceSet": {
+"shopMoney": {
+"amount": "4980.0"
+}
+}
+},
+{
+"name": "#31903",
+"createdAt": "2026-11-13T04:10:20Z",
+"paymentGatewayNames": [
+"KOMOJU - Paidy"
+],
+"displayFinancialStatus": "PAID",
+"currentTotalPriceSet": {
+"shopMoney": {
+"amount": "3980.0"
+}
+}
+},
+{
+"name": "#31902",
+"createdAt": "2026-11-13T03:46:24Z",
+"paymentGatewayNames": [
+"shopify_payments"
+],
+"displayFinancialStatus": "PAID",
+"currentTotalPriceSet": {
+"shopMoney": {
+"amount": "7164.0"
+}
+}
+},
+{
+"name": "#31901",
+"createdAt": "2026-11-13T03:46:14Z",
+"paymentGatewayNames": [
+"shopify_payments"
+],
+"displayFinancialStatus": "PAID",
+"currentTotalPriceSet": {
+"shopMoney": {
+"amount": "3980.0"
+}
+}
+},
+{
+"name": "#31900",
+"createdAt": "2026-11-13T03:23:32Z",
+"paymentGatewayNames": [
+"shopify_payments"
+],
+"displayFinancialStatus": "PAID",
+"currentTotalPriceSet": {
+"shopMoney": {
+"amount": "3980.0"
+}
+}
+},
+{
+"name": "#31899",
+"createdAt": "2026-11-13T02:39:19Z",
+"paymentGatewayNames": [
+"shopify_payments"
+],
+"displayFinancialStatus": "PAID",
+"currentTotalPriceSet": {
+"shopMoney": {
+"amount": "4980.0"
+}
+}
+},
+{
+"name": "#31898",
+"createdAt": "2026-11-13T02:32:46Z",
+"paymentGatewayNames": [
+"shopify_payments"
+],
+"displayFinancialStatus": "PAID",
+"currentTotalPriceSet": {
+"shopMoney": {
+"amount": "3980.0"
+}
+}
+},
+{
+"name": "#31897",
+"createdAt": "2026-11-13T02:23:52Z",
+"paymentGatewayNames": [
+"shopify_payments"
+],
+"displayFinancialStatus": "PAID",
+"currentTotalPriceSet": {
+"shopMoney": {
+"amount": "3980.0"
+}
+}
+},
+{
+"name": "#31896",
+"createdAt": "2026-11-13T02:13:04Z",
+"paymentGatewayNames": [
+"shopify_payments"
+],
+"displayFinancialStatus": "PAID",
+"currentTotalPriceSet": {
+"shopMoney": {
+"amount": "3980.0"
+}
+}
+},
+{
+"name": "#31895",
+"createdAt": "2026-11-13T01:53:31Z",
+"paymentGatewayNames": [
+"shopify_payments"
+],
+"displayFinancialStatus": "PAID",
+"currentTotalPriceSet": {
+"shopMoney": {
+"amount": "3980.0"
+}
+}
+},
+{
+"name": "#31894",
+"createdAt": "2026-11-13T01:39:01Z",
+"paymentGatewayNames": [
+"KOMOJU - スマホ決済 (Smartphone Payments)"
+],
+"displayFinancialStatus": "PAID",
+"currentTotalPriceSet": {
+"shopMoney": {
+"amount": "6980.0"
+}
+}
+},
+{
+"name": "#31893",
+"createdAt": "2026-11-13T01:19:17Z",
+"paymentGatewayNames": [
+"shopify_payments"
+],
+"displayFinancialStatus": "PAID",
+"currentTotalPriceSet": {
+"shopMoney": {
+"amount": "3980.0"
+}
+}
+},
+{
+"name": "#31892",
+"createdAt": "2026-11-13T01:03:48Z",
+"paymentGatewayNames": [
+"shopify_payments"
+],
+"displayFinancialStatus": "PAID",
+"currentTotalPriceSet": {
+"shopMoney": {
+"amount": "3980.0"
+}
+}
+},
+{
+"name": "#31891",
+"createdAt": "2026-11-13T00:49:49Z",
+"paymentGatewayNames": [
+"shopify_payments"
+],
+"displayFinancialStatus": "PAID",
+"currentTotalPriceSet": {
+"shopMoney": {
+"amount": "3980.0"
+}
+}
+},
+{
+"name": "#31890",
+"createdAt": "2026-11-13T00:30:14Z",
+"paymentGatewayNames": [
+"shopify_payments"
+],
+"displayFinancialStatus": "PAID",
+"currentTotalPriceSet": {
+"shopMoney": {
+"amount": "3980.0"
+}
+}
+},
+{
+"name": "#31889",
+"createdAt": "2026-11-13T00:25:32Z",
+"paymentGatewayNames": [
+"shopify_payments"
+],
+"displayFinancialStatus": "PAID",
+"currentTotalPriceSet": {
+"shopMoney": {
+"amount": "3980.0"
+}
+}
+},
+{
+"name": "#31888",
+"createdAt": "2026-11-13T00:20:30Z",
+"paymentGatewayNames": [
+"KOMOJU - Paidy"
+],
+"displayFinancialStatus": "PAID",
+"currentTotalPriceSet": {
+"shopMoney": {
+"amount": "3980.0"
+}
+}
+},
+{
+"name": "#31887",
+"createdAt": "2026-11-12T23:52:16Z",
+"paymentGatewayNames": [
+"shopify_payments"
+],
+"displayFinancialStatus": "PAID",
+"currentTotalPriceSet": {
+"shopMoney": {
+"amount": "3980.0"
+}
+}
+},
+{
+"name": "#31886",
+"createdAt": "2026-11-12T23:44:43Z",
+"paymentGatewayNames": [
+"shopify_payments"
+],
+"displayFinancialStatus": "PAID",
+"currentTotalPriceSet": {
+"shopMoney": {
+"amount": "3980.0"
+}
+}
+},
+{
+"name": "#31885",
+"createdAt": "2026-11-12T23:34:28Z",
+"paymentGatewayNames": [
+"KOMOJU - スマホ決済 (Smartphone Payments)"
+],
+"displayFinancialStatus": "PAID",
+"currentTotalPriceSet": {
+"shopMoney": {
+"amount": "4980.0"
+}
+}
+},
+{
+"name": "#31884",
+"createdAt": "2026-11-12T23:22:59Z",
+"paymentGatewayNames": [
+"shopify_payments"
+],
+"displayFinancialStatus": "PAID",
+"currentTotalPriceSet": {
+"shopMoney": {
+"amount": "6980.0"
+}
+}
+},
+{
+"name": "#31883",
+"createdAt": "2026-11-12T23:19:56Z",
+"paymentGatewayNames": [
+"KOMOJU - スマホ決済 (Smartphone Payments)"
+],
+"displayFinancialStatus": "PAID",
+"currentTotalPriceSet": {
+"shopMoney": {
+"amount": "3980.0"
+}
+}
+},
+{
+"name": "#31882",
+"createdAt": "2026-11-12T23:14:25Z",
+"paymentGatewayNames": [
+"shopify_payments"
+],
+"displayFinancialStatus": "PAID",
+"currentTotalPriceSet": {
+"shopMoney": {
+"amount": "3980.0"
+}
+}
+},
+{
+"name": "#31881",
+"createdAt": "2026-11-12T23:11:49Z",
+"paymentGatewayNames": [
+"KOMOJU - Paidy"
+],
+"displayFinancialStatus": "PAID",
+"currentTotalPriceSet": {
+"shopMoney": {
+"amount": "3980.0"
+}
+}
+},
+{
+"name": "#31880",
+"createdAt": "2026-11-12T22:55:52Z",
+"paymentGatewayNames": [
+"shopify_payments"
+],
+"displayFinancialStatus": "PAID",
+"currentTotalPriceSet": {
+"shopMoney": {
+"amount": "10149.0"
+}
+}
+},
+{
+"name": "#31879",
+"createdAt": "2026-11-12T22:49:04Z",
+"paymentGatewayNames": [
+"shopify_payments"
+],
+"displayFinancialStatus": "PAID",
+"currentTotalPriceSet": {
+"shopMoney": {
+"amount": "7164.0"
+}
+}
+},
+{
+"name": "#31878",
+"createdAt": "2026-11-12T21:35:24Z",
+"paymentGatewayNames": [
+"shopify_payments"
+],
+"displayFinancialStatus": "PAID",
+"currentTotalPriceSet": {
+"shopMoney": {
+"amount": "3980.0"
+}
+}
+},
+{
+"name": "#31877",
+"createdAt": "2026-11-12T21:23:19Z",
+"paymentGatewayNames": [
+"shopify_payments"
+],
+"displayFinancialStatus": "PAID",
+"currentTotalPriceSet": {
+"shopMoney": {
+"amount": "3980.0"
+}
+}
+},
+{
+"name": "#31876",
+"createdAt": "2026-11-12T20:45:14Z",
+"paymentGatewayNames": [
+"shopify_payments"
+],
+"displayFinancialStatus": "PAID",
+"currentTotalPriceSet": {
+"shopMoney": {
+"amount": "3980.0"
+}
+}
+},
+{
+"name": "#31875",
+"createdAt": "2026-11-12T20:32:41Z",
+"paymentGatewayNames": [
+"shopify_payments"
+],
+"displayFinancialStatus": "PAID",
+"currentTotalPriceSet": {
+"shopMoney": {
+"amount": "3980.0"
+}
+}
+},
+{
+"name": "#31874",
+"createdAt": "2026-11-12T19:29:27Z",
+"paymentGatewayNames": [
+"KOMOJU - スマホ決済 (Smartphone Payments)"
+],
+"displayFinancialStatus": "PAID",
+"currentTotalPriceSet": {
+"shopMoney": {
+"amount": "7954.0"
+}
+}
+},
+{
+"name": "#31873",
+"createdAt": "2026-11-12T17:56:44Z",
+"paymentGatewayNames": [
+"shopify_payments"
+],
+"displayFinancialStatus": "PAID",
+"currentTotalPriceSet": {
+"shopMoney": {
+"amount": "3980.0"
+}
+}
+},
+{
+"name": "#31872",
+"createdAt": "2026-11-12T17:27:31Z",
+"paymentGatewayNames": [
+"shopify_payments"
+],
+"displayFinancialStatus": "PAID",
+"currentTotalPriceSet": {
+"shopMoney": {
+"amount": "6980.0"
+}
+}
+},
+{
+"name": "#31871",
+"createdAt": "2026-11-12T16:12:23Z",
+"paymentGatewayNames": [
+"shopify_payments"
+],
+"displayFinancialStatus": "PAID",
+"currentTotalPriceSet": {
+"shopMoney": {
+"amount": "3980.0"
+}
+}
+},
+{
+"name": "#31870",
+"createdAt": "2026-11-12T15:51:24Z",
+"paymentGatewayNames": [
+"KOMOJU - スマホ決済 (Smartphone Payments)"
+],
+"displayFinancialStatus": "PAID",
+"currentTotalPriceSet": {
+"shopMoney": {
+"amount": "3980.0"
+}
+}
+},
+{
+"name": "#31869",
+"createdAt": "2026-11-12T14:36:32Z",
+"paymentGatewayNames": [
+"shopify_payments"
+],
+"displayFinancialStatus": "PAID",
+"currentTotalPriceSet": {
+"shopMoney": {
+"amount": "3980.0"
+}
+}
+},
+{
+"name": "#31868",
+"createdAt": "2026-11-12T14:19:03Z",
+"paymentGatewayNames": [
+"KOMOJU - Paidy"
+],
+"displayFinancialStatus": "PAID",
+"currentTotalPriceSet": {
+"shopMoney": {
+"amount": "3980.0"
+}
+}
+},
+{
+"name": "#31867",
+"createdAt": "2026-11-12T14:08:45Z",
+"paymentGatewayNames": [
+"shopify_payments"
+],
+"displayFinancialStatus": "PAID",
+"currentTotalPriceSet": {
+"shopMoney": {
+"amount": "7164.0"
+}
+}
+},
+{
+"name": "#31866",
+"createdAt": "2026-11-12T13:03:30Z",
+"paymentGatewayNames": [
+"shopify_payments"
+],
+"displayFinancialStatus": "PAID",
+"currentTotalPriceSet": {
+"shopMoney": {
+"amount": "3980.0"
+}
+}
+},
+{
+"name": "#31865",
+"createdAt": "2026-11-12T12:57:31Z",
+"paymentGatewayNames": [
+"shopify_payments"
+],
+"displayFinancialStatus": "PAID",
+"currentTotalPriceSet": {
+"shopMoney": {
+"amount": "3980.0"
+}
+}
+},
+{
+"name": "#31864",
+"createdAt": "2026-11-12T12:30:09Z",
+"paymentGatewayNames": [
+"shopify_payments"
+],
+"displayFinancialStatus": "PAID",
+"currentTotalPriceSet": {
+"shopMoney": {
+"amount": "3980.0"
+}
+}
+},
+{
+"name": "#31863",
+"createdAt": "2026-11-12T12:28:27Z",
+"paymentGatewayNames": [
+"shopify_payments"
+],
+"displayFinancialStatus": "PAID",
+"currentTotalPriceSet": {
+"shopMoney": {
+"amount": "3980.0"
+}
+}
+},
+{
+"name": "#31862",
+"createdAt": "2026-11-12T12:14:58Z",
+"paymentGatewayNames": [
+"shopify_payments"
+],
+"displayFinancialStatus": "PAID",
+"currentTotalPriceSet": {
+"shopMoney": {
+"amount": "4770.0"
+}
+}
+},
+{
+"name": "#31861",
+"createdAt": "2026-11-12T12:01:10Z",
+"paymentGatewayNames": [
+"shopify_payments"
+],
+"displayFinancialStatus": "PAID",
+"currentTotalPriceSet": {
+"shopMoney": {
+"amount": "3980.0"
+}
+}
+},
+{
+"name": "#31860",
+"createdAt": "2026-11-12T12:00:20Z",
+"paymentGatewayNames": [
+"shopify_payments"
+],
+"displayFinancialStatus": "PAID",
+"currentTotalPriceSet": {
+"shopMoney": {
+"amount": "3980.0"
+}
+}
+},
+{
+"name": "#31859",
+"createdAt": "2026-11-12T11:47:09Z",
+"paymentGatewayNames": [
+"shopify_payments"
+],
+"displayFinancialStatus": "PAID",
+"currentTotalPriceSet": {
+"shopMoney": {
+"amount": "10149.0"
+}
+}
+},
+{
+"name": "#31858",
+"createdAt": "2026-11-12T11:41:25Z",
+"paymentGatewayNames": [
+"shopify_payments"
+],
+"displayFinancialStatus": "PAID",
+"currentTotalPriceSet": {
+"shopMoney": {
+"amount": "7164.0"
+}
+}
+},
+{
+"name": "#31857",
+"createdAt": "2026-11-12T11:38:57Z",
+"paymentGatewayNames": [
+"KOMOJU - スマホ決済 (Smartphone Payments)"
+],
+"displayFinancialStatus": "PAID",
+"currentTotalPriceSet": {
+"shopMoney": {
+"amount": "3980.0"
+}
+}
+},
+{
+"name": "#31856",
+"createdAt": "2026-11-12T11:38:55Z",
+"paymentGatewayNames": [
+"shopify_payments"
+],
+"displayFinancialStatus": "PAID",
+"currentTotalPriceSet": {
+"shopMoney": {
+"amount": "3980.0"
+}
+}
+},
+{
+"name": "#31855",
+"createdAt": "2026-11-12T11:30:27Z",
+"paymentGatewayNames": [
+"shopify_payments"
+],
+"displayFinancialStatus": "PAID",
+"currentTotalPriceSet": {
+"shopMoney": {
+"amount": "3980.0"
+}
+}
+},
+{
+"name": "#31854",
+"createdAt": "2026-11-12T11:16:59Z",
+"paymentGatewayNames": [
+"KOMOJU - Paidy"
+],
+"displayFinancialStatus": "PAID",
+"currentTotalPriceSet": {
+"shopMoney": {
+"amount": "3980.0"
+}
+}
+},
+{
+"name": "#31853",
+"createdAt": "2026-11-12T11:14:10Z",
+"paymentGatewayNames": [
+"shopify_payments"
+],
+"displayFinancialStatus": "PAID",
+"currentTotalPriceSet": {
+"shopMoney": {
+"amount": "3980.0"
+}
+}
+},
+{
+"name": "#31852",
+"createdAt": "2026-11-12T11:04:34Z",
+"paymentGatewayNames": [
+"shopify_payments"
+],
+"displayFinancialStatus": "PAID",
+"currentTotalPriceSet": {
+"shopMoney": {
+"amount": "3980.0"
+}
+}
+},
+{
+"name": "#31851",
+"createdAt": "2026-11-12T10:30:12Z",
+"paymentGatewayNames": [
+"shopify_payments"
+],
+"displayFinancialStatus": "PAID",
+"currentTotalPriceSet": {
+"shopMoney": {
+"amount": "7164.0"
+}
+}
+},
+{
+"name": "#31850",
+"createdAt": "2026-11-12T10:15:51Z",
+"paymentGatewayNames": [
+"shopify_payments"
+],
+"displayFinancialStatus": "PAID",
+"currentTotalPriceSet": {
+"shopMoney": {
+"amount": "3980.0"
+}
+}
+},
+{
+"name": "#31849",
+"createdAt": "2026-11-12T09:08:57Z",
+"paymentGatewayNames": [
+"shopify_payments"
+],
+"displayFinancialStatus": "PAID",
+"currentTotalPriceSet": {
+"shopMoney": {
+"amount": "3980.0"
+}
+}
+},
+{
+"name": "#31848",
+"createdAt": "2026-11-12T08:17:58Z",
+"paymentGatewayNames": [
+"shopify_payments"
+],
+"displayFinancialStatus": "PAID",
+"currentTotalPriceSet": {
+"shopMoney": {
+"amount": "3980.0"
+}
+}
+},
+{
+"name": "#31847",
+"createdAt": "2026-11-12T07:50:43Z",
+"paymentGatewayNames": [
+"shopify_payments"
+],
+"displayFinancialStatus": "PAID",
+"currentTotalPriceSet": {
+"shopMoney": {
+"amount": "9960.0"
+}
+}
+},
+{
+"name": "#31846",
+"createdAt": "2026-11-12T07:31:56Z",
+"paymentGatewayNames": [
+"shopify_payments"
+],
+"displayFinancialStatus": "PAID",
+"currentTotalPriceSet": {
+"shopMoney": {
+"amount": "7164.0"
+}
+}
+},
+{
+"name": "#31845",
+"createdAt": "2026-11-12T06:39:36Z",
+"paymentGatewayNames": [
+"shopify_payments"
+],
+"displayFinancialStatus": "PAID",
+"currentTotalPriceSet": {
+"shopMoney": {
+"amount": "3980.0"
+}
+}
+},
+{
+"name": "#31844",
+"createdAt": "2026-11-12T06:35:04Z",
+"paymentGatewayNames": [
+"shopify_payments"
+],
+"displayFinancialStatus": "PAID",
+"currentTotalPriceSet": {
+"shopMoney": {
+"amount": "3980.0"
+}
+}
+},
+{
+"name": "#31843",
+"createdAt": "2026-11-12T05:36:27Z",
+"paymentGatewayNames": [
+"shopify_payments"
+],
+"displayFinancialStatus": "PAID",
+"currentTotalPriceSet": {
+"shopMoney": {
+"amount": "7164.0"
+}
+}
+},
+{
+"name": "#31842",
+"createdAt": "2026-11-12T05:14:29Z",
+"paymentGatewayNames": [
+"shopify_payments"
+],
+"displayFinancialStatus": "PAID",
+"currentTotalPriceSet": {
+"shopMoney": {
+"amount": "3980.0"
+}
+}
+},
+{
+"name": "#31841",
+"createdAt": "2026-11-12T05:04:37Z",
+"paymentGatewayNames": [
+"shopify_payments"
+],
+"displayFinancialStatus": "PAID",
+"currentTotalPriceSet": {
+"shopMoney": {
+"amount": "3980.0"
+}
+}
+},
+{
+"name": "#31840",
+"createdAt": "2026-11-12T04:43:40Z",
+"paymentGatewayNames": [
+"shopify_payments"
+],
+"displayFinancialStatus": "PAID",
+"currentTotalPriceSet": {
+"shopMoney": {
+"amount": "7164.0"
+}
+}
+},
+{
+"name": "#31839",
+"createdAt": "2026-11-12T04:26:17Z",
+"paymentGatewayNames": [
+"shopify_payments"
+],
+"displayFinancialStatus": "PAID",
+"currentTotalPriceSet": {
+"shopMoney": {
+"amount": "3980.0"
+}
+}
+},
+{
+"name": "#31838",
+"createdAt": "2026-11-12T04:01:48Z",
+"paymentGatewayNames": [
+"shopify_payments"
+],
+"displayFinancialStatus": "PAID",
+"currentTotalPriceSet": {
+"shopMoney": {
+"amount": "3980.0"
+}
+}
+}
+]
+}
+}
+}
