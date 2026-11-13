@@ -1,0 +1,22 @@
+# campaign_and_resource_get（campaign_id + ad_group）11/14 00時台 Meta直読・ENABLEDの11キャンペーン全部。campaign,adset,status,daily_budget,request_id
+3WAY着る電気ブランケット,3WAY着る電気ブランケット,ENABLED,8000,faDH3ugBfauQHPp7HSaBQRz7E2YZivpM
+4-in-1マルチクリーナー,4-in-1マルチクリーナー,ENABLED,8000,yadzTDwerCrc___pKuuCcs46V_DPeeS3
+W固定スマホ車載ホルダー,W固定スマホ車載ホルダー,ENABLED,10000,HLQzu2T5GTMXzPheurwSucuWZaxD23Pg
+W固定スマホ車載ホルダー,W固定スマホ車載ホルダー -sab,ENABLED,15600,HLQzu2T5GTMXzPheurwSucuWZaxD23Pg
+カタログ全部（テスト）,カタログ全部（テスト）,ENABLED,9000,_edWat933sTTSd8CJiwDCCwcVSW3_WG6
+ナノガラス脱毛パッド,ナノガラス脱毛パッド,PAUSED,6000,R5dyY7sbCepDR7xwRMPCieVLHC57eqAw
+ナノガラス脱毛パッド,ナノガラス脱毛パッド　かかと冬,PAUSED,8000,R5dyY7sbCepDR7xwRMPCieVLHC57eqAw
+ナノガラス脱毛パッド,ナノガラス脱毛パッド２,ENABLED,16000,R5dyY7sbCepDR7xwRMPCieVLHC57eqAw
+ナノガラス脱毛パッド,ナノガラス脱毛パッド３（BC検証用）,PAUSED,32000,R5dyY7sbCepDR7xwRMPCieVLHC57eqAw
+ナノガラス脱毛パッド,ナノガラス脱毛パッド３（BC検証用） エラ-回避用,PAUSED,25000,R5dyY7sbCepDR7xwRMPCieVLHC57eqAw
+ナノガラス脱毛パッド,ナノガラス脱毛パッド４,PAUSED,8000,R5dyY7sbCepDR7xwRMPCieVLHC57eqAw
+マグネットドアクッション,マグネットドアクッション,ENABLED,8000,zhtRWCe7xQiVt9huSLeWTDCqSeLqRRTs
+ワイド水切りワイパー,ワイド水切りワイパー,ENABLED,22000,x_MDTGXdzC5aixCg6eqn5YTasfxCmpEx
+伸縮ガラスクリーナー,伸縮ガラスクリーナー,ENABLED,13000,MnL2vj5WXZiKgxmaaehcRSGNXXVfR2SK
+伸縮ガラスクリーナー,伸縮ガラスクリーナー sabu,ENABLED,16000,MnL2vj5WXZiKgxmaaehcRSGNXXVfR2SK
+伸縮ワックス洗車ブラシ,伸縮ワックス洗車ブラシ,ENABLED,12000,3G4S9xC7EaX4awJ_VTaLXHychWhnKE_C
+快適マジックインソール,快適マジックインソール,ENABLED,10000,qLYS8WSziFLsj_AkRXzsticRMrTSwPQ9
+快適マジックインソール,快適マジックインソール 2,PAUSED,8000,qLYS8WSziFLsj_AkRXzsticRMrTSwPQ9
+快適マジックインソール,快適マジックインソール4,PAUSED,8000,qLYS8WSziFLsj_AkRXzsticRMrTSwPQ9
+快適マジックインソール,快適マジックインソール３,PAUSED,8000,qLYS8WSziFLsj_AkRXzsticRMrTSwPQ9
+防風あったか裏起毛パンツ,防風あったか裏起毛パンツ,ENABLED,8000,S9jTnAvMteg9v755hmmmL6Ci2_GyWeTt

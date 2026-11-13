@@ -1,0 +1,20 @@
+# data_query FA fresh・11/14 00時台取得・11/13 広告セット別（adsetdaily_budget は遅延あり＝参考外。予算は campaign_and_resource_get 直読が正）
+{adcampaign_name,adset_name,adsetstatus,adsetdaily_budget,cost,offsite_conversions_fb_pixel_purchase,offsite_conversion_value_fb_pixel_purchase,impressions,link_clicks,landing_page_views,offsite_conversions_fb_pixel_add_to_cart}
+ワイド水切りワイパー,ワイド水切りワイパー,ACTIVE,22000,20512,8,35024,8238,278,260,18
+W固定スマホ車載ホルダー,W固定スマホ車載ホルダー -sab,ACTIVE,15600,16517,6,27064,11149,290,254,17
+伸縮ガラスクリーナー,伸縮ガラスクリーナー sabu,ACTIVE,16000,15819,9,39004,7638,264,229,19
+ナノガラス脱毛パッド,ナノガラス脱毛パッド２,ACTIVE,16000,15115,5,19900,12912,265,250,10
+伸縮ワックス洗車ブラシ,伸縮ワックス洗車ブラシ,ACTIVE,12000,11750,5,27884,2627,107,93,21
+伸縮ガラスクリーナー,伸縮ガラスクリーナー,ACTIVE,13000,10751,2,11144,3560,117,108,7
+マグネットドアクッション,マグネットドアクッション,ACTIVE,8000,9610,4,15920,2127,89,72,4
+快適マジックインソール,快適マジックインソール,ACTIVE,10000,9306,6,34023,5073,92,81,23
+W固定スマホ車載ホルダー,W固定スマホ車載ホルダー,ACTIVE,10000,8437,3,11940,2837,92,90,9
+カタログ全部（テスト）,カタログ全部（テスト）,ACTIVE,9000,8062,2,10960,2436,101,91,9
+4-in-1マルチクリーナー,4-in-1マルチクリーナー,ACTIVE,8000,7719,3,20940,3823,140,130,7
+防風あったか裏起毛パンツ,防風あったか裏起毛パンツ,ACTIVE,8000,7694,2,7960,2972,96,85,3
+3WAY着る電気ブランケット,3WAY着る電気ブランケット,ACTIVE,8000,4370,1,10764,766,43,35,5
+UV歯ブラシ除菌器,UV歯ブラシ除菌器,CAMPAIGN_PAUSED,10000,0,null,null,null,null,1,null
+クリアビューレインガードフィルム,クリアビューレインガードフィルム,PAUSED,10000,0,null,null,null,null,null,null
+クリアビューレインガードフィルム,クリアビューレインガードフィルム - コピー,CAMPAIGN_PAUSED,5000,0,null,null,null,null,null,null
+ポータブルヒートシーラー,ポータブルヒートシーラー,CAMPAIGN_PAUSED,8000,0,null,null,null,null,null,null
+姿勢サポートチェア,姿勢サポートチェア,CAMPAIGN_PAUSED,9000,0,null,null,null,null,null,null
