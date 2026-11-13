@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""11/13(金) 18:5x 「ワイパーが弱くなった要因を分析せよ」「他の広告を入れた広告セットのパフォーマンスはどう？」
+"""11/13(金) 18:4x 「ワイパーが弱くなった要因を分析せよ」「他の広告を入れた広告セットのパフォーマンスはどう？」
 入力: wiper_why_1850_raw.json（11/13 は途中）・data/daily（11/12までの倍率）"""
 import os, sys, csv, json, math, collections, datetime
 D = os.path.dirname(os.path.abspath(__file__)) + '/'; R = D + '../../../'
