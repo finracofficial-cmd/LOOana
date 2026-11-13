@@ -1,0 +1,64 @@
+{
+ "note": "11/14 01時台取得。カタログ全部（テスト）の広告セット・広告の設定（campaign_and_resource_get full）",
+ "daily_budget": 9000,
+ "promoted_object": {
+  "pixel_id": "1511017499979931",
+  "custom_event_type": "PURCHASE",
+  "product_set_id": "26282003764771424",
+  "variation": "PRODUCT_SET_AND_WEBSITE",
+  "smart_pse_enabled": false
+ },
+ "creative_features_spec": {
+  "adapt_to_placement": {
+   "enroll_status": "OPT_IN",
+   "customizations": {
+    "aspect_ratio_config": {
+     "ar_4_5": {
+      "adapt": {
+       "enroll_status": "OPT_IN"
+      }
+     },
+     "ar_9_16": {
+      "adapt": {
+       "enroll_status": "OPT_IN"
+      }
+     }
+    },
+    "image_crop_style": "AUTO"
+   }
+  },
+  "advantage_plus_creative": {
+   "enroll_status": "OPT_OUT"
+  },
+  "description_automation": {
+   "enroll_status": "OPT_IN"
+  },
+  "enhance_cta": {
+   "enroll_status": "OPT_IN"
+  },
+  "hide_price": {
+   "enroll_status": "OPT_IN"
+  },
+  "image_background_gen": {
+   "enroll_status": "OPT_IN"
+  },
+  "image_uncrop": {
+   "enroll_status": "OPT_IN"
+  },
+  "inline_comment": {
+   "enroll_status": "OPT_IN"
+  },
+  "media_type_automation": {
+   "enroll_status": "OPT_IN"
+  },
+  "product_browsing": {
+   "enroll_status": "OPT_OUT"
+  },
+  "product_metadata_automation": {
+   "enroll_status": "OPT_IN"
+  },
+  "standard_enhancements_catalog": {
+   "enroll_status": "OPT_IN"
+  }
+ }
+}
