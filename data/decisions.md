@@ -10983,3 +10983,9 @@ Meta直接読み取り（稼働13キャンペーン・15広告セット）。ス
 - **訂正**: 15:1x の返答で「Advantage+ クリエイティブがオフ（ドアはオン）」と書いたのは誤り。API の creative_features_spec のうち `advantage_plus_creative` という1項目だけを見ていた。個別の項目は ドアA と ブランケットA で全部同じ（OPT_IN: creative_stickers・enhance_cta・text_optimizations・text_translation・inline_comment・standard_enhancements・video_auto_crop・video_filtering・video_uncrop・ig_video_native_subtitle・ads_with_benefits・pac_relaxation・show_destination_blurbs／OPT_OUT: product_browsing・product_extensions・site_extensions）。画面の表示（クリエイティブエンハンス 4/5件 オン・基本的なエンハンス 3/4件 オン・翻訳 オン）とも合う。違うのは API の `advantage_plus_creative` 1項目だけで、画面には出ていない。直す必要なし
 - 画面上の他の点: 右上「未公開の編集」＋下に「下書きを削除／公開する」＝公開されていない変更が残っている（Meta が今審査しているのは公開済みの内容）。プレビューの ⚠1 は中身が画面から見えない。CTA「購入する」は他の広告（SHOP_NOW）と同じ
 - 動画の「今なら半額セール中」: Shopify の表示は 通常価格 12,880円 → 5,980円（3色とも・compareAtPrice）で、表示どおり
+
+### 11/13(金) 15:2x 「ブラシもおなじエラーでてたから同じ広告セットに違う広告を配置したわ」
+- Meta直接読み: **伸縮ワックス洗車ブラシ**の広告セット（12,000円のまま）に 広告B（動画 7697573393347988756.mp4・審査中）。**マグネットドアクッション**の広告セット（8,000円のまま）にも 広告B（動画 20261014_qiufufa…ドア用緩衝パッド.mp4・承認済み・配信中）。どちらも広告Aは配信中のまま
+- ドアのBだけ、Aと違って 商品閲覧・商品タグがオン（product_browsing・product_extensions OPT_IN）。Bの成績がAと違っても、動画の違いか表示の違いかは分けられない
+- 予算の判定は変わらない: ブラシは 11/14朝に 11/12・11/13 が続けて1.25未満なら 12,000→9,600（11/12は1.25未満、11/13は終日待ち）。ドアは 11/14朝に 2日続けて1.25未満なら−20%・7日1.5以上かつ消化95%以上なら+20%。素材を足したことは判定の例外にしない
+- 確認: 11/16朝に 広告別の消化（Bにどれだけ回ったか）とクリック率。同じ広告セットの2本目は、インソール19%・UV歯ブラシ7%と取り分が小さかった例がある
