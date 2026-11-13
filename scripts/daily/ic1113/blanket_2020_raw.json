@@ -1,0 +1,31 @@
+{
+ "lp": {
+  "query": "FROM sessions SHOW sessions, sessions_with_cart_additions, sessions_that_reached_checkout, sessions_that_completed_checkout WHERE landing_page_path = '/products/outdoor-warming-heated-blanket-shawl' GROUP BY day SINCE 2026-11-13 UNTIL 2026-11-13 LIMIT 5",
+  "rows": [
+   [
+    "2026-11-13",
+    "26",
+    "0",
+    "0",
+    "0"
+   ]
+  ]
+ },
+ "meta": {
+  "fields": [
+   "adcampaign_name",
+   "cost",
+   "impressions",
+   "reach",
+   "link_clicks",
+   "landing_page_views",
+   "offsite_conversions_fb_pixel_add_to_cart",
+   "offsite_conversions_fb_pixel_initiate_checkout",
+   "offsite_conversions_fb_pixel_purchase"
+  ],
+  "rows": [
+   "3WAY着る電気ブランケット,2137,363,346,22,18,1,2,null"
+  ]
+ },
+ "note": "11/13 20:2x取得。3WAY着る電気ブランケット 今日（Meta fresh・入口ページ）"
+}
