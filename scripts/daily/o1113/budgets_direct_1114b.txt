@@ -1,0 +1,14 @@
+# campaign_and_resource_get 11/14 00:4x Meta直読（ユーザーの予算変更後）・クリーナー・ワイパー・ナノ・インソールの4キャンペーン
+ナノガラス脱毛パッド,ナノガラス脱毛パッド,PAUSED,6000,iibSUa_z6sa5feiSzY_WD_zKpU2iUdYD
+ナノガラス脱毛パッド,ナノガラス脱毛パッド　かかと冬,PAUSED,8000,iibSUa_z6sa5feiSzY_WD_zKpU2iUdYD
+ナノガラス脱毛パッド,ナノガラス脱毛パッド２,ENABLED,18000,iibSUa_z6sa5feiSzY_WD_zKpU2iUdYD
+ナノガラス脱毛パッド,ナノガラス脱毛パッド３（BC検証用）,PAUSED,32000,iibSUa_z6sa5feiSzY_WD_zKpU2iUdYD
+ナノガラス脱毛パッド,ナノガラス脱毛パッド３（BC検証用） エラ-回避用,PAUSED,25000,iibSUa_z6sa5feiSzY_WD_zKpU2iUdYD
+ナノガラス脱毛パッド,ナノガラス脱毛パッド４,PAUSED,8000,iibSUa_z6sa5feiSzY_WD_zKpU2iUdYD
+ワイド水切りワイパー,ワイド水切りワイパー,ENABLED,25000,ftyCS6auQKu_xYpyxRVF3gZ34keEeR37
+伸縮ガラスクリーナー,伸縮ガラスクリーナー,ENABLED,15000,38kFUPV_aDVKp3iVuGfrpaNnaA6YWR7U
+伸縮ガラスクリーナー,伸縮ガラスクリーナー sabu,ENABLED,19000,38kFUPV_aDVKp3iVuGfrpaNnaA6YWR7U
+快適マジックインソール,快適マジックインソール,ENABLED,11000,yP6ePHKzARpsaum6LMNzygtMjiFznumz
+快適マジックインソール,快適マジックインソール 2,PAUSED,8000,yP6ePHKzARpsaum6LMNzygtMjiFznumz
+快適マジックインソール,快適マジックインソール4,PAUSED,8000,yP6ePHKzARpsaum6LMNzygtMjiFznumz
+快適マジックインソール,快適マジックインソール３,PAUSED,8000,yP6ePHKzARpsaum6LMNzygtMjiFznumz
