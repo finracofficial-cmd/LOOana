@@ -1,0 +1,399 @@
+{
+ "optgoal": {
+  "W固定スマホ車載ホルダー": [
+   [
+    "W固定スマホ車載ホルダー -sab",
+    "ENABLED",
+    "OFFSITE_CONVERSIONS",
+    "LOWEST_COST_WITHOUT_CAP",
+    "PURCHASE"
+   ],
+   [
+    "W固定スマホ車載ホルダー",
+    "ENABLED",
+    "OFFSITE_CONVERSIONS",
+    "LOWEST_COST_WITHOUT_CAP",
+    "PURCHASE"
+   ]
+  ],
+  "マグネットドアクッション": [
+   [
+    "マグネットドアクッション",
+    "ENABLED",
+    "OFFSITE_CONVERSIONS",
+    "LOWEST_COST_WITHOUT_CAP",
+    "PURCHASE"
+   ]
+  ],
+  "カタログ全部（テスト）": [
+   [
+    "カタログ全部（テスト）",
+    "ENABLED",
+    "OFFSITE_CONVERSIONS",
+    "LOWEST_COST_WITHOUT_CAP",
+    "PURCHASE"
+   ]
+  ],
+  "ワイド水切りワイパー": [
+   [
+    "ワイド水切りワイパー",
+    "ENABLED",
+    "OFFSITE_CONVERSIONS",
+    "LOWEST_COST_WITHOUT_CAP",
+    "PURCHASE"
+   ]
+  ],
+  "伸縮ガラスクリーナー": [
+   [
+    "伸縮ガラスクリーナー sabu",
+    "ENABLED",
+    "OFFSITE_CONVERSIONS",
+    "LOWEST_COST_WITHOUT_CAP",
+    "PURCHASE"
+   ],
+   [
+    "伸縮ガラスクリーナー",
+    "ENABLED",
+    "OFFSITE_CONVERSIONS",
+    "LOWEST_COST_WITHOUT_CAP",
+    "PURCHASE"
+   ]
+  ],
+  "ナノガラス脱毛パッド": [
+   [
+    "ナノガラス脱毛パッド　かかと冬",
+    "PAUSED",
+    "OFFSITE_CONVERSIONS",
+    "LOWEST_COST_WITHOUT_CAP",
+    "PURCHASE"
+   ],
+   [
+    "ナノガラス脱毛パッド３（BC検証用） エラ-回避用",
+    "PAUSED",
+    "OFFSITE_CONVERSIONS",
+    "LOWEST_COST_WITHOUT_CAP",
+    "PURCHASE"
+   ],
+   [
+    "ナノガラス脱毛パッド４",
+    "PAUSED",
+    "OFFSITE_CONVERSIONS",
+    "LOWEST_COST_WITHOUT_CAP",
+    "PURCHASE"
+   ],
+   [
+    "ナノガラス脱毛パッド３（BC検証用）",
+    "PAUSED",
+    "OFFSITE_CONVERSIONS",
+    "LOWEST_COST_WITHOUT_CAP",
+    "PURCHASE"
+   ],
+   [
+    "ナノガラス脱毛パッド２",
+    "ENABLED",
+    "OFFSITE_CONVERSIONS",
+    "LOWEST_COST_WITHOUT_CAP",
+    "PURCHASE"
+   ],
+   [
+    "ナノガラス脱毛パッド",
+    "PAUSED",
+    "OFFSITE_CONVERSIONS",
+    "LOWEST_COST_WITHOUT_CAP",
+    "PURCHASE"
+   ]
+  ],
+  "4-in-1マルチクリーナー": [
+   [
+    "4-in-1マルチクリーナー",
+    "ENABLED",
+    "OFFSITE_CONVERSIONS",
+    "LOWEST_COST_WITHOUT_CAP",
+    "PURCHASE"
+   ]
+  ],
+  "防風あったか裏起毛パンツ": [
+   [
+    "防風あったか裏起毛パンツ",
+    "ENABLED",
+    "OFFSITE_CONVERSIONS",
+    "LOWEST_COST_WITHOUT_CAP",
+    "PURCHASE"
+   ]
+  ],
+  "快適マジックインソール": [
+   [
+    "快適マジックインソール4",
+    "PAUSED",
+    "OFFSITE_CONVERSIONS",
+    "LOWEST_COST_WITHOUT_CAP",
+    "PURCHASE"
+   ],
+   [
+    "快適マジックインソール３",
+    "PAUSED",
+    "OFFSITE_CONVERSIONS",
+    "LOWEST_COST_WITHOUT_CAP",
+    "PURCHASE"
+   ],
+   [
+    "快適マジックインソール 2",
+    "PAUSED",
+    "OFFSITE_CONVERSIONS",
+    "LOWEST_COST_WITHOUT_CAP",
+    "PURCHASE"
+   ],
+   [
+    "快適マジックインソール",
+    "ENABLED",
+    "OFFSITE_CONVERSIONS",
+    "LOWEST_COST_WITHOUT_CAP",
+    "PURCHASE"
+   ]
+  ],
+  "伸縮ワックス洗車ブラシ": [
+   [
+    "伸縮ワックス洗車ブラシ",
+    "ENABLED",
+    "OFFSITE_CONVERSIONS",
+    "LOWEST_COST_WITHOUT_CAP",
+    "PURCHASE"
+   ]
+  ]
+ },
+ "meta_30d": {
+  "schedule_id": "b309d30b43e6012deeef22d27e323888b9c07024c33b6f57349407a02afe9cd4",
+  "status": "completed",
+  "data": "[33]{adcampaign_name,cost,offsite_conversions_fb_pixel_purchase,offsite_conversion_value_fb_pixel_purchase}:\n  ナノガラス脱毛パッド,1569825,665,2864398\n  伸縮ガラスクリーナー,1078650,466,2246755\n  W固定スマホ車載ホルダー,960242,401,1843306\n  快適マジックインソール,717004,201,1147427\n  伸縮ワックス洗車ブラシ,377213,175,1061263\n  ポータブルヒートシーラー,340911,137,681988\n  4-in-1マルチクリーナー,276482,109,849430\n  カタログ全部（テスト）,267704,94,497211\n  高見えレザーヘッドレストフック,208357,60,403771\n  ワイド水切りワイパー,181216,122,564567\n  マグネットドアクッション,171407,77,360193\n  コードレスダブルミスト加湿器,155180,36,242277\n  姿勢サポートチェア,154067,38,297787\n  クリアビューレインガードフィルム,107502,51,277991\n  ナノバブルシャワーヘッド,96844,27,195440\n  ディスペンサー,56463,10,89228\n  高見えレザードアポケット,32026,8,44377\n  むくみ取りかっさ,25825,8,35024\n  バランスケアスリッパ,14666,3,19920\n  防風あったか裏起毛パンツ,11984,3,21293\n  2WAYシートボックス,10563,1,4980\n  ふわとろ高密度ブランケット,10366,null,null\n  シリコンホールド膝サポーター,9280,1,4980\n  コードレス毛玉クリーナー,7993,null,null\n  もちふわ肉球サンダル,5869,null,null\n  UV歯ブラシ除菌器,5656,null,null\n  健康サンダル,5033,null,null\n  ハイウエストシェイプパンツ,4923,null,null\n  すき間収納シートポケット,4911,null,null\n  ファスナー修理キット,4492,1,3980\n  ロングニトリル家事手袋,4366,null,null\n  アーチフィット逆ヒールサンダル,3922,null,null\n  携帯電動シェーバー,0,null,null",
+  "requested_field_ids": [
+   "adcampaign_name",
+   "cost",
+   "offsite_conversions_fb_pixel_purchase",
+   "offsite_conversion_value_fb_pixel_purchase"
+  ],
+  "canonical_field_ids": null,
+  "cache_used": false,
+  "cache_time": null,
+  "success": true,
+  "currency_recommendation": "Monetary values have no currency dimension. Add a currency field (currency) to identify the currency."
+ },
+ "shopify_30d": {
+  "query": "FROM sales SHOW orders, net_items_sold, gross_sales, discounts GROUP BY product_title ORDER BY gross_sales DESC SINCE 2026-10-14 UNTIL 2026-11-12 LIMIT 25",
+  "columns": [
+   {
+    "name": "product_title",
+    "dataType": "STRING"
+   },
+   {
+    "name": "orders",
+    "dataType": "INTEGER"
+   },
+   {
+    "name": "net_items_sold",
+    "dataType": "INTEGER"
+   },
+   {
+    "name": "gross_sales",
+    "dataType": "MONEY"
+   },
+   {
+    "name": "discounts",
+    "dataType": "MONEY"
+   }
+  ],
+  "rows": [
+   [
+    "【在庫セール⏰】【累計15万台突破🏆】LOOTY ナノガラス脱毛パッド【顧客満足度4.9⭐️】【全国送料無料🚗】",
+    "698",
+    "766",
+    "3052660",
+    "-53929"
+   ],
+   [
+    "【本日終了⏰】【累計15万台突破🏆】LOOTY伸縮ガラスクリーナー【顧客満足度No.1獲得商品🥇】【全国送料無料🚗】",
+    "496",
+    "621",
+    "2471580",
+    "-101893"
+   ],
+   [
+    "【本日終了⏰】【累計15万台突破🏆】LOOTY W固定スマホ車載ホルダー【顧客満足度No.1獲得商品🥇】【全国送料無料🚗】",
+    "426",
+    "496",
+    "1986020",
+    "-59501"
+   ],
+   [
+    "【本日終了⏰】【累計15万台突破🏆】LOOTY 快適マジックインソール【顧客満足度No.1獲得商品🥇】【全国送料無料🚗】",
+    "215",
+    "330",
+    "1313400",
+    "-94923"
+   ],
+   [
+    "【本日終了⏰】【累計15万台突破🏆】LOOTY 伸縮ワックス洗車ブラシ【顧客満足度No.1獲得商品🥇】【全国送料無料🚗】",
+    "179",
+    "223",
+    "1110540",
+    "-44322"
+   ],
+   [
+    "【本日終了⏰】【累計15万台突破🏆】LOOTY 4-in-1マルチクリーナー【顧客満足度No.1獲得商品🥇】【全国送料無料🚗】",
+    "113",
+    "124",
+    "865520",
+    "-16054"
+   ],
+   [
+    "【本日終了⏰】【累計15万台突破🏆】LOOTY ポータブルヒートシーラー【顧客満足度No.1獲得商品🥇】【全国送料無料🚗】",
+    "139",
+    "178",
+    "708440",
+    "-32636"
+   ],
+   [
+    "【本日終了⏰】【累計15万台突破🏆】LOOTY ワイド水切りワイパー 【顧客満足度No.1獲得商品🥇】【全国送料無料🚗】",
+    "125",
+    "145",
+    "577100",
+    "-16119"
+   ],
+   [
+    "【本日終了⏰】【累計15万台突破🏆】LOOTY 高見えレザーヘッドレストフック【顧客満足度No.1獲得商品🥇】【全国送料無料🚗】",
+    "66",
+    "126",
+    "501480",
+    "-48556"
+   ],
+   [
+    "【本日終了⏰】【累計15万台突破🏆】LOOTY マグネットドアクッション【顧客満足度No.1獲得商品🥇】【全国送料無料🚗】",
+    "84",
+    "98",
+    "390040",
+    "-11343"
+   ],
+   [
+    "【本日終了⏰】【累計15万台突破🏆】LOOTY 姿勢サポートチェア【顧客満足度No.1獲得商品🥇】【全国送料無料🚗】",
+    "38",
+    "51",
+    "310960",
+    "-17342"
+   ],
+   [
+    "【本日終了⏰】【累計15万台突破🏆】LOOTY クリアビューレインガードフィルム【顧客満足度No.1獲得商品🥇】【全国送料無料🚗】",
+    "53",
+    "75",
+    "298500",
+    "-18109"
+   ],
+   [
+    "【本日終了⏰】【累計15万台突破🏆】LOOTY コードレスダブルミスト加湿器【顧客満足度No.1獲得商品🥇】【全国送料無料🚗】",
+    "37",
+    "52",
+    "263940",
+    "-15438"
+   ],
+   [
+    "【本日終了⏰】【累計15万台突破🏆】LOOTYナノバブルシャワーヘッド【顧客満足度No.1獲得商品🥇】【全国送料無料🚗】",
+    "28",
+    "28",
+    "195440",
+    "0"
+   ],
+   [
+    "【本日終了⏰】【累計15万台突破🏆】LOOTY壁掛けディスペンサー【顧客満足度No.1獲得商品🥇】【全国送料無料🚗】",
+    "14",
+    "17",
+    "113660",
+    "-3688"
+   ],
+   [
+    "【本日終了⏰】【累計15万台突破🏆】LOOTY 高見えレザードアポケット【顧客満足度No.1獲得商品🥇】【全国送料無料🚗】",
+    "9",
+    "13",
+    "51740",
+    "-3383"
+   ],
+   [
+    "【本日終了⏰】【累計15万台突破🏆】LOOTY むくみ取りかっさ【顧客満足度No.1獲得商品🥇】【全国送料無料🚗】",
+    "11",
+    "13",
+    "51740",
+    "-1592"
+   ],
+   [
+    "【本日終了⏰】【累計15万台突破🏆】LOOTYネックマッサージャー【顧客満足度No.1獲得商品🥇】【全国送料無料🚗】",
+    "4",
+    "4",
+    "35920",
+    "0"
+   ],
+   [
+    "【本日終了⏰】【累計15万台突破🏆】LOOTY 防風あったか裏起毛パンツ【顧客満足度No.1獲得商品🥇】【全国送料無料🚗】",
+    "4",
+    "8",
+    "31840",
+    "-3383"
+   ],
+   [
+    "【本日終了⏰】【累計15万台突破🏆】LOOTY 携帯電動シェーバー【顧客満足度No.1獲得商品🥇】【全国送料無料🚗】",
+    "5",
+    "4",
+    "24900",
+    "0"
+   ],
+   [
+    "【本日終了⏰】【累計15万台突破🏆】LOOTY ムダ毛シェーバー【顧客満足度No.1獲得商品🥇】【全国送料無料🚗】",
+    "3",
+    "3",
+    "20940",
+    "0"
+   ],
+   [
+    "【本日終了⏰】【累計15万台突破🏆】LOOTY 2WAYシートボックス【顧客満足度No.1獲得商品🥇】【全国送料無料🚗】",
+    "4",
+    "4",
+    "19920",
+    "0"
+   ],
+   [
+    "【本日終了⏰】【累計15万台突破🏆】LOOTY 完全遮光・形状記憶・晴雨兼用・UV日傘【顧客満足度No.1獲得商品🥇】【全国送料無料🚗】",
+    "4",
+    "4",
+    "19920",
+    "0"
+   ],
+   [
+    "【本日終了⏰】【累計15万台突破🏆】LOOTYバランスケアスリッパ【顧客満足度No.1獲得商品🥇】【全国送料無料🚗】",
+    "4",
+    "4",
+    "19920",
+    "0"
+   ],
+   [
+    "【本日終了⏰】【累計15万台突破🏆】LOOTY 偏光・調光サングラス【顧客満足度No.1獲得商品🥇】【全国送料無料🚗】",
+    "5",
+    "5",
+    "19900",
+    "0"
+   ]
+  ],
+  "rowCount": 25,
+  "chartHint": {
+   "type": "bar",
+   "xAxisColumnIndex": 0,
+   "yAxisColumnIndices": [
+    1,
+    2
+   ],
+   "yAxisFormat": "number"
+  },
+  "summaryMetric": {
+   "label": "orders",
+   "value": "2,764"
+  },
+  "shopDomain": "h8ct0k-r2.myshopify.com",
+  "currencyCode": "JPY"
+ },
+ "note": "11/13 13時台取得。Shopify・Meta とも 10/14〜11/12（30日）。optgoal=有効10キャンペーンの広告セット別 最適化目標（campaign_and_resource_get 直接読み）"
+}
