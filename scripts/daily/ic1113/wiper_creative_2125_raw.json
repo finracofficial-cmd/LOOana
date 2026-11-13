@@ -1,0 +1,102 @@
+{
+ "note": "11/13 21:2x取得。ワイド水切りワイパー（キャンペーン52583270619412）広告Aの中身（campaign_and_resource_get full）",
+ "headlines": [
+  "期間限定セール中✨"
+ ],
+ "descriptions": [
+  "LOOTY ワイド水切りワイパーで、毎日の「洗車したのに水滴が残る…」「拭いても拭いても終わらない…」がスマートに変わる✨\n\n約30cm幅のシリコーンブレード×指をかけて握れる一体型ハンドルで、広い面の水切りと、仕上げ拭きのスムーズさにダブルアプローチ。握ってサッと滑らせる手軽さながら、やわらかい刃先＆ブラックのカーボン調デザインまで備えた本格仕様！\n\n自宅での手洗い洗車から洗車機の後・週末のお出かけ前まで、ボンネットも車窓も、残った水滴をまとめてオフ。砂やホコリを洗い流した濡れた面を水切りし、細かな部分はタオルで仕上げるだけ。乾いた水滴の跡を残しにくくして、拭いて絞ってを繰り返す手間に振り回されない毎日へ！",
+  "約30cm幅のブレード×一体型ハンドルが、広い面の水切りを驚くほどスムーズに✨\n\nLOOTY ワイド水切りワイパーで、握ってサッと滑らせるだけ。拭いても拭いても終わらない手間から解放され、スマートな洗車へ!",
+  "「拭いても終わらない...」そんな悩みを、約30cm幅×一体型ハンドルの組み合わせで解消!\n\nLOOTY ワイド水切りワイパーは、握って滑らせるだけで広範囲を水切り。手軽ながら本格的な仕様で、毎日の洗車をスマートに変えます✨"
+ ],
+ "video_title": "20261010_minokimi_7694606108010335496_洗車後にタオルで拭くと拭き跡や細かい傷がついてしまうそんな悩みを持っている方におすすめですこの車用水切りワイパーはシリコンブ.mp4",
+ "call_to_action": "SHOP_NOW",
+ "creative_features_spec": {
+  "ads_with_benefits": {
+   "enroll_status": "OPT_IN"
+  },
+  "advantage_plus_creative": {
+   "enroll_status": "OPT_IN"
+  },
+  "carousel_to_video": {
+   "enroll_status": "OPT_IN"
+  },
+  "creative_stickers": {
+   "enroll_status": "OPT_IN"
+  },
+  "cv_transformation": {
+   "enroll_status": "OPT_IN"
+  },
+  "enhance_cta": {
+   "enroll_status": "OPT_IN",
+   "customizations": {
+    "text_extraction": {
+     "enroll_status": "OPT_IN"
+    }
+   }
+  },
+  "ig_video_native_subtitle": {
+   "enroll_status": "OPT_IN"
+  },
+  "image_animation": {
+   "enroll_status": "OPT_IN"
+  },
+  "image_background_gen": {
+   "enroll_status": "OPT_IN"
+  },
+  "image_brightness_and_contrast": {
+   "enroll_status": "OPT_IN"
+  },
+  "image_uncrop": {
+   "enroll_status": "OPT_IN"
+  },
+  "inline_comment": {
+   "enroll_status": "OPT_IN"
+  },
+  "multi_photo_to_video": {
+   "enroll_status": "OPT_IN"
+  },
+  "pac_relaxation": {
+   "enroll_status": "OPT_IN"
+  },
+  "product_extensions": {
+   "enroll_status": "OPT_OUT",
+   "customizations": {
+    "pe_carousel": {
+     "enroll_status": "OPT_OUT"
+    }
+   }
+  },
+  "product_metadata_automation": {
+   "enroll_status": "OPT_IN"
+  },
+  "show_destination_blurbs": {
+   "enroll_status": "OPT_IN"
+  },
+  "site_extensions": {
+   "enroll_status": "OPT_OUT"
+  },
+  "standard_enhancements": {
+   "enroll_status": "OPT_IN"
+  },
+  "text_optimizations": {
+   "enroll_status": "OPT_IN",
+   "customizations": {
+    "text_extraction": {
+     "enroll_status": "OPT_IN"
+    }
+   }
+  },
+  "text_translation": {
+   "enroll_status": "OPT_IN"
+  },
+  "video_auto_crop": {
+   "enroll_status": "OPT_IN"
+  },
+  "video_filtering": {
+   "enroll_status": "OPT_IN"
+  },
+  "video_uncrop": {
+   "enroll_status": "OPT_IN"
+  }
+ }
+}
