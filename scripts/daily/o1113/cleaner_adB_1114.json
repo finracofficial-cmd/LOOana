@@ -1,0 +1,78 @@
+{
+ "ads": [
+  {
+   "adset": "伸縮ガラスクリーナー sabu",
+   "budget": 19000,
+   "ad": "A",
+   "id": "52574893796212",
+   "review": "APPROVED",
+   "delivery": "ACTIVE",
+   "video": "7686441602679672085.mp4",
+   "headlines": [
+    "期間限定セール中✨"
+   ],
+   "n_descriptions": 6,
+   "final_urls": null,
+   "product_browsing": {
+    "enroll_status": "OPT_OUT"
+   },
+   "product_extensions": "OPT_OUT"
+  },
+  {
+   "adset": "伸縮ガラスクリーナー",
+   "budget": 15000,
+   "ad": "A",
+   "id": "52565416390412",
+   "review": "IN_REVIEW",
+   "delivery": "PENDING_REVIEW",
+   "video": "7680122223658831125.mp4",
+   "headlines": [
+    "期間限定セール中✨"
+   ],
+   "n_descriptions": 5,
+   "final_urls": null,
+   "product_browsing": {
+    "enroll_status": "OPT_IN"
+   },
+   "product_extensions": "OPT_OUT"
+  },
+  {
+   "adset": "伸縮ガラスクリーナー",
+   "budget": 15000,
+   "ad": "B",
+   "id": "52585513475212",
+   "review": "IN_REVIEW",
+   "delivery": "IN_PROCESS",
+   "video": [
+    "1944356053396336",
+    "3749410485207712"
+   ],
+   "headlines": [
+    ""
+   ],
+   "n_descriptions": 0,
+   "final_urls": [
+    "https://looty-japan.com/products/nano-fine-fiber-defogging-and-windproof-window-cleaning-brush"
+   ],
+   "product_browsing": {
+    "enroll_status": "OPT_IN"
+   },
+   "product_extensions": "OPT_OUT"
+  }
+ ],
+ "today_spend": {
+  "fields": [
+   "adset_name",
+   "ad_name",
+   "adstatus",
+   "cost",
+   "impressions",
+   "link_clicks"
+  ],
+  "rows": [
+   "伸縮ガラスクリーナー sabu,A,ACTIVE,468,188,8",
+   "伸縮ガラスクリーナー,A,ACTIVE,399,85,3"
+  ]
+ },
+ "note": "11/14 01:2x取得。伸縮ガラスクリーナーの広告（Meta直読 full）と今日0時台〜の広告別の広告費"
+}
