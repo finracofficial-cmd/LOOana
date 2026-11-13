@@ -1,0 +1,19 @@
+# data_query FA・11/14 08時台取得・adcampaign_name,adset_name,adsetstatus,ad_name,adstatus,cost,impressions,link_clicks
+ワイド水切りワイパー,ワイド水切りワイパー,ACTIVE,A,ACTIVE,6122,1998,53
+伸縮ガラスクリーナー,伸縮ガラスクリーナー sabu,ACTIVE,A,ACTIVE,4364,1864,61
+ナノガラス脱毛パッド,ナノガラス脱毛パッド２,ACTIVE,A,ACTIVE,3932,3080,53
+W固定スマホ車載ホルダー,W固定スマホ車載ホルダー -sab,ACTIVE,B,ACTIVE,3642,2335,45
+伸縮ガラスクリーナー,伸縮ガラスクリーナー,ACTIVE,A,ACTIVE,2998,939,49
+3WAY着る電気ブランケット,3WAY着る電気ブランケット,ACTIVE,A,ACTIVE,2405,325,23
+マグネットドアクッション,マグネットドアクッション,ACTIVE,B,ACTIVE,2381,499,30
+伸縮ワックス洗車ブラシ,伸縮ワックス洗車ブラシ,ACTIVE,A,ACTIVE,2275,573,22
+4-in-1マルチクリーナー,4-in-1マルチクリーナー,ACTIVE,B,ACTIVE,2143,1182,52
+W固定スマホ車載ホルダー,W固定スマホ車載ホルダー,ACTIVE,A,ACTIVE,1898,649,29
+カタログ全部（テスト）,カタログ全部（テスト）,ACTIVE,AAA,ACTIVE,1623,459,12
+防風あったか裏起毛パンツ,防風あったか裏起毛パンツ,ACTIVE,A,ACTIVE,1586,490,27
+快適マジックインソール,快適マジックインソール,ACTIVE,A,ACTIVE,1512,681,13
+快適マジックインソール,快適マジックインソール,ACTIVE,A - コピー,ACTIVE,700,500,7
+ワイド水切りワイパー,ワイド水切りワイパー,ACTIVE,B,ACTIVE,606,203,6
+伸縮ワックス洗車ブラシ,伸縮ワックス洗車ブラシ,ACTIVE,B,ACTIVE,406,96,8
+マグネットドアクッション,マグネットドアクッション,ACTIVE,A,ACTIVE,96,25,2
+伸縮ガラスクリーナー,伸縮ガラスクリーナー,ACTIVE,B,ACTIVE,3,6,null

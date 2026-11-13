@@ -1,0 +1,27 @@
+{
+"data": {
+"discountNode": {
+"id": "gid://shopify/DiscountAutomaticNode/1539092218098",
+"discount": {
+"title": "Pumper-QB-V4-20261008004630364 (do not delete)",
+"status": "ACTIVE",
+"updatedAt": "2026-11-13T22:35:04Z",
+"appDiscountType": {
+"title": "Pumper Quantity Breaks V4",
+"functionId": "019fd0db-7f57-7a40-880c-5c8ab74aa0cb"
+}
+},
+"metafields": {
+"nodes": [
+{
+"namespace": "pumper-qb-v4",
+"key": "function-configuration",
+"updatedAt": "2026-10-09T07:19:04Z",
+"type": "json",
+"value": "{\"muyskqhm7eg2i1\":{\"target\":0,\"products\":[8999289651442],\"platformFeatures\":{\"out-of-stock-message\":{},\"basic-free-gift\":{\"gifts\":[]},\"basic-free-shipping\":{\"tiers\":[{\"tierId\":\"muyskqhm7eg2i1-1\",\"qty\":1,\"text\":\"\"},{\"tierId\":\"muyskqhm7eg2i1-2\",\"qty\":2,\"text\":\"\"},{\"tierId\":\"muyskqhm7eg2i1-3\",\"qty\":3,\"text\":\"\"}]},\"basic-tier\":{\"tiers\":[{\"title\":\"1個購入\",\"tierId\":\"muyskqhm7eg2i1-1\",\"qty\":1,\"type\":0,\"value\":0},{\"title\":\"2個購入で10％オフ\",\"tierId\":\"muyskqhm7eg2i1-2\",\"qty\":2,\"type\":0,\"value\":10},{\"title\":\" 3個購入で15％オフ\",\"tierId\":\"muyskqhm7eg2i1-3\",\"qty\":3,\"type\":0,\"value\":15}]},\"billing\":{},\"bundle-tier\":{\"bundles\":[]},\"bxgy\":{\"bxgy\":[]},\"checkbox-upsell\":{\"entries\":[]},\"market-targeting\":{},\"mix-and-match\":{\"mixAndMatch\":[]},\"offerv2\":{\"volume\":true,\"combine\":false,\"b2bExcluded\":false,\"rounding\":{\"enabled\":false,\"type\":\".99\"},\"display\":{\"byEach\":false,\"total\":false}},\"progressive-free-gift\":{\"gifts\":[{\"productId\":15412971831538,\"qty\":1,\"unlockTierIds\":[\"muyskqhm7eg2i1-2\",\"muyskqhm7eg2i1-3\"]}]},\"require-offer-id\":{},\"tier-cards\":{},\"upsell\":{\"upsells\":[]}}},\"selectedCollectionIds\":[]}"
+}
+]
+}
+}
+}
+}
