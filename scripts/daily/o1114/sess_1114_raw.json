@@ -1,0 +1,12 @@
+{
+"query": "FROM sessions SHOW sessions, sessions_with_cart_additions, sessions_that_reached_checkout, sessions_that_completed_checkout SINCE 2026-11-14 UNTIL 2026-11-14",
+"note": "11/15 00時台取得",
+"rows": [
+[
+"2570",
+"147",
+"138",
+"63"
+]
+]
+}
