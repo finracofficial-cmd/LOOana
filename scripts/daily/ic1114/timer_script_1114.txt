@@ -1,0 +1,144 @@
+# テーマ 20260226（MA時LP）rev20260226 の商品テンプレートにあるタイマー（11/14 19時台に GraphQL theme.files で読んだ）
+# テンプレートの更新日: carholder（W固定）2026-08-14・clenerrr（クリーナー）2026-09-07・mizukiri（ワイパー）2026-11-04・datumoupad（ナノ・在庫メーター）2026-11-10
+## templates/product.carholder.json
+<script>
+(function() {
+  const TIMER_DURATION = 15 * 60; // 15分（秒）
+  const STORAGE_KEY = 'shop_timer_expiry';
+
+  function startTimer() {
+    let expiry = localStorage.getItem(STORAGE_KEY);
+    let now = Math.floor(Date.now() / 1000);
+
+    // 有効期限がない、または期限切れなら新しく設定
+    if (!expiry || now > expiry) {
+      expiry = now + TIMER_DURATION;
+      localStorage.setItem(STORAGE_KEY, expiry);
+    }
+
+    const display = document.querySelector('#persistent-timer');
+
+    const update = setInterval(function() {
+      let currentNow = Math.floor(Date.now() / 1000);
+      let remaining = expiry - currentNow;
+
+      if (remaining <= 0) {
+        // 0になったらリセットしてループ
+        expiry = currentNow + TIMER_DURATION;
+        localStorage.setItem(STORAGE_KEY, expiry);
+        remaining = TIMER_DURATION;
+      }
+
+      let minutes = Math.floor(remaining / 60);
+      let seconds = remaining % 60;
+
+      minutes = minutes < 10 ? "0" + minutes : minutes;
+      seconds = seconds < 10 ? "0" + seconds : seconds;
+
+      display.textContent = minutes + ":" + seconds;
+    }, 1000);
+  }
+
+  // DOMが読み込まれてから実行
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', startTimer);
+  } else {
+    startTimer();
+  }
+})();
+</script>
+## templates/product.clenerrr.json
+<script>
+(function() {
+  const TIMER_DURATION = 15 * 60; // 15分（秒）
+  const STORAGE_KEY = 'shop_timer_expiry';
+
+  function startTimer() {
+    let expiry = localStorage.getItem(STORAGE_KEY);
+    let now = Math.floor(Date.now() / 1000);
+
+    // 有効期限がない、または期限切れなら新しく設定
+    if (!expiry || now > expiry) {
+      expiry = now + TIMER_DURATION;
+      localStorage.setItem(STORAGE_KEY, expiry);
+    }
+
+    const display = document.querySelector('#persistent-timer');
+
+    const update = setInterval(function() {
+      let currentNow = Math.floor(Date.now() / 1000);
+      let remaining = expiry - currentNow;
+
+      if (remaining <= 0) {
+        // 0になったらリセットしてループ
+        expiry = currentNow + TIMER_DURATION;
+        localStorage.setItem(STORAGE_KEY, expiry);
+        remaining = TIMER_DURATION;
+      }
+
+      let minutes = Math.floor(remaining / 60);
+      let seconds = remaining % 60;
+
+      minutes = minutes < 10 ? "0" + minutes : minutes;
+      seconds = seconds < 10 ? "0" + seconds : seconds;
+
+      display.textContent = minutes + ":" + seconds;
+    }, 1000);
+  }
+
+  // DOMが読み込まれてから実行
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', startTimer);
+  } else {
+    startTimer();
+  }
+})();
+</script>
+## templates/product.datumoupad.json: persistent-timer なし（在庫メーター）
+## templates/product.mizukiri.json
+<script>
+(function() {
+  const TIMER_DURATION = 15 * 60; // 15分（秒）
+  const STORAGE_KEY = 'shop_timer_expiry';
+
+  function startTimer() {
+    let expiry = localStorage.getItem(STORAGE_KEY);
+    let now = Math.floor(Date.now() / 1000);
+
+    // 有効期限がない、または期限切れなら新しく設定
+    if (!expiry || now > expiry) {
+      expiry = now + TIMER_DURATION;
+      localStorage.setItem(STORAGE_KEY, expiry);
+    }
+
+    const display = document.querySelector('#persistent-timer');
+
+    const update = setInterval(function() {
+      let currentNow = Math.floor(Date.now() / 1000);
+      let remaining = expiry - currentNow;
+
+      if (remaining <= 0) {
+        // 0になったらリセットしてループ
+        expiry = currentNow + TIMER_DURATION;
+        localStorage.setItem(STORAGE_KEY, expiry);
+        remaining = TIMER_DURATION;
+      }
+
+      let minutes = Math.floor(remaining / 60);
+      let seconds = remaining % 60;
+
+      minutes = minutes < 10 ? "0" + minutes : minutes;
+      seconds = seconds < 10 ? "0" + seconds : seconds;
+
+      display.textContent = minutes + ":" + seconds;
+    }, 1000);
+  }
+
+  // DOMが読み込まれてから実行
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', startTimer);
+  } else {
+    startTimer();
+  }
+})();
+</script>
