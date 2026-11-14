@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-"""ワイパーの広告費あたり注文が本当に落ちているか（2026-11-15 01:0x ユーザー「ワイパーはさげたほうがいいかな？」）
-注文: Shopify FROM sales SHOW orders WHERE product_title CONTAINS 'ワイド水切りワイパー' TIMESERIES day（01:0x 取得・下に貼る）
+"""ワイパーの広告費あたり注文が本当に落ちているか（2026-11-15 00:4x ユーザー「ワイパーはさげたほうがいいかな？」）
+注文: Shopify FROM sales SHOW orders WHERE product_title CONTAINS 'ワイド水切りワイパー' TIMESERIES day（00:4x 取得・下に貼る）
 広告費: data/daily/daily_ad.csv。偶然のぶれは注文数から（√(1/前+1/今)）、日ごとのぶれが偶然より大きい分（φ=1.32）も併記"""
 import csv, math, collections
 R = __file__.rsplit('/scripts/', 1)[0] + '/'
