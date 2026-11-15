@@ -1,4 +1,4 @@
-# Shopify FROM sales SHOW orders, gross_sales, discounts GROUP BY product_title SINCE 2026-10-16 UNTIL 2026-11-14（11/15 09:2x 取得）。広告費10万円以上の商品だけ。短い商品名,orders,gross,discounts
+# Shopify FROM sales SHOW orders, gross_sales, discounts GROUP BY product_title SINCE 2026-10-16 UNTIL 2026-11-14（11/15 09:1x 取得）。広告費10万円以上の商品だけ。短い商品名,orders,gross,discounts
 ナノガラス脱毛パッド,637,2782020,-48158
 伸縮ガラスクリーナー,496,2467600,-100898
 W固定スマホ車載ホルダー,423,1966120,-57909

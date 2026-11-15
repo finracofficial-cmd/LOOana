@@ -1,4 +1,4 @@
-# data_query FA 2026-10-16〜2026-11-14 Asia/Tokyo（11/15 09:2x 取得）・adcampaign_name,cost,impressions,link_clicks,landing_page_views,add_to_cart,purchase（null→0）
+# data_query FA 2026-10-16〜2026-11-14 Asia/Tokyo（11/15 09:1x 取得）・adcampaign_name,cost,impressions,link_clicks,landing_page_views,add_to_cart,purchase（null→0）
 ナノガラス脱毛パッド,1450174,1237864,18477,17329,1775,608
 伸縮ガラスクリーナー,1065822,410281,13774,12824,1440,469
 W固定スマホ車載ホルダー,939401,451657,14099,13307,1065,399

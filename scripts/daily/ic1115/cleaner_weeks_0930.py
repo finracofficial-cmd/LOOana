@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""伸縮ガラスクリーナーが長く売れ続けているか（出してからの週ごと・data/daily）。比べる: W固定・洗車ブラシ・ワイパー・ドアクッション（2026-11-15 09:3x）"""
+"""伸縮ガラスクリーナーが長く売れ続けているか（出してからの週ごと・data/daily）。比べる: W固定・洗車ブラシ・ワイパー・ドアクッション（2026-11-15 09:1x）"""
 import csv, sys, collections, datetime
 R = __file__.rsplit('/scripts/', 1)[0] + '/'
 src = open(R + 'scripts/product_tabs.py').read()
