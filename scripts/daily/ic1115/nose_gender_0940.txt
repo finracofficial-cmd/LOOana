@@ -1,4 +1,4 @@
-# data_query FA（11/15 09:3x 取得）adcampaign_name,gender,cost,impressions,link_clicks,add_to_cart,purchase・filters adcampaign_name =@ スマートノーズ・2026-04-01〜2026-11-15・Asia/Tokyo（null→0）
+# data_query FA（11/15 11:5x 取得）adcampaign_name,gender,cost,impressions,link_clicks,add_to_cart,purchase・filters adcampaign_name =@ スマートノーズ・2026-04-01〜2026-11-15・Asia/Tokyo（null→0）
 スマートノーズ,female,20378,9559,67,6,4
 スマートノーズ,male,5237,3240,19,2,1
 スマートノーズ,unknown,96,61,0,0,0
