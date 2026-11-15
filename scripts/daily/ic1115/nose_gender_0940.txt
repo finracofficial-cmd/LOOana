@@ -1,0 +1,8 @@
+# data_query FA（11/15 09:3x 取得）adcampaign_name,gender,cost,impressions,link_clicks,add_to_cart,purchase・filters adcampaign_name =@ スマートノーズ・2026-04-01〜2026-11-15・Asia/Tokyo（null→0）
+スマートノーズ,female,20378,9559,67,6,4
+スマートノーズ,male,5237,3240,19,2,1
+スマートノーズ,unknown,96,61,0,0,0
+スマートノーズEMS美顔器v2,male,5093,2700,40,13,1
+スマートノーズEMS美顔器v2,female,989,448,7,1,0
+スマートノーズEMS美顔器v2,unknown,14,22,0,0,0
+# 計算: 旧 女性 広告費の79%（20,378/25,711）・クリック率 0.70%／男性 0.59%。v2 男性 広告費の84%（5,093/6,096）・クリック率 1.48%／女性 1.56%
