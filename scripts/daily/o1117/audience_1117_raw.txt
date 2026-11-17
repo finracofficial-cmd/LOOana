@@ -1,0 +1,50 @@
+# data_query FA（11/18 00時台）。P7=11/10〜16 の合計（日付なし・1本）、P17=11/17（1日・fresh）。項目: 分け方,cost,impressions,link_clicks,LPV,ATC(Meta),purchase(Meta)（null→0）
+# 配置（publisher_platform,platform_position）
+P7,place,instagram|feed,380363,140342,4672,4275,486,169
+P7,place,instagram|instagram_reels,348688,169141,3826,3706,409,131
+P7,place,facebook|feed,183317,60137,2094,1925,194,79
+P7,place,facebook|facebook_reels,138994,38124,1192,1096,127,47
+P7,place,instagram|instagram_stories,120531,34579,1901,1827,128,44
+P7,place,threads|threads_feed,34086,51201,984,889,40,10
+P7,place,その他,10303,6743,108,93,13,5
+P17,place,instagram|feed,67980,25075,796,712,78,20
+P17,place,instagram|instagram_reels,59838,29516,637,601,45,18
+P17,place,facebook|feed,21583,7027,246,231,18,6
+P17,place,facebook|facebook_reels,20938,6367,187,160,18,8
+P17,place,instagram|instagram_stories,19170,5546,285,273,17,6
+P17,place,threads|threads_feed,5045,7907,150,142,0,1
+P17,place,その他,1606,889,6,7,1,1
+# 年齢・性別（unknown はまとめた）
+P7,age,55-64|male,243364,77338,2884,2684,303,103
+P7,age,45-54|male,173744,73946,2270,2099,190,73
+P7,age,65+|male,170493,41356,1839,1722,188,66
+P7,age,45-54|female,111135,38342,1447,1352,127,47
+P7,age,55-64|female,108500,24145,1184,1136,133,43
+P7,age,35-44|male,85922,46458,1142,1066,95,36
+P7,age,25-34|male,72665,53166,934,854,94,29
+P7,age,35-44|female,64163,31201,860,812,54,19
+P7,age,25-34|female,55824,38655,761,693,63,21
+P7,age,65+|female,55416,9548,496,452,60,15
+P7,age,18-24|male,41511,37673,505,469,31,12
+P7,age,18-24|female,29943,26047,408,424,57,21
+P7,age,unknown,3606,2393,47,47,2,0
+P17,age,55-64|male,32992,10741,359,334,27,8
+P17,age,65+|male,23908,6000,231,207,23,6
+P17,age,45-54|male,23750,10789,304,294,23,10
+P17,age,45-54|female,19475,6458,256,229,23,6
+P17,age,55-64|female,18250,4380,212,183,10,3
+P17,age,18-24|male,13795,10670,170,156,9,4
+P17,age,25-34|male,13642,9035,164,150,13,5
+P17,age,35-44|male,13554,7187,175,164,14,4
+P17,age,35-44|female,11410,5136,148,132,12,5
+P17,age,65+|female,10456,1902,116,107,16,7
+P17,age,25-34|female,9076,5652,104,100,7,2
+P17,age,18-24|female,5274,3991,59,60,0,0
+P17,age,unknown,578,387,9,11,0,0
+# Shopify 端末（FROM sessions SHOW sessions, sessions_with_cart_additions, sessions_that_completed_checkout GROUP BY session_device_type）。B=11/3〜16・T=11/17。device,sessions,cart,completed
+B,device,mobile,36968,2057,1055
+B,device,desktop,808,31,19
+B,device,tablet,452,39,20
+T,device,mobile,2463,115,57
+T,device,desktop,43,2,2
+T,device,tablet,28,1,1
