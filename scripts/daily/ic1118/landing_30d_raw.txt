@@ -1,0 +1,22 @@
+# Shopify（11/18 取得）FROM sessions SHOW sessions, sessions_with_cart_additions, sessions_that_reached_checkout, sessions_that_completed_checkout GROUP BY landing_page_path SINCE 2026-10-19 UNTIL 2026-11-17 ORDER BY sessions DESC LIMIT 40 から広告の商品ページだけ。商品名,入口ページ,sessions,cart,checkout,completed
+ナノガラス脱毛パッド,washable-reusable-fuzz-remover,18186,995,902,500
+W固定スマホ車載ホルダー,vacuum-adsorption-car-mobile-phone-folding-360-rotating-suction-cup-bracket,14378,762,642,361
+伸縮ガラスクリーナー,nano-fine-fiber-defogging-and-windproof-window-cleaning-brush,14372,865,776,444
+快適マジックインソール,soft-super-sports-shock-absorption-sweat-absorbent-sockliner-with-massage-function,6849,395,335,155
+伸縮ワックス洗車ブラシ,car-wash-cotton-thread-telescopic-wax-mop,4478,368,330,181
+4-in-1マルチクリーナー,portable-small-wireless-mini-dust-blower,4370,205,175,94
+ポータブルヒートシーラー,small-portable-mini-sealing-machine-heat-seal-food-hand-press-snack-plastic-bag,3931,213,180,104
+ワイド水切りワイパー,soft-silicone-car-squeegee-integrated-windshield-glass-scraper-tool-scratch-free-paint-safe-auto-washing-accessory-for-home-use,3275,249,222,154
+マグネットドアクッション,silicone-magnetic-door-lock-damping-pad-for-tesla-refresh-model-protective-accessory,3003,167,152,103
+姿勢サポートチェア,student-children-cushion-chair-waist-support,1988,84,69,35
+コードレスダブルミスト加湿器,smart-uv-light-oscillating-humidifier,1528,62,55,34
+クリアビューレインガードフィルム,waterproof-film-for-car-rearview-mirror,1138,89,77,51
+ナノバブルシャワーヘッド,water-stop-spray-beauty-bracket-shower-set,1099,43,38,16
+高見えレザーヘッドレストフック,seat-hook-chair-back-hidden-small-rear-row-fur-creative-upgrade-seat-flip-back-row-object-storage-car-bag,1067,70,58,41
+スマートノーズEMS美顔器,high-end-nose-massager-white,592,33,31,15
+壁掛けディスペンサー,hotel-toilet-wall-mounted-soap-dispenser,473,19,15,8
+携帯電動シェーバー,reciprocating-shaver,409,26,24,12
+防風あったか裏起毛パンツ,winter-sweatwear-men-plush-thick-fleece-sweatpant-lambswool-thermal-trousers-casual-pants-waterproof-windproof-warm-cotton-pants,398,14,12,8
+3WAY着る電気ブランケット,outdoor-warming-heated-blanket-shawl,367,20,16,8
+高見えレザードアポケット,vehicle-mounted-storage-of-car-door-storage-box,358,15,15,10
+360°マルチクリップ車載スマホホルダー,car-phone-holder-in-car-dashboard,237,13,12,10
