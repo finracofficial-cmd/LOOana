@@ -1,0 +1,6 @@
+{"note": "11/18 09時台取得（10/19〜11/17 の30日）",
+ "new_returning": {"query": "FROM sales SHOW orders, gross_sales, discounts, customers GROUP BY new_or_returning_customer SINCE 2026-10-19 UNTIL 2026-11-17", "rows": [["New","2319","12286950","-435039","2319"],["Returning","255","1533530","-74304","237"]]},
+ "funnel": {"query": "FROM sessions SHOW sessions, sessions_with_cart_additions, sessions_that_reached_checkout, sessions_that_completed_checkout SINCE 2026-10-19 UNTIL 2026-11-17", "rows": [["89841","5047","4583","2536"]]},
+ "referrer": {"query": "FROM sales SHOW orders, gross_sales GROUP BY order_referrer_source SINCE 2026-10-19 UNTIL 2026-11-17", "rows": [["social","1900","10187260"],["","608","3272050"],["search","66","361170"]]},
+ "customers_total": 34303, "abandoned_checkouts_1111_1117": 89,
+ "hotplate": "保温プレート 3件とも DRAFT（8,990円・元値17,990）"}
