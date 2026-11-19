@@ -1,5 +1,5 @@
 {
- "_note": "11/19 15時台取得。①②は ShopifyQL（TIMESERIES week・SINCE 2026-08-31 UNTIL 2026-11-18）の結果そのまま。③④は graphql products / locations の結果から必要な項目だけ",
+ "_note": "11/19 14時台取得。①②は ShopifyQL（TIMESERIES week・SINCE 2026-08-31 UNTIL 2026-11-18）の結果そのまま。③④は graphql products / locations の結果から必要な項目だけ",
  "q_nano": "FROM sales SHOW orders, gross_sales, discounts, quantity_ordered WHERE product_title CONTAINS 'ナノガラス脱毛パッド' TIMESERIES week SINCE 2026-08-31 UNTIL 2026-11-18",
  "nano": [["2026-08-31","284","1205940","-15522","303"],["2026-09-07","262","1130320","-17711","284"],["2026-09-14","253","1130320","-25074","284"],["2026-09-21","264","1130320","-16119","284"],["2026-09-28","261","1150220","-22885","289"],["2026-10-05","259","1102460","-14726","277"],["2026-10-12","263","1130320","-16915","284"],["2026-10-19","269","1166140","-19104","293"],["2026-10-26","144","624860","-9552","157"],["2026-11-02","69","318400","-8159","80"],["2026-11-09","57","250740","-4975","63"],["2026-11-16","20","99500","-3980","25"]],
  "q_store": "FROM sales SHOW orders, gross_sales, discounts, quantity_ordered WHERE product_title NOT CONTAINS 'VIP特典' TIMESERIES week SINCE 2026-08-31 UNTIL 2026-11-18",

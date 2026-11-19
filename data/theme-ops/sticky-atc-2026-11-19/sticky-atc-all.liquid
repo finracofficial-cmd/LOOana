@@ -1,0 +1,133 @@
+{%- comment -%}
+  LOOTY 画面下に固定の「カートに追加」ボタン 全商品用（スマホだけ）2026-11-19
+  ・商品ページならどの商品でも、その商品の値段・選んでいる個数（まとめ買い）に合わせて出る
+  ・元の「カートに追加する」ボタンが画面に見えていない間だけ、画面の下に出る
+  ・色やサイズを選ぶ商品: 1回目のタップで「まとめ買い・色・サイズを選ぶ場所」まで動く → 2回目でカートに入る
+  ・選ぶものがない商品: 1回目のタップでカートに入る
+  ・元のボタンをそのまま押すので、まとめ買いの割引・VIP特典・カートの画面・計測は今までと同じ
+  ・やめるとき: このコードを入れたセクション（またはスニペットの1行）を消すだけ
+
+  変えてよいのは下の2行だけ
+{%- endcomment -%}
+{%- assign looty_satc_note = '全国送料無料・30日返品OK' -%}
+{%- assign looty_satc_skip = '' -%}{%- comment -%} 出したくない商品のハンドルをカンマ区切りで。例: 'sun-umbrella,mat' {%- endcomment -%}
+
+{%- if template.name == 'product' and product -%}
+{%- assign looty_satc_skip_list = looty_satc_skip | split: ',' -%}
+{%- unless looty_satc_skip_list contains product.handle -%}
+<div id="looty-sticky-atc" class="looty-satc" hidden data-need-pick="{% if product.variants.size > 1 %}1{% else %}0{% endif %}">
+  <div class="looty-satc__info">
+    <span class="looty-satc__note">{{ looty_satc_note }}</span>
+    <span class="looty-satc__line"><span class="looty-satc__price">{{ product.selected_or_first_available_variant.price | money }}</span><span class="looty-satc__tier"></span></span>
+  </div>
+  <button type="button" class="looty-satc__btn" data-label-add="カートに追加する" data-label-pick="選んでカートに追加" data-label-out="売り切れ">カートに追加する</button>
+</div>
+<script type="application/json" id="looty-satc-data">{ {%- for v in product.variants -%}"{{ v.id }}":{{ v.price | money | strip_html | json }}{%- unless forloop.last -%},{%- endunless -%}{%- endfor -%} }</script>
+<style>
+  .looty-satc { display: none; }
+  @media screen and (max-width: 749px) {
+    .looty-satc {
+      display: flex; align-items: center; gap: 10px;
+      position: fixed; left: 0; right: 0; bottom: 0; z-index: 90;
+      padding: 8px 12px calc(8px + env(safe-area-inset-bottom));
+      background: #fff; border-top: 1px solid #e5e5e5; box-shadow: 0 -2px 10px rgba(0,0,0,.08);
+      transform: translateY(0); transition: transform .2s ease;
+    }
+    .looty-satc[hidden] { display: none; }
+    .looty-satc.is-off { transform: translateY(110%); }
+    .looty-satc__info { display: flex; flex-direction: column; line-height: 1.25; min-width: 0; max-width: 56%; }
+    .looty-satc__note { font-size: 11px; color: #555; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .looty-satc__line { display: flex; align-items: baseline; gap: 6px; min-width: 0; }
+    .looty-satc__price { font-size: 18px; font-weight: 700; color: #111; white-space: nowrap; }
+    .looty-satc__tier { font-size: 11px; color: #c0392b; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .looty-satc__btn {
+      flex: 1 1 auto; min-height: 46px; border: 0; border-radius: 8px;
+      background: #e8590c; color: #fff; font-size: 15px; font-weight: 700; letter-spacing: .02em;
+    }
+    .looty-satc__btn[disabled] { background: #bbb; }
+    body.looty-satc-has { padding-bottom: calc(64px + env(safe-area-inset-bottom)); }
+  }
+</style>
+<script>
+(function () {
+  var bar = document.getElementById('looty-sticky-atc');
+  if (!bar || bar.dataset.ready) return;
+  bar.dataset.ready = '1';
+  var btn = bar.querySelector('.looty-satc__btn');
+  var priceEl = bar.querySelector('.looty-satc__price');
+  var tierEl = bar.querySelector('.looty-satc__tier');
+  var prices = {};
+  try { prices = JSON.parse(document.getElementById('looty-satc-data').textContent); } catch (e) {}
+  var needPick = bar.dataset.needPick === '1';   // 色・サイズなど、選ぶものがある商品
+  var picked = false;
+
+  function form() {
+    var f = document.querySelector('product-form form[action*="/cart/add"]');
+    if (f) return f;
+    var b = document.querySelector('form[action*="/cart/add"] button[name="add"]');
+    return b ? b.form : null;
+  }
+  function original() { var f = form(); return (f && f.querySelector('button[name="add"]')) || document.querySelector('button.product-form__submit'); }
+  function shown(el) { return !!(el && el.offsetParent !== null && el.getBoundingClientRect().height > 0); }
+  function bundleBox() { var b = document.querySelector('.pumper_block'); return shown(b) ? b : null; }          // まとめ買いの枠（Pumper）
+  function themePicker() { var p = document.querySelector('variant-selects, variant-radios'); return shown(p) ? p : null; }  // テーマの色・サイズ
+  function chooseArea() { return bundleBox() || themePicker(); }
+  function tier() {
+    var b = bundleBox(); if (!b) return null;
+    var c = b.querySelector('.pmpr-tier-shell__card[data-selected="true"]'); if (!c) return null;
+    var t = c.querySelector('.pmpr-tier-title'), p = c.querySelector('.pmpr-tier-price__total');
+    return { title: t ? t.textContent.replace(/\s+/g, ' ').trim() : '', price: p ? p.textContent.replace(/\s+/g, '').trim() : '' };
+  }
+  function variantPrice() { var f = form(), i = f && f.querySelector('input[name="id"], select[name="id"]'); return i && prices[String(i.value)]; }
+
+  function refresh() {
+    var t = tier(), o = original();
+    var price = (t && t.price) || variantPrice();
+    if (price && priceEl.textContent !== price) priceEl.textContent = price;
+    var tt = t && t.price ? t.title : '';
+    if (tierEl.textContent !== tt) tierEl.textContent = tt;
+    var out = !!(o && o.disabled);
+    btn.disabled = out;
+    var label = out ? btn.dataset.labelOut : (needPick && !picked ? btn.dataset.labelPick : btn.dataset.labelAdd);
+    if (btn.textContent !== label) btn.textContent = label;
+  }
+
+  // まとめ買いの枠・色・サイズに触ったら「選び終わった」とみなす
+  function touched(e) {
+    var a = e.target && e.target.closest && e.target.closest('.pumper_block, variant-selects, variant-radios');
+    if (a) picked = true;
+    setTimeout(refresh, 60); setTimeout(refresh, 400);
+  }
+  document.addEventListener('click', touched, true);
+  document.addEventListener('change', touched, true);
+
+  var target = original();
+  if (!target) return;
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function (entries) {
+      bar.classList.toggle('is-off', entries[0].isIntersecting);
+    }, { threshold: 0.6 }).observe(target);
+  }
+  document.body.classList.add('looty-satc-has');
+  bar.hidden = false;
+  refresh();
+  setInterval(refresh, 1000);   // まとめ買いの枠はあとから表示されるので、値段を合わせ直す
+
+  btn.addEventListener('click', function () {
+    var o = original();
+    if (!o || o.disabled) return;
+    if (needPick && !picked) {
+      picked = true; refresh();
+      var area = chooseArea();
+      if (area) {
+        var y = area.getBoundingClientRect().top + window.pageYOffset - 70;
+        window.scrollTo({ top: y < 0 ? 0 : y, behavior: 'smooth' });
+        return;
+      }
+    }
+    o.click();
+  });
+})();
+</script>
+{%- endunless -%}
+{%- endif -%}

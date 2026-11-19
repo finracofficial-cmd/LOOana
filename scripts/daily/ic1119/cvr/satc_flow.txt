@@ -1,0 +1,15 @@
+① ナノ 開いた直後 {"price":"¥3,980","tier":"1個購入","label":"選んでカートに追加","off":false,"barTop":601,"vh":664,"y":0,"origTop":2049,"pumper":true,"tierPrice":"¥3,980"}
+   2個を選んで上に戻った {"price":"¥7,164","tier":"2個購入で10％オフ","label":"カートに追加する","off":false,"barTop":601,"vh":664,"y":1382,"origTop":727,"pumper":true,"tierPrice":"¥7,164"}
+   帯のボタンを1回 → カート {"total":7164,"items":[{"t":"VIP特典（無料優先配送＋次","v":null,"q":1,"line":0},{"t":"LOOTY ナノガラス脱毛パ","v":"ピュアホワイト","q":2,"line":7164}]} ｜増えたエラーの種類 ["Cannot set properties of null (setting 'textContent') @3559"]
+② ガラス 開いた直後 {"price":"¥3,980","tier":"1個購入","label":"選んでカートに追加","off":false,"barTop":601,"vh":664,"y":0,"origTop":2047,"pumper":true,"tierPrice":"¥3,980"}
+   1回目のタップ（選ぶ場所へ） {"price":"¥3,980","tier":"1個購入","label":"カートに追加する","off":false,"barTop":601,"vh":664,"y":1408,"origTop":639,"pumper":true,"tierPrice":"¥3,980"} カート []
+   上の色ボタンでグレー {"price":"¥3,980","tier":"1個購入","label":"カートに追加する","off":false,"barTop":601,"vh":664,"y":171,"origTop":1876,"pumper":true,"tierPrice":"¥3,980"}
+   帯のボタン → カート {"total":3980,"items":[{"t":"LOOTY伸縮ガラスクリーナ","v":"グレー","q":1,"line":3980}]}
+③ ブランケット 開いた直後 {"price":"¥6,980","tier":"1個購入","label":"選んでカートに追加","off":false,"barTop":601,"vh":664,"y":0,"origTop":2198,"pumper":true,"tierPrice":"¥6,980"}
+   ラージを選んだ後 {"price":"¥9,880","tier":"1個購入","label":"カートに追加する","off":false,"barTop":601,"vh":664,"y":300,"origTop":1898,"pumper":true,"tierPrice":"¥9,880"}
+   帯のボタン → カート {"total":9880,"items":[{"t":"VIP特典（無料優先配送＋次","v":null,"q":1,"line":0},{"t":"LOOTY ふわとろ高密度ブ","v":"さくら / ラージ：160x200cm（寝具用に最適！）","q":1,"line":9880}]}
+④ ワイパー 開いた直後 {"price":"¥3,980","tier":"1個購入","label":"カートに追加する","off":false,"barTop":601,"vh":664,"y":0,"origTop":1873,"pumper":true,"tierPrice":"¥3,980"}
+   帯のボタンを1回 → カート {"total":3980,"items":[{"t":"LOOTY ワイド水切りワイ","v":null,"q":1,"line":3980}]}
+⑤ インソール 開いた直後 {"price":"¥3,980","tier":"1個購入","label":"選んでカートに追加","off":false,"barTop":601,"vh":664,"y":0,"origTop":2357,"pumper":true,"tierPrice":"¥3,980"}
+   1回目のタップ（選ぶ場所へ） {"price":"¥3,980","tier":"1個購入","label":"カートに追加する","off":false,"barTop":601,"vh":664,"y":1702,"origTop":655,"pumper":true,"tierPrice":"¥3,980"}
+   まとめ買いの枠でサイズを変えて、帯のボタン → カート {"total":3980,"items":[{"t":"LOOTY 快適マジックイン","v":"ブラック / 25.5~26.5cm（41~42）","q":1,"line":3980}]}
