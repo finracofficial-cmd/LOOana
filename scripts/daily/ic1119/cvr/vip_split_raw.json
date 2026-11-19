@@ -1,0 +1,13 @@
+{
+ "_note": "11/19 15時台取得。①②は ShopifyQL（TIMESERIES week・SINCE 2026-08-31 UNTIL 2026-11-18）の結果そのまま。③④は graphql products / locations の結果から必要な項目だけ",
+ "q_nano": "FROM sales SHOW orders, gross_sales, discounts, quantity_ordered WHERE product_title CONTAINS 'ナノガラス脱毛パッド' TIMESERIES week SINCE 2026-08-31 UNTIL 2026-11-18",
+ "nano": [["2026-08-31","284","1205940","-15522","303"],["2026-09-07","262","1130320","-17711","284"],["2026-09-14","253","1130320","-25074","284"],["2026-09-21","264","1130320","-16119","284"],["2026-09-28","261","1150220","-22885","289"],["2026-10-05","259","1102460","-14726","277"],["2026-10-12","263","1130320","-16915","284"],["2026-10-19","269","1166140","-19104","293"],["2026-10-26","144","624860","-9552","157"],["2026-11-02","69","318400","-8159","80"],["2026-11-09","57","250740","-4975","63"],["2026-11-16","20","99500","-3980","25"]],
+ "q_store": "FROM sales SHOW orders, gross_sales, discounts, quantity_ordered WHERE product_title NOT CONTAINS 'VIP特典' TIMESERIES week SINCE 2026-08-31 UNTIL 2026-11-18",
+ "store": [["2026-08-31","669","3362740","-66486","756"],["2026-09-07","758","3943870","-118342","909"],["2026-09-14","757","3826140","-128380","929"],["2026-09-21","902","4579990","-150018","1096"],["2026-09-28","817","4263740","-160726","1018"],["2026-10-05","742","3815960","-120281","895"],["2026-10-12","712","3708210","-136923","892"],["2026-10-19","717","3801800","-143608","903"],["2026-10-26","610","3382250","-143074","790"],["2026-11-02","619","3338630","-118657","771"],["2026-11-09","492","2527850","-79524","603"],["2026-11-16","200","1152790","-39409","263"]],
+ "vip_products": [
+  {"id":"gid://shopify/Product/15412971831538","title":"VIP特典（無料優先配送＋次回1,000円OFFクーポン）","status":"UNLISTED","createdAt":"2026-10-03T06:53:53Z","productType":"free_gift","price":"0","requiresShipping":true,"tracked":false,"location":"新潟県阿賀野市里888-1","available":-424,"deliveryProfile":"一般プロフィール"},
+  {"id":"gid://shopify/Product/15420006727922","title":"VIP特典（無料優先配送＋次回1,000円OFFクーポン）_","status":"UNLISTED","createdAt":"2026-10-08T01:12:25Z","productType":"free_gift","price":"0","requiresShipping":true,"tracked":false,"location":"新潟県阿賀野市里888-1","available":-255,"deliveryProfile":"一般プロフィール"}],
+ "nano_product": {"handle":"washable-reusable-fuzz-remover","location":"cjdropshipping（fulfillmentService: cjdropshipping・shipsInventory false）","deliveryProfile":"一般プロフィール"},
+ "locations": [{"name":"新潟県阿賀野市里888-1","isActive":true,"fulfillsOnlineOrders":true,"shipsInventory":true,"fulfillmentService":null}],
+ "orders_sample_1112": "11/12 の注文 #31830〜#31869（40件）: VIP特典の行がある注文は 8件・「優先配送」の行がある注文は 2件。どちらの行も requiresShipping true・出荷元 新潟県阿賀野市里888-1・fulfillmentOrder は CLOSED（残り0）・注文全体は FULFILLED"
+}

@@ -1,0 +1,87 @@
+{%- comment -%}
+  LOOTY 画面下に固定の「カートに追加」ボタン（スマホだけ・テスト用）2026-11-19
+  ・元の「カートに追加する」ボタンが画面に見えていない間だけ、画面の下に出る
+  ・色やサイズを選ぶ商品: 1回目のタップで選ぶ場所まで動く → 2回目のタップで元のボタンを押す
+  ・選ぶものがない商品: 1回目のタップで元のボタンを押す
+  ・元のボタンをそのまま押すので、まとめ買い・カートの画面・計測は今までと同じに動く
+  ・やめるとき: このカスタムLiquid のセクションを削除するだけ
+{%- endcomment -%}
+<div id="looty-sticky-atc" class="looty-satc" hidden>
+  <div class="looty-satc__info">
+    <span class="looty-satc__note">全国送料無料・30日返品OK</span>
+    <span class="looty-satc__price">{{ product.selected_or_first_available_variant.price | money }}</span>
+  </div>
+  <button type="button" class="looty-satc__btn" data-label-add="カートに追加する" data-label-pick="選んでカートに追加">カートに追加する</button>
+</div>
+<style>
+  .looty-satc { display: none; }
+  @media screen and (max-width: 749px) {
+    .looty-satc {
+      display: flex; align-items: center; gap: 10px;
+      position: fixed; left: 0; right: 0; bottom: 0; z-index: 90;
+      padding: 8px 12px calc(8px + env(safe-area-inset-bottom));
+      background: #fff; border-top: 1px solid #e5e5e5; box-shadow: 0 -2px 10px rgba(0,0,0,.08);
+      transform: translateY(0); transition: transform .2s ease;
+    }
+    .looty-satc[hidden] { display: none; }
+    .looty-satc.is-off { transform: translateY(110%); }
+    .looty-satc__info { display: flex; flex-direction: column; line-height: 1.25; min-width: 0; }
+    .looty-satc__note { font-size: 11px; color: #555; white-space: nowrap; }
+    .looty-satc__price { font-size: 18px; font-weight: 700; color: #111; }
+    .looty-satc__btn {
+      flex: 1 1 auto; min-height: 46px; border: 0; border-radius: 8px;
+      background: #e8590c; color: #fff; font-size: 15px; font-weight: 700; letter-spacing: .02em;
+    }
+    body.looty-satc-on { padding-bottom: 66px; }
+  }
+</style>
+<script>
+(function () {
+  var bar = document.getElementById('looty-sticky-atc');
+  if (!bar || bar.dataset.ready) return;
+  bar.dataset.ready = '1';
+  var btn = bar.querySelector('.looty-satc__btn');
+  function original() {
+    return document.querySelector('form[action*="/cart/add"] button[name="add"], button.product-form__submit');
+  }
+  function choices() {
+    return document.querySelectorAll('variant-selects input[type="radio"], variant-radios input[type="radio"], .product-form__input input[type="radio"]');
+  }
+  function picker() {
+    var first = choices()[0];
+    return first ? (first.closest('fieldset') || first.closest('.product-form__input') || first) : null;
+  }
+  var target = original();
+  if (!target) return;
+  var needPick = choices().length > 1;   // 色・サイズなどの選択肢がある商品
+  var picked = false;
+  btn.textContent = needPick ? btn.dataset.labelPick : btn.dataset.labelAdd;
+
+  // 色・サイズ・まとめ買いに触ったら「選び終わった」とみなす
+  document.addEventListener('change', function (e) {
+    if (e.target && e.target.matches && e.target.matches('input[type="radio"], select')) { picked = true; btn.textContent = btn.dataset.labelAdd; }
+  }, true);
+
+  // 元のボタンが見えている間は隠す
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function (entries) {
+      var on = !entries[0].isIntersecting;
+      bar.classList.toggle('is-off', !on);
+      document.body.classList.toggle('looty-satc-on', on);
+    }, { threshold: 0.6 }).observe(target);
+  }
+  bar.hidden = false;
+
+  btn.addEventListener('click', function () {
+    var t = original();
+    if (!t) return;
+    if (needPick && !picked) {
+      picked = true; btn.textContent = btn.dataset.labelAdd;
+      var p = picker();
+      if (p) { p.scrollIntoView({ behavior: 'smooth', block: 'center' }); return; }
+    }
+    if (t.disabled) { t.scrollIntoView({ behavior: 'smooth', block: 'center' }); return; }
+    t.click();
+  });
+})();
+</script>

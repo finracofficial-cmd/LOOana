@@ -1,0 +1,9 @@
+ガラス ① 開いた直後: {"label":"選んでカートに追加","off":false,"barTop":601,"barH":63,"vh":664,"scrollY":0,"origTop":2047}
+ガラス ② 1回目のタップの後: {"label":"カートに追加する","off":false,"barTop":601,"barH":63,"vh":664,"scrollY":729,"origTop":1318}
+ガラス    カート: []
+ガラス ③ 2回目のタップの後のカート: [{"v":"ブルー","q":1}]
+ガラス ④ 元のボタンが見える位置: {"label":"カートに追加する","off":true,"barTop":670,"barH":63,"vh":664,"scrollY":1738,"origTop":309} ｜差し込み後に増えたエラー 10
+ワイパー（選択肢なし） ① 開いた直後: {"label":"カートに追加する","off":false,"barTop":601,"barH":63,"vh":664,"scrollY":0,"origTop":1873}
+ワイパー（選択肢なし） ② 1回目のタップの後: {"label":"カートに追加する","off":false,"barTop":601,"barH":63,"vh":664,"scrollY":0,"origTop":1873}
+ワイパー（選択肢なし）    カート: [{"v":null,"q":1}]
+ワイパー（選択肢なし） ④ 元のボタンが見える位置: {"label":"カートに追加する","off":true,"barTop":670,"barH":63,"vh":664,"scrollY":1564,"origTop":309} ｜差し込み後に増えたエラー 5
