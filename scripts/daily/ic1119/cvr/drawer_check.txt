@@ -1,0 +1,4 @@
+washable-reusable-fuzz-remover ｜画面の高さ 664 ｜「ご購入手続きへ」 [{"text":"ご購入手続きへ • ¥3,980","top":753,"bottom":807,"inView":false}]
+  決済画面: 最初の応答まで 1669 ms・メール欄が出るまで 1710 ms
+nano-fine-fiber-defogging-and- ｜画面の高さ 664 ｜「ご購入手続きへ」 [{"text":"ご購入手続きへ • ¥3,980","top":753,"bottom":807,"inView":false}]
+  決済画面: 最初の応答まで 1684 ms・メール欄が出るまで 1707 ms
