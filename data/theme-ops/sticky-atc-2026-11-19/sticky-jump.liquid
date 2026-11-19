@@ -1,0 +1,126 @@
+{%- comment -%}
+  LOOTY 画面下に固定の「商品を選ぶ」ボタン（スマホだけ・全商品用）2026-11-19
+  ・押すと「限定セール」の枠と「カートに追加する」ボタンが見える位置まで、すぐに移動する（カートには入れない）
+  ・商品ページならどの商品でも出る。商品ページ以外では何も出ない
+  ・帯の値段は、その時に選ばれている個数・色・サイズに合わせて変わる
+  ・元の「カートに追加する」ボタンが画面に見えている間は、帯は隠れる
+  ・カートに入れるのは今までどおり元のボタン。まとめ買いの割引・VIP特典・カートの画面・計測には触らない
+  ・やめるとき: このコードを入れたセクション（またはスニペットの1行）を消すだけ
+
+  変えてよいのは下の3行だけ
+{%- endcomment -%}
+{%- assign looty_jump_label = '商品を選ぶ ▼' -%}
+{%- assign looty_jump_note = '全国送料無料・30日返品OK' -%}
+{%- assign looty_jump_skip = '' -%}{%- comment -%} 出したくない商品のハンドルをカンマ区切りで。例: 'sun-umbrella,mat' {%- endcomment -%}
+
+{%- if template.name == 'product' and product -%}
+{%- assign looty_jump_skip_list = looty_jump_skip | split: ',' -%}
+{%- unless looty_jump_skip_list contains product.handle -%}
+<div id="looty-jump" class="looty-jump" hidden>
+  <div class="looty-jump__info">
+    <span class="looty-jump__note">{{ looty_jump_note }}</span>
+    <span class="looty-jump__line"><span class="looty-jump__price">{{ product.selected_or_first_available_variant.price | money }}</span><span class="looty-jump__tier"></span></span>
+  </div>
+  <button type="button" class="looty-jump__btn">{{ looty_jump_label }}</button>
+</div>
+<script type="application/json" id="looty-jump-data">{ {%- for v in product.variants -%}"{{ v.id }}":{{ v.price | money | strip_html | json }}{%- unless forloop.last -%},{%- endunless -%}{%- endfor -%} }</script>
+<style>
+  .looty-jump { display: none; }
+  @media screen and (max-width: 749px) {
+    .looty-jump {
+      display: flex; align-items: center; gap: 10px;
+      position: fixed; left: 0; right: 0; bottom: 0; z-index: 90;
+      padding: 8px 12px calc(8px + env(safe-area-inset-bottom));
+      background: #fff; border-top: 1px solid #e5e5e5; box-shadow: 0 -2px 10px rgba(0,0,0,.08);
+      transform: translateY(0); transition: transform .2s ease;
+    }
+    .looty-jump[hidden] { display: none; }
+    .looty-jump.is-off { transform: translateY(110%); }
+    .looty-jump__info { display: flex; flex-direction: column; line-height: 1.25; min-width: 0; max-width: 56%; }
+    .looty-jump__note { font-size: 11px; color: #555; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .looty-jump__line { display: flex; align-items: baseline; gap: 6px; min-width: 0; }
+    .looty-jump__price { font-size: 18px; font-weight: 700; color: #111; white-space: nowrap; }
+    .looty-jump__tier { font-size: 11px; color: #c0392b; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .looty-jump__btn {
+      flex: 1 1 auto; min-height: 46px; border: 0; border-radius: 8px;
+      background: #e8590c; color: #fff; font-size: 15px; font-weight: 700; letter-spacing: .02em;
+    }
+    body.looty-jump-has { padding-bottom: calc(64px + env(safe-area-inset-bottom)); }
+  }
+</style>
+<script>
+(function () {
+  var bar = document.getElementById('looty-jump');
+  if (!bar || bar.dataset.ready) return;
+  bar.dataset.ready = '1';
+  var btn = bar.querySelector('.looty-jump__btn');
+  var priceEl = bar.querySelector('.looty-jump__price');
+  var tierEl = bar.querySelector('.looty-jump__tier');
+  var prices = {};
+  try { prices = JSON.parse(document.getElementById('looty-jump-data').textContent); } catch (e) {}
+
+  function form() {
+    var f = document.querySelector('product-form form[action*="/cart/add"]');
+    if (f) return f;
+    var b = document.querySelector('form[action*="/cart/add"] button[name="add"]');
+    return b ? b.form : null;
+  }
+  function original() { var f = form(); return (f && f.querySelector('button[name="add"]')) || document.querySelector('button.product-form__submit'); }
+  function shown(el) { return !!(el && el.offsetParent !== null && el.getBoundingClientRect().height > 0); }
+  function bundleBox() { var b = document.querySelector('.pumper_block'); return shown(b) ? b : null; }   // 「限定セール」の枠（Pumper）
+  function tier() {
+    var b = bundleBox(); if (!b) return null;
+    var c = b.querySelector('.pmpr-tier-shell__card[data-selected="true"]'); if (!c) return null;
+    var t = c.querySelector('.pmpr-tier-title'), p = c.querySelector('.pmpr-tier-price__total');
+    return { title: t ? t.textContent.replace(/\s+/g, ' ').trim() : '', price: p ? p.textContent.replace(/\s+/g, '').trim() : '' };
+  }
+  function variantPrice() { var f = form(), i = f && f.querySelector('input[name="id"], select[name="id"]'); return i && prices[String(i.value)]; }
+
+  // 帯の値段を、いま選ばれているものに合わせる
+  function refresh() {
+    var t = tier();
+    var price = (t && t.price) || variantPrice();
+    if (price && priceEl.textContent !== price) priceEl.textContent = price;
+    var tt = t && t.price ? t.title : '';
+    if (tierEl.textContent !== tt) tierEl.textContent = tt;
+  }
+
+  // 「カートに追加する」ボタンが画面のいちばん下に来る位置へ、すぐに移動する
+  function place() {
+    var o = original(); if (!o) return;
+    var r = o.getBoundingClientRect();
+    var y = r.bottom + window.pageYOffset - window.innerHeight + 16;
+    var box = bundleBox();
+    if (box) {   // 枠の上からボタンまでが1画面に入るなら、枠の上をそろえる
+      var top = box.getBoundingClientRect().top + window.pageYOffset - 12;
+      if (r.bottom + window.pageYOffset - top + 16 <= window.innerHeight) y = top;
+    }
+    window.scrollTo(0, y < 0 ? 0 : y);
+  }
+
+  var target = original();
+  if (!target) return;
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function (entries) {
+      bar.classList.toggle('is-off', entries[0].isIntersecting);
+    }, { threshold: 0.6 }).observe(target);
+  }
+  document.body.classList.add('looty-jump-has');
+  bar.hidden = false;
+  refresh();
+  setInterval(refresh, 1000);
+  document.addEventListener('click', function () { setTimeout(refresh, 80); }, true);
+  document.addEventListener('change', function () { setTimeout(refresh, 80); }, true);
+
+  // 押したあとに画像の読み込みで位置がずれたら、指で触るまでは合わせ直す
+  var hands = true;
+  window.addEventListener('touchstart', function (e) { if (!bar.contains(e.target)) hands = true; }, { passive: true });
+  window.addEventListener('wheel', function () { hands = true; }, { passive: true });
+  btn.addEventListener('click', function () {
+    hands = false; place();
+    [250, 700, 1500].forEach(function (ms) { setTimeout(function () { if (!hands) place(); }, ms); });
+  });
+})();
+</script>
+{%- endunless -%}
+{%- endif -%}
