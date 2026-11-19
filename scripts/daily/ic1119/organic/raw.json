@@ -1,0 +1,13 @@
+{"note": "11/19 11時台取得（Shopify run-analytics-query）",
+ "q_ref": "FROM sales SHOW orders, gross_sales, discounts GROUP BY order_referrer_source SINCE 2026-10-20 UNTIL 2026-11-18",
+ "ref": [["social", 1878, 10097570, 378253], ["", 598, 3203180, 109599], ["search", 69, 389030, 13933]],
+ "q_nr": "FROM sales SHOW orders, gross_sales, discounts GROUP BY new_or_returning_customer SINCE 2026-10-20 UNTIL 2026-11-18",
+ "nr": [["New", 2289, 12152270, 427680], ["Returning", 256, 1537510, 74105]],
+ "q_utm": "FROM sessions SHOW sessions, sessions_that_completed_checkout GROUP BY utm_source, utm_medium SINCE 2026-10-20 UNTIL 2026-11-18",
+ "utm": [["facebook", "paid", 78738, 2257], ["", "", 7857, 175], ["", "paid", 1166, 45], ["shopify_email", "email", 903, 11], ["ig", "social", 390, 18], ["shop_app", "referral", 16, 0], ["chatgpt.com", "", 14, 2], ["facebook", "", 13, 2], ["IGShopping", "Social", 2, 0], ["--sanitized--", "--sanitized--", 2, 0], ["openai", "", 2, 0], ["tiktok", "paid", 1, 0]],
+ "q_month": "FROM sessions SHOW sessions, sessions_that_completed_checkout GROUP BY referrer_source TIMESERIES month SINCE 2026-06-01 UNTIL 2026-11-18（11月は18日分）",
+ "month": [["2026-06", "direct", 27659, 888], ["2026-06", "email", 334, 2], ["2026-06", "social", 130376, 4807], ["2026-06", "search", 3196, 256], ["2026-07", "social", 160026, 5229], ["2026-07", "email", 386, 3], ["2026-07", "search", 3855, 296], ["2026-07", "direct", 47274, 1229], ["2026-08", "social", 97802, 3055], ["2026-08", "search", 2195, 123], ["2026-08", "direct", 38097, 891], ["2026-08", "email", 236, 1], ["2026-09", "social", 76163, 2340], ["2026-09", "search", 1463, 94], ["2026-09", "direct", 27528, 636], ["2026-09", "email", 146, 2], ["2026-10", "direct", 32439, 757], ["2026-10", "email", 153, 0], ["2026-10", "search", 1367, 81], ["2026-10", "social", 72291, 2253], ["2026-11", "search", 662, 28], ["2026-11", "social", 33219, 1051], ["2026-11", "email", 42, 1], ["2026-11", "direct", 14383, 308]],
+ "q_code": "FROM sales SHOW orders, gross_sales, discounts GROUP BY discount_code SINCE 2026-10-01 UNTIL 2026-11-18",
+ "code": [["", 4585], ["VIP1000", 3]],
+ "q_email": "FROM sessions SHOW sessions, sessions_that_completed_checkout WHERE utm_source = 'shopify_email' TIMESERIES day SINCE 2026-10-20 UNTIL 2026-11-18",
+ "email_peak": [["2026-10-28", 550, 2], ["2026-10-29", 128, 0], ["2026-10-30", 29, 1], ["2026-10-31", 14, 0], ["2026-11-01", 18, 1], ["2026-11-02", 28, 0]]}
