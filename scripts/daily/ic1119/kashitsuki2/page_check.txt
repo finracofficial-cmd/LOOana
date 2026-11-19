@@ -1,0 +1,56 @@
+ページの応答: 200
+{
+ "title": "【在庫セール⏰】【累計15万台突破🏆】LOOTY 充電式ダブルミスト卓上加湿器【顧客満足度4.9⭐️】【全国送料無料🚗】",
+ "variants": [
+  {
+   "t": "ベージュ",
+   "price": 5980,
+   "available": true
+  },
+  {
+   "t": "ホワイト",
+   "price": 5980,
+   "available": true
+  },
+  {
+   "t": "木目調",
+   "price": 5980,
+   "available": false
+  }
+ ],
+ "h1": "【在庫セール⏰】【累計15万台突破🏆】LOOTY 充電式ダブルミスト卓上加湿器【顧客満足度4.9⭐️】【全国送料無料🚗】",
+ "pills": [
+  {
+   "v": "ベージュ",
+   "disabled": false
+  },
+  {
+   "v": "ホワイト",
+   "disabled": false
+  },
+  {
+   "v": "木目調",
+   "disabled": true
+  }
+ ],
+ "tiers": [
+  "1個購入 ¥5,980 ベージュ",
+  "2個購入で10％オフ ¥10,764 ¥11,960",
+  "3個購入で15％オフ ¥15,249 ¥17,940"
+ ],
+ "pumperOptions": [
+  "ベージュ",
+  "ホワイト"
+ ],
+ "bar": {
+  "price": "¥5,980",
+  "label": "商品を選ぶ ▼",
+  "shown": true
+ },
+ "addText": "カートに追加する",
+ "images": 13,
+ "reviews": "2件のレビュー"
+}
+カート（そのまま1個）: {"total":5980,"items":[{"t":"LOOTY 充電式ダブルミスト卓上加湿器","v":"ベージュ","q":1,"line":5980}]}
+決済画面: 1個のアイテム ｜合計  ｜URL https://looty-japan.com/checkouts/cn/hWNJK0nhJ42c5MjgV7DVsyL
+エラーの種類: ["Cannot set properties of null (setting 'textContent')"]
