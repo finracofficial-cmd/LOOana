@@ -1,0 +1,7 @@
+# 11/19 11時台 「looty のサイトはなんかブロックされたりしてないよな？評判も平均」の確認結果
+- サイト: curl（iPhone の UA）で トップ・商品ページ2つ すべて HTTP 200（0.5〜0.75秒）
+- Google Safe Browsing（transparencyreport の公開されていない窓口 api/v3/safebrowsing/status?site=looty-japan.com）: [["sb.ssr",1,false,false,false,false,false,...,"looty-japan.com",false]]。危険の項目はすべて false。項目の意味は一般に知られている読み方による（公式の説明はない）
+- Meta: 11/19 の広告 20本の adreview_feedback はすべて空（不承認なし）・止めたシーラー以外は ACTIVE で配信中。顧客フィードバックスコアは API では読めない
+- Web 検索（"looty-japan.com 評判"・"LOOTY 通販 詐欺 口コミ looty-japan"）: looty-japan.com 自体の記事は Gridinsoft の自動判定だけ（"Trusted but Verify"・マルウェア/フィッシングの検出なし・ドメインが新しい（約6か月））。購入者の口コミ・苦情は見つからなかった
+- 店内のレビュー（Shopify の reviews.rating / rating_count・40商品）: 1商品 2〜13件・評価 4.5〜5.0（多くが 5.0）。顧客 約3.4万人に対して件数が少ない
+  - 裏起毛タッチ防寒グローブ: 商品の作成 11/17 12:45・最初の注文 11/18（1件）なのに レビュー 2件・5.0。届く前にレビューが付いている。どこから入ったレビューか（取り込み等）は未確認
