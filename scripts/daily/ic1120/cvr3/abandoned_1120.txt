@@ -1,0 +1,12 @@
+# 11/20 決済画面に連絡先を入れて買わなかった人（Shopify の「カゴ落ち」）と、その後のメール — abandoned_counts_raw.json から
+期間 11/6〜11/19（14日）: カゴ落ち 216 件・同じ期間の注文 1063 件
+ メールが出た（email_state が not_sent 以外） 100 件 = 46% ・出ていない（not_sent） 116 件 = 54%
+ 注意: email_state:sent で数えると 216 件＝全件になる（not_sent も拾う検索の仕様とみられる）。そのため「not_sent 以外」で数えた
+ メールから戻って買い終えた（recovery_state:recovered） 0 件
+8/2 以降の全部: 1740 件・戻って買い終えた 27 件 = 1.6% ・メールが出ていない 987 件 = 57%
+大きさの目安（仮の計算）: 14日の 216 件のうち1割が戻ると 22 件 = 同じ期間の注文の 2.0%
+
+抜き出した35件（11/12〜11/19 の新しい順100件から約3件に1件・abandonmentByAbandonedCheckoutId。画面の結果からの転記）
+ emailState SENT 10件・空 25件。SENT の10件は、作られてから 20分02秒〜21分03秒後に送信
+ 35件すべて: 種類 CHECKOUT・「その後の注文なし」（customerHasNoOrderSinceAbandonment = true）
+ なぜ半分強に出ていないかは未確認（Shop Pay 経由かどうか・過去の注文の有無では分かれなかった）
