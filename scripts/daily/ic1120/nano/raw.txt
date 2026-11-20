@@ -218,3 +218,9 @@ CA,360°マルチクリップ車載スマホホルダー,23220,10010,278,8
 CA,4-in-1マルチクリーナー,18760,7805,258,7
 CA,カタログ全部（テスト）,18125,4768,212,3
 CA,携帯電動シェーバーv2,16021,6819,123,5
+# QR＝Meta ナノの広告 A の評価（ad_name, quality_score_ectr_text, quality_score_ecvr_text, quality_score_organic, cost, impressions）: 期間,エンゲージメント,コンバージョン,品質の値,cost,imp
+QR,10/15〜10/29,Above average,Above average,4,678440,516883
+QR,11/10〜11/16,Above average,Above average,5,113679,92638
+QR,11/13〜11/19,Above average,Above average,5,127749,89677
+QR,11/17〜11/19,Above average,Above average,5,59717,34015
+QR,11/18〜11/19,No rating,No rating,0,41589,21552
