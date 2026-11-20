@@ -1,0 +1,31 @@
+スクリプトの読み込み元（本数・サイズ）:
+  www.googletagmanager.com: 3本・473KB
+  shopify拡張:profit-pumper-bundles: 31本・313KB
+  looty-japan.com: 32本・292KB
+  shopify拡張:monster-upsells: 2本・266KB
+  connect.facebook.net: 4本・264KB
+  shopify本体: 36本・66KB
+  cdn.provesrc.com: 1本・48KB
+  shopify-assets.shopifycdn.com: 14本・43KB
+  shopify拡張:lb-upsell: 5本・30KB
+  テーマ・shopify: 1本・5KB
+  shopify拡張:judgeme: 1本・3KB
+  cdn-bundler.nice-team.net: 2本・1KB
+  bundler.nice-team.net: 1本・0KB
+  shop.app: 1本・0KB
+画面に出ているもの: {
+ "bundler": [],
+ "selleasy": [],
+ "judgeme": [
+  " 4件のレビュー"
+ ],
+ "provesrc": [],
+ "fv": {
+  "h1Top": 602,
+  "priceTop": 0,
+  "badgeTop": 535,
+  "video": 2,
+  "firstImgH": 364
+ }
+}
+フッターのリンク: ["LOOTY","プライバシーポリシー","返金ポリシー","利用規約","連絡先情報","配送ポリシー","特定商取引法に基づく表記"]
