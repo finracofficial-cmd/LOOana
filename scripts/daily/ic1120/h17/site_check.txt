@@ -1,0 +1,8 @@
+■ 伸縮ガラスクリーナー: 応答 200・読み込み 4084ms・下の帯 表示（¥3,980）・「カートに追加する」ボタン 押せる・限定セールの枠 表示
+  カート: {"total":3980,"n":1,"items":["LOOTY伸縮ガラスクリーナー×1"]}
+  決済画面: 応答 200・7637ms・{"url":"/checkouts/cn/","mail":true,"addr":true,"card":true,"paidy":true,"qr":true,"pay":true,"total":"合計 1","twoPkg":false}
+  ページのエラー: Cannot set properties of null (setting 'textContent') / Cannot set properties of null (setting 'textContent') / Cannot set properties of null (setting 'textContent') / Cannot set properties of null (setting 'textContent') / Cannot set properties of null (setting 'textContent') / Cannot set properties of null (setting 'textContent') / Cannot set properties of null (setting 'textContent') / Cannot set properties of null (setting 'textContent')
+■ ナノガラス脱毛パッド: 応答 200・読み込み 2865ms・下の帯 表示（¥3,980）・「カートに追加する」ボタン 押せる・限定セールの枠 表示
+  カート: {"total":3980,"n":1,"items":["LOOTY ナノガラス脱毛パッド×1"]}
+  決済画面: 応答 200・7529ms・{"url":"/checkouts/cn/","mail":true,"addr":true,"card":true,"paidy":true,"qr":true,"pay":true,"total":"合計 1","twoPkg":false}
+  ページのエラー: Cannot set properties of null (setting 'textContent') / Cannot set properties of null (setting 'textContent') / Cannot set properties of null (setting 'textContent') / Cannot set properties of null (setting 'textContent') / Cannot set properties of null (setting 'textContent') / Cannot set properties of null (setting 'textContent') / Cannot set properties of null (setting 'textContent') / Cannot set properties of null (setting 'textContent')
