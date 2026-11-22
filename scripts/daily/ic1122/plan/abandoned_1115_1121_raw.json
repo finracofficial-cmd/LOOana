@@ -1,0 +1,1 @@
+{"data": {"all": {"count": 93, "precision": "EXACT"}, "notsent": {"count": 57, "precision": "EXACT"}, "recovered": {"count": 0, "precision": "EXACT"}, "customers": {"count": 10000, "precision": "AT_LEAST"}}}
