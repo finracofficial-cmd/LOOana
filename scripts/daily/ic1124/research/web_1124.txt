@@ -1,0 +1,48 @@
+11/24 21時台 Web の下調べ（ユーザー「根本をよくする・サイトをより儲けるための案を幅広に」）。調べたのはこちらが立てた下調べの係（Web 検索とページの取得）。
+各行の末尾が出典。「推測」は下調べの係の解釈で、出典には無い。LOOTY のデータではない。
+取れなかったもの: Google トレンドの直接取得（拒否）・Amazon の売れ筋（503）・CJ 公式サイト（ボット確認で止まる）・JPX の PDF（403）
+
+■1. 12〜3月の季節の需要
+出典にあること
+・洗車: Google トレンド「洗車」の検索が多い週は 1位 12/29〜1/4、2位 GW、3位 3/15〜21（洗車業者のブログ・2020年・何年のデータかは書いていない） https://www.honjyo-k.com/post/%E6%89%8B%E6%B4%97%E3%81%84%E6%B4%97%E8%BB%8A%E3%81%AE%E6%BD%9C%E5%9C%A8%E9%9C%80%E8%A6%81%E3%81%A8%E3%81%AF%EF%BC%88%E5%AD%A3%E7%AF%80%E3%83%BB%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E7%B7%A8%EF%BC%89
+・同じ会社の社長の連載（2022/12）「洗車が最も売れやすくなるのは、年末年始」 https://bsrweb.jp/article/001231
+・オートバックスの月次（2024年12月度・既存店 +11.0%）「年末の帰省前の車両メンテナンス需要や降雪を背景にタイヤや冬季用品が好調」 https://www.autobacs.co.jp/ja/ir/finance/monthly_report/main/0/teaserItems1/06/linkList/0/link/02_monthlyAUTOBACS2503.pdf
+・冬用品は天気しだい: 2025年1〜3月は降雪・寒波で冬季用品・タイヤチェーンが好調／2025年12月度は冬季用品が低調（▲4.4%）／2026年1月度は寒波・降雪で好調（+8.1%）。どれも前年比のコメントで、月ごとの量は出ていない https://www.autobacs.co.jp/ja/ir/finance/monthly_report/main/0/teaserItems1/07/linkList/0/link/monthlyAUTOBACS2603_MM.pdf
+・11/24 の楽天「車用品」ランキング: 凍結防止カバー 14位（3,100円）・シートヒーター 19位・ヘッドライト用防雪フィルム 27位 https://www.rakuten.co.jp/category/101126/
+・11/24 の楽天「ウィンドウケア」: 上位は防雪フィルム・解氷剤・雪用ワイパー。曇り止めシート・内窓クリーナーは 1,000〜1,500円で中ほど https://www.rakuten.co.jp/category/210036/
+・東京の平年値: 湿度は 1月51%・2月52%・12月56%（1年でいちばん低い）・日最低気温 1月1.2℃・2月2.1℃ https://www.data.jma.go.jp/obd/stats/etrn/view/nml_sfc_ym.php?prec_no=44&block_no=47662
+・スギ花粉は 2026年、九州〜関東で2月上旬〜中旬に飛び始めた https://news.mynavi.jp/article/20260113-3949657/
+・黄砂（のべ日数の平年値）3月13.7・4月19.1・5月8.7日 https://www.data.jma.go.jp/env/kosahp/kosa_table_0.html
+見つからなかったもの: 解氷剤・スノーブラシ・静電気グッズ・曇り止めの月別の販売数
+推測: 年末の洗車＝中（山は最後の1週。中国から1〜2週かかるなら 12月上〜中旬の注文が勝負）／凍結・雪＝中（量と時期は寒波しだい）／静電気・曇り止め＝弱（湿度と気温の理屈だけ）／3月の洗車（花粉・黄砂）＝弱〜中
+
+■2. いま売れている種類と相場
+・楽天の年間ランキング「車用品」（2025/8/18〜2026/8/9）の上位: 傘型サンシェード・スマホホルダー・巻き取り式シガー充電器・車載扇風機・LED ヘッドライト・ハンディクリーナー・折りたたみのクッション収納ボックス・車用ゴミ箱（ほかにタイヤ・ドラレコ・AdBlue） https://event.rakuten.co.jp/rankingyearly/autogoods/
+・11/24 のランキングで 3,980〜6,980円に入る種類: シートヒーター（座布団型）3,980円〜・6,812円／芳香ディフューザー（ソーラー式・噴霧式）5,980〜7,980円／シートボックス 3,780〜4,980円・フットレスト付き収納 4,580円・増設テーブル 5,980円・ワイヤレス充電の車載充電器 6,990円 https://www.rakuten.co.jp/category/200285/
+・コードレスのハンディクリーナー 2,980〜5,980円・電動フォームガン 3,580円・充電式ブロワー 5,241円〜 https://www.rakuten.co.jp/category/558662/
+・ジャンプスターター 6,380円〜 https://www.rakuten.co.jp/category/101126/ （作りによって PSE の対象 https://www.meti.go.jp/policy/consumer/seian/denan/mlb_faq.html ）
+・セットで単価を上げている例: 解氷剤 3本 3,215円・マイクロファイバータオル 36枚 3,480円・雪用ワイパー 1台分 4,703円 https://www.rakuten.co.jp/category/558662/
+・いまの主力と同じ種類の相場: スマホホルダー 1,980〜3,250円 https://www.rakuten.co.jp/category/563726/ ・水切りワイパー 500〜2,500円（1本だけ 4,000円〜） https://www.rakuten.co.jp/category/410693/ ・内窓用ワイパー・クロス 1,098〜2,200円 https://www.rakuten.co.jp/category/200289/ ・サイドミラー用撥水フィルム 2枚 2,200円 https://www.rakuten.co.jp/category/210036/
+推測: 主力の単品 3,980円は楽天の相場の 1.5〜4倍／シートヒーター・ディフューザー・収納・テーブルは楽天でも単品 3,980円以上で売れている／電池の入った物は先に PSE と航空便の制限を確かめる／サンシェード・扇風機は夏物
+
+■3. Google の無料掲載とショッピング広告
+・無料掲載はショッピングタブで、広告の下に出る https://services.google.com/fh/files/misc/intro_to_free_listings_playbook.pdf
+・よく引かれる「クリック +70%・表示 +130%」は 2020年の米国の数字で、広告と無料掲載を合わせたもの https://9to5google.com/2020/06/29/google-free-product-listings/ 。日本の小さな店での効果の数字は見つからなかった
+・商品名に入れてはいけないもの: 価格・セール価格・販売期間・送料・お届け日などの時間に関する情報・強調の記号・顔文字・強調の大文字。上限150字・見えるのは先頭の約35字（全角） https://support.google.com/merchants/answer/6324415?hl=ja
+・画像に入れてはいけないもの: 宣伝の文字・オーバーレイ・店のロゴ・透かし・枠。500×500 以上（1,500 推奨） https://support.google.com/merchants/answer/6324350?hl=ja
+・自動画像改善（初期設定はオフ）を入れると、Google が文字・ロゴの除去を試み、成功すれば再承認される https://support.google.com/merchants/answer/9242973?hl=en
+・日本向けは送料の登録が必須 https://support.google.com/merchants/answer/6324484?hl=ja
+・停止の理由になる不実表示: 連絡先の不足・返品条件が分からない・追加料金を隠す など。悪質なものは警告なしで停止。審査は通常7営業日 https://support.google.com/merchants/answer/6150127?hl=ja
+・「No.1」を名指しした Google の規定は確認できなかった。日本では景品表示法で根拠が要る（消費者庁の実態調査・2024年9月） https://www.caa.go.jp/notice/entry/039459/
+・P-MAX の日予算は「CPA の3倍以上」と案内 https://developers.google.com/google-ads/api/performance-max/create-budget?hl=ja ／通常のショッピングキャンペーンも選べる https://support.google.com/google-ads/answer/3455481?hl=ja
+・クリック単価「ショッピング広告は10〜30円程度といわれています」（根拠の記載なし） https://imitsu.jp/matome/net-adagency/google-shopping 。カー用品の日本での値段は見つからなかった
+推測: 「本日終了」「在庫セール」「⏰」は商品名のルールの文面に当たる／まず無料掲載の不承認を潰す（商品名の宣伝語・文字の無い1枚目の画像・送料・特商法・返品・連絡先）／有料で試すなら CPA 2,500円の想定で 7,500円/日以上が Google の目安／ショッピング広告は値段が横に並ぶので、相場が安い種類（ホルダー・水切り・内窓ワイパー）は不利になりやすい
+
+■4. CJ と日本向けの配送
+・日本の倉庫は公開情報では確認できなかった。CJ の Shopify アプリの「調達ロケーション」は米・英・独・中 https://apps.shopify.com/cucheng?locale=ja
+・日本までの日数: CJ 公式は処理 3〜5日とだけ書き、配送日数は空欄 https://cjdropshipping.com/shippingpolicy ／第三者の記事は「CJPacket で日本へ 3〜7日」（根拠なし・同じ記事で 5〜9日とも） https://dodropshipping.com/dropshipping-in-japan/
+・日本の消費者: EY Japan（2020年8月・7,000人）「4日以上かかってもいい」47%・「8〜11日まで容認」11% https://netshop.impress.co.jp/node/8156
+・約束の日より遅れた注文の平均評価 3.45・当日着 4.16・早着 4.41（査読誌・新興国の EC・942件） https://pmc.ncbi.nlm.nih.gov/articles/PMC9115748/
+・配送が1営業日早まるとネット売上 +約1.5%（米国の衣料小売・元が7営業日・JMR 2019） https://www.ama.org/research-insights/research-insight-is-faster-delivery-worth-it-for-your-firms-bottom-line/
+・配送が遅れた客は次に買う確率が 3.67ポイント低い（スウェーデンの化粧品 EC・学士論文で根拠は弱い） http://arc.hhs.se/download.aspx?MediumId=6879
+推測: 実際に何日で届いているかは自店の注文データのほうが確か（LOOTY の注文には配達日が入っていない。11/2〜3 の注文100件は発送の記録が注文の1〜2日後）／評価を下げるのは「遅い」より「約束より遅れる」
