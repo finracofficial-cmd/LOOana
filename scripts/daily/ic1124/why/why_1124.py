@@ -126,3 +126,9 @@ for d in days[-28:]:
     for n, v in DAY[d][2].items(): top[n] += v / 28
 P(f'■ ⑥ 原価 直近28日（10/27〜11/23）: {c28:,.0f}円/日 → 5% 下がれば {c28*0.05:,.0f}円/日・10% なら {c28*0.10:,.0f}円/日｜多い順: ' + '・'.join(f'{n} {v:,.0f}' for n, v in top.most_common(6)))
 open(D0 + 'why_1124.txt', 'w').write('\n'.join(out) + '\n')
+q28 = collections.Counter()
+for d in days[-28:]:
+    for n, v in DAY[d][1].items(): q28[n] += v
+top5 = [n for n, _ in top.most_common(6) if n != '伸縮ワックス洗車ブラシ'][:5]
+P('  主力5本（広告中）の 28日の個数と原価/日: ' + '・'.join(f'{n} {q28[n]}個（{q28[n]*30/28:,.0f}個/30日）・{top[n]:,.0f}円/日' for n in top5) + f'｜合計 {sum(top[n] for n in top5):,.0f}円/日 → 10% で {sum(top[n] for n in top5)*0.1:,.0f}円/日')
+open(D0 + 'why_1124.txt', 'w').write('\n'.join(out) + '\n')
