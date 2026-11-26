@@ -63,7 +63,12 @@ P(f"  商品ページに着いた来訪（Shopify）: 11/26 {x1[0]}・カート 
 e = x1[0] * x7[3] / x7[0]; ec = x1[0] * x7[1] / x7[0]; r = x7[3] / x7[2]
 bino = lambda k_, n_, p_: sum(math.comb(n_, i) * p_ ** i * (1 - p_) ** (n_ - i) for i in range(k_ + 1))
 P(f"  来訪 {x1[0]} × 前7日の買う率 ＝ 見込み {e:.1f}件 → 実際 {x1[3]}件（{x1[3]}件以下 {ple(x1[3], e):.0%}）｜カートは見込み {ec:.1f} → {x1[1]}（{x1[1]}以下 {ple(x1[1], ec):.0%}）｜決済画面 {x1[2]}人のうち購入 {x1[3]}（前7日の完了率 {r:.0%} なら {x1[3]}人以下 {bino(x1[3], x1[2], r):.0%}）")
-P('  ＝クリックは来ていて、カートも入っている。少なかったのは決済画面から先。ページ・決済に不具合があったかはこの数字では分からない（カートと購入が 0 ではないので、止まっていたわけではない）')
+wd_ = json.load(open(D0 + 'lp_wfix_daily_1112_1126_raw.json'))['rows']; assert wd_[-1][0][:10] == T; pv_ = [int(r_[4]) for r_ in wd_ if r_[0][:10] < T]; ck_ = {r_[0][5:10]: int(r_[3]) for r_ in wd_}
+P(f"  このページの購入（日別・11/12〜25 の14日）: {min(pv_)}〜{max(pv_)}件／日 → 11/26 {int(wd_[-1][4])}件｜決済画面まで行った人は 11/25 {ck_['11-25']}人・11/26 {ck_['11-26']}人で同じ")
+pr = json.load(open(D0 + 'wfix_product_0040_raw.json'))['data']['productByIdentifier']; v_ = pr['variants']['nodes'][0]
+P(f"  商品の状態（直読 11/27 00:4x）: {pr['status']}・在庫 {pr['totalInventory']:,}・{v_['price']}円・販売できる状態 {v_['availableForSale']} ＝在庫切れ・値段の変更・非公開ではない")
+st_ = [int(x) for x in json.load(open(D0 + 'sess_1126_raw.json'))['rows'][0]]
+P(f"  ＝クリックは来ていて、カートも決済画面も前日と同じ数。少なかったのは決済画面から先（{x1[2]}人のうち{x1[3]}人）。店全体の完了率は 11/26 も {st_[3]/st_[2]:.0%}（{st_[3]}/{st_[2]}）でふだんどおり。W固定だけ低かった理由は未確認")
 # ---- ⑤ ブラシの初日 ----
 z = lambda x: 0 if x in ('null', '') else int(x)
 M = [l.strip().split(',') for l in json.load(open(D0 + 'meta_ad_1126_raw.json'))['data']['data'].split('\n')[1:] if l.strip()]
