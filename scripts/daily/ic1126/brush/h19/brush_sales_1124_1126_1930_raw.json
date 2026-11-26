@@ -1,0 +1,1 @@
+{"query": "FROM sales SHOW orders, gross_sales, discounts, net_items_sold WHERE product_title CONTAINS '伸縮ワックス洗車ブラシ' GROUP BY day SINCE 2026-11-24 UNTIL 2026-11-26 ORDER BY day ASC LIMIT 10", "columns": [], "rows": [], "rowCount": 0, "shopDomain": "h8ct0k-r2.myshopify.com", "currencyCode": "JPY"}
