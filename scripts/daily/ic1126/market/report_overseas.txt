@@ -1,0 +1,65 @@
+海外・仕入れ側の売れ筋調査（2026-11-26 取得）。順位・値段・販売数はすべてページに出ていた数字。予想は入れていません。
+
+(a) 開けたページ（コード＝(b) の URL 欄で使用）
+- Amazon US Best Sellers（取得 11/26・各1ページ目30位まで・米国の小売価格・ページに日付なし）: AZ1 全体 https://www.amazon.com/Best-Sellers-Automotive/zgbs/automotive ／以下 https://www.amazon.com/Best-Sellers-…/zgbs/ の後ろ: AZ2 Car Care automotive/15718271・AZ3 Interior automotive/15857501・AZ4 Exterior automotive/15857511・AZ5 Car Care Tools automotive/15718651・AZ6 Window Care automotive/219646387011・AZ7 車内 Electrical Appliances automotive/15735661・AZ8 Seat Covers automotive/15736751・AZ9 Consoles & Organizers automotive/15735451・AZ10 Cleaning Supplies home-garden/10802561（30位まで全部が紙タオル・洗剤・ゴミ袋などの消耗品）・AZ11 Vacuums home-garden/510106・AZ12 Wellness & Relaxation hpc/10079996011
+- Amazon US Hot New Releases（取得 11/26）: NR1 https://www.amazon.com/gp/new-releases/automotive ・NR2 …/automotive/15718271（Car Care）・NR3 …/automotive/15857501（Interior）・NR4 …/automotive/15857511（Exterior）・NR5 …/automotive/15718651（Tools）・NR6 https://www.amazon.com/gp/new-releases/home-garden/10802561 ・NR7 https://www.amazon.com/gp/new-releases/hpc/10079996011
+- CJ ブログ（値段・販売数なし。「編集部のおすすめで、検証済みの販売ランキングではない」と明記）: CJ1 11月版(10/19) https://cjdropshipping.com/blogs/winning-products/Best-Dropshipping-Products-November-2026 ・CJ2 12月版(11/25) …/Best-Dropshipping-Products-December-2026 ・CJ3 冬(10/28) …/Best-Winter-Dropshipping-Products ・CJ4 低コスト(10/27) …/12-Best-Low-Cost-Dropshipping-Products-With-High-Profit-Potential ・クリスマス(10/27) …/best-christmas-dropshipping-products-2026（飾り物だけ）
+- ほかの dropshipping リスト: AD1 AutoDS 冬(10/12) https://www.autods.com/blog/product-finding/best-winter-products-to-dropship/ ・DS1 Dropship.io 冬(10/14) https://www.dropship.io/blog/best-winter-products ・DS2 同 trending(9/23) https://www.dropship.io/blog/best-trending-products ・SH1 Shopify(11/6) https://www.shopify.com/blog/best-dropshipping-products ・Zendrop(7/8更新・ジャンル名だけ) https://www.zendrop.com/blog/best-dropshipping-products/
+- Sell The Trend（仕入れ値・売値・推定月商はサイト独自の数字。商品名はサイトの呼び名。同じカード内で仕入れ値が2通り出ていて一致しない）: ST1 (11/25更新) https://www.sellthetrend.com/blog/winning-products ／ 11/22更新の https://www.sellthetrend.com/niche/ 以下: ST2 automotive-accessories・ST3 home-improvement-and-decor・ST4 health-wellness-and-recovery・ST5 cooking-and-kitchen-gadgets・ST6 garden-and-patio-essentials・ST7 tools-and-diy-hardware・ST8 outdoor-and-survival-gear
+- TikTok Shop US: TK1 FindNiche 車・バイク(データ 11/1・直近7日) https://findniche.com/tiktok/trending-automotive-and-motorcycle-products-us ・TK2 FastMoss(11/6) https://www.fastmoss.com/blog/tiktok-shop-black-friday-products-creators-2026/ ・TK3 FastMoss(11/18・11/9〜15 の週) https://www.fastmoss.com/blog/tiktok-shop-product-hunting-2026/ ・TK4 FastMoss(10/19〜25 の週) https://www.fastmoss.com/blog/best-selling-products-by-category/ ・TK5 hypersku(10/14) https://www.hypersku.com/blog/tiktok-trending-products-bfcm-holiday/
+- AliExpress（取得 11/26・注文数順・HTML に出たのは各12件・「sold」は累計・$0.33 などは新規客向けの値段）: AL1 https://www.aliexpress.com/category/34/automobiles-motorcycles.html?SortType=total_tranpro_desc ／ https://www.aliexpress.com/w/wholesale-〇〇.html?SortType=total_tranpro_desc の〇〇: AL2 car-interior-accessories・AL3 car-cleaning-tools・AL4 household-cleaning-tools・AL5 car-windshield-snow-cover
+- 開けなかった・データが取れなかった: Amazon Movers & Shakers（Automotive・Home & Kitchen・Health & Household とも開けたが「no movers and shakers available」表示）／Amazon Most Gifted・Most Wished For（商品が取れず）／Temu（best-sellers・automotive とも商品一覧が返らず）／Kalodata（403）／FastMoss の生ランキング（ログインなしで No data）／CJ の trending-products ページ（500）／Minea・Spocket・DSers（2026年11〜12月の該当ページが見つからず）／AliExpress 11.11・Black Friday 2026 のカテゴリ別の結果発表（見つからず）／TikTok Shop UK・東南アジアの車・家庭カテゴリ（見つからず）
+- 開けたが使わなかった: AfterShip の TikTok 急上昇（表の日付が Apr 2025 と 2026-11-25 で食い違う）／Sell The Trend「Highest Revenue TikTok Shop」（1商品の売上が43億ドルなど桁が合わない）／EchoTik(9/29・商品名なし)
+- 取得した HTML: /tmp/claude-0/-home-user-LOOana/91ae6ee3-db77-5228-ad52-aeac6ce2aa54/scratchpad/web/
+
+(b) 売れている商品の種類（種類｜英語｜例｜値段｜どこで｜URL｜メモ）
+1. フロントガラスの雪・霜カバー｜windshield snow cover / frost cover (magnetic)｜EcoNour、ST の FrostGuard｜Amazon $13.99〜23.74／ST 仕入 $3.75〜8.09→売値 $39.95／AliExpress $2.59〜3.79｜AZ4 7位(評価1,276件)・14位(11,580件)、NR4 5・8・12・26位、ST1 12月の1番目・ST2 3番目(推定月商 $66,645)、AL5 1番目 20K+ sold・2番目 10K+ sold、CJ1・CJ3・AD1・DS1 に掲載｜AZ4, ST2, AL5｜季節物・布・車の大きさ違いの注意書きあり
+2. スノーブラシ＋アイススクレーパー｜snow brush ice scraper (extendable)｜AstroAI 27"｜$7.64〜16.14、伸縮 33〜57" は $16.98〜25.23｜AZ1 27位・AZ2 7位・AZ4 2位(評価32,454件)・10位・21位、NR2 7・16・24・26位、AD1・DS1｜AZ4｜長い・箱が大きい・プラスチック破損の注意(DS1)・季節物
+3. 電動アイススクレーパー｜electric ice scraper rechargeable｜回転ディスク式・Fanttik Polar G10 Max｜$36.99・$65.99｜NR2 19・20位、NR4 14・20・29・30位(評価5〜13件)｜NR4｜充電式・季節物
+4. 12V 車載ヒーター・デフロスター｜12V portable car heater windshield defroster｜200W シガーソケット式｜$25.99〜29.99｜NR1 4・7・12位(評価23〜57件)｜NR1｜12V 電源・発熱・季節物
+5. 12V 電熱ブランケット(車用)｜12V heated car blanket｜Stalwart｜$23.76〜37.99｜AZ7 1位(評価23,103件)・3・4位ほか30件中13件｜AZ7｜12V 電源・発熱・かさばる・季節物
+6. 冬用シートクッション・カバー｜winter car seat cushion cover｜Universal Seat Cushion Seat Cover｜$39.88〜95.99｜NR1 8位、NR3 2・10・30位、AZ8 12位｜NR3｜大きい・季節物
+7. 昼夜兼用の防眩バイザー｜day night anti-glare sun visor extender (polarized)｜JOYTUTUS・Veharvim｜$18.80〜29.50｜AZ3 24位(1,947件)・25位、NR1 13位、NR3 は30件中7件｜AZ3, NR3｜電池なし
+8. 内窓ワイパー(柄つき・布パッド／両面マグネット式)｜windshield cleaner tool extendable handle / dual magnetic windshield cleaner｜AstroAI・XINDELL・Klensia(磁石)｜$7.29〜15.00、磁石式2個 $53.99、AliExpress $1.33｜AZ1 10位(26,126件)・21位、AZ2 3・5・15位、AZ6 1位、磁石式 AZ6 17・18・24・27位、AL3 100K+ sold が2件｜AZ6, AL3｜電池なし・軽い
+9. 油膜取りブラシ｜oil film cleaning brush / glass oil film remover｜Clear Vision Car Glass Cleaner｜$9.99(2本)〜22.99｜NR1 16位、NR2 2・13・18位、NR5 1・6位、AZ6 23位(評価14〜33件)｜NR2｜薬剤入り(液体)
+10. 車内クリーニングジェル｜car cleaning gel / detailing putty｜PULIDIKI｜$5.63〜8.49｜AZ1 7位(101,466件)、AZ2 2・9位、AZ5 2・9・12位、SH1 に掲載｜AZ2｜ジェル状
+11. 大判の吸水タオル｜car drying towel 1300GSM twisted loop microfiber｜Blackline 24x36"｜$20.80〜43.31｜AZ5 15・17・19・29位、NR5 7・22・28位、TK1 9位(7日 446件・累計 27.47K)、AL3 100K+ sold｜AZ5, TK1｜電池なし・軽い
+12. ディテールブラシ・ホイールブラシ｜car detailing brush set / wheel barrel brush｜VIKING 17"・MVEQRRN 6本｜$9.59〜21.24｜AZ5 7・13・26・28位、NR5 8・9・18位、AL3 1番目 100K+ sold(すき間ブラシ)｜AZ5｜電池なし
+13. 長柄の洗車モップ｜long handle car wash brush mop (chenille microfiber)｜57" 3-in-1｜$18.99｜NR5 3・14・30位(評価28件)｜NR5｜長い
+14. 泡スプレー(手動ポンプ／電動)｜foam sprayer / snow foam cannon / electric foam sprayer｜2L Hand Pump Foam Sprayer、LEIBOO 2L 電動｜$1.09〜3.33、電動 $22.59〜24.39、Amazon のホース用 $35.99｜AL1 2・6・8・9番目(10K〜20K+ sold)、1番目はホース用の高圧ノズル 30K+ sold $6.19、NR2 15位｜AL1｜電動は充電式・水と洗剤を入れる
+15. コードレス高圧洗浄ガン｜cordless pressure washer gun｜SEESE、ST の PowerBlast｜ST 仕入 $34.90〜40.06→$99.95｜TK2: 1日 2,893個(10/10〜16)→1,770個(10/31〜11/6)で「cooling」、DS2: 7月 64,270個・前月比 約−36%・「hold」、ST6 5番目｜TK2｜バッテリー・大きい・減少中と記載
+16. 車用ハンディ掃除機・エアダスター｜cordless car vacuum / turbo jet fan air duster｜KMM 9000PA｜$21.30〜45.59、AliExpress $15.37〜18.79｜AZ2 8位(12,707件)・14位、NR2 8〜11・21位、AL1 10・12番目 10K+ sold、SH1｜AZ2, NR2｜充電式
+17. ヘッドライト黄ばみ取り｜headlight restoration kit｜CERAKOTE｜$12.40〜17.95｜AZ1 24位(77,346件)、TK1 10位(7日 418件)｜AZ1, TK1｜薬剤
+18. 樹脂・内装のつや戻し剤｜plastic trim restorer / interior detailer｜Tekard、CERAKOTE Trim Coat｜$15.19〜20.39、AliExpress $1.33｜TK1 2位(7日 1.72K)、AZ2 24位、AL3 50,000+ sold｜TK1｜液体
+19. レザー傷かくしペン・補修キット｜leather scratch repair pen / leather repair kit｜ST の LeatherRevive｜ST 仕入 $3.42〜4.09→$29.95、Amazon $14.99｜ST3 4番目・ST7 1番目(推定月商 $46,635)、NR2 25位｜ST7｜液体・ペースト
+20. シートのすき間フィラー｜car seat gap filler organizer｜Drop Stop｜$21.24、AliExpress $2.79｜AZ3 12位(74,930件)、AZ8 1位、AZ9 10・13・29位、AL2 70K+・50K+ sold｜AZ9, AL2｜2個組・電池なし
+21. ヘッドレストフック｜car headrest hooks / purse hook｜4-Pack｜$1.39〜11.49｜AZ1 23位、AZ3 5・11位(54,691件)、AZ9 は30件中7件、NR3 18・24位｜AZ9｜小さい・安い
+22. トランク収納ボックス｜foldable trunk organizer｜HOTOR｜$12.99、AliExpress フェルト製 $2.33｜AZ3 14位、AZ9 は30件中7件、AL2 50K+ sold、トランク用ネット 90K+ sold｜AZ9, AL2｜かさばる
+23. 車用ゴミ箱(フタ・袋つき)｜car trash can with lid｜HOTOR 2-Gallon、カップホルダー型｜$8.49〜9.48、AliExpress $5.39｜AZ3 15位(55,510件)、NR3 9位、AL2 40K+ sold、SH1｜AZ3｜電池なし
+24. マグネット式スマホホルダー｜magnetic car phone mount (MagSafe / vacuum suction)｜Kaistyle｜$5.98〜23.79｜AZ1 4位(34,027件)、AZ3 2・18位、AZ9 1位、TK1 3位(7日 1.46K)、AL2 30K+ sold｜AZ1, TK1｜電池なし
+25. 運転用クッション・腰当て｜memory foam car seat cushion / lumbar support pillow｜Everlasting Comfort｜$32.27｜AZ8 6位(19,844件)ほか30件中8件｜AZ8｜かさばる
+26. 木・石の車用芳香剤｜wood car air freshener visor clip / hanging diffuser｜Drift Wood｜$7.99〜19.49、AliExpress $1.09｜AZ1 1位(25,493件)、AZ3 は30件中10件、AL2 30K〜40K+ sold｜AZ3｜香料・消耗品
+27. ジャンプスターター(空気入れ一体)｜jump starter with air compressor｜Hieha 4000A、GOOLOO A3｜$35.99〜104.99｜AZ1 12・18位、NR1 2・14・24・26位、TK1 1位(7日 8.64K・累計 251.92K)、TK2 では 2025年 BF 週 7位 GMV $1,702,469、AD1｜TK1, AZ1｜リチウム電池
+28. 携帯タイヤ空気入れ｜portable tire inflator｜AstroAI L7｜$21.83〜28.79｜AZ1 2位(21,372件)・19位(107,549件)、NR1 3・10・15・17位｜AZ1｜充電式または 12V
+29. ねずみよけ(車のエンジンルーム用・超音波)｜ultrasonic rodent repellent for car engine｜2 Pack 電池式、ST の PestPulse(家用)｜$42.74〜45.89、ST 仕入 $10.49〜14.95→$39.95｜NR2 3・6位、ST6 2番目、TK4 Home Supplies 3位は袋タイプ 6,909個・GMV $170,640｜NR2｜電池式
+30. ペットの毛取り(くり返し使える)｜reusable pet hair remover roller / gloves｜PurePath 手袋2組｜$29.98、AliExpress $1.33、CJ4 仕入目安 $2〜5→売値目安 $16.99〜26.99｜NR6 2位(148件)、AL4 10,000+ sold、CJ2 5番目、CJ4、SH1｜NR6, CJ4｜電池なし
+31. マジッククロス(厚手・鏡やガラス用)｜magic cloth / genie cloth microfiber｜5-Pack XL｜$7.99〜29.99｜NR6 4・6・7・14位(評価4〜28件)｜NR6｜軽い
+32. はさむ式フラットモップ｜clamp mop / hands free flat mop｜Japanese Mop｜$21.59、AliExpress のモップ用クリップ $3.67｜NR6 3位(20件)、AL4 50,000+ sold｜NR6｜長い
+33. 首・肩マッサージャー(ヒーターつき)｜shiatsu neck massager with heat / cordless neck massager pillow｜Nekteck、ST の RelaxLoop｜$24.22〜59.49、ST 仕入 $7.00〜7.65→$34.95｜AZ12 19・20位、マッサージガン 3位(62,536件)、NR7 2・8・18位、ST4 5番目、TK5｜AZ12｜コード式または充電式
+34. 膝サポーター｜knee support brace (adjustable)｜ST の KneeFlex・PatellaPro｜仕入 $10.65〜11.33→$49.95、$2.55〜3.55→$39.95｜ST4 1番目(推定月商 $66,945)・8番目($70,245)｜ST4｜サイズ調整式と記載
+35. 充電式ヒートパッド・足元マット・カイロ｜rechargeable heat pad / USB foot warming mat / rechargeable hand warmer｜ST の CrampEase｜仕入 $5.89〜7.29→$39.95｜ST4 7番目、DS1 13・14番目(電池は航空便に制限と記載)｜ST4｜電池・発熱・季節物
+36. ドアのすき間風ストッパー｜door draft stopper｜—｜値段なし｜CJ3 6番目、AD1 3番目、DS1 11番目｜CJ3｜軽い・ドア幅の違いに注意と記載・季節物
+37. キッチン小物｜multifunction bottle opener / stove burner covers / mini bag heat sealer｜ST の TwistMate・StoveShield・FreshLock｜仕入 $2.07〜8.75→$29.95〜34.95｜ST5 1・4・5番目(推定月商 $50,175〜52,545)、TK3 では鍋ぶた置き $11.00 が 4,445個(11/9〜15)｜ST5, TK3｜シーラーは電池
+38. 防災用品｜hand crank phone charger / foldable LED lanterns｜ST の PowerCrank、LumaCore 4個組｜仕入 $4.05〜4.75→$29.95、ランタン $23.80〜26.00｜ST8 2番目、TK3 ランタン 28,801個(11/9〜15・前週 33,623個)｜ST8, TK3｜電池
+39. 保温タンブラー｜insulated stainless steel tumbler｜—｜値段なし｜CJ2 1番目、CJ3 5番目、AD1、DS1 15番目、TK5、TK3 新着(10/23 掲載・2,185個)｜CJ2｜重い・へこみやフタの不良に注意と記載
+40. 車の飾り・光り物｜LED strobe light / LED car window display / car projector / plush tissue box holder｜ST の FlashPilot・PixelMerry・MerryBeam・CuddleCaddy｜仕入 $4.02〜24.49→$29.95〜59.95｜ST2 1・2・7・8番目(推定月商 $42,345〜69,525)、ST1 12月の9番目｜ST2｜USB や電池・一部はクリスマス向け
+
+(c) 複数のリストにくり返し出てくる種類
+- 雪・霜カバー: CJ 2本・AutoDS・Dropship.io・Sell The Trend 2ページ・Amazon(売れ筋と新着)・AliExpress
+- スノーブラシ＋スクレーパー: Amazon 3リストと新着・AutoDS・Dropship.io
+- 窓を拭く道具(内窓ワイパー・油膜取り): Amazon 全体・Car Care・Window Care・新着・AliExpress
+- マイクロファイバーのタオル類: Amazon・TikTok(FindNiche)・AliExpress(100K+ sold が複数)・Shopify・CJ4
+- ジャンプスターター(空気入れ一体): Amazon 売れ筋と新着・TikTok(FindNiche 1位・FastMoss)・AutoDS
+- 車内の収納小物(すき間フィラー・フック・トランク収納・ゴミ箱): Amazon Interior／Organizers・AliExpress・Shopify
+- マグネット式スマホホルダー: Amazon・TikTok・AliExpress・Shopify
+- ペットの毛取り: CJ 2本・AliExpress・Amazon 新着・Shopify
