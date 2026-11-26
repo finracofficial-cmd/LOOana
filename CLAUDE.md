@@ -322,10 +322,10 @@ Shopify MCP の「現在接続しているストア」は **アカウント単�
 - **仕入れ**: CJ Dropshipping・全国送料無料
 - **未入金の注文が出る支払い方法（コンビニ払い・銀行振込など）は提案しない**（2026-11-20 ユーザー「未入金注文を流したくないんだよね」）。Amazon Pay は Shopify で 2025年1月から使えない（11/20 の検索。戻ったという情報なし）
 - **日次レポート**: `.claude/skills/looty-profit-report/SKILL.md` に全ルールがある。
+  数字の扱い（実測のみ・推計禁止）、判定ルール、原価表はすべてそこが正。
 - **定例のスクリプトの作り方**: 前の日の分（`scripts/daily/w11xx.py`・`an`・`moves`・`o11xx/prep`・`day`・`prod`・`mix`・`deep`）から `scripts/daily/shift_day.py`（`shift`＝集合にある日付だけ +1日・`rep`＝回数を確かめて置き換え）で作る。週の区切り・曜日・その日だけの数字は `rep` で直す
 - **graphql の注文の検索は日時を引用符で囲む**（`created_at:>='2026-11-26T00:00:00+09:00'`）。囲まないと件数が合わない（2026-11-27: 囲まずに 45件・正しくは 73件）。ordersCount は必ず ShopifyQL の orders と照らす
 - **Supermetrics の data_query の日予算（adsetdaily_budget）は1日ほど古い値が出ることがある**（2026-11-27 00時台: 11/26 00:24 の変更が反映されていなかった）。キャンペーンを止めても広告セットは ACTIVE のまま出る。予算の正は 変更履歴 ＋ 直読（campaign_and_resource_get の ad_group）
-  数字の扱い（実測のみ・推計禁止）、判定ルール、原価表はすべてそこが正。
 
 ## 書き込みについて
 
