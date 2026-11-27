@@ -1,0 +1,18 @@
+2026-11-28 07時台「cpmは日本でも年末につれて高くなるの？いつ低くなるの？」の下調べ（Web 検索 4回・LOOTY のデータではない。読んだのは検索結果の要約で、記事の全文ではない）
+
+■ 見つかったこと（主に米国・英語圏の広告会社・ツール会社の記事。Meta 自身の数字ではない）
+- 形はどの記事も同じ: 11月後半（ブラックフライデー〜サイバーマンデーの前後2週）がいちばん高い → 12月半ばから下がる → クリスマスのあと〜1月がいちばん安い
+- 幅は記事によって違う: 第4四半期は夏の +30〜70%／ブラックフライデーの週は 9月の +59%（同じ記事で、買う率も上がり 1購入の広告費は −20%）／1月は年平均の −20% ほど・2026年1月は 2025年10月の −17%／12/26〜1/15 は −40〜60% という見積もりもある
+- 上がり始めは年で違う（2025年は 11/10 の週・2024年は 10月半ば）。「年末に必ず上がるわけではない」（2022年は下がった）という指摘もある
+- 3月の終わり・7月にも小さな山があるという記事が1つ
+■ 見つからなかったこと
+- 日本の月別の CPM の推移（日本語で 3回探したが、出てきたのは料金の一般的な説明だけ）。日本の 12月（ボーナス・年末商戦）・1月（初売り）・3月（年度末）にそのまま当てはまるかは分からない
+■ 出どころ
+- https://www.jonloomer.com/qvt/holiday-competition-and-cpm/
+- https://www.jonloomer.com/qvt/holiday-cpms-2024/
+- https://marketingbrew.com/stories/media-buyers-navigating-higher-ad-prices-on-meta
+- https://lebesgue.io/facebook-ads/are-meta-ads-worth-it-black-friday
+- https://revealbot.com/blog/meta-ad-costs-analysis/amp/
+- https://stackmatix.com/blog/seasonal-ad-cost-fluctuations-2026
+- https://adriselab.com/blog/q4-meta-ads-cpm-curve-2026
+- https://adsverse.io/learn/meta-ads-q4-cpm
